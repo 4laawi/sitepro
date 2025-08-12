@@ -22,8 +22,8 @@ export function generateStaticParams() {
 
 const phone = '2120663711164'
 
-export function generateMetadata({ params }: { params: { ville: string } }): Metadata {
-  const city = params.ville
+export function generateMetadata({ params }: any): Metadata {
+  const city: string = params?.ville
   const cityCap = city.charAt(0).toUpperCase() + city.slice(1)
   return {
     title: `Création de site web ${cityCap} | Sitepro.ma`,
@@ -45,8 +45,8 @@ export function generateMetadata({ params }: { params: { ville: string } }): Met
   }
 }
 
-export default function CityCreationPage({ params }: { params: { ville: string } }) {
-  const city = params.ville
+export default function CityCreationPage({ params }: any) {
+  const city: string = params?.ville
   const cityCap = city.charAt(0).toUpperCase() + city.slice(1)
 
   const zonesParVille: Record<string, string[]> = {
