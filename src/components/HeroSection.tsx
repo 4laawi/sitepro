@@ -183,22 +183,13 @@ export default function HeroSection() {
               transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
               className="space-y-8"
             >
-              {/* Enhanced Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 px-6 py-3 rounded-2xl text-sm font-semibold border border-blue-200/50 hover:shadow-lg transition-all duration-300 cursor-pointer"
+              {/* Simple, non-animated badge for performance */}
+              <div
+                className="inline-flex items-center gap-2 bg-white/90 text-blue-700 px-4 py-2 rounded-xl text-sm font-semibold border border-blue-200"
               >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <Sparkles className="w-5 h-5" />
-                </motion.div>
+                <Sparkles className="w-4 h-4" />
                 <span>Leader de la création web au Maroc</span>
-              </motion.div>
+              </div>
 
               {/* Enhanced Main Heading */}
               <motion.div
