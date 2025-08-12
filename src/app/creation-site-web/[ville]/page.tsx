@@ -1,4 +1,4 @@
-import type { Metadata, PageProps } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import CityExtras from '@/components/CityExtras'
@@ -22,8 +22,8 @@ export function generateStaticParams() {
 
 const phone = '2120663711164'
 
-export async function generateMetadata({ params }: PageProps<{ ville: string }>): Promise<Metadata> {
-  const { ville: city } = await params
+export function generateMetadata({ params }: { params: { ville: string } }): Metadata {
+  const city = params.ville
   const cityCap = city.charAt(0).toUpperCase() + city.slice(1)
   return {
     title: `Création de site web ${cityCap} | Sitepro.ma`,
@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: PageProps<{ ville: string }>)
   }
 }
 
-export default async function CityCreationPage({ params }: PageProps<{ ville: string }>) {
-  const { ville: city } = await params
+export default function CityCreationPage({ params }: { params: { ville: string } }) {
+  const city = params.ville
   const cityCap = city.charAt(0).toUpperCase() + city.slice(1)
 
   const zonesParVille: Record<string, string[]> = {
