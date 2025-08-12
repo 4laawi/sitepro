@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import Script from 'next/script'
 import PortfolioInteractive from '@/components/PortfolioInteractive'
-import { ExternalLink, ChevronRight, FolderOpen, Tag } from 'lucide-react'
+import { FolderOpen } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sitepro.ma',
@@ -145,7 +144,7 @@ export default function PortfolioPage() {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <p className="text-gray-600 mb-4">Envie d'un projet similaire ? Parlons-en.</p>
+          <p className="text-gray-600 mb-4">Envie d&apos;un projet similaire ? Parlons-en.</p>
           <a href={`https://wa.me/2120663711164`} className="btn-primary inline-flex items-center gap-2">
             Démarrer un projet
           </a>

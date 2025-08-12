@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Award, Users, Target, Zap, CheckCircle } from 'lucide-react'
+import { Award, Users, Target, CheckCircle } from 'lucide-react'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 
@@ -133,7 +133,7 @@ export default function AboutSection() {
             
             <p className="body-large text-gray-600 mb-8">
               Depuis plus de 8 ans, Sitepro.ma accompagne les entreprises marocaines 
-              dans leur transformation digitale. Notre équipe d'experts passionnés 
+              dans leur transformation digitale. Notre équipe d&apos;experts passionnés 
               combine créativité, innovation et expertise technique pour créer des 
               solutions web qui dépassent vos attentes.
             </p>

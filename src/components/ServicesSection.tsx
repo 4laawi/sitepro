@@ -9,7 +9,6 @@ import {
   Search, 
   ShoppingCart, 
   Palette, 
-  Code2, 
   Rocket, 
   Shield,
   ArrowRight

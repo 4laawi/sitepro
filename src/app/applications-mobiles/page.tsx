@@ -21,7 +21,7 @@ export default function MobileAppsPage() {
           <p className="text-lg text-gray-800 font-semibold mt-2"><Typewriter words={["PWA & natif","UX fluide","Intégrations API","Performance"]} /></p>
           <p className="text-gray-600 max-w-2xl mt-3">Nous créons des applications mobiles et PWA fiables avec une expérience utilisateur moderne.</p>
           <div className="mt-6 flex gap-3">
-            <a href={`https://wa.me/${phone}`} className="btn-primary">Discuter d'une app</a>
+            <a href={`https://wa.me/${phone}`} className="btn-primary">Discuter d&apos;une app</a>
             <Link href="/portfolio" className="btn-secondary">Voir des apps</Link>
           </div>
         </ClientMotionWrapper>

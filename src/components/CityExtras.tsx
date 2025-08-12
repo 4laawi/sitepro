@@ -1,5 +1,5 @@
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
-import { Megaphone, LineChart, PenTool, Gift, Sparkles, Quote } from 'lucide-react'
+import { Megaphone, LineChart, PenTool, Gift, Quote } from 'lucide-react'
 
 interface CityExtrasProps {
   cityName: string

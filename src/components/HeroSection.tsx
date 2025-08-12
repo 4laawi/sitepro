@@ -484,7 +484,7 @@ export default function HeroSection() {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Quel est votre secteur d'activité ?</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Quel est votre secteur d&apos;activité ?</label>
                         <div className="grid grid-cols-2 gap-2">
                           {['Restaurant / Café', 'Magasin / Boutique', 'Services / Coaching', 'Autre'].map((option) => (
                             <button
