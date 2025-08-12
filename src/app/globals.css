@@ -1,26 +1,221 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Denton Superfamily (self-host or Adobe Fonts). Replace URL(s) when available */
+/* Example self-host usage: uncomment and provide correct src URLs
+@font-face {
+  font-family: 'Denton Superfamily';
+  src: url('/fonts/denton-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Denton Superfamily';
+  src: url('/fonts/denton-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Will be overridden if Denton is available */
+  --font-serif-brand: var(--font-playfair);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* If you add Denton via Adobe Fonts, you can set the variable like this:
+:root { --font-serif-brand: 'denton-superfamily', var(--font-playfair); }
+*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 antialiased bg-white;
+  }
+
+  /* Default heading typography (serif) */
+  h1 {
+    @apply font-serif font-bold tracking-tight leading-tight text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  h2 {
+    @apply font-serif font-bold tracking-tight leading-tight text-3xl md:text-4xl lg:text-5xl;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  h3 {
+    @apply font-serif font-bold tracking-tight leading-tight text-2xl md:text-3xl lg:text-4xl;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  ::selection {
+    @apply bg-primary-600 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  /* Performance utility: defers rendering until scrolled near viewport */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+  }
+
+  /* Typography Classes */
+  .heading-1 {
+    @apply font-serif font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-tight;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .heading-2 {
+    @apply font-serif font-bold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  .heading-3 {
+    @apply font-serif font-bold text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .heading-4 {
+    @apply font-serif font-bold text-xl md:text-2xl lg:text-3xl leading-tight tracking-tight;
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+  }
+
+  .body-large {
+    @apply font-sans text-lg md:text-xl leading-relaxed tracking-normal;
+    line-height: 1.6;
+  }
+
+  .body-normal {
+    @apply font-sans text-base md:text-lg leading-relaxed tracking-normal;
+    line-height: 1.6;
+  }
+
+  .body-small {
+    @apply font-sans text-sm md:text-base leading-relaxed tracking-normal;
+    line-height: 1.5;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  .card-shadow {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/80 border border-white/20;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold px-6 py-3 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-700 font-semibold px-6 py-3 rounded-lg border-2 border-primary-600 hover:bg-primary-50 transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Infinite scroll animation for partners carousel */
+  .animate-scroll {
+    animation: scroll 120s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .gradient-animate {
+    background: linear-gradient(-45deg, #3b82f6, #1d4ed8, #1e40af, #1e3a8a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .blob {
+    animation: blob 7s infinite;
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .bg-radial-gradient {
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  }
 }

@@ -1,0 +1,13 @@
+{
+  "name": "Sitepro.ma",
+  "short_name": "Sitepro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}
+
+
