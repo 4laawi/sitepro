@@ -1,5 +1,6 @@
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import { Megaphone, LineChart, PenTool, Gift, Quote } from 'lucide-react'
+import Image from 'next/image'
 
 interface CityExtrasProps {
   cityName: string
@@ -79,11 +80,11 @@ export default function CityExtras({ cityName }: CityExtrasProps) {
       {/* Offices */}
       <div className="mt-12 grid md:grid-cols-2 gap-6">
         <figure className="rounded-2xl overflow-hidden border border-gray-100 shadow-lg">
-          <img src="/office.webp" alt="Bureau Sitepro" className="w-full h-60 object-cover" />
+          <Image src="/office.webp" alt="Bureau Sitepro" width={800} height={480} className="w-full h-60 object-cover" />
           <figcaption className="text-center text-xs text-gray-500 py-2">Bureau — accueil clients</figcaption>
         </figure>
         <figure className="rounded-2xl overflow-hidden border border-gray-100 shadow-lg">
-          <img src="/office2.webp" alt="Salle de réunion Sitepro" className="w-full h-60 object-cover" />
+          <Image src="/office2.webp" alt="Salle de réunion Sitepro" width={800} height={480} className="w-full h-60 object-cover" />
           <figcaption className="text-center text-xs text-gray-500 py-2">Salle de réunion — sessions de cadrage</figcaption>
         </figure>
       </div>

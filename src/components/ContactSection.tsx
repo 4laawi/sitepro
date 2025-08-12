@@ -48,7 +48,7 @@ export default function ContactSection() {
         source: formData.source
       })
 
-      const response = await fetch(`https://script.google.com/macros/s/AKfycbz9AAzzOr0zzbo7fc9tTEmEqGDWYZxj1FAsomPjvVVRDS4lVDdzqkAojIfnOdsEqNIu/exec?${queryParams.toString()}`, {
+      await fetch(`https://script.google.com/macros/s/AKfycbz9AAzzOr0zzbo7fc9tTEmEqGDWYZxj1FAsomPjvVVRDS4lVDdzqkAojIfnOdsEqNIu/exec?${queryParams.toString()}`, {
         method: 'GET',
         mode: 'no-cors' // This is required for Google Apps Script
       })
@@ -355,7 +355,7 @@ export default function ContactSection() {
           >
             {/* Quick Contact */}
             <div className="bg-primary-600 text-white rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4">Besoin d'aide rapide ?</h3>
+              <h3 className="text-2xl font-bold mb-4">Besoin d&apos;aide rapide ?</h3>
               <p className="mb-6 text-white/90">
                 Notre équipe est là pour répondre à toutes vos questions et vous 
                 accompagner dans votre projet digital.
