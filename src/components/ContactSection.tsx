@@ -313,6 +313,10 @@ export default function ContactSection() {
                   />
                 </motion.div>
 
+                {error && (
+                  <div className="text-red-600 text-sm -mt-2">{error}</div>
+                )}
+
                 <motion.button
                   type="submit"
                   disabled={isSubmitting || isSubmitted}

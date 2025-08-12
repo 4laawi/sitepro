@@ -22,8 +22,12 @@ export function generateStaticParams() {
 
 const phone = '2120663711164'
 
-export function generateMetadata({ params }: any): Metadata {
-  const city: string = params?.ville
+// Match Next 15 props shape locally to satisfy type checking
+type CityPageParams = { ville: string }
+type CityPageProps = Readonly<{ params: Promise<CityPageParams> }>
+
+export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
+  const { ville: city } = await params
   const cityCap = city.charAt(0).toUpperCase() + city.slice(1)
   return {
     title: `Création de site web ${cityCap} | Sitepro.ma`,
@@ -45,8 +49,8 @@ export function generateMetadata({ params }: any): Metadata {
   }
 }
 
-export default function CityCreationPage({ params }: any) {
-  const city: string = params?.ville
+export default async function CityCreationPage({ params }: CityPageProps) {
+  const { ville: city } = await params
   const cityCap = city.charAt(0).toUpperCase() + city.slice(1)
 
   const zonesParVille: Record<string, string[]> = {
