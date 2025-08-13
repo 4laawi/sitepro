@@ -111,7 +111,7 @@ export default async function CityCreationPage({ params }: CityPageProps) {
       <div className="relative overflow-hidden">
         {hero && (
           <div className="absolute inset-0">
-            <Image src={hero} alt={cityCap} fill className="object-cover" priority />
+            <Image src={hero} alt={cityCap} fill sizes="100vw" className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20" />
           </div>
         )}

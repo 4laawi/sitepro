@@ -1,12 +1,25 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
+    // Decide whether to enable heavy animations
+    const isSmallScreen = window.matchMedia('(max-width: 1023px)').matches
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // @ts-ignore - navigator.connection is not in standard TS lib
+    const saveData = typeof navigator !== 'undefined' && navigator.connection?.saveData === true
+    const shouldEnable = !isSmallScreen && !prefersReducedMotion && !saveData
+    setEnabled(shouldEnable)
+
+    if (!shouldEnable) {
+      return
+    }
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -134,99 +147,83 @@ export default function AnimatedBackground() {
 
   return (
     <>
-      {/* Canvas for grid animation */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 1 }}
-      />
-      
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 2 }}>
-        {/* Top gradient */}
-        <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-white/90 to-transparent" />
-        
-        {/* Bottom gradient */}
-        <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white/90 to-transparent" />
-        
-        {/* Radial gradient overlay */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-white/20" />
-      </div>
+      {enabled ? (
+        <>
+          {/* Canvas for grid animation */}
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 pointer-events-none"
+            style={{ zIndex: 1 }}
+          />
 
-      {/* Stable background with subtle floating orbs */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
-        {/* Fixed gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100/50 to-primary-100/30" />
-        
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Floating orbs with reduced movement */}
-          <motion.div
-            className="absolute top-20 left-20 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl"
-            animate={{
-              x: [0, 20, 0],
-              y: [0, -15, 0],
-              opacity: [0.2, 0.3, 0.2],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-40 right-32 w-24 h-24 bg-purple-200/15 rounded-full blur-2xl"
-            animate={{
-              x: [0, -15, 0],
-              y: [0, 20, 0],
-              opacity: [0.15, 0.25, 0.15],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-32 left-1/3 w-28 h-28 bg-cyan-200/20 rounded-full blur-2xl"
-            animate={{
-              x: [0, 25, 0],
-              y: [0, -20, 0],
-              opacity: [0.2, 0.3, 0.2],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-      </div>
+          {/* Gradient overlays */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 2 }}>
+            <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-white/90 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-96 bg-gradient-to-t from-white/90 to-transparent" />
+            <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-white/20" />
+          </div>
 
-      {/* Stable gradient mesh without transform animations */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ zIndex: 0 }}
-      >
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 0.05 }}>
-              <animate attributeName="stop-opacity" values="0.05;0.12;0.05" dur="6s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="50%" style={{ stopColor: '#1d4ed8', stopOpacity: 0.08 }}>
-              <animate attributeName="stop-opacity" values="0.08;0.15;0.08" dur="6s" repeatCount="indefinite" />
-            </stop>
-            <stop offset="100%" style={{ stopColor: '#2563eb', stopOpacity: 0.06 }}>
-              <animate attributeName="stop-opacity" values="0.06;0.1;0.06" dur="6s" repeatCount="indefinite" />
-            </stop>
-          </linearGradient>
-        </defs>
-        
-        <rect
-          width="100%"
-          height="100%"
-          fill="url(#grad1)"
-        />
-      </svg>
+          {/* Background and subtle floating orbs (desktop only) */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100/50 to-primary-100/30" />
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-20 left-20 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl"
+                animate={{ x: [0, 20, 0], y: [0, -15, 0], opacity: [0.2, 0.3, 0.2] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              <motion.div
+                className="absolute top-40 right-32 w-24 h-24 bg-purple-200/15 rounded-full blur-2xl"
+                animate={{ x: [0, -15, 0], y: [0, 20, 0], opacity: [0.15, 0.25, 0.15] }}
+                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              <motion.div
+                className="absolute bottom-32 left-1/3 w-28 h-28 bg-cyan-200/20 rounded-full blur-2xl"
+                animate={{ x: [0, 25, 0], y: [0, -20, 0], opacity: [0.2, 0.3, 0.2] }}
+                transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </div>
+          </div>
+
+          {/* Subtle gradient mesh */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 0.05 }}>
+                  <animate attributeName="stop-opacity" values="0.05;0.12;0.05" dur="6s" repeatCount="indefinite" />
+                </stop>
+                <stop offset="50%" style={{ stopColor: '#1d4ed8', stopOpacity: 0.08 }}>
+                  <animate attributeName="stop-opacity" values="0.08;0.15;0.08" dur="6s" repeatCount="indefinite" />
+                </stop>
+                <stop offset="100%" style={{ stopColor: '#2563eb', stopOpacity: 0.06 }}>
+                  <animate attributeName="stop-opacity" values="0.06;0.1;0.06" dur="6s" repeatCount="indefinite" />
+                </stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grad1)" />
+          </svg>
+        </>
+      ) : (
+        <>
+          {/* Lightweight static background for mobile / reduced motion */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-200/40 to-cyan-100" />
+            {/* Soft radial accents */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'radial-gradient(600px 400px at 20% 25%, rgba(59,130,246,0.12), transparent 60%), radial-gradient(500px 350px at 80% 75%, rgba(99,102,241,0.12), transparent 60%)',
+              }}
+            />
+          </div>
+          {/* Gentle fade overlays to keep content legible */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 2 }}>
+            <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-white/85 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-white/85 to-transparent" />
+          </div>
+        </>
+      )}
     </>
   )
 }

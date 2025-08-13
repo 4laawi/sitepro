@@ -59,7 +59,13 @@ export default function PortfolioInteractive({ items, categories }: PortfolioInt
             className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all"
           >
             <div className="relative h-56">
-              <Image src={item.image} alt={item.title} fill className="object-cover" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                className="object-cover"
+              />
               <div className="absolute top-4 left-4">
                 <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium">
                   {item.category}
