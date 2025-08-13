@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Check, Sparkles, Monitor, Gauge, Headphones, Timer } from 'lucide-react'
 import AnimatedBackground from './AnimatedBackground'
-import WavyText from './WavyText'
 import Image from 'next/image';
 
 export default function HeroSection() {
@@ -98,11 +97,7 @@ export default function HeroSection() {
 
             <div className="relative flex justify-center group">
               {/* Enhanced hero image with hover effects */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="relative"
-              >
+              <div className="relative">
                 <Image
                   src="/hero-img.png"
                   alt="Sitepro - Sites web professionnels"
@@ -114,12 +109,8 @@ export default function HeroSection() {
                 />
                 
                 {/* Enhanced floating elements with better positioning and margins */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="absolute -bottom-8 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300"
+                <div
+                  className="absolute -bottom-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                   style={{ left: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                 >
                   <div className="text-center">
@@ -127,14 +118,10 @@ export default function HeroSection() {
                     <div className="text-sm font-medium text-gray-600 mt-1">Sites créés</div>
                     <div className="w-8 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-2"></div>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, y: -20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05, y: 5 }}
-                  className="absolute -top-8 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300"
+                <div
+                  className="absolute -top-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                   style={{ right: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                 >
                   <div className="text-center">
@@ -142,35 +129,9 @@ export default function HeroSection() {
                     <div className="text-sm font-medium text-gray-600 mt-1">Support</div>
                     <div className="w-8 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mt-2"></div>
                   </div>
-                </motion.div>
+                </div>
 
-                {/* Interactive floating dots */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 pointer-events-none"
-                >
-                  {[...Array(6)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60"
-                      style={{
-                        left: `${(50 + 40 * Math.cos(i * Math.PI / 3)).toFixed(3)}%`,
-                        top: `${(50 + 40 * Math.sin(i * Math.PI / 3)).toFixed(3)}%`,
-                      }}
-                      animate={{
-                        scale: [1, 1.5, 1],
-                        opacity: [0.6, 1, 0.6],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        delay: i * 0.5,
-                      }}
-                    />
-                  ))}
-                </motion.div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
 
@@ -218,37 +179,25 @@ export default function HeroSection() {
                 Nous créons des expériences web uniques qui propulsent votre entreprise vers de nouveaux sommets.
               </motion.p>
 
-              {/* Enhanced Features List */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
-                className="space-y-2 md:space-y-3"
-              >
-                {[
-                  { text: 'Sites web responsifs et modernes', Icon: Monitor },
-                  { text: 'Optimisation SEO et performance', Icon: Gauge },
-                  { text: 'Support technique 24/7', Icon: Headphones },
-                  { text: 'Délais de livraison garantis', Icon: Timer }
-                ].map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.6 }}
-                    transition={{ delay: 0.4, duration: 0.5 }}
-                    whileHover={{ x: 5 }}
-                    className="flex items-center gap-2 md:gap-3 p-0 rounded-xl transition-all duration-300 group"
-                  >
-                    <feature.Icon className="w-5 h-5 md:w-6 md:h-6 text-primary-600 group-hover:text-primary-700 transition-colors" />
-                    <WavyText
-                      text={feature.text}
-                      className="m-0 leading-snug body-normal text-gray-700 font-medium"
-                      delay={index * 1.1}
-                    />
-                  </motion.div>
-                ))}
-              </motion.div>
+              {/* Features List (static for mobile performance) */}
+              <div className="space-y-2 md:space-y-3">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Monitor className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
+                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Sites web responsifs et modernes</span>
+                </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Gauge className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
+                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Optimisation SEO et performance</span>
+                </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Headphones className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
+                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Support technique 24/7</span>
+                </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Timer className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
+                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Délais de livraison garantis</span>
+                </div>
+              </div>
 
               {/* Enhanced CTA Button */}
               <motion.div
@@ -282,11 +231,7 @@ export default function HeroSection() {
             >
               <div className="relative flex justify-center group">
                 {/* Enhanced hero image with hover effects */}
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative"
-                >
+                <div className="relative">
                   <Image
                     src="/hero-img.png"
                     alt="Sitepro - Sites web professionnels"
@@ -298,12 +243,8 @@ export default function HeroSection() {
                   />
 
                   {/* Enhanced floating elements with better positioning and margins */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="absolute -bottom-8 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300"
+                  <div
+                    className="absolute -bottom-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                     style={{ left: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                   >
                     <div className="text-center">
@@ -311,14 +252,10 @@ export default function HeroSection() {
                       <div className="text-sm font-medium text-gray-600 mt-1">Sites créés</div>
                       <div className="w-8 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-2"></div>
                     </div>
-                  </motion.div>
+                  </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: -20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05, y: 5 }}
-                    className="absolute -top-8 bg-gradient-to-br from-white/95 to-white/90 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300"
+                  <div
+                    className="absolute -top-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                     style={{ right: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                   >
                     <div className="text-center">
@@ -326,31 +263,9 @@ export default function HeroSection() {
                       <div className="text-sm font-medium text-gray-600 mt-1">Support</div>
                       <div className="w-8 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mt-2"></div>
                     </div>
-                  </motion.div>
+                  </div>
 
-                  {/* Interactive floating dots */}
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 pointer-events-none"
-                  >
-                    {[...Array(6)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60"
-                        style={{
-                          left: `${(50 + 40 * Math.cos(i * Math.PI / 3)).toFixed(3)}%`,
-                          top: `${(50 + 40 * Math.sin(i * Math.PI / 3)).toFixed(3)}%`,
-                        }}
-                        animate={{
-                          scale: [1, 1.5, 1],
-                          opacity: [0.6, 1, 0.6],
-                        }}
-                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
-                      />
-                    ))}
-                  </motion.div>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
