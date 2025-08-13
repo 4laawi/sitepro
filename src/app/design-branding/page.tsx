@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import Typewriter from '@/components/Typewriter'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Design & Branding | Sitepro.ma',
@@ -11,6 +12,27 @@ export const metadata: Metadata = {
 export default function DesignBrandingPage() {
   return (
     <section className="cv-auto">
+      <Script id="ld-breadcrumbs-design" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Design & Branding', item: 'https://sitepro.ma/design-branding' }
+          ]
+        })}
+      </Script>
+      <Script id="ld-service-design" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Design & Branding',
+          serviceType: 'Branding / Design',
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
+          areaServed: 'MA',
+          url: 'https://sitepro.ma/design-branding'
+        })}
+      </Script>
       <div className="container mx-auto px-4 py-20">
         <ClientMotionWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="heading-1 text-gray-900">Design & Branding</h1>

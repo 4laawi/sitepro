@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import Typewriter from '@/components/Typewriter'
 import TextTicker from '@/components/TextTicker'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Référencement SEO au Maroc | Sitepro.ma',
@@ -15,6 +16,27 @@ const phone = '2120663711164'
 export default function SeoPage() {
   return (
     <section className="cv-auto">
+      <Script id="ld-breadcrumbs-seo" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Référencement SEO', item: 'https://sitepro.ma/referencement-seo' }
+          ]
+        })}
+      </Script>
+      <Script id="ld-service-seo" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Référencement SEO',
+          serviceType: 'SEO',
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
+          areaServed: 'MA',
+          url: 'https://sitepro.ma/referencement-seo'
+        })}
+      </Script>
       <div className="container mx-auto px-4 py-20">
         <ClientMotionWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="heading-1 text-gray-900">Référencement SEO</h1>

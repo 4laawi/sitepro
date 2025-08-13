@@ -4,6 +4,7 @@ import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import Typewriter from '@/components/Typewriter'
 import TextTicker from '@/components/TextTicker'
 import { Database, Search, Sparkles, Wrench, Rocket, Shield, CreditCard, Globe } from 'lucide-react'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Création de sites e‑commerce | Sitepro.ma',
@@ -16,6 +17,27 @@ const phone = '2120663711164'
 export default function EcommercePage() {
   return (
     <section className="cv-auto">
+      <Script id="ld-breadcrumbs-ecommerce" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'E-commerce', item: 'https://sitepro.ma/e-commerce' }
+          ]
+        })}
+      </Script>
+      <Script id="ld-service-ecommerce" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Création de boutiques en ligne',
+          serviceType: 'E-commerce',
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
+          areaServed: 'MA',
+          url: 'https://sitepro.ma/e-commerce'
+        })}
+      </Script>
       <div className="container mx-auto px-4 py-20">
         <ClientMotionWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="heading-1 text-gray-900">E‑commerce performant</h1>
