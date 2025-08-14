@@ -11,7 +11,7 @@ export default function AnimatedBackground() {
     // Decide whether to enable heavy animations
     const isSmallScreen = window.matchMedia('(max-width: 1023px)').matches
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    // @ts-ignore - navigator.connection is not in standard TS lib
+    // @ts-expect-error - navigator.connection is not in standard TS lib
     const saveData = typeof navigator !== 'undefined' && navigator.connection?.saveData === true
     const shouldEnable = !isSmallScreen && !prefersReducedMotion && !saveData
     setEnabled(shouldEnable)

@@ -8,7 +8,7 @@ const partners = [
   { name: 'Google Partner', logo: 'GOOGLE' },
   { name: 'Shopify Partner', logo: 'SHOPIFY' },
   { name: 'TikTok Marketing Partners', logo: 'TIKTOK' },
-  { name: 'WordPress VIP', logo: 'WP' },
+  { name: 'WordPress VIP', logo: 'WordPress' },
 ]
 
 export default function PartnersSection() {
