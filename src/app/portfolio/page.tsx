@@ -88,6 +88,24 @@ const items = [
     tags: ['WordPress', 'SEO', 'Performance'],
     link: 'https://centredentairebentouda.com/',
   },
+  {
+    id: 8,
+    title: 'Rabat Rentals',
+    category: 'Location',
+    description: 'Agence premium de location de voitures à Rabat avec flotte de luxe et service chauffeur professionnel.',
+    image: '/rabat-rentals.webp',
+    tags: ['Next.js', 'Vercel', 'Service Premium'],
+    link: 'https://rabat-rentals.vercel.app/',
+  },
+  {
+    id: 9,
+    title: 'Rabat Rental',
+    category: 'Location',
+    description: 'Location de voitures à Rabat avec système de réservation en ligne et assistance 24h/24.',
+    image: '/rabat-rental.webp',
+    tags: ['React', 'Vercel', 'Réservation 24/7'],
+    link: 'https://rabat-rental.vercel.app/',
+  },
 ]
 
 const categories = [

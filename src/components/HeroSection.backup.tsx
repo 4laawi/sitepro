@@ -78,9 +78,6 @@ export default function HeroSection() {
     <section className="relative min-h-screen overflow-hidden">
       {/* Award-worthy Animated Background */}
       <AnimatedBackground />
-      
-      {/* Enhanced background gradient overlay - CSS only, no JS animations */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-transparent to-white/50 pointer-events-none" style={{ zIndex: 5 }}></div>
 
       <div className="relative container mx-auto px-4 py-20 lg:py-28" style={{ zIndex: 10 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +96,7 @@ export default function HeroSection() {
             </div>
 
             <div className="relative flex justify-center group">
-              {/* Enhanced hero image with subtle border and shadow */}
+              {/* Enhanced hero image with hover effects */}
               <div className="relative">
                 <Image
                   src="/hero-img.png"
@@ -107,13 +104,13 @@ export default function HeroSection() {
                   width={900}
                   height={700}
                   sizes="(max-width: 1024px) 100vw, 900px"
-                  className="w-full max-w-5xl h-auto rounded-3xl shadow-xl border border-white/30"
+                  className="w-full max-w-5xl h-auto rounded-3xl shadow-2xl border border-white/20"
                   priority
                 />
                 
                 {/* Enhanced floating elements with better positioning and margins */}
                 <div
-                  className="absolute -bottom-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
+                  className="absolute -bottom-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                   style={{ left: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                 >
                   <div className="text-center">
@@ -124,7 +121,7 @@ export default function HeroSection() {
                 </div>
 
                 <div
-                  className="absolute -top-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
+                  className="absolute -top-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                   style={{ right: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                 >
                   <div className="text-center">
@@ -149,7 +146,7 @@ export default function HeroSection() {
             >
               {/* Simple, non-animated badge for performance */}
               <div
-                className="inline-flex items-center gap-2 bg-white/90 text-blue-700 px-4 py-2 rounded-xl text-sm font-semibold border border-blue-200 shadow-sm"
+                className="inline-flex items-center gap-2 bg-white/90 text-blue-700 px-4 py-2 rounded-xl text-sm font-semibold border border-blue-200"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>Leader de la création web au Maroc</span>
@@ -162,13 +159,13 @@ export default function HeroSection() {
                 transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
                 className="space-y-4"
               >
-                <h1 className="heading-1 text-gray-900 leading-tight tracking-tight">
+                <h1 className="heading-1 text-gray-900 leading-tight">
                   Votre Agence Web{' '}
                   <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
                     Sitepro.ma
                   </span>
                 </h1>
-                <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
               </motion.div>
 
               {/* Enhanced Description */}
@@ -176,36 +173,28 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 1, ease: "easeOut" }}
-                className="body-large text-gray-600 leading-relaxed text-lg max-w-xl"
+                className="body-large text-gray-600 leading-relaxed text-lg"
               >
                 Transformez votre présence digitale avec des sites web qui convertissent. 
                 Nous créons des expériences web uniques qui propulsent votre entreprise vers de nouveaux sommets.
               </motion.p>
 
               {/* Features List (static for mobile performance) */}
-              <div className="space-y-3 md:space-y-4">
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
-                    <Monitor className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
+              <div className="space-y-2 md:space-y-3">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Monitor className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
                   <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Sites web responsifs et modernes</span>
                 </div>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600">
-                    <Gauge className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Gauge className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
                   <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Optimisation SEO et performance</span>
                 </div>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center text-cyan-600">
-                    <Headphones className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Headphones className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
                   <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Support technique 24/7</span>
                 </div>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600">
-                    <Timer className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Timer className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
                   <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Délais de livraison garantis</span>
                 </div>
               </div>
@@ -217,18 +206,20 @@ export default function HeroSection() {
                 transition={{ delay: 1, duration: 1, ease: "easeOut" }}
                 className="pt-4"
               >
-                <button
+                <motion.button
                   onClick={openModal}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-md"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden"
                 >
-                  <div className="flex items-center gap-2">
-                    <span>Obtenez un devis</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </button>
+                  <span className="relative z-10">Obtenez un devis</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <motion.div
+                    className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 rounded-2xl blur opacity-30 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </motion.button>
               </motion.div>
             </motion.div>
             {/* Right Column - Desktop Hero Visuals */}
@@ -239,24 +230,21 @@ export default function HeroSection() {
               className="hidden lg:flex justify-center"
             >
               <div className="relative flex justify-center group">
-                {/* Enhanced hero image with subtle border and shadow */}
+                {/* Enhanced hero image with hover effects */}
                 <div className="relative">
-                  {/* Subtle glow effect behind image - static, no animation */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-[32px] blur-2xl"></div>
-                  
                   <Image
                     src="/hero-img.png"
                     alt="Sitepro - Sites web professionnels"
                     width={900}
                     height={700}
                     sizes="(min-width:1024px) 780px, 100vw"
-                    className="relative w-full max-w-[780px] h-auto rounded-3xl shadow-xl border border-white/30"
+                    className="w-full max-w-[780px] h-auto rounded-3xl shadow-2xl border border-white/20"
                     priority
                   />
 
                   {/* Enhanced floating elements with better positioning and margins */}
                   <div
-                    className="absolute -bottom-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
+                    className="absolute -bottom-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                     style={{ left: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                   >
                     <div className="text-center">
@@ -267,7 +255,7 @@ export default function HeroSection() {
                   </div>
 
                   <div
-                    className="absolute -top-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
+                    className="absolute -top-8 bg-white/95 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/30"
                     style={{ right: 'max(-32px, calc(-50vw + 50% + 20px))' }}
                   >
                     <div className="text-center">
