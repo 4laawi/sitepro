@@ -106,6 +106,15 @@ const items = [
     tags: ['React', 'Vercel', 'Réservation 24/7'],
     link: 'https://rabat-rental.vercel.app/',
   },
+  {
+    id: 10,
+    title: 'Essouira Surf House Club',
+    category: 'Location',
+    description: 'Site web moderne pour club de surf à Essaouira avec design épuré et expérience utilisateur optimale.',
+    image: '/sitepro_ma_creation_de_site_web_maroc.webp',
+    tags: ['React', 'Netlify', 'Design Moderne'],
+    link: 'https://surf11.netlify.app/',
+  },
 ]
 
 const categories = [

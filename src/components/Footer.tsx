@@ -11,8 +11,7 @@ import {
   Mail, 
   Phone, 
   MapPin,
-  ArrowUp,
-  Heart
+  ArrowUp
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
@@ -207,10 +206,6 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
-            
-            <p className="text-gray-400 text-sm flex items-center gap-1">
-              Fait avec <Heart size={16} className="text-red-500" /> au Maroc
-            </p>
           </div>
         </div>
       </div>
