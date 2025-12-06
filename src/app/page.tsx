@@ -15,9 +15,9 @@ export default function Home() {
       <HeroSection />
       {/* Breadcrumb JSON-LD for homepage */}
       {/* Inject via next/script would normally be in layout if needed; homepage typically doesn't require breadcrumbs */}
+      <section className="cv-auto"><PortfolioSection /></section>
       <section className="cv-auto"><PartnersSection /></section>
       <section className="cv-auto"><ServicesSection /></section>
-      <section className="cv-auto"><PortfolioSection /></section>
       <ServedCities />
       <section className="cv-auto"><AboutSection /></section>
       <section className="cv-auto"><ContactSection /></section>
