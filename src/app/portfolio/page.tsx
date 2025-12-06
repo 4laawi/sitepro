@@ -115,6 +115,15 @@ const items = [
     tags: ['React', 'Netlify', 'Design Moderne'],
     link: 'https://surf11.netlify.app/',
   },
+  {
+    id: 11,
+    title: 'Trevi Rent Car Location',
+    category: 'Location',
+    description: 'Site de location de voitures professionnel avec système de réservation en ligne et gestion de flotte.',
+    image: '/trevi.png',
+    tags: ['Next.js', 'Réservation', 'Location Voitures'],
+    link: 'https://www.trevirentcarlocation.ma/',
+  },
 ]
 
 const categories = [
