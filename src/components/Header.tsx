@@ -123,235 +123,258 @@ export default function Header() {
     setOpenDropdown(openDropdown === key ? null : key)
   }
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMobileMenuOpen])
+
   return (
-    <header className={`bg-white py-[20px] sticky top-0 z-70 snipcss-ooWPY transition-transform duration-300 ease-in-out ${!isVisible ? 'header-hidden' : ''}`}>
-      <div className="h-[70px] flex items-center justify-between header">
-        <div className="flex w-full items-center justify-between z-[111]">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/Logo-site-web-pro-maroc.webp"
-              alt="Sitepro.ma"
-              width={400}
-              height={100}
-              className="h-[45px] sm:h-[55px] w-auto"
-              priority
-            />
-          </Link>
-          <nav>
-            <ul className="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
-              <li className="relative dropdown-hebergement group">
-                <button
-                  className={`animated-link link_header text-title flex items-center gap-2 navbar-bold border-none p-0 transition-colors duration-200 ${openDropdown === 'hebergement' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
-                  onClick={() => toggleDropdown('hebergement')}
-                >
-                  {t.hosting}
-                  <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'hebergement' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'hebergement' ? 'is-open' : ''}`}>
-                  <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
-                    <li> <Link href={language === 'EN' ? "/en/starty/" : "/starty/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.starty} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/business/" : "/business/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.business} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/cloud-maroc/" : "/cloud-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.cloud} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/email-professionnel/" : "/email-professionnel/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.email} </Link> </li>
-                  </ul>
-                </div>
-              </li>
-              <li> <Link href={language === 'EN' ? "/en/nom-de-domaine-ma/" : "/nom-de-domaine-ma/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.domains} </Link> </li>
-              <li className="relative dropdown-webapps group">
-                <button
-                  className={`flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 ${openDropdown === 'webapps' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
-                  onClick={() => toggleDropdown('webapps')}
-                >
-                  <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M16 4L12 20" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                  {t.webApps}
-                  <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'webapps' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'webapps' ? 'is-open' : ''}`}>
-                  <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-                    <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.webAppsSub.sites} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.webAppsSub.apps} </Link> </li>
-                  </ul>
-                </div>
-              </li>
-              <li className="relative dropdown-seo group">
-                <button
-                  className={`flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 ${openDropdown === 'seo' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
-                  onClick={() => toggleDropdown('seo')}
-                >
-                  <Image src="https://www.hostino.ma/images/google-svg.svg" alt="Google" width={20} height={20} />
-                  {t.seoSea}
-                  <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'seo' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'seo' ? 'is-open' : ''}`}>
-                  <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-                    <li> <Link href={language === 'EN' ? "/en/agence-seo-maroc/" : "/agence-seo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.geo} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.gmb} </Link> </li>
-                    <li> <Link href={language === 'EN' ? "/en/google-ads-maroc/" : "/google-ads-maroc/"} className="block navbar-bold ml-6 my-3 animated-link link_header text-title hover:bg-gray-50 transition-colors"> {t.seoSub.ads} </Link> </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </nav>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <div className="hidden sm:flex items-center">
-              <div className="lang-switch-container" data-lang={language}>
-                <div className="lang-slider"></div>
-                <div
-                  className={`lang-option ${language === 'FR' ? 'active' : ''}`}
-                  onClick={() => toggleLanguage('FR')}
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                  <span>FR</span>
-                </div>
-                <div
-                  className={`lang-option ${language === 'EN' ? 'active' : ''}`}
-                  onClick={() => toggleLanguage('EN')}
-                >
-                  <span>EN</span>
+    <>
+      <header className={`bg-white py-[20px] sticky top-0 z-70 snipcss-ooWPY transition-transform duration-300 ease-in-out ${!isVisible && !isMobileMenuOpen ? 'header-hidden' : ''}`}>
+        <div className="h-[70px] flex items-center justify-between header">
+          <div className="flex w-full items-center justify-between z-[111]">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/Logo-site-web-pro-maroc.webp"
+                alt="Sitepro.ma"
+                width={400}
+                height={100}
+                className="h-[38px] sm:h-[55px] w-auto relative z-[160]"
+                priority
+              />
+            </Link>
+            <nav>
+              <ul className="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
+                <li className="relative dropdown-hebergement group">
+                  <button
+                    className={`animated-link link_header text-title flex items-center gap-2 navbar-bold border-none p-0 transition-colors duration-200 ${openDropdown === 'hebergement' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
+                    onClick={() => toggleDropdown('hebergement')}
+                  >
+                    {t.hosting}
+                    <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'hebergement' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'hebergement' ? 'is-open' : ''}`}>
+                    <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
+                      <li> <Link href={language === 'EN' ? "/en/starty/" : "/starty/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.starty} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/business/" : "/business/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.business} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/cloud-maroc/" : "/cloud-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.cloud} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/email-professionnel/" : "/email-professionnel/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.email} </Link> </li>
+                    </ul>
+                  </div>
+                </li>
+                <li> <Link href={language === 'EN' ? "/en/nom-de-domaine-ma/" : "/nom-de-domaine-ma/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.domains} </Link> </li>
+                <li className="relative dropdown-webapps group">
+                  <button
+                    className={`flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 ${openDropdown === 'webapps' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
+                    onClick={() => toggleDropdown('webapps')}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M16 4L12 20" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" />
+                    </svg>
+                    {t.webApps}
+                    <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'webapps' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'webapps' ? 'is-open' : ''}`}>
+                    <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
+                      <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.webAppsSub.sites} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.webAppsSub.apps} </Link> </li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="relative dropdown-seo group">
+                  <button
+                    className={`flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 ${openDropdown === 'seo' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
+                    onClick={() => toggleDropdown('seo')}
+                  >
+                    <Image src="https://www.hostino.ma/images/google-svg.svg" alt="Google" width={20} height={20} />
+                    {t.seoSea}
+                    <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'seo' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'seo' ? 'is-open' : ''}`}>
+                    <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
+                      <li> <Link href={language === 'EN' ? "/en/agence-seo-maroc/" : "/agence-seo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.geo} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.gmb} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/google-ads-maroc/" : "/google-ads-maroc/"} className="block navbar-bold ml-6 my-3 animated-link link_header text-title hover:bg-gray-50 transition-colors"> {t.seoSub.ads} </Link> </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="hidden sm:flex items-center">
+                <div className="lang-switch-container" data-lang={language}>
+                  <div className="lang-slider"></div>
+                  <div
+                    className={`lang-option ${language === 'FR' ? 'active' : ''}`}
+                    onClick={() => toggleLanguage('FR')}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                    <span>FR</span>
+                  </div>
+                  <div
+                    className={`lang-option ${language === 'EN' ? 'active' : ''}`}
+                    onClick={() => toggleLanguage('EN')}
+                  >
+                    <span>EN</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div>
-              <Link href="https://wa.me/212663750908" target="_blank" rel="noopener noreferrer" className="absolute sm:hidden block right-4 z-[1111] w-10 h-10 bg-[#2563eb] rounded-full flex items-center justify-center hover:shadow-xl hover:scale-110 transition-all duration-300 group style-2Ygp6" aria-label="Contact us on WhatsApp" id="style-2Ygp6">
-                <svg viewBox="0 0 32 32" className="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM23.407 19.51c-0.407-0.204-2.397-1.183-2.77-1.319-0.373-0.136-0.644-0.204-0.915 0.204s-1.053 1.319-1.291 1.59c-0.237 0.271-0.475 0.305-0.882 0.102s-1.722-0.635-3.278-2.023c-1.212-1.081-2.030-2.416-2.267-2.823s-0.025-0.628 0.179-0.831c0.184-0.184 0.407-0.475 0.611-0.712s0.271-0.407 0.407-0.678c0.136-0.271 0.068-0.509-0.034-0.712s-0.915-2.207-1.254-3.023c-0.339-0.815-0.678-0.678-0.915-0.678s-0.509-0.034-0.78-0.034-0.712 0.102-1.087 0.509c-0.373 0.407-1.427 1.394-1.427 3.399s1.461 3.942 1.665 4.213c0.204 0.271 2.817 4.434 6.865 6.196 4.047 1.762 4.047 1.173 4.776 1.105s2.397-0.982 2.735-1.929c0.339-0.947 0.339-1.757 0.237-1.929s-0.373-0.271-0.78-0.475z" />
-                </svg>
-              </Link>
+              <div>
+                <Link href="https://wa.me/212663750908" target="_blank" rel="noopener noreferrer" className="sm:hidden flex items-center justify-center w-10 h-10 bg-[#2563eb] rounded-full hover:shadow-xl hover:scale-110 transition-all duration-300 group relative z-[160]" aria-label="Contact us on WhatsApp">
+                  <svg viewBox="0 0 32 32" className="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.408 1.408-5.245-0.292-0.507c-1.224-2.162-1.87-4.588-1.87-7.070 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM23.407 19.51c-0.407-0.204-2.397-1.183-2.77-1.319-0.373-0.136-0.644-0.204-0.915 0.204s-1.053 1.319-1.291 1.59c-0.237 0.271-0.475 0.305-0.882 0.102s-1.722-0.635-3.278-2.023c-1.212-1.081-2.030-2.416-2.267-2.823s-0.025-0.628 0.179-0.831c0.184-0.184 0.407-0.475 0.611-0.712s0.271-0.407 0.407-0.678c0.136-0.271 0.068-0.509-0.034-0.712s-0.915-2.207-1.254-3.023c-0.339-0.815-0.678-0.678-0.915-0.678s-0.509-0.034-0.78-0.034-0.712 0.102-1.087 0.509c-0.373 0.407-1.427 1.394-1.427 3.399s1.461 3.942 1.665 4.213c0.204 0.271 2.817 4.434 6.865 6.196 4.047 1.762 4.047 1.173 4.776 1.105s2.397-0.982 2.735-1.929c0.339-0.947 0.339-1.757 0.237-1.929s-0.373-0.271-0.78-0.475z" />
+                  </svg>
+                </Link>
+              </div>
+              <button
+                className={`lg:hidden text-title burger-button relative z-[160] ${isMobileMenuOpen ? 'active' : ''}`}
+                aria-label="Toggle menu"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                <div className="burger-icon"> <span></span> <span></span> <span></span> </div>
+              </button>
             </div>
-            <button
-              className={`lg:hidden text-title burger-button ${isMobileMenuOpen ? 'active' : ''}`}
-              aria-label="Toggle menu"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <div className="burger-icon"> <span></span> <span></span> <span></span> </div>
-            </button>
           </div>
         </div>
-      </div>
-      <div className={`mobile-menu lg:hidden bg-white border-t border-gray-200 pt-[80px] z-[100] fixed inset-0 h-screen w-screen overflow-y-auto ${isMobileMenuOpen ? 'active' : 'hidden'}`}>
-        <nav className="px-6 py-4 space-y-2">
-          <ul>
+      </header>
+
+      <div className={`mobile-menu lg:hidden ${isMobileMenuOpen ? 'active' : ''}`}>
+        <nav className="px-6 py-4">
+          <ul className="space-y-1">
             <li className="mobile-dropdown-hebergement">
               <span
-                className="w-full link_header button cursor-pointer flex items-center justify-between py-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
+                className="w-full link_header cursor-pointer flex items-center justify-between py-4 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
                 onClick={() => toggleMobileSubmenu('hebergement')}
               >
-                <div className="flex items-center gap-2">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <div className="flex items-center gap-3">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
                     <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
                     <line x1="6" y1="6" x2="6" y2="6" />
                     <line x1="6" y1="18" x2="6" y2="18" />
                   </svg>
-                  {t.hosting}
+                  <span className="text-[17px]">{t.hosting}</span>
                 </div>
                 <svg className={`w-5 h-5 transition-transform duration-300 mobile-arrow ${openMobileSubmenus['hebergement'] ? 'active' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
-              <ul className={`mobile-submenu pl-4 ${openMobileSubmenus['hebergement'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/starty/" : "/starty/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title navbar-bold"> {t.hostingSub.starty} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/business/" : "/business/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title navbar-bold"> {t.hostingSub.business} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/cloud-maroc/" : "/cloud-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title navbar-bold"> {t.hostingSub.cloud} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/email-professionnel/" : "/email-professionnel/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title navbar-bold"> {t.hostingSub.email} </Link> </li>
+              <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['hebergement'] ? 'active' : 'hidden'}`}>
+                <li> <Link href={language === 'EN' ? "/en/starty/" : "/starty/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.starty} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/business/" : "/business/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.business} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/cloud-maroc/" : "/cloud-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.cloud} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/email-professionnel/" : "/email-professionnel/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.email} </Link> </li>
               </ul>
             </li>
             <li>
               <Link
                 href={language === 'EN' ? "/en/nom-de-domaine-ma/" : "/nom-de-domaine-ma/"}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-2 text-title link_header cursor-pointer navbar-bold py-2 transition-colors duration-200 hover:text-[#2563eb]"
+                className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="2" y1="12" x2="22" y2="12" />
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 </svg>
-                {t.domains}
+                <span className="text-[17px]">{t.domains}</span>
               </Link>
             </li>
             <li className="mobile-dropdown-webapps">
               <span
-                className="w-full link_header button cursor-pointer flex items-center justify-between py-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
+                className="w-full link_header cursor-pointer flex items-center justify-between py-4 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
                 onClick={() => toggleMobileSubmenu('webapps')}
               >
-                <div className="flex items-center gap-2">
-                  <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M16 4L12 20" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" />
+                <div className="flex items-center gap-3">
+                  <svg width="22" height="22" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 18L1 12L7 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M21 6L27 12L21 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M16 4L12 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                   </svg>
-                  {t.webApps}
+                  <span className="text-[17px]">{t.webApps}</span>
                 </div>
                 <svg className={`w-5 h-5 transition-transform duration-300 mobile-arrow ${openMobileSubmenus['webapps'] ? 'active' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
-              <ul className={`mobile-submenu pl-4 ${openMobileSubmenus['webapps'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header max-w-max py-[8px] text-title navbar-bold animated-link"> {t.webAppsSub.sites} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header max-w-max py-[8px] text-title navbar-bold animated-link"> {t.webAppsSub.apps} </Link> </li>
+              <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['webapps'] ? 'active' : 'hidden'}`}>
+                <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.webAppsSub.sites} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.webAppsSub.apps} </Link> </li>
               </ul>
             </li>
             <li className="mobile-dropdown-seo">
               <span
-                className="w-full link_header button cursor-pointer flex items-center justify-between py-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
+                className="w-full link_header cursor-pointer flex items-center justify-between py-4 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
                 onClick={() => toggleMobileSubmenu('seo')}
               >
-                <div className="flex items-center gap-2">
-                  <Image src="https://www.hostino.ma/images/google-svg.svg" alt="google svg" width={20} height={20} />
-                  {t.seoSea}
+                <div className="flex items-center gap-3">
+                  <div className="w-[22px] h-[22px] flex items-center justify-center">
+                    <Image src="https://www.hostino.ma/images/google-svg.svg" alt="google" width={20} height={20} />
+                  </div>
+                  <span className="text-[17px]">{t.seoSea}</span>
                 </div>
                 <svg className={`w-5 h-5 transition-transform duration-300 mobile-arrow ${openMobileSubmenus['seo'] ? 'active' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
-              <ul className={`mobile-submenu pl-4 ${openMobileSubmenus['seo'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/agence-seo-maroc/" : "/agence-seo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header max-w-max py-[8px] text-title navbar-bold animated-link"> {t.seoSub.seo} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header max-w-max py-[8px] text-title navbar-bold animated-link"> {t.seoSub.geo} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header max-w-max py-[8px] text-title navbar-bold animated-link"> {t.seoSub.gmb} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/google-ads-maroc/" : "/google-ads-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header max-w-max py-[8px] text-title navbar-bold animated-link"> {t.seoSub.ads} </Link> </li>
+              <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['seo'] ? 'active' : 'hidden'}`}>
+                <li> <Link href={language === 'EN' ? "/en/agence-seo-maroc/" : "/agence-seo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.geo} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.gmb} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/google-ads-maroc/" : "/google-ads-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.ads} </Link> </li>
               </ul>
             </li>
           </ul>
-          <div className="pt-4 mt-4 space-y-4 border-t border-gray-100">
-            <div className="flex items-center justify-center">
-              <div className="lang-switch-container-mobile" data-lang={language}>
-                <div className="lang-slider"></div>
-                <div
-                  className={`lang-option-mobile ${language === 'FR' ? 'active' : ''}`}
-                  onClick={() => toggleLanguage('FR')}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                  <span>FR</span>
-                </div>
-                <div
-                  className={`lang-option-mobile ${language === 'EN' ? 'active' : ''}`}
-                  onClick={() => toggleLanguage('EN')}
-                >
-                  <span>EN</span>
-                </div>
+          <div className="pt-6 mt-6 border-t border-gray-100">
+            <div className="lang-switch-container-mobile" data-lang={language}>
+              <div className="lang-slider"></div>
+              <div
+                className={`lang-option-mobile ${language === 'FR' ? 'active' : ''}`}
+                onClick={() => toggleLanguage('FR')}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+                <span>FR</span>
+              </div>
+              <div
+                className={`lang-option-mobile ${language === 'EN' ? 'active' : ''}`}
+                onClick={() => toggleLanguage('EN')}
+              >
+                <span>EN</span>
               </div>
             </div>
 
+            <div className="mobile-cta-container mt-8">
+              <Link
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="btn-mobile-cta"
+              >
+                {language === 'EN' ? 'Get my website quote' : 'Obtenir mon devis site web'}
+              </Link>
+            </div>
           </div>
         </nav>
       </div>
-    </header>
+    </>
   )
 }

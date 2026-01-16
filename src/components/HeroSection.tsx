@@ -129,12 +129,12 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
 
   return (
     <section className="bg-gray-200 snipcss-odHLl">
-      <div className="container grid-cols-1 md:py-[120px] py-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
+      <div className="container grid-cols-1 md:pt-[120px] md:pb-[40px] py-[60px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
         <div className="col-span-1 flex sm:px-[0] px-[20px] flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left">
           <div className="flex justify-center md:justify-start">
-            <div className="inline-flex items-center gap-4 px-6 py-3 bg-[rgba(37,99,235,0.08)] rounded-[60px]">
-              <span className="w-4 h-4 bg-[#2563eb] rounded-full flex-shrink-0"></span>
-              <h1 className="md:text-[17px] text-[20px] poppins-semibold tracking-[-0.5px] text-[#022545]">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[rgba(37,99,235,0.08)] rounded-[60px]">
+              <span className="w-3 h-3 bg-[#2563eb] rounded-full flex-shrink-0"></span>
+              <h1 className="md:text-[17px] text-[15px] poppins-semibold tracking-[-0.5px] text-[#022545]">
                 {t.badge}
               </h1>
             </div>

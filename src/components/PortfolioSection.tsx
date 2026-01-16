@@ -270,7 +270,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
     : translatedPortfolioItems.filter(item => item.category === selectedCategory)
 
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-[#F8F8F8]">
+    <section id="portfolio" className="pt-10 pb-20 lg:pt-16 lg:pb-32 bg-[#F8F8F8]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -297,7 +297,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap md:justify-center gap-2 md:gap-4 mb-12 overflow-x-auto pb-4 no-scrollbar"
         >
           {t.categories.map((category) => (
             <motion.button
@@ -305,7 +305,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
               onClick={() => setSelectedCategory(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedCategory === category
+              className={`px-5 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap text-sm ${selectedCategory === category
                 ? 'bg-primary-600 text-white shadow-lg'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
@@ -344,16 +344,19 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
                     className="object-cover"
                   />
 
-                  {/* Overlay on Hover */}
+                  {/* Overlay on Hover (Desktop) or Persistent (Mobile) */}
                   <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: hoveredItem === item.id ? 1 : 0 }}
-                    className="absolute inset-0 bg-black/70 flex items-center justify-center gap-4"
+                    animate={{ opacity: (hoveredItem === item.id) ? 1 : 0 }}
+                    className="absolute inset-0 bg-black/70 flex items-center justify-center gap-4 md:opacity-0 group-hover:opacity-100 transition-opacity"
                   >
+                    <div className="absolute inset-0 flex items-center justify-center gap-4 sm:hidden bg-black/40">
+                      {/* This makes it more apparent on mobile though persistent buttons would be better */}
+                    </div>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tech-dark hover:bg-primary-600 hover:text-white transition-colors"
+                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tech-dark hover:bg-primary-600 hover:text-white transition-colors z-10"
                     >
                       <Eye size={20} />
                     </motion.button>
@@ -363,7 +366,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tech-dark hover:bg-primary-600 hover:text-white transition-colors"
+                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tech-dark hover:bg-primary-600 hover:text-white transition-colors z-10"
                     >
                       <ExternalLink size={20} />
                     </motion.a>
