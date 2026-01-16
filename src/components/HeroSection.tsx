@@ -168,9 +168,10 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
               <Image
                 src="/latest-cpanel-for-sitepro-maroc.webp"
                 alt={t.badge}
-                width={600}
-                height={600}
-                className="w-full h-full md:p-8 p-4 md:scale-100 lg:scale-100 rounded-lg"
+                width={1200}
+                height={780}
+                quality={95}
+                className="w-full h-auto md:p-2 p-1 md:scale-110 lg:scale-125 transition-transform duration-700 rounded-xl"
                 priority
               />
             </div>

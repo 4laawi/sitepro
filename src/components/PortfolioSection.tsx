@@ -128,7 +128,6 @@ const portfolioItems = [
   }
 ]
 
-const categories = ['Tous', 'E-commerce', 'Location', 'Restaurant', 'Location Airbnb', 'Immobilier', 'Cabinet Médical']
 
 interface PortfolioSectionProps {
   lang?: 'FR' | 'EN';
@@ -271,7 +270,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
     : translatedPortfolioItems.filter(item => item.category === selectedCategory)
 
   return (
-    <section id="portfolio" className="py-20 lg:py-32 bg-white">
+    <section id="portfolio" className="py-20 lg:py-32 bg-[#F8F8F8]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
