@@ -3,75 +3,153 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Typewriter from '@/components/Typewriter'
-import { 
-  Globe, 
-  Smartphone, 
-  Search, 
-  ShoppingCart, 
-  Palette, 
-  Rocket, 
+import {
+  Globe,
+  Smartphone,
+  Search,
+  ShoppingCart,
+  Palette,
+  Rocket,
   Shield,
   ArrowRight
 } from 'lucide-react'
 import { useState } from 'react'
 
-const services = [
-  {
-    icon: Globe,
-    title: 'Création de Sites Web',
-    description: 'Sites vitrines, corporate et institutionnels parfaitement optimisés pour votre marque.',
-    features: ['Design sur mesure', 'Responsive design', 'SEO intégré'],
-    color: 'from-blue-500 to-blue-600',
-  },
-  {
-    icon: ShoppingCart,
-    title: 'E-commerce',
-    description: 'Boutiques en ligne performantes avec paiement sécurisé et gestion simplifiée.',
-    features: ['Paiement sécurisé', 'Gestion des stocks', 'Multi-devises'],
-    color: 'from-purple-500 to-purple-600',
-  },
-  {
-    icon: Search,
-    title: 'Référencement SEO',
-    description: 'Optimisation pour les moteurs de recherche et visibilité maximale.',
-    features: ['Audit SEO', 'Optimisation on-page', 'Stratégie de contenu'],
-    color: 'from-green-500 to-green-600',
-  },
-  {
-    icon: Smartphone,
-    title: 'Applications Mobiles',
-    description: 'Applications natives et PWA pour iOS et Android.',
-    features: ['Cross-platform', 'UI/UX optimal', 'Performance native'],
-    color: 'from-orange-500 to-orange-600',
-  },
-  {
-    icon: Palette,
-    title: 'Design & Branding',
-    description: 'Identité visuelle complète et design graphique professionnel.',
-    features: ['Logo design', 'Charte graphique', 'Design system'],
-    color: 'from-pink-500 to-pink-600',
-  },
-  {
-    icon: Shield,
-    title: 'Maintenance & Support',
-    description: 'Support technique continu et maintenance préventive.',
-    features: ['Support 24/7', 'Mises à jour', 'Sauvegardes'],
-    color: 'from-indigo-500 to-indigo-600',
-  },
-]
+interface ServicesSectionProps {
+  lang?: 'FR' | 'EN';
+}
 
-export default function ServicesSection() {
+export default function ServicesSection({ lang = 'FR' }: ServicesSectionProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
+  const t = {
+    FR: {
+      badge: 'Nos Services',
+      title: 'Solutions Digitales ',
+      titleAccent: 'Complètes',
+      description: 'De la conception à la réalisation, nous offrons une gamme complète de services pour transformer votre présence digitale et accélérer votre croissance.',
+      typewriter: [
+        'SEO qui performe',
+        'E‑commerce qui convertit',
+        'Applications mobiles modernes',
+        'Design & branding',
+        'Maintenance & support',
+      ],
+      learnMore: 'En savoir plus',
+      ctaTitle: 'Prêt à transformer votre présence digitale ?',
+      ctaDesc: 'Discutons de votre projet et découvrez comment nous pouvons vous aider à atteindre vos objectifs.',
+      ctaButton: 'Démarrer Mon Projet',
+      services: [
+        {
+          title: 'Création de Sites Web',
+          description: 'Sites vitrines, corporate et institutionnels parfaitement optimisés pour votre marque.',
+          features: ['Design sur mesure', 'Responsive design', 'SEO intégré'],
+        },
+        {
+          title: 'E-commerce',
+          description: 'Boutiques en ligne performantes avec paiement sécurisé et gestion simplifiée.',
+          features: ['Paiement sécurisé', 'Gestion des stocks', 'Multi-devises'],
+        },
+        {
+          title: 'Référencement SEO',
+          description: 'Optimisation pour les moteurs de recherche et visibilité maximale.',
+          features: ['Audit SEO', 'Optimisation on-page', 'Stratégie de contenu'],
+        },
+        {
+          title: 'Applications Mobiles',
+          description: 'Applications natives et PWA pour iOS et Android.',
+          features: ['Cross-platform', 'UI/UX optimal', 'Performance native'],
+        },
+        {
+          title: 'Design & Branding',
+          description: 'Identité visuelle complète et design graphique professionnel.',
+          features: ['Logo design', 'Charte graphique', 'Design system'],
+        },
+        {
+          title: 'Maintenance & Support',
+          description: 'Support technique continu et maintenance préventive.',
+          features: ['Support 24/7', 'Mises à jour', 'Sauvegardes'],
+        }
+      ]
+    },
+    EN: {
+      badge: 'Our Services',
+      title: 'Complete ',
+      titleAccent: 'Digital Solutions',
+      description: 'From design to execution, we offer a full range of services to transform your digital presence and accelerate your growth.',
+      typewriter: [
+        'SEO that performs',
+        'E-commerce that converts',
+        'Modern mobile apps',
+        'Design & branding',
+        'Maintenance & support',
+      ],
+      learnMore: 'Learn more',
+      ctaTitle: 'Ready to transform your digital presence?',
+      ctaDesc: 'Let\'s discuss your project and discover how we can help you achieve your goals.',
+      ctaButton: 'Start My Project',
+      services: [
+        {
+          title: 'Website Creation',
+          description: 'Showcase, corporate, and institutional sites perfectly optimized for your brand.',
+          features: ['Custom design', 'Responsive design', 'Integrated SEO'],
+        },
+        {
+          title: 'E-commerce',
+          description: 'High-performance online stores with secure payment and simplified management.',
+          features: ['Secure payment', 'Inventory management', 'Multi-currency'],
+        },
+        {
+          title: 'SEO Ranking',
+          description: 'Optimization for search engines and maximum visibility.',
+          features: ['SEO audit', 'On-page optimization', 'Content strategy'],
+        },
+        {
+          title: 'Mobile Applications',
+          description: 'Native apps and PWAs for iOS and Android.',
+          features: ['Cross-platform', 'Optimal UI/UX', 'Native performance'],
+        },
+        {
+          title: 'Design & Branding',
+          description: 'Complete visual identity and professional graphic design.',
+          features: ['Logo design', 'Graphic charter', 'Design system'],
+        },
+        {
+          title: 'Maintenance & Support',
+          description: 'Ongoing technical support and preventive maintenance.',
+          features: ['24/7 Support', 'Updates', 'Backups'],
+        }
+      ]
+    }
+  }[lang];
+
+  const baseServices = [
+    { icon: Globe, color: 'from-blue-500 to-blue-600' },
+    { icon: ShoppingCart, color: 'from-purple-500 to-purple-600' },
+    { icon: Search, color: 'from-green-500 to-green-600' },
+    { icon: Smartphone, color: 'from-orange-500 to-orange-600' },
+    { icon: Palette, color: 'from-pink-500 to-pink-600' },
+    { icon: Shield, color: 'from-indigo-500 to-indigo-600' },
+  ]
+
+  const servicesWithIcons = baseServices.map((s, i) => ({
+    ...s,
+    ...t.services[i]
+  }));
+
   const slugFor = (title: string): string | null => {
+    // Slugs remain in French as per existing routes
     switch (title) {
       case 'Création de Sites Web':
+      case 'Website Creation':
         return '/creation-site-web'
       case 'E-commerce':
         return '/e-commerce'
       case 'Référencement SEO':
+      case 'SEO Ranking':
         return '/referencement-seo'
       case 'Applications Mobiles':
+      case 'Mobile Applications':
         return '/applications-mobiles'
       case 'Design & Branding':
         return '/design-branding'
@@ -101,29 +179,22 @@ export default function ServicesSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
-            Nos Services
+            {t.badge}
           </span>
           <h2 className="heading-2 text-tech-dark mb-2">
-            Solutions Digitales <span className="text-primary-700">Complètes</span>
+            {t.title}<span className="text-primary-700">{t.titleAccent}</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-800 font-semibold">
-            <Typewriter words={[
-              'SEO qui performe',
-              'E‑commerce qui convertit',
-              'Applications mobiles modernes',
-              'Design & branding',
-              'Maintenance & support',
-            ]} />
+            <Typewriter words={t.typewriter} />
           </p>
           <p className="body-large text-gray-600 max-w-3xl mx-auto">
-            De la conception à la réalisation, nous offrons une gamme complète de services 
-            pour transformer votre présence digitale et accélérer votre croissance.
+            {t.description}
           </p>
         </motion.div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {servicesWithIcons.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -139,7 +210,7 @@ export default function ServicesSection() {
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}
                 />
-                
+
                 {/* Icon */}
                 <motion.div
                   animate={{
@@ -166,7 +237,7 @@ export default function ServicesSection() {
                     <motion.li
                       key={featureIndex}
                       initial={{ opacity: 0, x: -20 }}
-                      animate={{ 
+                      animate={{
                         opacity: hoveredIndex === index ? 1 : 0.7,
                         x: hoveredIndex === index ? 0 : -10
                       }}
@@ -186,14 +257,14 @@ export default function ServicesSection() {
                     if (href) {
                       return (
                         <Link href={href} className="inline-flex items-center gap-2 text-primary-600 font-medium group/link">
-                          En savoir plus
+                          {t.learnMore}
                           <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                         </Link>
                       )
                     }
                     return (
                       <a href="#contact" className="inline-flex items-center gap-2 text-primary-600 font-medium group/link">
-                        En savoir plus
+                        {t.learnMore}
                         <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                       </a>
                     )
@@ -239,14 +310,13 @@ export default function ServicesSection() {
               transition={{ duration: 3, repeat: Infinity }}
               className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"
             />
-            
+
             <div className="relative">
               <h3 className="text-3xl font-bold text-white mb-4">
-                Prêt à transformer votre présence digitale ?
+                {t.ctaTitle}
               </h3>
               <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-                Discutons de votre projet et découvrez comment nous pouvons 
-                vous aider à atteindre vos objectifs.
+                {t.ctaDesc}
               </p>
               <motion.a
                 href="#contact"
@@ -255,7 +325,7 @@ export default function ServicesSection() {
                 className="inline-flex items-center gap-3 bg-white text-primary-700 px-8 py-4 rounded-lg font-bold hover:shadow-xl transition-all duration-300"
               >
                 <Rocket size={20} />
-                Démarrer Mon Projet
+                {t.ctaButton}
                 <ArrowRight size={20} />
               </motion.a>
             </div>

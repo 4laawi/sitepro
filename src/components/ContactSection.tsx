@@ -2,17 +2,21 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Send, 
-  Clock, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  Clock,
   MessageSquare,
   CheckCircle
 } from 'lucide-react'
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  lang?: 'FR' | 'EN';
+}
+
+export default function ContactSection({ lang = 'FR' }: ContactSectionProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,11 +33,114 @@ export default function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
 
+  const t = {
+    FR: {
+      badge: 'Contact',
+      title: 'Parlons de votre projet',
+      description: 'Prêt à donner vie à votre vision ? Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons transformer votre présence digitale.',
+      formTitle: 'Envoyez-nous un message',
+      labels: {
+        name: 'Nom complet *',
+        email: 'Email *',
+        phone: 'Téléphone',
+        company: 'Entreprise',
+        projectType: 'Type de projet *',
+        budget: 'Budget estimé',
+        deadline: 'Délai souhaité',
+        source: 'Comment nous avez-vous trouvés ?',
+        description: 'Description du projet *',
+      },
+      placeholders: {
+        name: 'Ahmed Bennani',
+        email: 'ahmed@restaurant.ma',
+        phone: '06 12 34 56 78',
+        company: 'Restaurant Al Fassia',
+        description: 'Décrivez votre projet en détail...',
+      },
+      selects: {
+        projectType: ['Sélectionnez', 'Site Web', 'E-commerce', 'Application Mobile', 'Site Vitrine', 'Référencement SEO', 'Autre'],
+        budget: ['Sélectionnez', 'À partir de 1300 MAD', '2000 – 3500 MAD', '3500 – 5000 MAD', '5000+ MAD (sur mesure)'],
+        deadline: ['Sélectionnez', 'Dans 1 semaine', 'Dans 1 mois', 'Dans 3 mois', 'Flexible'],
+        source: ['Sélectionnez', 'Google Search', 'Réseaux sociaux', 'Recommandation', 'Autre'],
+      },
+      button: {
+        idle: 'Envoyer le message',
+        submitting: 'Envoi en cours...',
+        success: 'Message envoyé !',
+      },
+      errorMsg: 'Erreur lors de l\'envoi du formulaire. Veuillez réessayer.',
+      quickHelp: {
+        title: 'Besoin d\'aide rapide ?',
+        desc: 'Notre équipe est là pour répondre à toutes vos questions et vous accompagner dans votre projet digital.',
+        response: 'Réponse sous 24h',
+        whatsapp: 'Chat WhatsApp',
+      },
+      contactInfo: {
+        phone: 'Téléphone',
+        email: 'Email',
+        addressLabel: 'Adresse',
+        address: 'Marrakech, Maroc',
+        hoursLabel: 'Horaires',
+        hours: 'Lun-Ven: 9h-18h',
+      }
+    },
+    EN: {
+      badge: 'Contact',
+      title: 'Let\'s talk about your project',
+      description: 'Ready to bring your vision to life? Contact us for a free consultation and discover how we can transform your digital presence.',
+      formTitle: 'Send us a message',
+      labels: {
+        name: 'Full Name *',
+        email: 'Email *',
+        phone: 'Phone',
+        company: 'Company',
+        projectType: 'Project Type *',
+        budget: 'Estimated Budget',
+        deadline: 'Desired Deadline',
+        source: 'How did you find us?',
+        description: 'Project Description *',
+      },
+      placeholders: {
+        name: 'John Doe',
+        email: 'john@restaurant.com',
+        phone: '06 12 34 56 78',
+        company: 'Al Fassia Restaurant',
+        description: 'Describe your project in detail...',
+      },
+      selects: {
+        projectType: ['Select', 'Website', 'E-commerce', 'Mobile App', 'Showcase Site', 'SEO Ranking', 'Other'],
+        budget: ['Select', 'From 1300 MAD', '2000 – 3500 MAD', '3500 – 5000 MAD', '5000+ MAD (custom)'],
+        deadline: ['Select', 'Within 1 week', 'Within 1 month', 'Within 3 months', 'Flexible'],
+        source: ['Select', 'Google Search', 'Social Networks', 'Recommendation', 'Other'],
+      },
+      button: {
+        idle: 'Send Message',
+        submitting: 'Sending...',
+        success: 'Message Sent!',
+      },
+      errorMsg: 'Error sending form. Please try again.',
+      quickHelp: {
+        title: 'Need quick help?',
+        desc: 'Our team is here to answer all your questions and support you in your digital project.',
+        response: 'Response within 24h',
+        whatsapp: 'WhatsApp Chat',
+      },
+      contactInfo: {
+        phone: 'Phone',
+        email: 'Email',
+        addressLabel: 'Address',
+        address: 'Marrakech, Morocco',
+        hoursLabel: 'Hours',
+        hours: 'Mon-Fri: 9am-6pm',
+      }
+    }
+  }[lang];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError('')
-    
+
     try {
       // Create query string from form data
       const queryParams = new URLSearchParams({
@@ -56,7 +163,7 @@ export default function ContactSection() {
       // Since we're using no-cors, we can't read the response
       // But we can assume success if no error was thrown
       setIsSubmitted(true)
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -69,14 +176,14 @@ export default function ContactSection() {
         description: '',
         source: ''
       })
-      
+
       // Reset success message after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false)
       }, 5000)
-      
+
     } catch (err) {
-      setError('Erreur lors de l\'envoi du formulaire. Veuillez réessayer.')
+      setError(t.errorMsg)
       console.error('Form submission error:', err)
     } finally {
       setIsSubmitting(false)
@@ -90,29 +197,29 @@ export default function ContactSection() {
     })
   }
 
-  const contactInfo = [
+  const contactInfoData = [
     {
       icon: Phone,
-      title: 'Téléphone',
+      title: t.contactInfo.phone,
       content: '+212 06 63 71 11 64',
       link: 'tel:+2120663711164'
     },
     {
       icon: Mail,
-      title: 'Email',
+      title: t.contactInfo.email,
       content: 'contact@sitepro.ma',
       link: 'mailto:contact@sitepro.ma'
     },
     {
       icon: MapPin,
-      title: 'Adresse',
-      content: 'Marrakech, Maroc',
+      title: t.contactInfo.addressLabel,
+      content: t.contactInfo.address,
       link: '#'
     },
     {
       icon: Clock,
-      title: 'Horaires',
-      content: 'Lun-Ven: 9h-18h',
+      title: t.contactInfo.hoursLabel,
+      content: t.contactInfo.hours,
       link: '#'
     }
   ]
@@ -133,14 +240,13 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
-            Contact
+            {t.badge}
           </span>
           <h2 className="heading-2 text-tech-dark mb-4">
-            Parlons de votre projet
+            {t.title}
           </h2>
           <p className="body-large text-gray-600 max-w-3xl mx-auto">
-            Prêt à donner vie à votre vision ? Contactez-nous pour une consultation 
-            gratuite et découvrez comment nous pouvons transformer votre présence digitale.
+            {t.description}
           </p>
         </motion.div>
 
@@ -154,13 +260,13 @@ export default function ContactSection() {
             className="lg:col-span-2"
           >
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
-              <h3 className="heading-3 mb-6">Envoyez-nous un message</h3>
-              
+              <h3 className="heading-3 mb-6">{t.formTitle}</h3>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Nom complet *
+                      {t.labels.name}
                     </label>
                     <input
                       type="text"
@@ -169,13 +275,13 @@ export default function ContactSection() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
-                      placeholder="Ahmed Bennani"
+                      placeholder={t.placeholders.name}
                     />
                   </motion.div>
-                  
+
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
+                      {t.labels.email}
                     </label>
                     <input
                       type="email"
@@ -184,7 +290,7 @@ export default function ContactSection() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
-                      placeholder="ahmed@restaurant.ma"
+                      placeholder={t.placeholders.email}
                     />
                   </motion.div>
                 </div>
@@ -192,7 +298,7 @@ export default function ContactSection() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Téléphone
+                      {t.labels.phone}
                     </label>
                     <input
                       type="tel"
@@ -200,13 +306,13 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
-                      placeholder="06 12 34 56 78"
+                      placeholder={t.placeholders.phone}
                     />
                   </motion.div>
-                  
+
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Entreprise
+                      {t.labels.company}
                     </label>
                     <input
                       type="text"
@@ -214,7 +320,7 @@ export default function ContactSection() {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
-                      placeholder="Restaurant Al Fassia"
+                      placeholder={t.placeholders.company}
                     />
                   </motion.div>
                 </div>
@@ -222,7 +328,7 @@ export default function ContactSection() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Type de projet *
+                      {t.labels.projectType}
                     </label>
                     <select
                       name="projectType"
@@ -231,19 +337,15 @@ export default function ContactSection() {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                     >
-                      <option value="">Sélectionnez</option>
-                      <option value="Site Web">Site Web</option>
-                      <option value="E-commerce">E-commerce</option>
-                      <option value="Application Mobile">Application Mobile</option>
-                      <option value="Site Vitrine">Site Vitrine</option>
-                      <option value="Référencement SEO">Référencement SEO</option>
-                      <option value="Autre">Autre</option>
+                      {t.selects.projectType.map((opt, i) => (
+                        <option key={opt} value={i === 0 ? "" : opt}>{opt}</option>
+                      ))}
                     </select>
                   </motion.div>
-                  
+
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Budget estimé
+                      {t.labels.budget}
                     </label>
                     <select
                       name="budget"
@@ -251,11 +353,9 @@ export default function ContactSection() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                     >
-                      <option value="">Sélectionnez</option>
-                      <option value="À partir de 1300 MAD">À partir de 1300 MAD</option>
-                      <option value="2000 – 3500 MAD">2000 – 3500 MAD</option>
-                      <option value="3500 – 5000 MAD">3500 – 5000 MAD</option>
-                      <option value="5000+ MAD (sur mesure)">5000+ MAD (sur mesure)</option>
+                      {t.selects.budget.map((opt, i) => (
+                        <option key={opt} value={i === 0 ? "" : opt}>{opt}</option>
+                      ))}
                     </select>
                   </motion.div>
                 </div>
@@ -263,7 +363,7 @@ export default function ContactSection() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Délai souhaité
+                      {t.labels.deadline}
                     </label>
                     <select
                       name="deadline"
@@ -271,17 +371,15 @@ export default function ContactSection() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                     >
-                      <option value="">Sélectionnez</option>
-                      <option value="Dans 1 semaine">Dans 1 semaine</option>
-                      <option value="Dans 1 mois">Dans 1 mois</option>
-                      <option value="Dans 3 mois">Dans 3 mois</option>
-                      <option value="Flexible">Flexible</option>
+                      {t.selects.deadline.map((opt, i) => (
+                        <option key={opt} value={i === 0 ? "" : opt}>{opt}</option>
+                      ))}
                     </select>
                   </motion.div>
-                  
+
                   <motion.div whileFocus={{ scale: 1.02 }}>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Comment nous avez-vous trouvés ?
+                      {t.labels.source}
                     </label>
                     <select
                       name="source"
@@ -289,18 +387,16 @@ export default function ContactSection() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors"
                     >
-                      <option value="">Sélectionnez</option>
-                      <option value="Google Search">Google Search</option>
-                      <option value="Réseaux sociaux">Réseaux sociaux</option>
-                      <option value="Recommandation">Recommandation</option>
-                      <option value="Autre">Autre</option>
+                      {t.selects.source.map((opt, i) => (
+                        <option key={opt} value={i === 0 ? "" : opt}>{opt}</option>
+                      ))}
                     </select>
                   </motion.div>
                 </div>
 
                 <motion.div whileFocus={{ scale: 1.01 }}>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Description du projet *
+                    {t.labels.description}
                   </label>
                   <textarea
                     name="description"
@@ -309,7 +405,7 @@ export default function ContactSection() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 transition-colors resize-none"
-                    placeholder="Décrivez votre projet en détail..."
+                    placeholder={t.placeholders.description}
                   />
                 </motion.div>
 
@@ -322,11 +418,10 @@ export default function ContactSection() {
                   disabled={isSubmitting || isSubmitted}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-                    isSubmitted 
-                      ? 'bg-green-600 text-white' 
-                      : 'bg-primary-600 hover:bg-primary-700 text-white'
-                  }`}
+                  className={`w-full py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${isSubmitted
+                    ? 'bg-green-600 text-white'
+                    : 'bg-primary-600 hover:bg-primary-700 text-white'
+                    }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -361,7 +456,7 @@ export default function ContactSection() {
             <div className="bg-primary-600 text-white rounded-2xl p-8">
               <h3 className="text-2xl font-bold mb-4">Besoin d&apos;aide rapide ?</h3>
               <p className="mb-6 text-white/90">
-                Notre équipe est là pour répondre à toutes vos questions et vous 
+                Notre équipe est là pour répondre à toutes vos questions et vous
                 accompagner dans votre projet digital.
               </p>
               <div className="flex items-center gap-3 mb-4">
@@ -369,11 +464,11 @@ export default function ContactSection() {
                 <span>Réponse sous 24h</span>
               </div>
               <a
-        href="https://wa.me/2120663711164"
+                href="https://wa.me/2120663711164"
                 className="inline-flex items-center gap-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                 </svg>
                 Chat WhatsApp
               </a>
@@ -381,7 +476,7 @@ export default function ContactSection() {
 
             {/* Contact Details */}
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
+              {contactInfoData.map((info, index) => (
                 <motion.a
                   key={index}
                   href={info.link}

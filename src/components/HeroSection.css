@@ -1,0 +1,102 @@
+.snipcss-odHLl {
+    --gray-200: #F8F8F8;
+    --primary: #2563eb;
+    --title: #022545;
+    --gap: 20px;
+    --font-weight-semibold: 600;
+    --radius-lg: .5rem;
+    --ease-out: cubic-bezier(0, 0, .2, 1);
+    --default-transition-duration: .15s;
+    --row-gap: var(--gap);
+}
+
+.snipcss-odHLl.bg-gray-200 {
+    background-color: var(--gray-200) !important;
+}
+
+.snipcss-odHLl .title-hero-section {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 54px;
+    letter-spacing: -1.5px;
+    color: var(--title);
+}
+
+@media (min-width: 48rem) {
+    .snipcss-odHLl .title-hero-section {
+        letter-spacing: -3px;
+        font-size: 45px;
+        line-height: 52px;
+    }
+}
+
+@media (min-width: 64rem) {
+    .snipcss-odHLl .title-hero-section {
+        letter-spacing: -2.6px;
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
+
+.snipcss-odHLl .poppins-semibold {
+    font-family: var(--font-outfit), sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.snipcss-odHLl .border-bottom {
+    border-bottom: 5px solid var(--primary);
+    max-width: max-content;
+}
+
+.snipcss-odHLl .custom-row-gap {
+    gap: var(--row-gap);
+}
+
+.snipcss-odHLl .text-title {
+    color: var(--title);
+}
+
+.snipcss-odHLl .bg-primary {
+    background-color: var(--primary);
+}
+
+/* Custom button span animations from the provided CSS */
+.snipcss-odHLl .group-hover\:-translate-y-\[150\%\] {
+    transform: translateY(-150%);
+}
+
+.snipcss-odHLl .translate-y-\[150\%\] {
+    transform: translateY(150%);
+}
+
+.snipcss-odHLl .group-hover\:translate-y-0 {
+    transform: translateY(0);
+}
+
+.snipcss-odHLl .bg-\[rgba\(0\,204\,97\,0\.08\)\] {
+    background-color: rgba(0, 204, 97, 0.08);
+}
+
+.snipcss-odHLl .bg-\[\#00d084\] {
+    background-color: #00d084;
+}
+
+.snipcss-odHLl .text-\[\#022545\] {
+    color: #022545;
+}
+
+.snipcss-odHLl .hover\:bg-title:hover {
+    background-color: var(--title);
+}
+
+/* Ensure the button transitions work as expected */
+.snipcss-odHLl .group:hover .group-hover\:-translate-y-\[150\%\] {
+    transform: translateY(-150%);
+}
+
+.snipcss-odHLl .group:hover .group-hover\:translate-y-0 {
+    transform: translateY(0);
+}

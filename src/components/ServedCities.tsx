@@ -14,7 +14,26 @@ const cities = [
   { slug: 'laayoune', label: 'Laayoune' },
 ]
 
-export default function ServedCities() {
+interface ServedCitiesProps {
+  lang?: 'FR' | 'EN';
+}
+
+export default function ServedCities({ lang = 'FR' }: ServedCitiesProps) {
+  const t = {
+    FR: {
+      badge: 'Zones d’intervention',
+      title: 'Villes desservies',
+      description: 'Nous travaillons partout au Maroc — en présentiel et à distance. Choisissez votre ville pour voir notre service local.',
+      cityAria: 'Création de site web'
+    },
+    EN: {
+      badge: 'Intervention Zones',
+      title: 'Cities Served',
+      description: 'We work everywhere in Morocco — in person and remotely. Choose your city to see our local service.',
+      cityAria: 'Website creation'
+    }
+  }[lang];
+
   return (
     <section className="py-16 bg-gradient-to-b from-white to-blue-50/40 relative overflow-hidden">
       {/* soft background accents */}
@@ -32,10 +51,10 @@ export default function ServedCities() {
           className="text-center mb-10"
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold">
-            <MapPin size={16} /> Zones d’intervention
+            <MapPin size={16} /> {t.badge}
           </span>
-          <h2 className="heading-2 text-tech-dark mt-3">Villes desservies</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Nous travaillons partout au Maroc — en présentiel et à distance. Choisissez votre ville pour voir notre service local.</p>
+          <h2 className="heading-2 text-tech-dark mt-3">{t.title}</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">{t.description}</p>
         </motion.div>
 
         <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl">
@@ -50,7 +69,7 @@ export default function ServedCities() {
               <Link
                 href={`/creation-site-web/${city.slug}`}
                 className="group relative block rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm px-5 py-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5"
-                aria-label={`Création de site web ${city.label}`}
+                aria-label={`${t.cityAria} ${city.label}`}
               >
                 <div className="flex items-center gap-3">
                   <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary-50 text-primary-700 group-hover:scale-105 transition-transform">

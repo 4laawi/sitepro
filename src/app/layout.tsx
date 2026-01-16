@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Plus_Jakarta_Sans, Outfit } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import LangUpdater from '@/components/LangUpdater'
 
-const inter = Inter({ 
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-plus-jakarta',
   display: 'swap',
 })
 
-const playfair = Playfair_Display({ 
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-outfit',
   display: 'swap',
 })
 
@@ -85,7 +86,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${outfit.variable} font-sans antialiased text-gray-900 bg-white`}>
         <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -102,6 +103,7 @@ export default function RootLayout({
             }]
           })}
         </Script>
+        <LangUpdater />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

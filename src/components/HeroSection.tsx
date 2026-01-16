@@ -1,371 +1,265 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
-import { Check, Sparkles, Monitor, Gauge, Headphones, Timer } from 'lucide-react'
-import AnimatedBackground from './AnimatedBackground'
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Check } from 'lucide-react';
 import Image from 'next/image';
+import './HeroSection.css';
 
-export default function HeroSection() {
-  const [currentStep, setCurrentStep] = useState(1)
-  const [name, setName] = useState('')
-  const [websiteType, setWebsiteType] = useState('')
-  const [sector, setSector] = useState('')
-  const [deadline, setDeadline] = useState('')
-  const [isModalOpen, setIsModalOpen] = useState(false)
+interface HeroSectionProps {
+  lang?: 'FR' | 'EN';
+}
+
+export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [name, setName] = useState('');
+  const [websiteType, setWebsiteType] = useState('');
+  const [sector, setSector] = useState('');
+  const [deadline, setDeadline] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const t = {
+    FR: {
+      badge: 'Agence Création Site Web Maroc',
+      title: 'Création de site web professionnel au Maroc',
+      cta: 'Obtenir mon devis site web',
+      emailConsult: 'Consultation par Email ?',
+      modalTitle: 'Obtenez Votre Devis Gratuit',
+      labelName: 'Votre Nom',
+      placeholderName: 'Entrez votre nom',
+      labelType: 'Type de site',
+      placeholderType: 'Sélectionnez un type',
+      types: ['Site vitrine', 'E-commerce', 'Site de réservation', 'Projet sur mesure'],
+      labelSector: 'Quel est votre secteur d’activité ?',
+      sectors: ['Restaurant / Café', 'Magasin / Boutique', 'Services / Coaching', 'Autre'],
+      labelDeadline: 'Quand en avez-vous besoin ?',
+      deadlines: ['Dans 1 semaine', 'Dans 1 mois', 'Flexible'],
+      prev: 'Précédent',
+      next: 'Continuer',
+      submit: 'Envoyer sur WhatsApp',
+      trust: '97% de nos clients sont satisfaits',
+      waGreeting: 'Bonjour Sitepro.ma 👋',
+      waMessage: 'Je souhaite obtenir un devis pour la création de mon site web.',
+      waInfo: 'Voici les informations :',
+      waThanks: 'Merci de me recontacter au plus vite pour en discuter. 📩',
+      waName: 'Nom',
+      waType: 'Type de site',
+      waSector: 'Secteur d\'activité',
+      waDeadline: 'Deadline'
+    },
+    EN: {
+      badge: 'Website Design Agency Morocco',
+      title: 'Professional Website Creation in Morocco',
+      cta: 'Get my website quote',
+      emailConsult: 'Any questions?',
+      modalTitle: 'Get Your Free Quote',
+      labelName: 'Your Name',
+      placeholderName: 'Enter your name',
+      labelType: 'Website Type',
+      placeholderType: 'Select a type',
+      types: ['Showcase site', 'E-commerce', 'Booking site', 'Custom project'],
+      labelSector: 'What is your business sector?',
+      sectors: ['Restaurant / Café', 'Shop / Boutique', 'Services / Coaching', 'Other'],
+      labelDeadline: 'When do you need it?',
+      deadlines: ['Within 1 week', 'Within 1 month', 'Flexible'],
+      prev: 'Previous',
+      next: 'Continue',
+      submit: 'Send on WhatsApp',
+      trust: '97% of our clients are satisfied',
+      waGreeting: 'Hello Sitepro.ma 👋',
+      waMessage: 'I would like to get a quote for the creation of my website.',
+      waInfo: 'Here is the information:',
+      waThanks: 'Please contact me as soon as possible to discuss. 📩',
+      waName: 'Name',
+      waType: 'Website type',
+      waSector: 'Business sector',
+      waDeadline: 'Deadline'
+    }
+  }[lang];
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Only proceed if we're on step 4 and all data is complete
-    if (currentStep !== 4 || !canProceed()) {
-      console.log('Form submission blocked:', { currentStep, canProceed: canProceed() })
-      return
-    }
-    
-    const message = [
-      'Bonjour Sitepro.ma 👋',
-      'Je souhaite obtenir un devis pour la création de mon site web.',
-      'Voici les informations :',
-      `- Nom : ${name}`,
-      `- Type de site : ${websiteType}`,
-      `- Secteur d'activité : ${sector}`,
-      `- Deadline : ${deadline}`,
-      '',
-      'Merci de me recontacter au plus vite pour en discuter. 📩',
-    ].join('\n')
+    e.preventDefault();
 
-    const phone = '2120663711164'
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
-    window.open(url, '_blank')
-    
-    // Close modal after submission
-    setIsModalOpen(false)
-    setCurrentStep(1)
-    setName('')
-    setWebsiteType('')
-    setSector('')
-    setDeadline('')
-  }
+    if (currentStep !== 4 || !canProceed()) return;
+
+    const message = [
+      t.waGreeting,
+      t.waMessage,
+      t.waInfo,
+      `- ${t.waName} : ${name}`,
+      `- ${t.waType} : ${websiteType}`,
+      `- ${t.waSector} : ${sector}`,
+      `- ${t.waDeadline} : ${deadline}`,
+      '',
+      t.waThanks,
+    ].join('\n');
+
+    const phone = '2120663711164';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+
+    closeModal();
+  };
 
   const canProceed = () => {
-    if (currentStep === 1) return name.trim().length > 1
-    if (currentStep === 2) return websiteType !== ''
-    if (currentStep === 3) return sector !== ''
-    if (currentStep === 4) return deadline !== ''
-    return false
-  }
+    if (currentStep === 1) return name.trim().length > 1;
+    if (currentStep === 2) return websiteType !== '';
+    if (currentStep === 3) return sector !== '';
+    if (currentStep === 4) return deadline !== '';
+    return false;
+  };
 
   const openModal = () => {
-    setIsModalOpen(true)
-    setCurrentStep(1)
-    setName('')
-    setWebsiteType('')
-    setSector('')
-    setDeadline('')
-  }
+    setIsModalOpen(true);
+    setCurrentStep(1);
+    setName('');
+    setWebsiteType('');
+    setSector('');
+    setDeadline('');
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setCurrentStep(1)
-    setName('')
-    setWebsiteType('')
-    setSector('')
-    setDeadline('')
-  }
+    setIsModalOpen(false);
+    setCurrentStep(1);
+    setName('');
+    setWebsiteType('');
+    setSector('');
+    setDeadline('');
+  };
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Award-worthy Animated Background */}
-      <AnimatedBackground />
-      
-      {/* Enhanced background gradient overlay - CSS only, no JS animations */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-transparent to-white/50 pointer-events-none" style={{ zIndex: 5 }}></div>
-
-      <div className="relative container mx-auto px-4 py-20 lg:py-28" style={{ zIndex: 10 }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Image - Top of Section with Enhanced Design */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
-            className="text-center mb-16 relative lg:hidden"
-          >
-            {/* Decorative background elements */}
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-50/50 via-purple-50/30 to-cyan-50/50 rounded-full blur-3xl opacity-60"></div>
-              <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-200/40 to-purple-200/40 rounded-full blur-2xl animate-pulse"></div>
-              <div className="absolute top-0 right-1/4 w-24 h-24 bg-gradient-to-br from-cyan-200/40 to-blue-200/40 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section className="bg-gray-200 snipcss-odHLl">
+      <div className="container grid-cols-1 md:py-[120px] py-[80px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
+        <div className="col-span-1 flex sm:px-[0] px-[20px] flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left">
+          <div className="flex justify-center md:justify-start">
+            <div className="inline-flex items-center gap-4 px-6 py-3 bg-[rgba(37,99,235,0.08)] rounded-[60px]">
+              <span className="w-4 h-4 bg-[#2563eb] rounded-full flex-shrink-0"></span>
+              <h1 className="md:text-[17px] text-[20px] poppins-semibold tracking-[-0.5px] text-[#022545]">
+                {t.badge}
+              </h1>
             </div>
-
-            <div className="relative flex justify-center group">
-              {/* Enhanced hero image with subtle border and shadow */}
-              <div className="relative">
-                <Image
-                  src="/hero-img.png"
-                  alt="Sitepro - Sites web professionnels"
-                  width={900}
-                  height={700}
-                  sizes="(max-width: 1024px) 100vw, 900px"
-                  className="w-full max-w-5xl h-auto rounded-3xl shadow-xl border border-white/30"
-                  priority
-                />
-                
-                {/* Enhanced floating elements with better positioning and margins */}
-                <div
-                  className="absolute -bottom-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
-                  style={{ left: 'max(-32px, calc(-50vw + 50% + 20px))' }}
-                >
-                  <div className="text-center">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">500+</div>
-                    <div className="text-sm font-medium text-gray-600 mt-1">Sites créés</div>
-                    <div className="w-8 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-2"></div>
-                  </div>
-                </div>
-
-                <div
-                  className="absolute -top-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
-                  style={{ right: 'max(-32px, calc(-50vw + 50% + 20px))' }}
-                >
-                  <div className="text-center">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">24/7</div>
-                    <div className="text-sm font-medium text-gray-600 mt-1">Support</div>
-                    <div className="w-8 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mt-2"></div>
-                  </div>
-                </div>
-
-              </div>
+          </div>
+          <h2 className="title-hero-section"> {t.title} </h2>
+          <div>
+            <button
+              onClick={openModal}
+              className="relative overflow-hidden text-center cursor-pointer transition-all duration-200 group py-[18px] px-[56px] text-[18px] poppins-semibold rounded-xl hover:bg-title bg-[#2563eb]"
+            >
+              <span className="transition-transform duration-200 flex items-center justify-center ease-out group-hover:-translate-y-[150%] text-white">
+                {t.cta}
+              </span>
+              <span className="absolute inset-0 flex items-center justify-center transition-all duration-200 ease-out translate-y-[150%] group-hover:translate-y-0 text-white">
+                {t.cta}
+              </span>
+            </button>
+          </div>
+          <div className="flex flex-col md:items-start items-center">
+            <p className="text-title text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]">
+              {t.emailConsult}
+            </p>
+            <p className="border-bottom text-[34px] poppins-semibold text-title">
+              contact@sitepro.ma
+            </p>
+          </div>
+        </div>
+        <div className="col-span-1 flex z-10 justify-center">
+          <div className="relative w-full">
+            <div className="relative w-full">
+              <Image
+                src="/latest-cpanel-for-sitepro-maroc.webp"
+                alt={t.badge}
+                width={600}
+                height={600}
+                className="w-full h-full md:p-8 p-4 md:scale-100 lg:scale-100 rounded-lg"
+                priority
+              />
             </div>
-          </motion.div>
-
-          {/* Enhanced Content Grid with Better Spacing (Desktop two-columns) */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content - Enhanced Text & CTA */}
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-              className="space-y-8"
-            >
-              {/* Simple, non-animated badge for performance */}
-              <div
-                className="inline-flex items-center gap-2 bg-white/90 text-blue-700 px-4 py-2 rounded-xl text-sm font-semibold border border-blue-200 shadow-sm"
-              >
-                <Sparkles className="w-4 h-4" />
-                <span>Leader de la création web au Maroc</span>
-              </div>
-
-              {/* Enhanced Main Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
-                className="space-y-4"
-              >
-                <h1 className="heading-1 text-gray-900 leading-tight tracking-tight">
-                  Votre Agence Web{' '}
-                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-                    Sitepro.ma
-                  </span>
-                </h1>
-                <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-              </motion.div>
-
-              {/* Enhanced Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 1, ease: "easeOut" }}
-                className="body-large text-gray-600 leading-relaxed text-lg max-w-xl"
-              >
-                Transformez votre présence digitale avec des sites web qui convertissent. 
-                Nous créons des expériences web uniques qui propulsent votre entreprise vers de nouveaux sommets.
-              </motion.p>
-
-              {/* Features List (static for mobile performance) */}
-              <div className="space-y-3 md:space-y-4">
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
-                    <Monitor className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
-                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Sites web responsifs et modernes</span>
-                </div>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600">
-                    <Gauge className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
-                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Optimisation SEO et performance</span>
-                </div>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center text-cyan-600">
-                    <Headphones className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
-                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Support technique 24/7</span>
-                </div>
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600">
-                    <Timer className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
-                  <span className="m-0 leading-snug body-normal text-gray-700 font-medium">Délais de livraison garantis</span>
-                </div>
-              </div>
-
-              {/* Enhanced CTA Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 1, ease: "easeOut" }}
-                className="pt-4"
-              >
-                <button
-                  onClick={openModal}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-2px] active:translate-y-[1px] active:shadow-md"
-                >
-                  <div className="flex items-center gap-2">
-                    <span>Obtenez un devis</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </div>
-                </button>
-              </motion.div>
-            </motion.div>
-            {/* Right Column - Desktop Hero Visuals */}
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-              className="hidden lg:flex justify-center"
-            >
-              <div className="relative flex justify-center group">
-                {/* Enhanced hero image with subtle border and shadow */}
-                <div className="relative">
-                  {/* Subtle glow effect behind image - static, no animation */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-[32px] blur-2xl"></div>
-                  
-                  <Image
-                    src="/hero-img.png"
-                    alt="Sitepro - Sites web professionnels"
-                    width={900}
-                    height={700}
-                    sizes="(min-width:1024px) 780px, 100vw"
-                    className="relative w-full max-w-[780px] h-auto rounded-3xl shadow-xl border border-white/30"
-                    priority
-                  />
-
-                  {/* Enhanced floating elements with better positioning and margins */}
-                  <div
-                    className="absolute -bottom-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
-                    style={{ left: 'max(-32px, calc(-50vw + 50% + 20px))' }}
-                  >
-                    <div className="text-center">
-                      <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">500+</div>
-                      <div className="text-sm font-medium text-gray-600 mt-1">Sites créés</div>
-                      <div className="w-8 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mt-2"></div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="absolute -top-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-white/30"
-                    style={{ right: 'max(-32px, calc(-50vw + 50% + 20px))' }}
-                  >
-                    <div className="text-center">
-                      <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">24/7</div>
-                      <div className="text-sm font-medium text-gray-600 mt-1">Support</div>
-                      <div className="w-8 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mt-2"></div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Modal */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={closeModal}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 30 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative bg-gradient-to-br from-white/95 via-white/98 to-white/95 backdrop-blur-xl rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/30"
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="relative bg-[#f8fafc] rounded-[40px] shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-white/20"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Enhanced Close button (kept clear but aligned with modal padding) */}
               <motion.button
                 onClick={closeModal}
                 aria-label="Fermer le formulaire"
-                whileHover={{ scale: 1.1, rotate: 90 }}
-                whileTap={{ scale: 0.9 }}
-                className="absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 rounded-full flex items-center justify-center transition-all duration-300 z-10 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute top-6 right-6 w-10 h-10 bg-[#f1f5f9] hover:bg-[#e2e8f0] rounded-full flex items-center justify-center transition-colors duration-200 z-10"
               >
-                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </motion.button>
 
-              {/* Modal content */}
-              <div className="p-8">
-                <h3 className="heading-3 mb-6 text-gray-800 text-center">
-                  Obtenez Votre Devis Gratuit
+              <div className="p-10 pt-12">
+                <h3 className="text-[32px] leading-[1.2] font-bold mb-8 text-[#1e293b] text-center max-w-[300px] mx-auto">
+                  {t.modalTitle}
                 </h3>
-                
-                {/* Step Indicators */}
-                <div className="flex items-center justify-between mb-6 px-2 md:px-6">
+
+                {/* Step Indicators Snappy */}
+                <div className="flex items-center justify-center mb-10 px-4">
                   {[1, 2, 3, 4].map((step) => (
-                    <div key={step} className="flex items-center flex-1">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        className="relative z-10"
-                      >
-                        <div
-                          className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                            step <= currentStep
-                              ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg'
-                              : 'bg-gray-200 text-gray-500'
+                    <div key={step} className="flex items-center">
+                      <div
+                        className={`w-11 h-11 rounded-full flex items-center justify-center text-[15px] font-bold transition-all duration-200 relative z-10 ${step === currentStep
+                          ? 'bg-[#2563eb] text-white shadow-[0_4px_12px_rgba(37,99,235,0.3)]'
+                          : step < currentStep
+                            ? 'bg-[#2563eb] text-white'
+                            : 'bg-[#e2e8f0] text-gray-500'
                           }`}
-                        >
-                          {step < currentStep ? <Check size={16} /> : step}
-                        </div>
-                      </motion.div>
+                      >
+                        {step < currentStep ? <Check size={18} strokeWidth={3} /> : step}
+                      </div>
                       {step < 4 && (
-                        <div className={`flex-1 h-0.5 mx-2 transition-all duration-300 ${
-                          step <= currentStep ? 'bg-primary-600' : 'bg-gray-300'
-                        }`} />
+                        <div className="w-[40px] md:w-[60px] h-[2px] bg-[#e2e8f0] mx-0">
+                          <motion.div
+                            className="h-full bg-[#2563eb]"
+                            initial={false}
+                            animate={{ width: step < currentStep ? '100%' : '0%' }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
                       )}
                     </div>
                   ))}
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <AnimatePresence mode="wait">
                     {currentStep === 1 && (
                       <motion.div
                         key="step-1"
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.15 }}
+                        className="min-h-[140px]"
                       >
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Votre Nom <span className="text-red-500">*</span></label>
+                        <label className="block text-base font-semibold text-[#334155] mb-2.5">{t.labelName} <span className="text-red-500 opacity-80">*</span></label>
                         <input
                           type="text"
-                          placeholder="Entrez votre nom"
+                          placeholder={t.placeholderName}
+                          autoFocus
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          onKeyDown={(e) => e.key === 'Enter' && e.preventDefault()}
-                          className="w-full px-3 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-inner"
+                          className="w-full px-5 py-4 bg-white border border-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-[#2563eb] transition-all duration-200 shadow-sm placeholder:text-gray-400"
                         />
                       </motion.div>
                     )}
@@ -373,23 +267,22 @@ export default function HeroSection() {
                     {currentStep === 2 && (
                       <motion.div
                         key="step-2"
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.15 }}
+                        className="min-h-[140px]"
                       >
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Type de site</label>
+                        <label className="block text-base font-semibold text-[#334155] mb-2.5">{t.labelType}</label>
                         <select
                           value={websiteType}
                           onChange={(e) => setWebsiteType(e.target.value)}
-                          onKeyDown={(e) => e.key === 'Enter' && e.preventDefault()}
-                          className="w-full px-3 py-2.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-inner"
+                          className="w-full px-5 py-4 bg-white border border-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-[#2563eb] transition-all duration-200 shadow-sm appearance-none cursor-pointer"
                         >
-                          <option value="">Sélectionnez un type</option>
-                          <option>Site vitrine</option>
-                          <option>E-commerce</option>
-                          <option>Site de réservation</option>
-                          <option>Projet sur mesure</option>
+                          <option value="">{t.placeholderType}</option>
+                          {t.types.map(type => (
+                            <option key={type} value={type}>{type}</option>
+                          ))}
                         </select>
                       </motion.div>
                     )}
@@ -397,23 +290,23 @@ export default function HeroSection() {
                     {currentStep === 3 && (
                       <motion.div
                         key="step-3"
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.15 }}
+                        className="min-h-[140px]"
                       >
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Quel est votre secteur d&apos;activité ?</label>
-                        <div className="grid grid-cols-2 gap-2">
-                          {['Restaurant / Café', 'Magasin / Boutique', 'Services / Coaching', 'Autre'].map((option) => (
+                        <label className="block text-base font-semibold text-[#334155] mb-2.5">{t.labelSector}</label>
+                        <div className="grid grid-cols-2 gap-3">
+                          {t.sectors.map((option) => (
                             <button
                               key={option}
                               type="button"
                               onClick={() => setSector(option)}
-                              className={`p-2.5 rounded-lg border-2 transition-all duration-300 text-xs font-medium ${
-                                sector === option
-                                  ? 'border-primary-500 bg-primary-50 text-primary-700 shadow-md'
-                                  : 'border-gray-200 bg-white/60 hover:border-primary-300 hover:bg-primary-25'
-                              }`}
+                              className={`p-4 rounded-xl border-2 transition-all duration-200 text-[13px] font-bold ${sector === option
+                                ? 'border-[#2563eb] bg-blue-50 text-[#2563eb]'
+                                : 'border-gray-50 bg-white hover:border-gray-200 text-gray-600'
+                                }`}
                             >
                               {option}
                             </button>
@@ -425,23 +318,23 @@ export default function HeroSection() {
                     {currentStep === 4 && (
                       <motion.div
                         key="step-4"
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.15 }}
+                        className="min-h-[140px]"
                       >
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Quand en avez-vous besoin ?</label>
-                        <div className="space-y-2">
-                          {['Dans 1 semaine', 'Dans 1 mois', 'Flexible'].map((option) => (
+                        <label className="block text-base font-semibold text-[#334155] mb-2.5">{t.labelDeadline}</label>
+                        <div className="space-y-2.5">
+                          {t.deadlines.map((option) => (
                             <button
                               key={option}
                               type="button"
                               onClick={() => setDeadline(option)}
-                              className={`w-full p-2.5 rounded-lg border-2 transition-all duration-300 text-sm font-medium ${
-                                deadline === option
-                                  ? 'border-primary-500 bg-primary-50 text-primary-700 shadow-md'
-                                  : 'border-gray-200 bg-white/60 hover:border-primary-300 hover:bg-primary-25'
-                              }`}
+                              className={`w-full p-4 rounded-xl border-2 transition-all duration-200 text-sm font-bold text-left ${deadline === option
+                                ? 'border-[#2563eb] bg-blue-50 text-[#2563eb]'
+                                : 'border-gray-50 bg-white hover:border-gray-200 text-gray-600'
+                                }`}
                             >
                               {option}
                             </button>
@@ -451,46 +344,44 @@ export default function HeroSection() {
                     )}
                   </AnimatePresence>
 
-                  {/* Navigation Buttons */}
-                  <div className="flex items-center justify-between pt-2">
-                    {currentStep > 1 && (
+                  <div className="flex items-center justify-between pt-4">
+                    {currentStep > 1 ? (
                       <button
                         type="button"
                         onClick={() => setCurrentStep(currentStep - 1)}
-                        className="text-sm text-gray-600 hover:text-primary-700 transition-colors"
+                        className="text-sm font-semibold text-gray-500 hover:text-[#2563eb] transition-colors"
                       >
-                        Précédent
+                        {t.prev}
                       </button>
-                    )}
-                    {currentStep === 1 && <div></div>} {/* Placeholder to maintain flex spacing */}
-                    
+                    ) : <div />}
+
                     {currentStep < 4 ? (
                       <button
                         type="button"
                         onClick={() => setCurrentStep(currentStep + 1)}
                         disabled={!canProceed()}
-                        className="ml-auto px-5 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-medium hover:from-primary-700 hover:to-primary-800 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-8 py-3.5 bg-[#2563eb] text-white rounded-2xl font-bold shadow-lg shadow-blue-500/20 hover:bg-[#1d4ed8] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                       >
-                        Continuer
+                        {t.next}
                       </button>
                     ) : (
                       <button
                         type="submit"
                         disabled={!canProceed()}
-                        className="ml-auto px-5 py-2 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl font-medium hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-8 py-3.5 bg-green-500 text-white rounded-2xl font-bold shadow-lg shadow-green-500/20 hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                       >
-                        Envoyer sur WhatsApp
+                        {t.submit}
                       </button>
                     )}
                   </div>
                 </form>
 
-                {/* Trust indicator */}
-                <div className="mt-4 pt-3 border-t border-gray-100">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>97% de nos clients sont satisfaits</span>
-                  </div>
+                {/* Trust Footer */}
+                <div className="mt-12 pt-6 border-t border-gray-100 flex items-center justify-start gap-2.5">
+                  <div className="w-2.5 h-2.5 bg-[#10b981] rounded-full shadow-[0_0_8px_rgba(16,185,129,0.3)]" />
+                  <span className="text-[13px] font-medium text-gray-500">
+                    {t.trust}
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -498,5 +389,5 @@ export default function HeroSection() {
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }

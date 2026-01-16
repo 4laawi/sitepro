@@ -27,9 +27,10 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        // Prefer Denton Superfamily when available, fallback to Playfair
-        serif: ['var(--font-serif-brand)', 'var(--font-playfair)', 'Georgia', 'serif'],
+        sans: ['var(--font-plus-jakarta)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-outfit)', 'system-ui', 'sans-serif'],
+        // Prefer Denton Superfamily when available, fallback to Outfit
+        serif: ['var(--font-serif-brand)', 'var(--font-outfit)', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

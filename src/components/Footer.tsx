@@ -2,22 +2,83 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  Twitter, 
-  Mail, 
-  Phone, 
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Mail,
+  Phone,
   MapPin,
   ArrowUp
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export default function Footer() {
+  const pathname = usePathname()
   const [showScrollTop, setShowScrollTop] = useState(false)
 
+  // Determine language based on route
+  const language = pathname.startsWith('/en') ? 'EN' : 'FR'
+
+  const t = {
+    FR: {
+      tagline: 'Votre partenaire digital de confiance au Maroc. Nous créons des expériences web exceptionnelles qui propulsent votre business.',
+      services: 'Services',
+      company: 'Entreprise',
+      contact: 'Contact',
+      rights: 'Tous droits réservés.',
+      serviceLinks: [
+        { label: 'Création de Sites Web', href: '/creation-site-web-maroc' },
+        { label: 'E-commerce', href: '/e-commerce' },
+        { label: 'Applications Mobiles', href: '/application-mobile-maroc' },
+        { label: 'Référencement SEO', href: '/agence-seo-maroc' },
+        { label: 'Design & Branding', href: '/design-branding' },
+        { label: 'Maintenance & Support', href: '/maintenance-support' },
+      ],
+      companyLinks: [
+        { label: 'À propos', href: '/#about' },
+        { label: 'Portfolio', href: '/#portfolio' },
+        { label: 'Villes', href: '/#villes' },
+        { label: 'Contact', href: '/#contact' },
+      ],
+      legalLinks: [
+        { label: 'Mentions Légales', href: '/mentions-legales' },
+        { label: 'Politique de Confidentialité', href: '/politique-de-confidentialite' },
+        { label: 'CGV', href: '/cgv' },
+        { label: 'Cookies', href: '/cookies' },
+      ]
+    },
+    EN: {
+      tagline: 'Your trusted digital partner in Morocco. We create exceptional web experiences that propel your business.',
+      services: 'Services',
+      company: 'Company',
+      contact: 'Contact',
+      rights: 'All rights reserved.',
+      serviceLinks: [
+        { label: 'Website Creation', href: '/en/creation-site-web-maroc' },
+        { label: 'E-commerce', href: '/en/e-commerce' },
+        { label: 'Mobile Applications', href: '/en/application-mobile-maroc' },
+        { label: 'SEO Ranking', href: '/en/agence-seo-maroc' },
+        { label: 'Design & Branding', href: '/en/design-branding' },
+        { label: 'Maintenance & Support', href: '/en/maintenance-support' },
+      ],
+      companyLinks: [
+        { label: 'About Us', href: '/en#about' },
+        { label: 'Portfolio', href: '/en#portfolio' },
+        { label: 'Cities', href: '/en#villes' },
+        { label: 'Contact', href: '/en#contact' },
+      ],
+      legalLinks: [
+        { label: 'Legal Notice', href: '/en/mentions-legales' },
+        { label: 'Privacy Policy', href: '/en/politique-de-confidentialite' },
+        { label: 'Terms of Service', href: '/en/cgv' },
+        { label: 'Cookies', href: '/en/cookies' },
+      ]
+    }
+  }[language];
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300)
@@ -28,29 +89,6 @@ export default function Footer() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const footerLinks = {
-    services: [
-      { label: 'Création de Sites Web', href: '/creation-site-web' },
-      { label: 'E-commerce', href: '/e-commerce' },
-      { label: 'Applications Mobiles', href: '/applications-mobiles' },
-      { label: 'Référencement SEO', href: '/referencement-seo' },
-      { label: 'Design & Branding', href: '/design-branding' },
-      { label: 'Maintenance & Support', href: '/maintenance-support' },
-    ],
-    company: [
-      { label: 'À propos', href: '/#about' },
-      { label: 'Portfolio', href: '/portfolio' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Contact', href: '/#contact' },
-    ],
-    legal: [
-      { label: 'Mentions Légales', href: '/mentions-legales' },
-      { label: 'Politique de Confidentialité', href: '/politique-de-confidentialite' },
-      { label: 'CGV', href: '/cgv' },
-      { label: 'Cookies', href: '/cookies' },
-    ],
   }
 
   const socialLinks = [
@@ -75,19 +113,17 @@ export default function Footer() {
           >
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/logo.png"
+                src="/Logo-site-web-pro-maroc.webp"
                 alt="Sitepro.ma - Agence Web Maroc"
                 width={150}
                 height={50}
-                className="h-10 w-auto filter brightness-0 invert hover:scale-105 transition-transform duration-300"
+                className="h-14 w-auto filter brightness-0 invert hover:scale-105 transition-transform duration-300"
               />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Votre partenaire digital de confiance au Maroc. 
-              Nous créons des expériences web exceptionnelles 
-              qui propulsent votre business.
+              {t.tagline}
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -111,9 +147,9 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-lg font-semibold mb-6">{t.services}</h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
+              {t.serviceLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
@@ -134,9 +170,9 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6">Entreprise</h4>
+            <h4 className="text-lg font-semibold mb-6">{t.company}</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
+              {t.companyLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
@@ -157,7 +193,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6">Contact</h4>
+            <h4 className="text-lg font-semibold mb-6">{t.contact}</h4>
             <ul className="space-y-4">
               <li>
                 <a
@@ -192,11 +228,11 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2024 Sitepro.ma. Tous droits réservés.
+              © 2024 Sitepro.ma. {t.rights}
             </p>
-            
+
             <div className="flex items-center gap-6">
-              {footerLinks.legal.map((link, index) => (
+              {t.legalLinks.map((link, index) => (
                 <Link
                   key={index}
                   href={link.href}

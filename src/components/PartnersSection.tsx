@@ -11,7 +11,32 @@ const partners = [
   { name: 'WordPress VIP', logo: 'WordPress' },
 ]
 
-export default function PartnersSection() {
+interface PartnersSectionProps {
+  lang?: 'FR' | 'EN';
+}
+
+export default function PartnersSection({ lang = 'FR' }: PartnersSectionProps) {
+  const t = {
+    FR: {
+      title: 'NOS PARTENAIRES TECHNOLOGIQUES',
+      description: 'Nous collaborons avec les leaders mondiaux du digital pour vous offrir les meilleures solutions et technologies',
+      badges: [
+        { title: 'Certifié Google', desc: 'Agence certifiée Google Ads & Analytics' },
+        { title: 'Partenaire Meta', desc: 'Expert en publicité Facebook & Instagram' },
+        { title: 'Excellence Shopify', desc: 'Développement e-commerce professionnel' },
+      ]
+    },
+    EN: {
+      title: 'OUR TECHNOLOGY PARTNERS',
+      description: 'We collaborate with global digital leaders to offer you the best solutions and technologies',
+      badges: [
+        { title: 'Google Certified', desc: 'Google Ads & Analytics certified agency' },
+        { title: 'Meta Partner', desc: 'Expert in Facebook & Instagram advertising' },
+        { title: 'Shopify Excellence', desc: 'Professional e-commerce development' },
+      ]
+    }
+  }[lang];
+
   return (
     <section className="py-16 bg-gray-50 relative overflow-hidden z-10">
       <div className="container mx-auto px-4">
@@ -22,18 +47,17 @@ export default function PartnersSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-tech-dark mb-4">
-            NOS PARTENAIRES TECHNOLOGIQUES
+          <h2 className="text-3xl font-bold text-tech-dark mb-4 uppercase">
+            {t.title}
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Nous collaborons avec les leaders mondiaux du digital pour vous offrir 
-            les meilleures solutions et technologies
+            {t.description}
           </p>
         </motion.div>
 
         {/* Partners Carousel */}
         <div className="relative">
-            <div className="flex overflow-hidden" aria-label="Logos de partenaires">
+          <div className="flex overflow-hidden" aria-label="Logos de partenaires">
             <div className="flex animate-scroll gap-8 lg:gap-16">
               {/* Create 8 sets of partners for truly seamless infinite loop */}
               {[...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners].map((partner, index) => (
@@ -67,11 +91,7 @@ export default function PartnersSection() {
           viewport={{ once: true }}
           className="mt-16 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
-          {[
-            { title: 'Certifié Google', desc: 'Agence certifiée Google Ads & Analytics' },
-            { title: 'Partenaire Meta', desc: 'Expert en publicité Facebook & Instagram' },
-            { title: 'Excellence Shopify', desc: 'Développement e-commerce professionnel' },
-          ].map((badge, index) => (
+          {t.badges.map((badge, index) => (
             <motion.div
               key={index}
               whileHover={{ y: -5 }}

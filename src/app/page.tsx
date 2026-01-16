@@ -12,15 +12,15 @@ const ContactSection = dynamic(() => import('@/components/ContactSection'), { ss
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroSection lang="FR" />
       {/* Breadcrumb JSON-LD for homepage */}
       {/* Inject via next/script would normally be in layout if needed; homepage typically doesn't require breadcrumbs */}
-      <section className="cv-auto"><PortfolioSection /></section>
-      <section className="cv-auto"><PartnersSection /></section>
-      <section className="cv-auto"><ServicesSection /></section>
-      <ServedCities />
-      <section className="cv-auto"><AboutSection /></section>
-      <section className="cv-auto"><ContactSection /></section>
+      <section className="cv-auto"><PortfolioSection lang="FR" /></section>
+      <section className="cv-auto"><PartnersSection lang="FR" /></section>
+      <section className="cv-auto"><ServicesSection lang="FR" /></section>
+      <ServedCities lang="FR" />
+      <section className="cv-auto"><AboutSection lang="FR" /></section>
+      <section className="cv-auto"><ContactSection lang="FR" /></section>
     </>
   )
 }
