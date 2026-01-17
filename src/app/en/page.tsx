@@ -5,11 +5,13 @@ import PartnersSection from '@/components/PartnersSection'
 import ServedCities from '@/components/ServedCities'
 import AboutSection from '@/components/AboutSection'
 import ContactSection from '@/components/ContactSection'
+import TrustSection from '@/components/TrustSection'
 
 export default function EnglishHomePage() {
     return (
         <>
             <HeroSection lang="EN" />
+            <TrustSection lang="EN" />
             <section className="cv-auto"><PortfolioSection lang="EN" /></section>
             <ServicesSection lang="EN" />
             <PartnersSection lang="EN" />

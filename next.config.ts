@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: 'www.hostino.ma',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.devnetcorp.com',
+        pathname: '/**',
+      },
     ],
   },
 };

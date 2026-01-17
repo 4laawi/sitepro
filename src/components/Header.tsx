@@ -20,19 +20,15 @@ export default function Header() {
 
   const t = {
     FR: {
-      hosting: 'Hébergement',
-      domains: 'Nom de domaine',
-      webApps: 'Web & Apps',
+      creationWeb: 'Création Web',
+      portfolio: 'Portfolio',
+      appsMobiles: 'Applications Mobiles',
       seoSea: 'SEO/SEA',
-      hostingSub: {
-        starty: 'Starty',
-        business: 'Business',
-        cloud: 'Cloud Maroc',
-        email: '@Email Pro',
-      },
-      webAppsSub: {
-        sites: 'Sites web',
-        apps: 'Apps',
+      creationWebSub: {
+        vitrine: 'Sites Vitrine',
+        ecommerce: 'E-commerce',
+        branding: 'Design & Branding',
+        maintenance: 'Maintenance',
       },
       seoSub: {
         seo: 'Agence SEO',
@@ -42,19 +38,15 @@ export default function Header() {
       }
     },
     EN: {
-      hosting: 'Hosting',
-      domains: 'Domain Name',
-      webApps: 'Web & Apps',
+      creationWeb: 'Web Creation',
+      portfolio: 'Portfolio',
+      appsMobiles: 'Mobile Apps',
       seoSea: 'SEO/SEA',
-      hostingSub: {
-        starty: 'Starty',
-        business: 'Business',
-        cloud: 'Cloud Morocco',
-        email: '@Professional Email',
-      },
-      webAppsSub: {
-        sites: 'Websites',
-        apps: 'Mobile Apps',
+      creationWebSub: {
+        vitrine: 'Showcase Sites',
+        ecommerce: 'E-commerce',
+        branding: 'Design & Branding',
+        maintenance: 'Maintenance',
       },
       seoSub: {
         seo: 'SEO Agency',
@@ -153,45 +145,33 @@ export default function Header() {
               <ul className="hidden lg:flex items-center sm:gap-[12px] xl:gap-[20px]">
                 <li className="relative dropdown-hebergement group">
                   <button
-                    className={`animated-link link_header text-title flex items-center gap-2 navbar-bold border-none p-0 transition-colors duration-200 ${openDropdown === 'hebergement' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
-                    onClick={() => toggleDropdown('hebergement')}
+                    className={`animated-link link_header text-title flex items-center gap-2 navbar-bold border-none p-0 transition-colors duration-200 ${openDropdown === 'creationWeb' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
+                    onClick={() => toggleDropdown('creationWeb')}
                   >
-                    {t.hosting}
-                    <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'hebergement' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {t.creationWeb}
+                    <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'creationWeb' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'hebergement' ? 'is-open' : ''}`}>
+                  <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'creationWeb' ? 'is-open' : ''}`}>
                     <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
-                      <li> <Link href={language === 'EN' ? "/en/starty/" : "/starty/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.starty} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/business/" : "/business/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.business} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/cloud-maroc/" : "/cloud-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.cloud} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/email-professionnel/" : "/email-professionnel/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.hostingSub.email} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/creation-site-web/" : "/creation-site-web/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.vitrine} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.ecommerce} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/maintenance-support/" : "/maintenance-support/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
                     </ul>
                   </div>
                 </li>
-                <li> <Link href={language === 'EN' ? "/en/nom-de-domaine-ma/" : "/nom-de-domaine-ma/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.domains} </Link> </li>
-                <li className="relative dropdown-webapps group">
-                  <button
-                    className={`flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 ${openDropdown === 'webapps' ? 'text-[#2563eb]' : 'hover:text-[#2563eb]'}`}
-                    onClick={() => toggleDropdown('webapps')}
-                  >
+                <li> <Link href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
+                <li>
+                  <Link href={language === 'EN' ? "/en/applications-mobiles/" : "/applications-mobiles/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
                     <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M16 4L12 20" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
-                    {t.webApps}
-                    <svg className={`w-4 h-4 transition-transform duration-300 dropdown-arrow ${openDropdown === 'webapps' ? 'is-open' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'webapps' ? 'is-open' : ''}`}>
-                    <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-                      <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.webAppsSub.sites} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.webAppsSub.apps} </Link> </li>
-                    </ul>
-                  </div>
+                    {t.appsMobiles}
+                  </Link>
                 </li>
                 <li className="relative dropdown-seo group">
                   <button
@@ -262,7 +242,7 @@ export default function Header() {
             <li className="mobile-dropdown-hebergement">
               <span
                 className="w-full link_header cursor-pointer flex items-center justify-between py-4 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
-                onClick={() => toggleMobileSubmenu('hebergement')}
+                onClick={() => toggleMobileSubmenu('creationWeb')}
               >
                 <div className="flex items-center gap-3">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -271,22 +251,22 @@ export default function Header() {
                     <line x1="6" y1="6" x2="6" y2="6" />
                     <line x1="6" y1="18" x2="6" y2="18" />
                   </svg>
-                  <span className="text-[17px]">{t.hosting}</span>
+                  <span className="text-[17px]">{t.creationWeb}</span>
                 </div>
-                <svg className={`w-5 h-5 transition-transform duration-300 mobile-arrow ${openMobileSubmenus['hebergement'] ? 'active' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-5 h-5 transition-transform duration-300 mobile-arrow ${openMobileSubmenus['creationWeb'] ? 'active' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
-              <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['hebergement'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/starty/" : "/starty/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.starty} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/business/" : "/business/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.business} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/cloud-maroc/" : "/cloud-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.cloud} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/email-professionnel/" : "/email-professionnel/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.hostingSub.email} </Link> </li>
+              <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['creationWeb'] ? 'active' : 'hidden'}`}>
+                <li> <Link href={language === 'EN' ? "/en/creation-site-web/" : "/creation-site-web/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.vitrine} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.ecommerce} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/maintenance-support/" : "/maintenance-support/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
               </ul>
             </li>
             <li>
               <Link
-                href={language === 'EN' ? "/en/nom-de-domaine-ma/" : "/nom-de-domaine-ma/"}
+                href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
@@ -295,13 +275,14 @@ export default function Header() {
                   <line x1="2" y1="12" x2="22" y2="12" />
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 </svg>
-                <span className="text-[17px]">{t.domains}</span>
+                <span className="text-[17px]">{t.portfolio}</span>
               </Link>
             </li>
-            <li className="mobile-dropdown-webapps">
-              <span
-                className="w-full link_header cursor-pointer flex items-center justify-between py-4 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]"
-                onClick={() => toggleMobileSubmenu('webapps')}
+            <li>
+              <Link
+                href={language === 'EN' ? "/en/applications-mobiles/" : "/applications-mobiles/"}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
                 <div className="flex items-center gap-3">
                   <svg width="22" height="22" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -309,16 +290,9 @@ export default function Header() {
                     <path d="M21 6L27 12L21 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M16 4L12 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                   </svg>
-                  <span className="text-[17px]">{t.webApps}</span>
+                  <span className="text-[17px]">{t.appsMobiles}</span>
                 </div>
-                <svg className={`w-5 h-5 transition-transform duration-300 mobile-arrow ${openMobileSubmenus['webapps'] ? 'active' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-              <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['webapps'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.webAppsSub.sites} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.webAppsSub.apps} </Link> </li>
-              </ul>
+              </Link>
             </li>
             <li className="mobile-dropdown-seo">
               <span
