@@ -5,6 +5,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LangUpdater from '@/components/LangUpdater'
+import SmoothScroll from '@/components/SmoothScroll'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -104,6 +105,7 @@ export default function RootLayout({
           })}
         </Script>
         <LangUpdater />
+        <SmoothScroll />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

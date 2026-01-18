@@ -7,7 +7,9 @@ const PartnersSection = dynamic(() => import('@/components/PartnersSection'), { 
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), { ssr: true })
 const PortfolioSection = dynamic(() => import('@/components/PortfolioSection'), { ssr: true })
 const AboutSection = dynamic(() => import('@/components/AboutSection'), { ssr: true })
+const MoroccoSection = dynamic(() => import('@/components/MoroccoSection'), { ssr: true })
 const ContactSection = dynamic(() => import('@/components/ContactSection'), { ssr: true })
+const ToolsSection = dynamic(() => import('@/components/ToolsSection'), { ssr: true })
 
 export default function Home() {
   return (
@@ -18,7 +20,9 @@ export default function Home() {
       <section className="cv-auto"><PortfolioSection lang="FR" /></section>
       <section className="cv-auto"><PartnersSection lang="FR" /></section>
       <section className="cv-auto"><ServicesSection lang="FR" /></section>
+      <ToolsSection />
       <ServedCities lang="FR" />
+      <section className="cv-auto"><MoroccoSection /></section>
       <section className="cv-auto"><AboutSection lang="FR" /></section>
       <section className="cv-auto"><ContactSection lang="FR" /></section>
     </>

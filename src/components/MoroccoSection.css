@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.morocco-section {
+    --title: #022545;
+    --text: #022545;
+    --spacing: 0.25rem;
+}
+
+.morocco-section .title-section {
+    letter-spacing: -1.5px;
+    color: var(--title);
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+@media (min-width: 768px) {
+    .morocco-section .title-section {
+        letter-spacing: -2.5px;
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+.morocco-section .paragraph {
+    color: var(--text);
+    letter-spacing: 0.2px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7rem;
+}
+
+@media (min-width: 768px) {
+    .morocco-section .paragraph {
+        font-size: 17px;
+    }
+}
+
+.morocco-section .paragraph:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.morocco-section .poppins-semibold {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.morocco-section .underline {
+    text-decoration: underline;
+}
