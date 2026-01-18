@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import './ToolsSection.css';
 
 const tools = [
@@ -70,7 +71,13 @@ const ToolsSection = () => {
                             {tools.map((tool, index) => (
                                 <div key={index} className="tab-card">
                                     <span className="logo">
-                                        <img src={tool.logo} alt={tool.name} loading="lazy" />
+                                        <Image
+                                            src={tool.logo}
+                                            alt={tool.name}
+                                            width={48}
+                                            height={48}
+                                            loading="lazy"
+                                        />
                                     </span>
                                     <h4 className="title">{tool.name}</h4>
                                 </div>

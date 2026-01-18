@@ -61,7 +61,7 @@ export default function TrustSection({ lang = 'FR' }: TrustSectionProps) {
                                 data-element_type="section"
                             >
                                 <div className="elementor-container elementor-column-gap-default">
-                                    {logos.map((logo, index) => (
+                                    {logos.map((logo) => (
                                         <div
                                             key={logo.id}
                                             className={`elementor-column elementor-col-14 elementor-inner-column elementor-element ${logo.hiddenMobile ? 'elementor-hidden-mobile' : ''}`}

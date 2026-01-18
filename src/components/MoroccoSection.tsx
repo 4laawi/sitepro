@@ -27,7 +27,7 @@ const MoroccoSection = () => {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        <h2 className="title-section"> L'excellence du Web Design et du Développement au Maroc </h2>
+                        <h2 className="title-section"> L&apos;excellence du Web Design et du Développement au Maroc </h2>
                         <div className="space-y-2 text-[#022545] text-lg">
                             <p className="paragraph">
                                 Chez Sitepro.ma, nous redéfinissons les standards du web design et du développement au Maroc. Nous créons des expériences numériques captivantes, alliant esthétique moderne, performance technique et ergonomie intuitive pour propulser votre présence en ligne.
@@ -40,12 +40,12 @@ const MoroccoSection = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    "Digital Morocco 2030"
+                                    &quot;Digital Morocco 2030&quot;
                                 </a>{' '}
-                                initiée par le Ministère de la Transition Numérique et de la Réforme de l'Administration, nous accompagnons les entreprises marocaines dans leur transformation digitale grâce à des solutions sur mesure et innovantes.
+                                initiée par le Ministère de la Transition Numérique et de la Réforme de l&apos;Administration, nous accompagnons les entreprises marocaines dans leur transformation digitale grâce à des solutions sur mesure et innovantes.
                             </p>
                             <p className="paragraph">
-                                Notre expertise couvre le design UI/UX, le développement full-stack et l'optimisation SEO, garantissant des sites web robustes et évolutifs. Avec une approche centrée sur l'utilisateur et une maîtrise des dernières technologies, nous transformons vos idées en succès numériques concrets.
+                                Notre expertise couvre le design UI/UX, le développement full-stack et l&apos;optimisation SEO, garantissant des sites web robustes et évolutifs. Avec une approche centrée sur l&apos;utilisateur et une maîtrise des dernières technologies, nous transformons vos idées en succès numériques concrets.
                             </p>
                         </div>
                     </motion.div>
