@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import * as React from 'react'
-import { useState, useEffect } from 'react'
 import { ExternalLink, Eye, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 

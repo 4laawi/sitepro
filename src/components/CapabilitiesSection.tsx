@@ -107,13 +107,13 @@ const CapabilitiesSection = () => {
                     </div>
                     <h2 className="section-title">Nos Services de Design et Développement Web</h2>
                     <p className="section-description">
-                        Nous sommes fiers d'être l'agence de design web axée sur le client et la qualité
+                        Nous sommes fiers d&apos;être l&apos;agence de design web axée sur le client et la qualité
                         qui peut répondre à tous les besoins de votre site internet.
                     </p>
                 </div>
 
                 <div className="capabilities-grid">
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                         <div key={service.id} className="capability-card grid-item animate-up">
                             <div className="card-icon">
                                 {service.icon}

@@ -70,7 +70,7 @@ export default function AboutSection({ lang = 'FR' }: AboutSectionProps) {
   }[lang];
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+    <section id="about" className="pt-4 pb-20 lg:py-32 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <motion.div
         animate={{
@@ -86,13 +86,69 @@ export default function AboutSection({ lang = 'FR' }: AboutSectionProps) {
 
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content - Images */}
+          {/* Left Content - Text (Modified for mobile order) */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left"
+          >
+            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+              {t.badge}
+            </span>
+
+            <h2 className="heading-2 text-tech-dark mb-6">
+              {t.title}
+              <span className="text-primary-600"> {t.titleAccent}</span>
+            </h2>
+
+            <p className="body-large text-gray-600 mb-8">
+              {t.description}
+            </p>
+
+            {/* Features List */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {t.features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center justify-center lg:justify-start gap-3"
+                >
+                  <div className="w-5 h-5 bg-primary-600 rounded-full flex items-center justify-center">
+                    <CheckCircle size={14} className="text-white" />
+                  </div>
+                  <span className="text-gray-700">{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block"
+            >
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-3 bg-primary-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+              >
+                <Target size={20} />
+                {t.cta}
+              </a>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Images (Modified for mobile order) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative lg:order-1"
           >
             <div className="relative">
               {/* Main Image */}
@@ -158,61 +214,6 @@ export default function AboutSection({ lang = 'FR' }: AboutSectionProps) {
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary-100 rounded-full opacity-50 blur-2xl" />
               <div className="absolute -top-10 -right-10 w-60 h-60 bg-blue-100 rounded-full opacity-50 blur-2xl" />
             </div>
-          </motion.div>
-
-          {/* Right Content - Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
-              {t.badge}
-            </span>
-
-            <h2 className="heading-2 text-tech-dark mb-6">
-              {t.title}
-              <span className="text-primary-600"> {t.titleAccent}</span>
-            </h2>
-
-            <p className="body-large text-gray-600 mb-8">
-              {t.description}
-            </p>
-
-            {/* Features List */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {t.features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="w-5 h-5 bg-primary-600 rounded-full flex items-center justify-center">
-                    <CheckCircle size={14} className="text-white" />
-                  </div>
-                  <span className="text-gray-700">{feature}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
-            >
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-3 bg-primary-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-primary-700 transition-colors"
-              >
-                <Target size={20} />
-                {t.cta}
-              </a>
-            </motion.div>
           </motion.div>
         </div>
 

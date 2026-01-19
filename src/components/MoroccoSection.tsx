@@ -18,7 +18,7 @@ const MoroccoSection = () => {
     return (
         <section
             ref={sectionRef}
-            className="bg-white rounded-t-[28px] md:rounded-t-[60px] -mt-[28px] md:-mt-[60px] relative z-20 pt-24 pb-16 md:pt-32 md:pb-24 morocco-section overflow-hidden shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.05)] cv-auto"
+            className="bg-white rounded-t-[28px] md:rounded-t-[60px] -mt-[28px] md:-mt-[60px] relative z-20 pt-24 pb-8 md:pt-32 md:pb-24 morocco-section overflow-hidden shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.05)] cv-auto"
         >
             <div className="container mx-auto px-4 lg:px-7">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -70,28 +70,11 @@ const MoroccoSection = () => {
                 {/* Hosting Section */}
                 <div className="grid lg:grid-cols-2 gap-16 items-center mt-32">
                     <motion.div
-                        style={{ y: yImage }}
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        viewport={{ once: true }}
-                        className="relative flex justify-start"
-                    >
-                        <Image
-                            src="/Untitled design (12).webp"
-                            alt="Hébergement web facile"
-                            loading="eager"
-                            width={660}
-                            height={440}
-                            className="xl:w-[90%] md:mt-[20px] mt-[40px] md:mr-auto md:w-[86%] w-[100%] h-auto"
-                        />
-                    </motion.div>
-                    <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="space-y-8"
+                        className="space-y-8 lg:order-2"
                     >
                         <div className="space-y-4">
                             <h2 className="title-section md:pr-[180px] lg:pr-[0]">
@@ -118,6 +101,23 @@ const MoroccoSection = () => {
                                 </p>
                             </div>
                         </div>
+                    </motion.div>
+                    <motion.div
+                        style={{ y: yImage }}
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="relative flex justify-start lg:order-1"
+                    >
+                        <Image
+                            src="/Untitled design (12).webp"
+                            alt="Hébergement web facile"
+                            loading="eager"
+                            width={660}
+                            height={440}
+                            className="xl:w-[90%] md:mt-[20px] mt-[40px] md:mr-auto md:w-[86%] w-[100%] h-auto"
+                        />
                     </motion.div>
                 </div>
             </div>
