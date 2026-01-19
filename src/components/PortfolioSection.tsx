@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 import { ExternalLink, Eye, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
@@ -21,7 +22,7 @@ const portfolioItems = [
     title: 'Mama Fatma Store',
     category: 'E-commerce',
     description: 'Boutique en ligne moderne avec gestion des produits, SEO optimisé et performances élevées',
-    image: '/ecommerce.png',
+    image: '/mamafatma.webp',
     tags: ['Next.js', 'Supabase', 'SEO'],
     stats: { visitors: '15K+', conversion: '4.2%' },
     link: 'https://mamafatma.ma/'
@@ -134,8 +135,16 @@ interface PortfolioSectionProps {
 }
 
 export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps) {
-  const [selectedCategory, setSelectedCategory] = useState(lang === 'FR' ? 'Tous' : 'All')
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null)
+  const [selectedCategory, setSelectedCategory] = React.useState(lang === 'FR' ? 'Tous' : 'All')
+  const [hoveredItem, setHoveredItem] = React.useState<number | null>(null)
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const t = {
     FR: {
@@ -269,6 +278,10 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
     ? translatedPortfolioItems
     : translatedPortfolioItems.filter(item => item.category === selectedCategory)
 
+  const displayedItems = (isMobile && (selectedCategory === 'Tous' || selectedCategory === 'All'))
+    ? filteredItems.slice(0, 3)
+    : filteredItems
+
   return (
     <section id="portfolio" className="pt-10 pb-20 lg:pt-16 lg:pb-32 bg-[#F8F8F8]">
       <div className="container mx-auto px-4">
@@ -297,7 +310,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap md:justify-center gap-2 md:gap-4 mb-12 overflow-x-auto pb-4 no-scrollbar"
+          className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 pb-4"
         >
           {t.categories.map((category) => (
             <motion.button
@@ -320,7 +333,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredItems.map((item, index) => (
+          {displayedItems.map((item, index) => (
             <motion.div
               key={item.id}
               layout
@@ -334,14 +347,14 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
 
                   <Image
                     src={item.image}
                     alt={`Projet: ${item.title}`}
                     fill
                     sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
 
                   {/* Overlay on Hover (Desktop) or Persistent (Mobile) */}

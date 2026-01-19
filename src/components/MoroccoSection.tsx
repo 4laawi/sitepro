@@ -16,7 +16,10 @@ const MoroccoSection = () => {
     const yImage = useTransform(scrollYProgress, [0, 1], [0, -100])
 
     return (
-        <section ref={sectionRef} className="bg-white lg:my-[150px] my-[80px] morocco-section overflow-hidden">
+        <section
+            ref={sectionRef}
+            className="bg-white rounded-t-[28px] md:rounded-t-[60px] -mt-[28px] md:-mt-[60px] relative z-20 pt-24 pb-16 md:pt-32 md:pb-24 morocco-section overflow-hidden shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.05)] cv-auto"
+        >
             <div className="container mx-auto px-4 lg:px-7">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <motion.div
@@ -54,13 +57,67 @@ const MoroccoSection = () => {
                         className="relative"
                     >
                         <Image
-                            src="/hebergeur-web-depuis-maroc copy.jpg"
+                            src="/clipboard-image-1768750283.webp"
                             alt="Expertise Web Design et Développement Maroc"
                             width={900}
                             height={600}
                             loading="eager"
                             className="lg:w-[88%] ml-auto block"
                         />
+                    </motion.div>
+                </div>
+
+                {/* Hosting Section */}
+                <div className="grid lg:grid-cols-2 gap-16 items-center mt-32">
+                    <motion.div
+                        style={{ y: yImage }}
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="relative flex justify-start"
+                    >
+                        <Image
+                            src="/Untitled design (12).webp"
+                            alt="Hébergement web facile"
+                            loading="eager"
+                            width={660}
+                            height={440}
+                            className="xl:w-[90%] md:mt-[20px] mt-[40px] md:mr-auto md:w-[86%] w-[100%] h-auto"
+                        />
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="space-y-8"
+                    >
+                        <div className="space-y-4">
+                            <h2 className="title-section md:pr-[180px] lg:pr-[0]">
+                                Votre hébergement web en toute facilité
+                            </h2>
+                            <h3 className="text-2xl lg:text-3xl poppins-semibold mt-[10px] text-[#022545]">
+                                Votre meilleur choix d&apos;hébergement web au Maroc
+                            </h3>
+                        </div>
+                        <div className="space-y-6 text-[#022545]">
+                            <div>
+                                <p className="paragraph">
+                                    – Des <b className="poppins-semibold">performances inégalées :</b> Nos serveurs ultra-rapides garantissent des temps de chargement jusqu&apos;à 3 fois plus rapides que la concurrence.
+                                </p>
+                            </div>
+                            <div>
+                                <p className="paragraph">
+                                    <b className="poppins-semibold">– La sécurité au cœur de nos préoccupations :</b> Nous mettons en place des mesures de sécurité robustes pour protéger vos données et celles de vos utilisateurs.
+                                </p>
+                            </div>
+                            <div>
+                                <p className="paragraph">
+                                    – Notre <b className="poppins-semibold">connaissance approfondie</b> de l&apos;écosystème digital au Maroc nous permet de soutenir le développement rapide de l&apos;économie numérique, de faciliter la transformation digitale des entreprises, et d&apos;améliorer leur compétitivité, notamment celle des TPE/PME, auto-entrepreneurs, et startups.
+                                </p>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
             </div>

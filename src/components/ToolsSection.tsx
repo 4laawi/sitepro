@@ -28,14 +28,17 @@ const ToolsSection = () => {
     const checkScroll = () => {
         if (scrollRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-            setCanScrollLeft(scrollLeft > 0);
-            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5); // 5px tolerance
+            setCanScrollLeft(scrollLeft > 2); // Small threshold for reliability
+            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
         }
     };
 
     useEffect(() => {
         const currentRef = scrollRef.current;
         if (currentRef) {
+            // Force reset on mount
+            currentRef.scrollLeft = 0;
+
             currentRef.addEventListener('scroll', checkScroll);
             checkScroll();
             window.addEventListener('resize', checkScroll);
@@ -50,7 +53,7 @@ const ToolsSection = () => {
 
     const scroll = (direction: 'left' | 'right') => {
         if (scrollRef.current) {
-            const scrollAmount = 350; // Roughly the width of a card + gap
+            const scrollAmount = 342; // Updated: Card width (330) + Gap (12)
             scrollRef.current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth',
@@ -59,10 +62,38 @@ const ToolsSection = () => {
     };
 
     return (
-        <section className="tools-section">
-            <div className="tools-container">
+        <section className="tools-section relative overflow-hidden z-10">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                }} />
+            </div>
+            <div className="tools-container relative z-10">
                 <div className="tabs-btns">
                     <h2 className="tab-btn">Tools we use</h2>
+                    <div className="scroll-nav">
+                        <button
+                            className="scroll-button prev"
+                            onClick={() => scroll('left')}
+                            disabled={!canScrollLeft}
+                            aria-label="Previous tools"
+                        >
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.8764 24.7533L23.5498 28.4355L22.4878 29.5L17.0008 24L22.4878 18.5L23.5498 19.5645L19.8752 23.2479L31 23.2479L31 24.7533L19.8764 24.7533Z" />
+                            </svg>
+                        </button>
+                        <button
+                            className="scroll-button next"
+                            onClick={() => scroll('right')}
+                            disabled={!canScrollRight}
+                            aria-label="Next tools"
+                        >
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M28.1236 23.2467L24.4502 19.5645L25.5122 18.5L30.9992 24L25.5122 29.5L24.4502 28.4355L28.1248 24.7521L17 24.7521L17 23.2467L28.1236 23.2467Z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 <div className="tabs-content">
@@ -74,37 +105,15 @@ const ToolsSection = () => {
                                         <Image
                                             src={tool.logo}
                                             alt={tool.name}
-                                            width={48}
-                                            height={48}
+                                            width={300}
+                                            height={300}
                                             loading="lazy"
+                                            className="object-contain"
                                         />
                                     </span>
                                     <h4 className="title">{tool.name}</h4>
                                 </div>
                             ))}
-                        </div>
-
-                        <div className="scroll-nav">
-                            <button
-                                className="scroll-button prev"
-                                onClick={() => scroll('left')}
-                                disabled={!canScrollLeft}
-                                aria-label="Previous tools"
-                            >
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19.8764 24.7533L23.5498 28.4355L22.4878 29.5L17.0008 24L22.4878 18.5L23.5498 19.5645L19.8752 23.2479L31 23.2479L31 24.7533L19.8764 24.7533Z" />
-                                </svg>
-                            </button>
-                            <button
-                                className="scroll-button next"
-                                onClick={() => scroll('right')}
-                                disabled={!canScrollRight}
-                                aria-label="Next tools"
-                            >
-                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M28.1236 23.2467L24.4502 19.5645L25.5122 18.5L30.9992 24L25.5122 29.5L24.4502 28.4355L28.1248 24.7521L17 24.7521L17 23.2467L28.1236 23.2467Z" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
                 </div>

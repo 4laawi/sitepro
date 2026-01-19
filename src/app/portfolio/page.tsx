@@ -26,7 +26,7 @@ const items = [
     category: 'E‑commerce',
     description:
       'Boutique en ligne moderne avec gestion produits, SEO optimisé et performances élevées.',
-    image: '/ecommerce.png',
+    image: '/clipboard-image-1768749880.webp',
     tags: ['Next.js', 'Supabase', 'SEO'],
     link: 'https://mamafatma.ma/',
     caseStudy: '/portfolio/case-studies/mama-fatma-store',

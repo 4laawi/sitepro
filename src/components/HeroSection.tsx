@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Check } from 'lucide-react';
 import Image from 'next/image';
@@ -18,6 +18,17 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
   const [deadline, setDeadline] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -141,7 +152,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
     <section ref={sectionRef} className="bg-gray-200 snipcss-odHLl overflow-hidden">
       <div className="container grid-cols-1 md:pt-[120px] md:pb-[40px] py-[60px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
         <motion.div
-          style={{ y: contentY, opacity }}
+          style={{ y: isMobile ? 0 : contentY, opacity: isMobile ? 1 : opacity }}
           className="col-span-1 flex sm:px-[0] px-[20px] flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left"
         >
           <div className="flex justify-center md:justify-start">
@@ -176,7 +187,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
           </div>
         </motion.div>
         <motion.div
-          style={{ y: imageY, opacity }}
+          style={{ y: isMobile ? 0 : imageY, opacity: isMobile ? 1 : opacity }}
           className="col-span-1 flex z-10 justify-center"
         >
           <div className="relative w-full">
