@@ -1,9 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import * as React from 'react'
-import { ExternalLink, Eye, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const portfolioItems = [
   {
@@ -11,30 +12,33 @@ const portfolioItems = [
     title: 'Apex Clinique Dentaire',
     category: 'Cabinet Médical',
     description: 'Clinique dentaire de pointe à Tanger, Maroc, avec une présence digitale élégante et fonctionnelle.',
-    image: '/Screenshot 2026-01-12 at 6.57.55 PM.webp',
+    image: '/Screenshot 2026-01-20 at 11.54.18 PM.webp',
     tags: ['Next.js', 'Clinique Dentaire', 'Tanger'],
     stats: { visitors: '7K+', conversion: '6.5%' },
-    link: 'https://www.apexdental.ma/'
+    link: 'https://www.apexdental.ma/',
+    scrollOnHover: true
   },
   {
     id: 2,
     title: 'Mama Fatma Store',
     category: 'E-commerce',
     description: 'Boutique en ligne moderne avec gestion des produits, SEO optimisé et performances élevées',
-    image: '/mamafatma.webp',
+    image: '/Screenshot 2026-01-20 at 10.04.03 PM.webp',
     tags: ['Next.js', 'Supabase', 'SEO'],
     stats: { visitors: '15K+', conversion: '4.2%' },
-    link: 'https://mamafatma.ma/'
+    link: 'https://mamafatma.ma/',
+    scrollOnHover: true
   },
   {
     id: 3,
     title: 'EUN Cars - Location de Voitures',
     category: 'Location',
     description: 'Système de réservation en ligne pour location de voitures à Laayoune avec interface intuitive',
-    image: '/CAR2.png',
+    image: '/Screenshot 2026-01-20 at 10.03.01 PM.webp',
     tags: ['React', 'Vercel', 'Système de réservation'],
     stats: { visitors: '8K+', conversion: '6.1%' },
-    link: 'https://eun-cars.vercel.app/'
+    link: 'https://eun-cars.vercel.app/',
+    scrollOnHover: true
   },
   {
     id: 4,
@@ -51,10 +55,11 @@ const portfolioItems = [
     title: 'Tamraght Paradise',
     category: 'Location Airbnb',
     description: 'Listing Airbnb luxueux à Tamraght avec système de réservation et sélecteur de calendrier',
-    image: '/AIRBNB-listing.png',
+    image: '/Screenshot 2026-01-21 at 6.07.54 PM.webp',
     tags: ['React', 'Firebase', 'Calendrier'],
     stats: { visitors: '6K+', conversion: '7.8%' },
-    link: 'https://tamraght-paradise.web.app/'
+    link: 'https://tamraght-paradise.web.app/',
+    scrollOnHover: true
   },
   {
     id: 6,
@@ -64,7 +69,8 @@ const portfolioItems = [
     image: '/CAR1.png',
     tags: ['React', 'Firebase', 'Design simple'],
     stats: { visitors: '5K+', conversion: '4.7%' },
-    link: 'https://cars-6431a.web.app/'
+    link: 'https://cars-6431a.web.app/',
+    hideFromAll: true
   },
   {
     id: 7,
@@ -91,10 +97,11 @@ const portfolioItems = [
     title: 'Rabat Rentals',
     category: 'Location',
     description: 'Agence premium de location de voitures à Rabat avec flotte de luxe et service chauffeur professionnel',
-    image: '/rabat-rentals.webp',
+    image: '/Screenshot 2026-01-21 at 6.24.54 PM.webp',
     tags: ['Next.js', 'Vercel', 'Service Premium'],
     stats: { visitors: '18K+', conversion: '5.8%' },
-    link: 'https://rabat-rentals.vercel.app/'
+    link: 'https://rabat-rentals.vercel.app/',
+    scrollOnHover: true
   },
   {
     id: 10,
@@ -114,17 +121,74 @@ const portfolioItems = [
     image: '/sitepro_ma_creation_de_site_web_maroc.webp',
     tags: ['React', 'Netlify', 'Design Moderne'],
     stats: { visitors: '9K+', conversion: '5.1%' },
-    link: 'https://surf11.netlify.app/'
+    link: 'https://surf11.netlify.app/',
+    hideFromAll: true
   },
   {
     id: 12,
     title: 'Trevi Rent Car Location',
     category: 'Location',
     description: 'Site de location de voitures professionnel avec système de réservation en ligne et gestion de flotte',
-    image: '/trevi.png',
+    image: '/Screenshot 2026-01-21 at 6.27.59 PM.webp',
     tags: ['Next.js', 'Réservation', 'Location Voitures'],
     stats: { visitors: '11K+', conversion: '5.5%' },
-    link: 'https://www.trevirentcarlocation.ma/'
+    link: 'https://www.trevirentcarlocation.ma/',
+    scrollOnHover: true
+  },
+  {
+    id: 13,
+    title: 'marocMaroc',
+    category: 'E-commerce',
+    description: 'Boutique e-commerce premium spécialisée dans les rituels de beauté et cosmétiques marocains de luxe.',
+    image: '/Screenshot 2026-01-20 at 9.52.32 PM (1).jpg',
+    tags: ['Next.js', 'E-commerce', 'Beauty'],
+    stats: { visitors: '12K+', conversion: '5.1%' },
+    link: 'https://www.marocmaroc.ma/',
+    scrollOnHover: true
+  },
+  {
+    id: 14,
+    title: 'Car Hire Agadir',
+    category: 'Location',
+    description: 'Service de location de voitures premium à Agadir avec un large choix de véhicules et assistance 24/7.',
+    image: '/Screenshot 2026-01-21 at 6.43.33 PM.webp',
+    tags: ['React', 'Agadir', 'Location Voitures'],
+    stats: { visitors: '13K+', conversion: '5.9%' },
+    link: 'https://car-hire-agadir.com/',
+    scrollOnHover: true
+  },
+  {
+    id: 15,
+    title: 'Power Delivery',
+    category: 'Livraison',
+    description: 'Solution logistique innovante au Maroc avec suivi de colis en temps réel et portail dédié pour les entreprises.',
+    image: '/Screenshot 2026-01-21 at 6.58.12 PM.webp',
+    tags: ['Next.js', 'Logistique', 'Suivi de colis'],
+    stats: { visitors: '22K+', conversion: '5.4%' },
+    link: 'https://power-delivery.ma/',
+    scrollOnHover: true
+  },
+  {
+    id: 16,
+    title: 'MetaLivraison',
+    category: 'Livraison',
+    description: 'Plateforme de livraison marocaine ultra-moderne avec des animations fluides et une expérience utilisateur immersive.',
+    image: '/Screenshot 2026-01-21 at 6.51.53 PM.webp',
+    tags: ['Next.js', 'Framer Motion', 'Logistique'],
+    stats: { visitors: '18K+', conversion: '6.2%' },
+    link: 'https://metalivraison.ma/',
+    scrollOnHover: true
+  },
+  {
+    id: 17,
+    title: 'LondonFood.ma',
+    category: 'Restaurant',
+    description: 'Site de restauration vibrant avec un design graphique soigné, permettant la commande en ligne de manière simple et intuitive.',
+    image: '/screencapture-londonfood-ma-2025.webp',
+    tags: ['Next.js', 'Restaurant', 'E-commerce'],
+    stats: { visitors: '15K+', conversion: '7.2%' },
+    link: 'https://londonfood.ma/',
+    scrollOnHover: true
   }
 ]
 
@@ -135,8 +199,9 @@ interface PortfolioSectionProps {
 
 export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps) {
   const [selectedCategory, setSelectedCategory] = React.useState(lang === 'FR' ? 'Tous' : 'All')
-  const [hoveredItem, setHoveredItem] = React.useState<number | null>(null)
   const [isMobile, setIsMobile] = React.useState(false)
+  const sectionRef = React.useRef<HTMLElement>(null)
+  const isInView = useInView(sectionRef, { amount: 0.1, once: false })
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768)
@@ -145,12 +210,12 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  const t = {
+  const t = React.useMemo(() => ({
     FR: {
       badge: 'Portfolio',
       title: 'Nos Réalisations Récentes',
       description: 'Découvrez une sélection de projets qui illustrent notre expertise et notre capacité à créer des solutions digitales performantes.',
-      categories: ['Tous', 'E-commerce', 'Location', 'Restaurant', 'Location Airbnb', 'Immobilier', 'Cabinet Médical'],
+      categories: ['Tous', 'E-commerce', 'Location', 'Restaurant', 'Location Airbnb', 'Immobilier', 'Cabinet Médical', 'Livraison'],
       items: [
         {
           category: 'Cabinet Médical',
@@ -199,6 +264,26 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
         {
           category: 'Location',
           description: 'Site de location de voitures professionnel avec système de réservation en ligne et gestion de flotte',
+        },
+        {
+          category: 'E-commerce',
+          description: 'Boutique e-commerce premium spécialisée dans les rituels de beauté et cosmétiques marocains de luxe.',
+        },
+        {
+          category: 'Location',
+          description: 'Service de location de voitures premium à Agadir avec un large choix de véhicules et assistance 24/7.',
+        },
+        {
+          category: 'Livraison',
+          description: 'Solution logistique innovante au Maroc avec suivi de colis en temps réel et portail dédié pour les entreprises.',
+        },
+        {
+          category: 'Livraison',
+          description: 'Plateforme de livraison marocaine ultra-moderne avec des animations fluides et une expérience utilisateur immersive.',
+        },
+        {
+          category: 'Restaurant',
+          description: 'Site de restauration vibrant avec un design graphique soigné, permettant la commande en ligne de manière simple et intuitive.',
         }
       ],
       visitors: 'Visiteurs',
@@ -210,7 +295,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
       badge: 'Portfolio',
       title: 'Our Recent Achievements',
       description: 'Discover a selection of projects that illustrate our expertise and our ability to create high-performance digital solutions.',
-      categories: ['All', 'E-commerce', 'Rental', 'Restaurant', 'Airbnb Rental', 'Real Estate', 'Medical Practice'],
+      categories: ['All', 'E-commerce', 'Rental', 'Restaurant', 'Airbnb Rental', 'Real Estate', 'Medical Practice', 'Delivery'],
       items: [
         {
           category: 'Medical Practice',
@@ -259,6 +344,26 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
         {
           category: 'Rental',
           description: 'Professional car rental site with online booking system and fleet management.',
+        },
+        {
+          category: 'E-commerce',
+          description: 'Premium e-commerce boutique specializing in luxury Moroccan beauty rituals and cosmetics.',
+        },
+        {
+          category: 'Rental',
+          description: 'Premium car rental service in Agadir with a wide choice of vehicles and 24/7 assistance.',
+        },
+        {
+          category: 'Delivery',
+          description: 'Innovative logistics solution in Morocco with real-time parcel tracking and dedicated portal for businesses.',
+        },
+        {
+          category: 'Delivery',
+          description: 'Ultra-modern Moroccan delivery platform with fluid animations and immersive user experience.',
+        },
+        {
+          category: 'Restaurant',
+          description: 'Vibrant restaurant site with careful graphic design, allowing online ordering in a simple and intuitive way.',
         }
       ],
       visitors: 'Visitors',
@@ -266,23 +371,44 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
       ctaText: 'Have a project in mind? Let\'s talk!',
       ctaButton: 'See More Projects'
     }
-  }[lang];
+  }[lang]), [lang]);
 
-  const translatedPortfolioItems = portfolioItems.map((item, index) => ({
+  const translatedPortfolioItems = React.useMemo(() => portfolioItems.map((item, index) => ({
     ...item,
     ...t.items[index]
-  }))
+  })), [t.items])
 
-  const filteredItems = selectedCategory === (lang === 'FR' ? 'Tous' : 'All')
-    ? translatedPortfolioItems
-    : translatedPortfolioItems.filter(item => item.category === selectedCategory)
+  const filteredItems = React.useMemo(() => {
+    const baseItems = selectedCategory === (lang === 'FR' ? 'Tous' : 'All')
+      ? translatedPortfolioItems.filter(item => !item.hideFromAll)
+      : translatedPortfolioItems.filter(item => item.category === selectedCategory);
+    return baseItems;
+  }, [selectedCategory, lang, translatedPortfolioItems])
 
-  const displayedItems = (isMobile && (selectedCategory === 'Tous' || selectedCategory === 'All'))
+  const displayedItems = React.useMemo(() => (isMobile && (selectedCategory === 'Tous' || selectedCategory === 'All'))
     ? filteredItems.slice(0, 3)
-    : filteredItems
+    : filteredItems, [isMobile, selectedCategory, filteredItems])
+
+  const randomDelays = React.useMemo(() => {
+    return Array.from({ length: 50 }, () => Math.random() * 10)
+  }, [])
 
   return (
-    <section id="portfolio" className="pt-10 pb-20 lg:pt-16 lg:pb-32 bg-[#F8F8F8]">
+    <section id="portfolio" ref={sectionRef} className="pt-10 pb-20 lg:pt-16 lg:pb-32 bg-[#F8F8F8]">
+      <style jsx global>{`
+        @keyframes autoScrollReturn {
+          0%, 10% { transform: translateY(0); }
+          45%, 55% { transform: translateY(calc(-100% + 12rem)); }
+          90%, 100% { transform: translateY(0); }
+        }
+        .animate-auto-scroll {
+          animation: autoScrollReturn 15s ease-in-out infinite;
+        }
+        .pause-on-hover:hover .animate-auto-scroll {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -340,49 +466,39 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onHoverStart={() => setHoveredItem(item.id)}
-              onHoverEnd={() => setHoveredItem(null)}
               className="group relative"
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
 
-                  <Image
-                    src={item.image}
-                    alt={`Projet: ${item.title}`}
-                    fill
-                    sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-                    className="object-cover object-top"
-                  />
-
-                  {/* Overlay on Hover (Desktop) or Persistent (Mobile) */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: (hoveredItem === item.id) ? 1 : 0 }}
-                    className="absolute inset-0 bg-black/70 flex items-center justify-center gap-4 md:opacity-0 group-hover:opacity-100 transition-opacity"
+                  <div
+                    className={`w-full relative ${item.scrollOnHover && isInView ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
+                    style={item.scrollOnHover && isInView ? {
+                      animationDelay: `${randomDelays[index % randomDelays.length]}s`,
+                    } : {}}
                   >
-                    <div className="absolute inset-0 flex items-center justify-center gap-4 sm:hidden bg-black/40">
-                      {/* This makes it more apparent on mobile though persistent buttons would be better */}
-                    </div>
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tech-dark hover:bg-primary-600 hover:text-white transition-colors z-10"
-                    >
-                      <Eye size={20} />
-                    </motion.button>
-                    <motion.a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tech-dark hover:bg-primary-600 hover:text-white transition-colors z-10"
-                    >
-                      <ExternalLink size={20} />
-                    </motion.a>
-                  </motion.div>
+                    {item.scrollOnHover ? (
+                      <Image
+                        src={item.image}
+                        alt={`Projet: ${item.title}`}
+                        className="w-full h-auto block"
+                        width={500}
+                        height={1000}
+                        unoptimized
+                      />
+                    ) : (
+                      <div className="relative h-48 w-full">
+                        <Image
+                          src={item.image}
+                          alt={`Projet: ${item.title}`}
+                          fill
+                          sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                          className="object-cover object-top"
+                        />
+                      </div>
+                    )}
+                  </div>
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
@@ -394,9 +510,11 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
 
                 {/* Project Info */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-tech-dark mb-2 group-hover:text-primary-600 transition-colors">
-                    {item.title}
-                  </h3>
+                  <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-xl font-bold text-tech-dark mb-2 group-hover:text-primary-600 transition-colors">
+                      {item.title}
+                    </h3>
+                  </Link>
                   <p className="text-gray-600 mb-4">
                     {item.description}
                   </p>
@@ -458,6 +576,6 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           </motion.a>
         </motion.div>
       </div>
-    </section>
+    </section >
   )
 }

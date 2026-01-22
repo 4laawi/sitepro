@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // City landing pages for local SEO
-  const cities = ['marrakech','rabat','casablanca','agadir','fes','tanger','laayoune']
+  const cities = ['marrakech', 'rabat', 'casablanca', 'agadir', 'fes', 'tanger', 'laayoune']
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${base}/creation-site-web/${city}`,
     lastModified: now,
@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const caseStudies: MetadataRoute.Sitemap = [
     { url: `${base}/portfolio/case-studies/mama-fatma-store`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${base}/portfolio/case-studies/le-grand-bazar`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${base}/portfolio/case-studies/maroc-maroc`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
   ]
 
   return [...staticPages, ...cityPages, ...caseStudies]

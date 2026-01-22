@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import { CheckCircle2 } from 'lucide-react'
 import Script from 'next/script'
+import FAQSection from '@/components/FAQSection'
 
 export const metadata: Metadata = {
   title: 'Création de sites web professionnels | Sitepro.ma',
@@ -143,7 +144,7 @@ export default function CreationSiteWebPage() {
                   width={820}
                   height={560}
                   sizes="(min-width:1024px) 700px, 100vw"
-                  className="w-full max-w-[700px] rounded-3xl shadow-2xl border border-white/20"
+                  className="w-full max-w-[700px]"
                   priority
                 />
               </div>
@@ -306,7 +307,7 @@ export default function CreationSiteWebPage() {
                 >
                   Démarrer
                 </a>
-                </ClientMotionWrapper>
+              </ClientMotionWrapper>
             ))}
           </div>
 
@@ -325,26 +326,7 @@ export default function CreationSiteWebPage() {
         </div>
       </div>
 
-      {/* FAQ */}
-      <div className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="heading-2 text-center text-gray-900 mb-8">FAQ</h2>
-          <div className="max-w-3xl mx-auto grid gap-4">
-            {[
-              { q: 'Combien de temps pour créer un site ?', a: 'Généralement 2 à 4 semaines pour un site vitrine, et 4 à 8 semaines pour un e‑commerce selon les fonctionnalités.' },
-              { q: 'Puis‑je gérer le site moi‑même ?', a: 'Oui, un CMS est inclus. Nous formons votre équipe à la mise à jour du contenu.' },
-              { q: 'Le SEO est‑il inclus ?', a: 'Nous mettons en place un socle SEO (balises, vitesse, sitemap, structure). Des prestations avancées sont possibles.' },
-              { q: 'Offrez‑vous le support après lancement ?', a: 'Oui, plusieurs niveaux de maintenance et support 24/7 sont disponibles.' },
-              { q: "Pouvez‑vous reprendre un site existant ?", a: 'Oui, nous auditons l’existant et proposons un plan de refonte partielle ou complète.' },
-            ].map((item, idx) => (
-              <details key={idx} className="group bg-white rounded-xl border border-gray-200 p-4 open:shadow-md">
-                <summary className="cursor-pointer font-medium text-gray-900">{item.q}</summary>
-                <p className="mt-2 text-gray-600 text-sm">{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </div>
+      <FAQSection />
 
       {/* CTA */}
       <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-14">

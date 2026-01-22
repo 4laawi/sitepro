@@ -3,8 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef } from 'react'
 import { ExternalLink, Tag } from 'lucide-react'
+import { useInView } from 'framer-motion'
 
 export interface PortfolioItem {
   id: number
@@ -15,6 +16,8 @@ export interface PortfolioItem {
   tags: string[]
   link: string
   caseStudy?: string
+  scrollOnHover?: boolean
+  hideFromAll?: boolean
 }
 
 interface PortfolioInteractiveProps {
@@ -24,14 +27,30 @@ interface PortfolioInteractiveProps {
 
 export default function PortfolioInteractive({ items, categories }: PortfolioInteractiveProps) {
   const [selected, setSelected] = useState<string>('Tous')
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(sectionRef, { amount: 0.1, once: false })
 
   const filtered = useMemo(() => {
-    if (selected === 'Tous') return items
+    if (selected === 'Tous') return items.filter((i) => !i.hideFromAll)
     return items.filter((i) => i.category === selected)
   }, [items, selected])
 
+  const randomDelays = useMemo(() => {
+    return Array.from({ length: 50 }, () => Math.random() * 10)
+  }, [])
+
   return (
-    <div>
+    <div ref={sectionRef}>
+      <style jsx global>{`
+        @keyframes autoScrollReturn {
+          0%, 10% { transform: translateY(0); }
+          45%, 55% { transform: translateY(calc(-100% + 12rem)); }
+          90%, 100% { transform: translateY(0); }
+        }
+        .animate-auto-scroll {
+          animation: autoScrollReturn 15s ease-in-out infinite;
+        }
+      `}</style>
       {/* Filters */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((c) => (
@@ -57,15 +76,35 @@ export default function PortfolioInteractive({ items, categories }: PortfolioInt
             transition={{ duration: 0.5, delay: index * 0.04 }}
             className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all"
           >
-            <div className="relative h-48">
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-                className="object-cover object-top"
-              />
-              <div className="absolute top-4 left-4">
+            <div className="relative h-48 overflow-hidden">
+              <div
+                className={`w-full relative ${item.scrollOnHover && isInView ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
+                style={item.scrollOnHover && isInView ? {
+                  animationDelay: `${randomDelays[index % randomDelays.length]}s`,
+                } : {}}
+              >
+                {item.scrollOnHover ? (
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-auto block"
+                    width={500}
+                    height={1000}
+                    unoptimized
+                  />
+                ) : (
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="absolute top-4 left-4 z-10">
                 <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium">
                   {item.category}
                 </span>
