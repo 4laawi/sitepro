@@ -115,7 +115,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
       t.waThanks,
     ].join('\n');
 
-    const phone = '2120663711164';
+    const phone = '212663711164';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 

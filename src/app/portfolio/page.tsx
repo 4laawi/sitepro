@@ -251,7 +251,7 @@ export default function PortfolioPage() {
         {/* CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-600 mb-4">Envie d&apos;un projet similaire ? Parlons-en.</p>
-          <a href={`https://wa.me/2120663711164`} className="btn-primary inline-flex items-center gap-2">
+          <a href={`https://wa.me/212663711164`} className="btn-primary inline-flex items-center gap-2">
             Démarrer un projet
           </a>
         </div>

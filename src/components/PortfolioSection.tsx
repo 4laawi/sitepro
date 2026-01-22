@@ -197,12 +197,43 @@ interface PortfolioSectionProps {
   lang?: 'FR' | 'EN';
 }
 
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tags: string[];
+  stats: {
+    visitors: string;
+    conversion: string;
+  };
+  link: string;
+  scrollOnHover?: boolean;
+  hideFromAll?: boolean;
+}
+
+interface TranslationType {
+  badge: string;
+  title: string;
+  description: string;
+  categories: string[];
+  items: {
+    category: string;
+    description: string;
+  }[];
+  visitors: string;
+  conversion: string;
+  ctaText: string;
+  ctaButton: string;
+}
+
 interface PortfolioCardProps {
-  item: any;
+  item: PortfolioItem;
   index: number;
   isInView: boolean;
   randomDelays: number[];
-  t: any;
+  t: TranslationType;
 }
 
 function PortfolioCard({ item, index, isInView, randomDelays, t }: PortfolioCardProps) {
@@ -549,7 +580,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 pb-4"
         >
-          {t.categories.map((category) => (
+          {t.categories.map((category: string) => (
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}

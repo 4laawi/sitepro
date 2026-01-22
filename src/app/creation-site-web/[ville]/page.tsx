@@ -20,7 +20,7 @@ export function generateStaticParams() {
   return CITIES.map((ville) => ({ ville }))
 }
 
-const phone = '2120663711164'
+const phone = '212663711164'
 
 // Match Next 15 props shape locally to satisfy type checking
 type CityPageParams = { ville: string }
@@ -93,7 +93,7 @@ export default async function CityCreationPage({ params }: CityPageProps) {
           '@type': 'LocalBusiness',
           name: `Sitepro.ma – Création de site web ${cityCap}`,
           url: `https://www.sitepro.ma/creation-site-web/${city}`,
-          telephone: '+2120663711164',
+          telephone: '+212663711164',
           areaServed: cityCap,
           image: 'https://www.sitepro.ma/og-image.jpg',
           address: {
@@ -144,7 +144,7 @@ export default async function CityCreationPage({ params }: CityPageProps) {
               </a>
               <Link href="/portfolio" className={`${hero ? 'inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/40' : 'btn-secondary'}`}>Voir des projets</Link>
             </div>
-            <p className={`mt-3 text-sm ${hero ? 'text-white/80' : 'text-gray-600'}`}>WhatsApp +212 06 63 71 11 64 — réponse &lt; 15 min</p>
+            <p className={`mt-3 text-sm ${hero ? 'text-white/80' : 'text-gray-600'}`}>WhatsApp +212 6 63 71 11 64 — réponse &lt; 15 min</p>
           </ClientMotionWrapper>
         </div>
       </div>

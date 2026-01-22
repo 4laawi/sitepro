@@ -201,8 +201,8 @@ export default function ContactSection({ lang = 'FR' }: ContactSectionProps) {
     {
       icon: Phone,
       title: t.contactInfo.phone,
-      content: '+212 06 63 71 11 64',
-      link: 'tel:+2120663711164'
+      content: '+212 6 63 71 11 64',
+      link: 'tel:+212663711164'
     },
     {
       icon: Mail,
@@ -464,7 +464,7 @@ export default function ContactSection({ lang = 'FR' }: ContactSectionProps) {
                 <span>Réponse sous 24h</span>
               </div>
               <a
-                href="https://wa.me/2120663711164"
+                href="https://wa.me/212663711164"
                 className="inline-flex items-center gap-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

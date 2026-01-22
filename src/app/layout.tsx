@@ -102,7 +102,7 @@ export default function RootLayout({
               contactType: 'customer support',
               areaServed: 'MA',
               availableLanguage: ['fr', 'ar'],
-              telephone: '+2120663711164'
+              telephone: '+212663711164'
             }]
           })}
         </Script>

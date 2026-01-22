@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 }
 
-const phone = '2120663711164'
+const phone = '212663711164'
 
 export default function CreationSiteWebPage() {
   const features = [

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/e-commerce' },
 }
 
-const phone = '2120663711164'
+const phone = '212663711164'
 
 export default function EcommercePage() {
   return (

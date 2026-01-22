@@ -46,7 +46,7 @@ export default function MaintenanceSupportPage() {
           <ClientMotionWrapper initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
             <h2 className="heading-2 text-gray-900 mb-3">Site en panne, bogué ou lent ?</h2>
             <p className="text-gray-700">Nos experts remettent votre site sur pied rapidement: erreurs serveur, bugs front/back, sécurité, performances. Vous nous envoyez les fichiers du site (ou accès hébergeur/Git), et on gère le reste — diagnostic, correctifs et déploiement.</p>
-            <a href={`https://wa.me/2120663711164`} className="btn-primary mt-4 inline-block">Demander une intervention</a>
+            <a href={`https://wa.me/212663711164`} className="btn-primary mt-4 inline-block">Demander une intervention</a>
           </ClientMotionWrapper>
           <ClientMotionWrapper initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl bg-white border border-gray-100 shadow-lg p-6">
             <h3 className="font-semibold text-gray-900">Ce dont nous avons besoin</h3>
@@ -70,7 +70,7 @@ export default function MaintenanceSupportPage() {
                 <ul className="mt-3 space-y-1 text-gray-700 text-sm">
                   {pkg.l.map((x) => (<li key={x}>• {x}</li>))}
                 </ul>
-                <a href={`https://wa.me/2120663711164`} className="btn-primary mt-4 inline-block">Souscrire</a>
+                <a href={`https://wa.me/212663711164`} className="btn-primary mt-4 inline-block">Souscrire</a>
               </ClientMotionWrapper>
             ))}
           </div>
@@ -84,7 +84,7 @@ export default function MaintenanceSupportPage() {
               <ClientMotionWrapper key={c.t} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
                 <h3 className="font-semibold text-gray-900">{c.t}</h3>
                 <p className="text-gray-600 text-sm mt-1">{c.d}</p>
-                <a href={`https://wa.me/2120663711164`} className="inline-block mt-3 text-primary-700 font-medium">Programmer une mise à jour →</a>
+                <a href={`https://wa.me/212663711164`} className="inline-block mt-3 text-primary-700 font-medium">Programmer une mise à jour →</a>
               </ClientMotionWrapper>
             ))}
           </div>

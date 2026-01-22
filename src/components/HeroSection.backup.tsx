@@ -35,7 +35,7 @@ export default function HeroSection() {
       'Merci de me recontacter au plus vite pour en discuter. 📩',
     ].join('\n')
 
-    const phone = '2120663711164'
+    const phone = '212663711164'
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
     

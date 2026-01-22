@@ -39,7 +39,7 @@ export default function DesignBrandingPage() {
           <p className="text-lg text-gray-800 font-semibold mt-2"><Typewriter words={["Logo & identité", "Charte & composants", "Design system", "UI élégante"]} /></p>
           <p className="text-gray-600 max-w-2xl mt-3">Nous créons des identités fortes et cohérentes avec un système de design réutilisable.</p>
           <div className="mt-6 flex gap-3">
-            <a href={`https://wa.me/2120663711164`} className="btn-primary">Demander un audit design</a>
+            <a href={`https://wa.me/212663711164`} className="btn-primary">Demander un audit design</a>
             <a href={`/portfolio`} className="btn-secondary">Voir des projets</a>
           </div>
         </ClientMotionWrapper>
@@ -63,7 +63,7 @@ export default function DesignBrandingPage() {
                 <ul className="mt-3 space-y-1 text-gray-700 text-sm">
                   {pkg.l.map((x) => (<li key={x}>• {x}</li>))}
                 </ul>
-                <a href={`https://wa.me/2120663711164`} className="btn-primary mt-4 inline-block">Obtenir un devis</a>
+                <a href={`https://wa.me/212663711164`} className="btn-primary mt-4 inline-block">Obtenir un devis</a>
               </ClientMotionWrapper>
             ))}
           </div>
