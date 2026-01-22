@@ -20,8 +20,8 @@ export default function EcommercePage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'E-commerce', item: 'https://sitepro.ma/e-commerce' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'E-commerce', item: 'https://www.sitepro.ma/e-commerce' }
           ]
         })}
       </Script>
@@ -31,9 +31,9 @@ export default function EcommercePage() {
           '@type': 'Service',
           name: 'Création de boutiques en ligne',
           serviceType: 'E-commerce',
-          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://www.sitepro.ma' },
           areaServed: 'MA',
-          url: 'https://sitepro.ma/e-commerce'
+          url: 'https://www.sitepro.ma/e-commerce'
         })}
       </Script>
 

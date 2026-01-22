@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Création de sites web professionnels | Maroc',
     description: 'Design moderne, SEO, performance. Devis rapide sur WhatsApp.',
-    url: 'https://sitepro.ma/creation-site-web',
+    url: 'https://www.sitepro.ma/creation-site-web',
     type: 'article',
   },
 }

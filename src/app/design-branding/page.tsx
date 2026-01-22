@@ -17,8 +17,8 @@ export default function DesignBrandingPage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Design & Branding', item: 'https://sitepro.ma/design-branding' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Design & Branding', item: 'https://www.sitepro.ma/design-branding' }
           ]
         })}
       </Script>
@@ -28,15 +28,15 @@ export default function DesignBrandingPage() {
           '@type': 'Service',
           name: 'Design & Branding',
           serviceType: 'Branding / Design',
-          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://www.sitepro.ma' },
           areaServed: 'MA',
-          url: 'https://sitepro.ma/design-branding'
+          url: 'https://www.sitepro.ma/design-branding'
         })}
       </Script>
       <div className="container mx-auto px-4 py-20">
         <ClientMotionWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="heading-1 text-gray-900">Design & Branding</h1>
-          <p className="text-lg text-gray-800 font-semibold mt-2"><Typewriter words={["Logo & identité","Charte & composants","Design system","UI élégante"]} /></p>
+          <p className="text-lg text-gray-800 font-semibold mt-2"><Typewriter words={["Logo & identité", "Charte & composants", "Design system", "UI élégante"]} /></p>
           <p className="text-gray-600 max-w-2xl mt-3">Nous créons des identités fortes et cohérentes avec un système de design réutilisable.</p>
           <div className="mt-6 flex gap-3">
             <a href={`https://wa.me/2120663711164`} className="btn-primary">Demander un audit design</a>
@@ -45,8 +45,8 @@ export default function DesignBrandingPage() {
         </ClientMotionWrapper>
         {/* Pourquoi nous */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          {[{t:'Méthodologie prouvée',d:'Process clair: recherche, moodboard, exploration, itérations et design system.'},{t:'Design qui performe',d:'Orienté conversion: lisibilité, hiérarchie, contraste, cohérence multi‑écran.'},{t:'Livrables complets',d:'Logos, déclinaisons, charte graphique, composants UI et guide d’usage.'}].map((b,i)=> (
-            <ClientMotionWrapper key={b.t} initial={{opacity:0,y:12}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.4,delay:i*0.05}} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
+          {[{ t: 'Méthodologie prouvée', d: 'Process clair: recherche, moodboard, exploration, itérations et design system.' }, { t: 'Design qui performe', d: 'Orienté conversion: lisibilité, hiérarchie, contraste, cohérence multi‑écran.' }, { t: 'Livrables complets', d: 'Logos, déclinaisons, charte graphique, composants UI et guide d’usage.' }].map((b, i) => (
+            <ClientMotionWrapper key={b.t} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
               <h3 className="font-semibold text-gray-900">{b.t}</h3>
               <p className="text-gray-600 text-sm mt-1">{b.d}</p>
             </ClientMotionWrapper>
@@ -56,12 +56,12 @@ export default function DesignBrandingPage() {
         <div className="mt-16">
           <h2 className="heading-2 text-gray-900 mb-6">Formules de branding</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {[{n:'Starter',p:'3 500 MAD',l:['Logo + palette','Carte de visite','Guide d’usage (1 page)']},{n:'Pro',p:'7 500 MAD',l:['Identité complète','Charte graphique','Composants UI']},{n:'Enterprise',p:'Sur devis',l:['Design system','Design tokens','Kit marketing']}] .map((pkg,i)=> (
-              <ClientMotionWrapper key={pkg.n} initial={{opacity:0,y:12}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.4,delay:i*0.05}} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
+            {[{ n: 'Starter', p: '3 500 MAD', l: ['Logo + palette', 'Carte de visite', 'Guide d’usage (1 page)'] }, { n: 'Pro', p: '7 500 MAD', l: ['Identité complète', 'Charte graphique', 'Composants UI'] }, { n: 'Enterprise', p: 'Sur devis', l: ['Design system', 'Design tokens', 'Kit marketing'] }].map((pkg, i) => (
+              <ClientMotionWrapper key={pkg.n} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
                 <h3 className="font-bold text-xl text-gray-900">{pkg.n}</h3>
                 <p className="text-primary-700 font-semibold mt-1">{pkg.p}</p>
                 <ul className="mt-3 space-y-1 text-gray-700 text-sm">
-                  {pkg.l.map((x)=> (<li key={x}>• {x}</li>))}
+                  {pkg.l.map((x) => (<li key={x}>• {x}</li>))}
                 </ul>
                 <a href={`https://wa.me/2120663711164`} className="btn-primary mt-4 inline-block">Obtenir un devis</a>
               </ClientMotionWrapper>

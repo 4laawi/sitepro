@@ -197,6 +197,118 @@ interface PortfolioSectionProps {
   lang?: 'FR' | 'EN';
 }
 
+interface PortfolioCardProps {
+  item: any;
+  index: number;
+  isInView: boolean;
+  randomDelays: number[];
+  t: any;
+}
+
+function PortfolioCard({ item, index, isInView, randomDelays, t }: PortfolioCardProps) {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative"
+    >
+      <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+        {/* Project Image */}
+        <div className="relative h-48 overflow-hidden bg-gray-100">
+          {!isLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+            </div>
+          )}
+          <div
+            className={`w-full relative ${item.scrollOnHover && isInView && isLoaded ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
+            style={item.scrollOnHover && isInView && isLoaded ? {
+              animationDelay: `${randomDelays[index % randomDelays.length]}s`,
+            } : {}}
+          >
+            {item.scrollOnHover ? (
+              <Image
+                src={item.image}
+                alt={`Projet: ${item.title}`}
+                className={`w-full h-auto block transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                width={500}
+                height={1000}
+                priority={index < 3}
+                onLoad={() => setIsLoaded(true)}
+              />
+            ) : (
+              <div className="relative h-48 w-full">
+                <Image
+                  src={item.image}
+                  alt={`Projet: ${item.title}`}
+                  fill
+                  sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                  className={`object-cover object-top transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  priority={index < 3}
+                  onLoad={() => setIsLoaded(true)}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Category Badge */}
+          <div className="absolute top-4 left-4 z-10">
+            <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium">
+              {item.category}
+            </span>
+          </div>
+        </div>
+
+        {/* Project Info */}
+        <div className="p-6">
+          <Link href={item.link} target="_blank" rel="noopener noreferrer">
+            <h3 className="text-xl font-bold text-tech-dark mb-2 group-hover:text-primary-600 transition-colors">
+              {item.title}
+            </h3>
+          </Link>
+          <p className="text-gray-600 mb-4">
+            {item.description}
+          </p>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {item.tags.map((tag: string, tagIndex: number) => (
+              <span
+                key={tagIndex}
+                className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+            <div>
+              <p className="text-xs text-gray-500">{t.visitors}</p>
+              <p className="font-bold text-primary-600">{item.stats.visitors}</p>
+            </div>
+            <div>
+              <p className="text-xs text-gray-500">{t.conversion}</p>
+              <p className="font-bold text-green-600">{item.stats.conversion}</p>
+            </div>
+            <motion.div
+              whileHover={{ x: 5 }}
+              className="text-primary-600"
+            >
+              <ChevronRight size={20} />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps) {
   const [selectedCategory, setSelectedCategory] = React.useState(lang === 'FR' ? 'Tous' : 'All')
   const [isMobile, setIsMobile] = React.useState(false)
@@ -459,98 +571,14 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {displayedItems.map((item, index) => (
-            <motion.div
+            <PortfolioCard
               key={item.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
-            >
-              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
-
-                  <div
-                    className={`w-full relative ${item.scrollOnHover && isInView ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
-                    style={item.scrollOnHover && isInView ? {
-                      animationDelay: `${randomDelays[index % randomDelays.length]}s`,
-                    } : {}}
-                  >
-                    {item.scrollOnHover ? (
-                      <Image
-                        src={item.image}
-                        alt={`Projet: ${item.title}`}
-                        className="w-full h-auto block"
-                        width={500}
-                        height={1000}
-                        unoptimized
-                      />
-                    ) : (
-                      <div className="relative h-48 w-full">
-                        <Image
-                          src={item.image}
-                          alt={`Projet: ${item.title}`}
-                          fill
-                          sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-                          className="object-cover object-top"
-                        />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium">
-                      {item.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6">
-                  <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                    <h3 className="text-xl font-bold text-tech-dark mb-2 group-hover:text-primary-600 transition-colors">
-                      {item.title}
-                    </h3>
-                  </Link>
-                  <p className="text-gray-600 mb-4">
-                    {item.description}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Stats */}
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <div>
-                      <p className="text-xs text-gray-500">{t.visitors}</p>
-                      <p className="font-bold text-primary-600">{item.stats.visitors}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500">{t.conversion}</p>
-                      <p className="font-bold text-green-600">{item.stats.conversion}</p>
-                    </div>
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      className="text-primary-600"
-                    >
-                      <ChevronRight size={20} />
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              item={item}
+              index={index}
+              isInView={isInView}
+              randomDelays={randomDelays}
+              t={t}
+            />
           ))}
         </motion.div>
 

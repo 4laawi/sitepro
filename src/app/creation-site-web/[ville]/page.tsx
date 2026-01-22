@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     openGraph: {
       title: `Création de site web ${cityCap} | Sitepro.ma`,
       description: `Sites rapides et SEO pour ${cityCap}. Devis WhatsApp en 1 minute.`,
-      url: `https://sitepro.ma/creation-site-web/${city}`,
+      url: `https://www.sitepro.ma/creation-site-web/${city}`,
       type: 'website',
     },
   }
@@ -81,9 +81,9 @@ export default async function CityCreationPage({ params }: CityPageProps) {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Création de Sites Web', item: 'https://sitepro.ma/creation-site-web' },
-            { '@type': 'ListItem', position: 3, name: `Création site web ${cityCap}`, item: `https://sitepro.ma/creation-site-web/${city}` },
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Création de Sites Web', item: 'https://www.sitepro.ma/creation-site-web' },
+            { '@type': 'ListItem', position: 3, name: `Création site web ${cityCap}`, item: `https://www.sitepro.ma/creation-site-web/${city}` },
           ],
         })}
       </Script>
@@ -92,17 +92,17 @@ export default async function CityCreationPage({ params }: CityPageProps) {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: `Sitepro.ma – Création de site web ${cityCap}`,
-          url: `https://sitepro.ma/creation-site-web/${city}`,
+          url: `https://www.sitepro.ma/creation-site-web/${city}`,
           telephone: '+2120663711164',
           areaServed: cityCap,
-          image: 'https://sitepro.ma/og-image.jpg',
+          image: 'https://www.sitepro.ma/og-image.jpg',
           address: {
             '@type': 'PostalAddress',
             addressLocality: cityCap,
             addressCountry: 'MA'
           },
           sameAs: [
-            'https://sitepro.ma',
+            'https://www.sitepro.ma',
           ]
         })}
       </Script>

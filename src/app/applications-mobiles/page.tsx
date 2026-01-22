@@ -21,8 +21,8 @@ export default function MobileAppsPage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Applications mobiles', item: 'https://sitepro.ma/applications-mobiles' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Applications mobiles', item: 'https://www.sitepro.ma/applications-mobiles' }
           ]
         })}
       </Script>
@@ -32,15 +32,15 @@ export default function MobileAppsPage() {
           '@type': 'Service',
           name: 'Développement d\u2019applications mobiles & PWA',
           serviceType: 'Mobile apps / PWA',
-          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://www.sitepro.ma' },
           areaServed: 'MA',
-          url: 'https://sitepro.ma/applications-mobiles'
+          url: 'https://www.sitepro.ma/applications-mobiles'
         })}
       </Script>
       <div className="container mx-auto px-4 py-20">
         <ClientMotionWrapper initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="heading-1 text-gray-900">Applications mobiles</h1>
-          <p className="text-lg text-gray-800 font-semibold mt-2"><Typewriter words={["PWA & natif","UX fluide","Intégrations API","Performance"]} /></p>
+          <p className="text-lg text-gray-800 font-semibold mt-2"><Typewriter words={["PWA & natif", "UX fluide", "Intégrations API", "Performance"]} /></p>
           <p className="text-gray-600 max-w-2xl mt-3">Nous créons des applications mobiles et PWA fiables avec une expérience utilisateur moderne.</p>
           <div className="mt-6 flex gap-3">
             <a href={`https://wa.me/${phone}`} className="btn-primary">Discuter d&apos;une app</a>
@@ -50,8 +50,8 @@ export default function MobileAppsPage() {
         <TextTicker text="PWA • Natif • UX • API • Performance • Sécurité" className="mt-8 border-y border-gray-100 text-sm" />
         {/* Differentiators */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">
-          {[{t:'Expérience utilisateur',d:'Design mobile‑first, gestes, navigation fluide et accessibilité.'},{t:'Performance',d:'Temps de lancement optimisé, cache offline et notifications push.'},{t:'Intégrations',d:'API, paiement, analytics, crash reporting et CI/CD.'}].map((b,i)=> (
-            <ClientMotionWrapper key={b.t} initial={{opacity:0,y:12}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.4,delay:i*0.05}} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
+          {[{ t: 'Expérience utilisateur', d: 'Design mobile‑first, gestes, navigation fluide et accessibilité.' }, { t: 'Performance', d: 'Temps de lancement optimisé, cache offline et notifications push.' }, { t: 'Intégrations', d: 'API, paiement, analytics, crash reporting et CI/CD.' }].map((b, i) => (
+            <ClientMotionWrapper key={b.t} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="p-6 rounded-2xl bg-white border border-gray-100 shadow-lg">
               <h3 className="font-semibold text-gray-900">{b.t}</h3>
               <p className="text-gray-600 text-sm mt-1">{b.d}</p>
             </ClientMotionWrapper>
