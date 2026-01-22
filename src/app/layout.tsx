@@ -6,8 +6,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LangUpdater from '@/components/LangUpdater'
-import SmoothScroll from '@/components/SmoothScroll'
-import Chatbot from '@/components/Chatbot'
+import ClientOnlyWrapper from '@/components/ClientOnlyWrapper'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -107,11 +106,10 @@ export default function RootLayout({
           })}
         </Script>
         <LangUpdater />
-        <SmoothScroll />
+        <ClientOnlyWrapper />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <Chatbot />
       </body>
     </html>
   )
