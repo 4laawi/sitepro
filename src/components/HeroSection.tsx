@@ -43,6 +43,11 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
     FR: {
       badge: 'Agence Création Site Web Maroc',
       title: 'Création de site web professionnel au Maroc',
+      description: (
+        <>
+          Notre <strong className="font-semibold text-title">agence de création de sites web</strong> au <strong className="font-semibold text-title">Maroc</strong> conçoit des solutions sur mesure, entièrement optimisées pour le <strong className="font-semibold text-title">SEO</strong> et les nouveaux <strong className="font-semibold text-title">moteurs d’IA</strong>.
+        </>
+      ),
       cta: 'Obtenir mon devis site web',
       emailConsult: 'Consultation par Email ?',
       modalTitle: 'Obtenez Votre Devis Gratuit',
@@ -71,6 +76,11 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
     EN: {
       badge: 'Website Design Agency Morocco',
       title: 'Professional Website Creation in Morocco',
+      description: (
+        <>
+          Our <strong className="font-semibold text-title">website creation agency</strong> in <strong className="font-semibold text-title">Morocco</strong> designs custom solutions, fully optimized for <strong className="font-semibold text-title">SEO</strong> and new <strong className="font-semibold text-title">AI engines</strong>.
+        </>
+      ),
       cta: 'Get my website quote',
       emailConsult: 'Any questions?',
       modalTitle: 'Get Your Free Quote',
@@ -158,12 +168,17 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
           <div className="flex justify-center md:justify-start">
             <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[rgba(37,99,235,0.08)] rounded-[60px]">
               <span className="w-3 h-3 bg-[#2563eb] rounded-full flex-shrink-0"></span>
-              <h1 className="md:text-[17px] text-[15px] poppins-semibold tracking-[-0.5px] text-[#022545]">
+              <span className="md:text-[17px] text-[15px] poppins-semibold tracking-[-0.5px] text-[#022545]">
                 {t.badge}
-              </h1>
+              </span>
             </div>
           </div>
-          <h2 className="title-hero-section"> {t.title} </h2>
+          <h1 className="title-hero-section"> {t.title} </h1>
+          {t.description && (
+            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto md:mx-0">
+              {t.description}
+            </p>
+          )}
           <div>
             <button
               onClick={openModal}
@@ -193,12 +208,12 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
           <div className="relative w-full">
             <div className="relative w-full">
               <Image
-                src="/latest-cpanel-for-sitepro-maroc.webp"
+                src="/Purple and White Minimalist Your Business Needs a Website Instagram Post.webp"
                 alt={t.badge}
-                width={1200}
-                height={780}
+                width={1080}
+                height={1080}
                 quality={95}
-                className="w-full h-auto md:p-2 p-1 md:scale-110 lg:scale-125 transition-transform duration-700 rounded-xl"
+                className="w-full h-auto max-w-[620px] mx-auto md:p-2 p-1 transition-transform duration-700 rounded-xl"
                 priority
               />
             </div>

@@ -81,8 +81,8 @@ export default function Footer() {
 
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Facebook, href: 'https://web.facebook.com/spongebobbffring/', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/sitepro.ma/', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
   ]

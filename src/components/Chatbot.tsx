@@ -141,7 +141,7 @@ export default function Chatbot() {
                             repeat: Infinity,
                             ease: "easeInOut",
                         }}
-                        className="absolute inset-0 bg-blue-500 rounded-full blur-lg"
+                        className="absolute inset-0 bg-blue-500 rounded-full blur-lg hidden sm:block"
                     />
                 )}
 
@@ -151,7 +151,7 @@ export default function Chatbot() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={handleOpen}
-                    className="relative p-4 sm:p-5 bg-gradient-to-tr from-blue-600 to-indigo-600 text-white rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center overflow-visible"
+                    className="relative p-4 sm:p-5 bg-gradient-to-tr from-blue-600 to-indigo-600 text-white rounded-full shadow-lg sm:shadow-2xl transition-all duration-300 flex items-center justify-center overflow-visible"
                 >
                     <AnimatePresence mode="wait">
                         {isOpen ? (

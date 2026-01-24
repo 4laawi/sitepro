@@ -35,7 +35,8 @@ export default function Header() {
         geo: 'Agence GEO',
         gmb: 'Agence GMB',
         ads: 'Google Ads',
-      }
+      },
+      contact: 'Contact'
     },
     EN: {
       creationWeb: 'Web Creation',
@@ -53,7 +54,8 @@ export default function Header() {
         geo: 'GEO Agency',
         gmb: 'GMB Agency',
         ads: 'Google Ads',
-      }
+      },
+      contact: 'Contact'
     }
   }[language];
 
@@ -199,6 +201,7 @@ export default function Header() {
                     </ul>
                   </div>
                 </li>
+                <li> <Link href={language === 'EN' ? "/en/contact/" : "/contact/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.contact} </Link> </li>
               </ul>
             </nav>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -345,7 +348,7 @@ export default function Header() {
 
             <div className="mobile-cta-container mt-8">
               <Link
-                href="#contact"
+                href={language === 'EN' ? "/en/contact/" : "/contact/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="btn-mobile-cta"
               >

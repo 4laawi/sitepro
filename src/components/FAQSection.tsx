@@ -6,7 +6,7 @@ import './FAQSection.css';
 
 const faqData = [
     {
-        question: "Pourquoi choisir Horizon pour mon site ?",
+        question: "Pourquoi choisir Sitepro.ma pour mon site ?",
         answer: "Notre force, c'est que nous combinons design, développement technique et expertise marketing. Cela nous permet de créer des sites qui ne sont pas seulement beaux, mais qui performent. Chaque projet est pensé pour être rapide et évolutif afin de répondre à vos objectifs de croissance."
     },
     {
@@ -15,7 +15,7 @@ const faqData = [
     },
     {
         question: "Quel CMS choisir ?",
-        answer: "Il n’y a pas de “meilleure” solution universelle. Shopify, Webflow ou WordPress : chaque CMS a ses forces. Nous vous conseillons selon vos objectifs (vitrine, e-commerce, leadgen), vos besoins en intégrations et votre budget. L’idée est simple : choisir un outil qui soutient votre croissance, pas qui la freine."
+        answer: "Il n’y a pas de “meilleure” solution universelle. Shopify, Webflow ou WordPress : chaque CMS a ses forces. Nous vous conseillons selon vos objectifs (vitrine, e-commerce, leadgen), vos besoins en intégrations et votre budget chez Sitepro.ma. L’idée est simple : choisir un outil qui soutient votre croissance, pas qui la freine."
     },
     {
         question: "Combien de temps ça prend ?",
@@ -27,7 +27,7 @@ const faqData = [
     },
     {
         question: "Vous ne faites que du web ?",
-        answer: "Non. Chez Horizon, nous avons choisi de nous spécialiser avec des experts dédiés sur trois leviers clés : Paid, Web et CRM. Chacun peut être activé séparément ou combiné, mais toujours avec une vision globale du tunnel de croissance où acquisition, conversion et fidélisation travaillent ensemble."
+        answer: "Non. Chez Sitepro.ma, nous avons choisi de nous spécialiser avec des experts dédiés sur trois leviers clés : Acquisition, Web et SEO. Chacun peut être activé séparément ou combiné, mais toujours avec une vision globale de votre croissance en ligne."
     }
 ];
 
