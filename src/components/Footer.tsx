@@ -11,14 +11,13 @@ import {
   Twitter,
   Mail,
   Phone,
-  MapPin,
-  ArrowUp
+  MapPin
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export default function Footer() {
   const pathname = usePathname()
-  const [showScrollTop, setShowScrollTop] = useState(false)
+
 
   // Determine language based on route
   const language = pathname.startsWith('/en') ? 'EN' : 'FR'
@@ -79,17 +78,7 @@ export default function Footer() {
       ]
     }
   }[language];
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
@@ -246,22 +235,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ArrowUp size={20} />
-          </motion.button>
-        )}
-      </AnimatePresence>
     </footer>
   )
 }
