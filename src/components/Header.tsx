@@ -197,10 +197,12 @@ export default function Header() {
                   </button>
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'seo' ? 'is-open' : ''}`}>
                     <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-                      <li> <Link href={language === 'EN' ? "/en/agence-seo-maroc/" : "/agence-seo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/referencement-seo/" : "/referencement-seo/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
+                      {/* Temporarily hiding non-existent routes until created 
                       <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.geo} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.gmb} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/google-ads-maroc/" : "/google-ads-maroc/"} className="block navbar-bold ml-6 my-3 animated-link link_header text-title hover:bg-gray-50 transition-colors"> {t.seoSub.ads} </Link> </li>
+                      */}
                     </ul>
                   </div>
                 </li>
@@ -323,10 +325,12 @@ export default function Header() {
                 </svg>
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['seo'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/agence-seo-maroc/" : "/agence-seo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/referencement-seo/" : "/referencement-seo/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
+                {/* Temporarily hiding non-existent routes until created 
                 <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.geo} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.gmb} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/google-ads-maroc/" : "/google-ads-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.ads} </Link> </li>
+                */}
               </ul>
             </li>
           </ul>

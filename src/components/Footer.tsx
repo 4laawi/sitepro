@@ -32,8 +32,8 @@ export default function Footer() {
       serviceLinks: [
         { label: 'Création de Sites Web', href: '/creation-site-web-maroc' },
         { label: 'E-commerce', href: '/e-commerce' },
-        { label: 'Applications Mobiles', href: '/application-mobile-maroc' },
-        { label: 'Référencement SEO', href: '/agence-seo-maroc' },
+        { label: 'Applications Mobiles', href: '/applications-mobiles' },
+        { label: 'Référencement SEO', href: '/referencement-seo' },
         { label: 'Design & Branding', href: '/design-branding' },
         { label: 'Maintenance & Support', href: '/maintenance-support' },
       ],
@@ -44,10 +44,10 @@ export default function Footer() {
         { label: 'Contact', href: '/#contact' },
       ],
       legalLinks: [
-        { label: 'Mentions Légales', href: '/mentions-legales' },
-        { label: 'Politique de Confidentialité', href: '/politique-de-confidentialite' },
-        { label: 'CGV', href: '/cgv' },
-        { label: 'Cookies', href: '/cookies' },
+        { label: 'Mentions Légales', href: '#' },
+        { label: 'Politique de Confidentialité', href: '#' },
+        { label: 'CGV', href: '#' },
+        { label: 'Cookies', href: '#' },
       ]
     },
     EN: {
@@ -59,8 +59,8 @@ export default function Footer() {
       serviceLinks: [
         { label: 'Website Creation', href: '/en/creation-site-web-maroc' },
         { label: 'E-commerce', href: '/en/e-commerce' },
-        { label: 'Mobile Applications', href: '/en/application-mobile-maroc' },
-        { label: 'SEO Ranking', href: '/en/agence-seo-maroc' },
+        { label: 'Mobile Applications', href: '/en/applications-mobiles' },
+        { label: 'SEO Ranking', href: '/en/referencement-seo' },
         { label: 'Design & Branding', href: '/en/design-branding' },
         { label: 'Maintenance & Support', href: '/en/maintenance-support' },
       ],
@@ -71,10 +71,10 @@ export default function Footer() {
         { label: 'Contact', href: '/en#contact' },
       ],
       legalLinks: [
-        { label: 'Legal Notice', href: '/en/mentions-legales' },
-        { label: 'Privacy Policy', href: '/en/politique-de-confidentialite' },
-        { label: 'Terms of Service', href: '/en/cgv' },
-        { label: 'Cookies', href: '/en/cookies' },
+        { label: 'Legal Notice', href: '#' },
+        { label: 'Privacy Policy', href: '#' },
+        { label: 'Terms of Service', href: '#' },
+        { label: 'Cookies', href: '#' },
       ]
     }
   }[language];
