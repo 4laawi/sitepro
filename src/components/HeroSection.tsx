@@ -189,7 +189,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
               </span>
             </button>
           </div>
-          <div className="flex flex-col md:items-start items-center">
+          <div className="flex flex-col md:items-start items-center mb-10 md:mb-0">
             <p className="text-title text-[13px] font-[500] py-[5px] mb-[10px] tracking-[1.2px]">
               {t.emailConsult}
             </p>

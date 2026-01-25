@@ -1,9 +1,15 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import type { ComponentType } from 'react';
 
-const ScrollVelocityComponent = dynamic(() => import('./ScrollVelocity'), { ssr: false });
+interface ScrollVelocityProps {
+    texts: string[];
+    [key: string]: unknown;
+}
 
-export default function ScrollVelocity(props: any) {
+const ScrollVelocityComponent = dynamic(() => import('./ScrollVelocity'), { ssr: false }) as ComponentType<ScrollVelocityProps>;
+
+export default function ScrollVelocity(props: ScrollVelocityProps) {
     return <ScrollVelocityComponent {...props} />;
 }

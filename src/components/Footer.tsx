@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   Facebook,
   Instagram,
@@ -13,11 +13,10 @@ import {
   Phone,
   MapPin
 } from 'lucide-react'
-import { useEffect, useState } from 'react'
+
 
 export default function Footer() {
   const pathname = usePathname()
-
 
   // Determine language based on route
   const language = pathname.startsWith('/en') ? 'EN' : 'FR'

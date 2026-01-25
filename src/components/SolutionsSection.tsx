@@ -69,9 +69,11 @@ const SolutionsSection = () => {
                                         <p className="solution-description">{item.description}</p>
                                     </div>
                                     <div className="solution-image-container">
-                                        <img
+                                        <Image
                                             src={item.image}
                                             alt={item.title}
+                                            width={400}
+                                            height={300}
                                             className="solution-image"
                                             loading="lazy"
                                         />

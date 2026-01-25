@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import Script from 'next/script'
 import PortfolioInteractive from '@/components/PortfolioInteractive'
-import { FolderOpen } from 'lucide-react'
+
 
 export const metadata: Metadata = {
   title: 'Portfolio | Sitepro.ma',

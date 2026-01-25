@@ -61,12 +61,12 @@ export default function StatsSection() {
         },
         {
             number: 3,
-            label: <>ans d'expérience<br />pratique</>,
+            label: <>ans d&apos;expérience<br />pratique</>,
         },
         {
             number: 90,
             suffix: '%',
-            label: <>Taux de satisfaction client<br />NPS sur l'année 2024</>,
+            label: <>Taux de satisfaction client<br />NPS sur l&apos;année 2024</>,
         },
     ];
 

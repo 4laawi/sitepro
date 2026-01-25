@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, CheckCircle } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ export default function ContactForm() {
             setFormData({ fullName: '', projectType: '', otherProjectType: '', delay: '' })
 
             setTimeout(() => setIsSubmitted(false), 5000)
-        } catch (err) {
+        } catch (_err) {
             setError('Une erreur est survenue. Veuillez réessayer.')
         } finally {
             setIsSubmitting(false)
