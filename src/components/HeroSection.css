@@ -14,31 +14,7 @@
     background-color: var(--gray-200) !important;
 }
 
-.snipcss-odHLl .title-hero-section {
-    font-family: var(--font-outfit), sans-serif;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 42px;
-    letter-spacing: -1px;
-    color: var(--title);
-}
 
-@media (min-width: 48rem) {
-    .snipcss-odHLl .title-hero-section {
-        letter-spacing: -3px;
-        font-size: 45px;
-        line-height: 52px;
-    }
-}
-
-@media (min-width: 64rem) {
-    .snipcss-odHLl .title-hero-section {
-        letter-spacing: -2.6px;
-        font-size: 60px;
-        line-height: 70px;
-    }
-}
 
 .snipcss-odHLl .poppins-semibold {
     font-family: var(--font-outfit), sans-serif;

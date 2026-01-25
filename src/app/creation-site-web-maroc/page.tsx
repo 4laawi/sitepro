@@ -96,7 +96,7 @@ export default function CreationSiteWebMarocPage() {
     ]
 
     return (
-        <div className="flex flex-col w-full font-sans">
+        <div className="flex flex-col w-full font-sans snipcss-odHLl">
             {/* Hero Section */}
             <section className="bg-white border-b border-gray-100">
                 <div className="container px-4 py-16 lg:py-24 mx-auto max-w-7xl">
@@ -107,18 +107,17 @@ export default function CreationSiteWebMarocPage() {
                             transition={{ duration: 0.6 }}
                             className="space-y-8 text-center lg:text-left"
                         >
-                            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-primary-50 rounded-full border border-primary-100">
-                                <span className="w-2.5 h-2.5 bg-primary-500 rounded-full animate-pulse"></span>
-                                <span className="text-sm font-semibold text-gray-800 tracking-wide uppercase">
+                            <div className="flex justify-center lg:justify-start">
+                                <span className="badge-gradient">
                                     Création site web Maroc
                                 </span>
                             </div>
 
-                            <h1 className="text-4xl md:text-6xl font-extrabold text-[#022545] leading-[1.1] tracking-tight">
+                            <h1 className="hero-title-premium">
                                 Création de site web au Maroc – <span className="text-primary-600">100 % optimisé</span> SEO et IA
                             </h1>
 
-                            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                            <p className="hero-subtitle-premium mx-auto lg:mx-0">
                                 Notre <strong className="text-gray-900">agence de création de sites web</strong> au <strong className="text-gray-900">Maroc</strong> conçoit des solutions sur mesure, entièrement optimisées pour le <strong className="text-gray-900">SEO</strong> et les nouveaux <strong className="text-gray-900">moteurs d’IA</strong>.
                             </p>
 
@@ -141,11 +140,11 @@ export default function CreationSiteWebMarocPage() {
                             className="relative"
                         >
                             <Image
-                                src="/hero-creation.webp"
+                                src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (1).webp"
                                 alt="Création site web Maroc"
-                                width={600}
-                                height={500}
-                                className="w-full h-auto relative z-10"
+                                width={1080}
+                                height={1080}
+                                className="w-full h-auto max-w-[620px] mx-auto relative z-10 transition-transform duration-700 rounded-xl"
                                 priority
                             />
                             <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-100 rounded-full blur-3xl opacity-60 z-0"></div>
@@ -165,22 +164,14 @@ export default function CreationSiteWebMarocPage() {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                            Création de site web : un conseiller <br className="hidden md:block" />
-                            <span className="text-primary-400 border-b-4 border-primary-500 pb-2">vous rappelle !</span>
+                        <h2 className="section-title-premium text-white">
+                            Création de site web : un conseiller <span className="text-primary-400 border-b-4 border-primary-500 pb-2">vous rappelle !</span>
                         </h2>
                     </ClientMotionWrapper>
 
                     <div className="mt-16 max-w-4xl mx-auto">
                         <ContactForm />
                     </div>
-
-                    <p className="text-gray-400 text-sm mt-10">
-                        En cliquant sur &quot;Envoyer&quot;, vous acceptez notre{' '}
-                        <Link href="/politique-de-confidentialite/" className="text-primary-400 hover:text-primary-300 underline underline-offset-4">
-                            politique de confidentialité
-                        </Link>.
-                    </p>
                 </div>
             </section>
 
@@ -188,10 +179,10 @@ export default function CreationSiteWebMarocPage() {
             <section className="py-24 bg-white new-gen-section">
                 <div className="new-gen-container">
                     <header className="section-header">
-                        <h2 className="main-title">
+                        <h2 className="section-title-premium">
                             <span>Excellence en conception web</span> <br /> <span className="title-line-2"><span className="highlight">nouvelle génération</span> au Maroc</span>
                         </h2>
-                        <p className="main-description">Nous bâtissons des infrastructures digitales ultra-performantes, conçues pour <strong>convertir vos visiteurs</strong> et dominer les résultats de recherche.</p>
+                        <p className="section-subtitle-premium mx-auto">Nous bâtissons des infrastructures digitales ultra-performantes, conçues pour <strong>convertir vos visiteurs</strong> et dominer les résultats de recherche.</p>
                         <div className="tech-stack">
                             {techStack.map((tech) => (
                                 <span key={tech.name} className="tech-pill">
@@ -267,10 +258,10 @@ export default function CreationSiteWebMarocPage() {
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#022545] leading-tight">
+                            <h2 className="section-title-premium lg:text-left">
                                 Prenez l&apos;avantage : des technologies web qui <span className="text-primary-600">surpassent vos concurrents</span>
                             </h2>
-                            <p className="text-xl text-gray-600 leading-relaxed">
+                            <p className="section-subtitle-premium lg:text-left lg:mx-0">
                                 Pendant que vos concurrents stagnent avec des sites dépassés <strong>invisibles sur Google</strong> et <strong>ignorés par les IA</strong> — votre site domine les résultats au Maroc et à l&apos;étranger.
                             </p>
 
@@ -354,23 +345,23 @@ export default function CreationSiteWebMarocPage() {
             </section>
 
             {/* About Section */}
-            <section className="py-24 bg-gray-50">
+            <section className="py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="order-2 lg:order-1">
                             <Image
-                                src="/images/creation-site-web-maroc-main.webp"
-                                alt="Pourquoi le site web low-cost est une erreur"
-                                width={665}
-                                height={557}
-                                className="rounded-3xl shadow-xl w-full h-auto"
+                                src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (7).webp"
+                                alt="Agence de création de sites web optimisés SEO, IA et conversion"
+                                width={1080}
+                                height={1080}
+                                className="w-full h-auto"
                             />
                         </div>
                         <div className="space-y-6 order-1 lg:order-2">
-                            <h2 className="text-3xl md:text-5xl font-bold text-[#022545] leading-tight text-balance">
+                            <h2 className="section-title-premium lg:text-left">
                                 Agence de création de sites web optimisés SEO, IA et conversion
                             </h2>
-                            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+                            <div className="space-y-4 text-gray-600 section-subtitle-premium lg:text-left lg:mx-0">
                                 <p>Sitepro.ma est votre agence web de référence spécialisée dans la création de sites internet au Maroc. Basés à Marrakech, nous accompagnons les entrepreneurs et les PME dans leur réussite digitale.</p>
                                 <p>Notre approche est humaine : chaque site est co-construit avec vous pour être <strong className="text-gray-900">100 % optimisé pour le SEO</strong>, assurant une visibilité immédiate sur les moteurs de recherche.</p>
                                 <p>Nous mettons l&apos;accent sur la <strong>conversion</strong> et la <strong>sécurité</strong>, tout en garantissant des temps de chargement ultra-rapides pour ne perdre aucun client potentiel.</p>
@@ -391,7 +382,7 @@ export default function CreationSiteWebMarocPage() {
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-3xl md:text-5xl font-bold text-[#022545] leading-tight text-balance">
+                            <h2 className="section-title-premium lg:text-left">
                                 Création de site web : <span className="underline decoration-red-500">l&apos;erreur à ne pas commettre</span> ⚠️
                             </h2>
                             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
@@ -406,15 +397,14 @@ export default function CreationSiteWebMarocPage() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="relative group">
+                        <div className="relative">
                             <Image
-                                src="/images/erreur-creation-site-web-maroc.png"
+                                src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (8).webp"
                                 alt="Pourquoi le site web low-cost est une erreur"
-                                width={665}
-                                height={557}
-                                className="rounded-[3rem] shadow-2xl w-full h-auto filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                                width={1080}
+                                height={1080}
+                                className="w-full h-auto"
                             />
-                            <div className="absolute inset-0 bg-red-600/10 rounded-[3rem] group-hover:bg-transparent transition-all pointer-events-none"></div>
                         </div>
                     </div>
                 </div>
@@ -424,7 +414,7 @@ export default function CreationSiteWebMarocPage() {
             <section className="py-24 bg-[#f8fafc]">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <header className="mb-20">
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#022545] leading-tight text-balance">
+                        <h2 className="section-title-premium">
                             Découvrez l&apos;ensemble de nos <br />
                             services de création site web Maroc
                         </h2>
@@ -455,8 +445,8 @@ export default function CreationSiteWebMarocPage() {
             {/* Success Section */}
             <section className="py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#022545] mb-6">Expertise Sitepro.ma : <br /> Performance & Visibilité</h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">Nous avons aidé des dizaines d&apos;entreprises au Maroc à atteindre la première page de Google. <strong className="text-primary-600">Rejoignez nos success stories</strong>.</p>
+                    <h2 className="section-title-premium">Expertise Sitepro.ma : <br /> Performance & Visibilité</h2>
+                    <p className="section-subtitle-premium mx-auto">Nous avons aidé des dizaines d&apos;entreprises au Maroc à atteindre la première page de Google. <strong className="text-primary-600">Rejoignez nos success stories</strong>.</p>
                 </div>
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -485,11 +475,11 @@ export default function CreationSiteWebMarocPage() {
             </section>
 
             {/* GDPR Section */}
-            <section className="py-24 bg-[#f8fafc]">
+            <section className="py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-3xl md:text-5xl font-bold text-[#022545] leading-tight text-balance">
+                            <h2 className="section-title-premium lg:text-left">
                                 Sites web conformes CNDP au Maroc et au RGPD en Europe
                             </h2>
                             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
@@ -519,7 +509,7 @@ export default function CreationSiteWebMarocPage() {
             {/* Lead Gen Table */}
             <section className="py-24 bg-[#022545] text-white overflow-hidden relative">
                 <div className="container px-4 mx-auto max-w-7xl">
-                    <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-balance">Site web orienté <span className="text-primary-400">génération de leads</span></h2>
+                    <h2 className="section-title-premium text-white">Site web orienté <span className="text-primary-400">génération de leads</span></h2>
                     <div className="overflow-x-auto rounded-3xl border border-white/10">
                         <table className="w-full text-left min-w-[800px]">
                             <thead>
@@ -554,8 +544,8 @@ export default function CreationSiteWebMarocPage() {
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="flex flex-col lg:flex-row gap-16 items-start">
                         <div className="flex-1 space-y-6">
-                            <h2 className="text-4xl font-bold text-[#022545]">Création site web partout au Maroc</h2>
-                            <p className="text-gray-600 mb-10">Nous accompagnons les entreprises dans toutes les régions du Royaume.</p>
+                            <h2 className="section-title-premium lg:text-left">Création site web partout au Maroc</h2>
+                            <p className="section-subtitle-premium lg:text-left lg:mx-0">Nous accompagnons les entreprises dans toutes les régions du Royaume.</p>
                             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-4">
                                 {cities.map((city) => (
                                     <Link key={city} href={`/creation-site-web-${city.toLowerCase()}/`} className="text-gray-500 hover:text-primary-600 hover:translate-x-1 transition-all flex items-center gap-2">
@@ -584,7 +574,7 @@ export default function CreationSiteWebMarocPage() {
             {/* FAQ Section */}
             <section className="bg-gray-50 py-24">
                 <div className="container px-4 mx-auto max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#022545] text-center mb-16 text-balance">FAQ - Création site web Maroc</h2>
+                    <h2 className="section-title-premium">FAQ - Création site web Maroc</h2>
                     <FAQSection />
                 </div>
             </section>
@@ -592,7 +582,7 @@ export default function CreationSiteWebMarocPage() {
             {/* Final CTA */}
             <section className="py-24 bg-primary-500 text-white">
                 <div className="container px-4 mx-auto max-w-5xl text-center space-y-8">
-                    <h2 className="text-4xl md:text-6xl font-black text-balance">Besoin d&apos;un site web pro ?</h2>
+                    <h2 className="hero-title-premium text-white">Besoin d&apos;un site web pro ?</h2>
                     <p className="text-2xl opacity-90">Appelez le <a href={`tel:+${phone}`} className="underline hover:no-underline font-black">{phone.replace(/(\d{4})(\d{2})(\d{2})(\d{2})/, '+$1 $2 $3 $4')}</a></p>
                     <div className="pt-8">
                         <Link href="#contact-form-section" className="bg-[#022545] text-white px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all inline-block shadow-2xl">

@@ -20,11 +20,12 @@ export default function Header() {
 
   const t = {
     FR: {
-      creationWeb: 'Création Web',
+      creationWeb: 'Solutions',
       portfolio: 'Portfolio',
       appsMobiles: 'Applications Mobiles',
       seoSea: 'SEO/SEA',
       creationWebSub: {
+        siteWeb: 'Création site web',
         vitrine: 'Sites Vitrine',
         ecommerce: 'E-commerce',
         branding: 'Design & Branding',
@@ -39,11 +40,12 @@ export default function Header() {
       contact: 'Contact'
     },
     EN: {
-      creationWeb: 'Web Creation',
+      creationWeb: 'Solutions',
       portfolio: 'Portfolio',
       appsMobiles: 'Mobile Apps',
       seoSea: 'SEO/SEA',
       creationWebSub: {
+        siteWeb: 'Website Creation',
         vitrine: 'Showcase Sites',
         ecommerce: 'E-commerce',
         branding: 'Design & Branding',
@@ -163,6 +165,7 @@ export default function Header() {
                   </button>
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'creationWeb' ? 'is-open' : ''}`}>
                     <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
+                      <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/creation-site-web/" : "/creation-site-web/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.vitrine} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.ecommerce} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
@@ -267,6 +270,7 @@ export default function Header() {
                 </svg>
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['creationWeb'] ? 'active' : 'hidden'}`}>
+                <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/creation-site-web/" : "/creation-site-web/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.vitrine} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.ecommerce} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>

@@ -229,15 +229,16 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4 py-16 lg:py-24">
           <ClientMotionWrapper
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold">
-              <FolderOpen size={16} /> Portfolio
+            <span className="badge-gradient">
+              Portfolio
             </span>
-            <h1 className="heading-1 text-gray-900 mt-4">Sélection de projets</h1>
-            <p className="body-large text-gray-600 mt-3">
+            <h1 className="hero-title-premium mt-4">Sélection de projets</h1>
+            <p className="hero-subtitle-premium mx-auto mt-3">
               Des interfaces modernes, performantes et orientées résultat pour des secteurs variés.
             </p>
           </ClientMotionWrapper>

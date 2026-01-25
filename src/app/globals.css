@@ -230,4 +230,29 @@
   .bg-radial-gradient {
     background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
   }
+
+  /* Standardized Section Headers */
+  .badge-gradient {
+    @apply inline-block text-[17px] font-medium mb-4;
+    background: linear-gradient(90deg, #078ef7, #a767fc 51%, #ca16a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-title-premium {
+    @apply text-3xl md:text-[42px] font-bold text-[#111827] leading-[1.2] mb-4;
+  }
+
+  .section-subtitle-premium {
+    @apply text-lg md:text-2xl font-normal text-gray-700 leading-relaxed max-w-3xl mx-auto;
+  }
+
+  .hero-title-premium {
+    @apply text-4xl md:text-5xl lg:text-[60px] font-bold text-[#111827] leading-[1.1] mb-6;
+  }
+
+  .hero-subtitle-premium {
+    @apply text-lg md:text-xl lg:text-2xl font-normal text-gray-700 leading-relaxed max-w-2xl;
+  }
 }

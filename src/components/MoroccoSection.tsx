@@ -30,7 +30,8 @@ const MoroccoSection = () => {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        <h2 className="title-section"> L&apos;excellence du Web Design et du Développement au Maroc </h2>
+                        <span className="badge-gradient">Solutions Digitales</span>
+                        <h2 className="section-title-premium lg:text-left"> L&apos;excellence du Web Design et du Développement au Maroc </h2>
                         <div className="space-y-2 text-[#022545] text-lg">
                             <p className="paragraph">
                                 Chez Sitepro.ma, nous redéfinissons les standards du web design et du développement au Maroc. Nous créons des expériences numériques captivantes, alliant esthétique moderne, performance technique et ergonomie intuitive pour propulser votre présence en ligne.
@@ -77,10 +78,11 @@ const MoroccoSection = () => {
                         className="space-y-8 lg:order-2"
                     >
                         <div className="space-y-4">
-                            <h2 className="title-section md:pr-[180px] lg:pr-[0]">
+                            <span className="badge-gradient">Hébergement Premium</span>
+                            <h2 className="section-title-premium lg:text-left">
                                 Votre hébergement web en toute facilité
                             </h2>
-                            <h3 className="text-2xl lg:text-3xl poppins-semibold mt-[10px] text-[#022545]">
+                            <h3 className="section-subtitle-premium font-medium lg:mx-0 lg:text-left mt-[10px]">
                                 Votre meilleur choix d&apos;hébergement web au Maroc
                             </h3>
                         </div>

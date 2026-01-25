@@ -70,9 +70,12 @@ const ToolsSection = () => {
                 }} />
             </div>
             <div className="tools-container relative z-10">
+                <div className="text-center mb-12">
+                    <span className="badge-gradient">Expertise Technique</span>
+                    <h2 className="section-title-premium">Les outils que nous utilisons</h2>
+                </div>
                 <div className="tabs-btns">
-                    <h2 className="tab-btn">Tools we use</h2>
-                    <div className="scroll-nav">
+                    <div className="scroll-nav w-full flex justify-end">
                         <button
                             className="scroll-button prev"
                             onClick={() => scroll('left')}

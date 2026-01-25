@@ -239,13 +239,13 @@ export default function ContactSection({ lang = 'FR' }: ContactSectionProps) {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+          <span className="badge-gradient">
             {t.badge}
           </span>
-          <h2 className="heading-2 text-tech-dark mb-4">
+          <h2 className="section-title-premium">
             {t.title}
           </h2>
-          <p className="body-large text-gray-600 max-w-3xl mx-auto">
+          <p className="section-subtitle-premium">
             {t.description}
           </p>
         </motion.div>

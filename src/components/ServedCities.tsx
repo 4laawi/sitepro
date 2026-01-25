@@ -51,11 +51,11 @@ export default function ServedCities({ lang = 'FR' }: ServedCitiesProps) {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold">
-            <MapPin size={16} /> {t.badge}
+          <span className="badge-gradient">
+            {t.badge}
           </span>
-          <h2 className="heading-2 text-tech-dark mt-3">{t.title}</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">{t.description}</p>
+          <h2 className="section-title-premium">{t.title}</h2>
+          <p className="section-subtitle-premium">{t.description}</p>
         </motion.div>
 
         <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl">

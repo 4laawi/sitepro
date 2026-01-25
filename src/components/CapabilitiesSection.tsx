@@ -100,15 +100,11 @@ const CapabilitiesSection = () => {
                 }} />
             </div>
             <div className="capabilities-container relative z-10">
-                <div className="section-header animate-up">
-                    <div className="header-badge">
-                        <div className="badge-line"></div>
-                        <span className="badge-text">NOS COMPÉTENCES</span>
-                    </div>
-                    <h2 className="section-title">Nos Services de Design et Développement Web</h2>
-                    <p className="section-description">
-                        Nous sommes fiers d&apos;être l&apos;agence de design web axée sur le client et la qualité
-                        qui peut répondre à tous les besoins de votre site internet.
+                <div className="section-header">
+                    <span className="badge-gradient">Nos Capacités</span>
+                    <h2 className="section-title-premium">En quoi pouvons-nous vous aider ?</h2>
+                    <p className="section-subtitle-premium">
+                        Nous sommes une agence digitale créative, passionnée par le développement de marques et la création de sites web au Maroc.
                     </p>
                 </div>
 

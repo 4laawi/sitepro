@@ -159,23 +159,20 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
   };
 
   return (
-    <section ref={sectionRef} className="bg-gray-200 snipcss-odHLl overflow-hidden">
-      <div className="container grid-cols-1 md:pt-[120px] md:pb-[40px] py-[60px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
+    <section ref={sectionRef} className="bg-white snipcss-odHLl overflow-hidden">
+      <div className="container grid-cols-1 md:pt-[40px] md:pb-[40px] py-[30px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
         <motion.div
           style={{ y: isMobile ? 0 : contentY, opacity: isMobile ? 1 : opacity }}
           className="col-span-1 flex sm:px-[0] px-[20px] flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left"
         >
           <div className="flex justify-center md:justify-start">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[rgba(37,99,235,0.08)] rounded-[60px]">
-              <span className="w-3 h-3 bg-[#2563eb] rounded-full flex-shrink-0"></span>
-              <span className="md:text-[17px] text-[15px] poppins-semibold tracking-[-0.5px] text-[#022545]">
-                {t.badge}
-              </span>
-            </div>
+            <span className="badge-gradient">
+              {t.badge}
+            </span>
           </div>
-          <h1 className="title-hero-section"> {t.title} </h1>
+          <h1 className="hero-title-premium"> {t.title} </h1>
           {t.description && (
-            <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto md:mx-0">
+            <p className="hero-subtitle-premium mx-auto md:mx-0">
               {t.description}
             </p>
           )}

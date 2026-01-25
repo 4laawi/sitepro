@@ -537,7 +537,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
   }, [])
 
   return (
-    <section id="portfolio" ref={sectionRef} className="pt-10 pb-20 lg:pt-16 lg:pb-32 bg-[#F8F8F8]">
+    <section id="portfolio" ref={sectionRef} className="pt-10 pb-20 lg:pt-16 lg:pb-32 bg-white snipcss-odHLl">
       <style jsx global>{`
         @keyframes autoScrollReturn {
           0%, 10% { transform: translateY(0); }
@@ -561,13 +561,13 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4" id="portfolio">
+          <span className="badge-gradient" id="portfolio">
             {t.badge}
           </span>
-          <h2 className="heading-2 text-tech-dark mb-4">
+          <h2 className="hero-title-premium">
             {t.title}
           </h2>
-          <p className="body-large text-gray-600 max-w-3xl mx-auto">
+          <p className="hero-subtitle-premium mx-auto">
             {t.description}
           </p>
         </motion.div>

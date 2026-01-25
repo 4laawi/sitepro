@@ -94,16 +94,16 @@ export default function AboutSection({ lang = 'FR' }: AboutSectionProps) {
             viewport={{ once: true }}
             className="lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+            <span className="badge-gradient">
               {t.badge}
             </span>
 
-            <h2 className="heading-2 text-tech-dark mb-6">
+            <h2 className="section-title-premium">
               {t.title}
               <span className="text-primary-600"> {t.titleAccent}</span>
             </h2>
 
-            <p className="body-large text-gray-600 mb-8">
+            <p className="section-subtitle-premium lg:mx-0 lg:text-left mb-8">
               {t.description}
             </p>
 

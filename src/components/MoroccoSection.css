@@ -6,25 +6,6 @@
     --spacing: 0.25rem;
 }
 
-.morocco-section .title-section {
-    letter-spacing: -1.5px;
-    color: var(--title);
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 40px;
-}
-
-@media (min-width: 768px) {
-    .morocco-section .title-section {
-        letter-spacing: -2.5px;
-        font-size: 44px;
-        line-height: 50px;
-    }
-}
-
 .morocco-section .paragraph {
     color: var(--text);
     letter-spacing: 0.2px;

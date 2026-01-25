@@ -1,20 +1,21 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
         fullName: '',
-        phone: '',
-        email: '',
+        projectType: '',
+        otherProjectType: '',
+        delay: '',
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [error, setError] = useState('')
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -27,12 +28,22 @@ export default function ContactForm() {
         setError('')
 
         try {
-            // Use the existing Google Apps Script endpoint from ContactSection if needed, 
-            // or a similar one. For now, let's mock the success state after a delay.
-            await new Promise((resolve) => setTimeout(resolve, 1500))
+            // Construct WhatsApp message
+            const projectInfo = formData.projectType === 'Autre'
+                ? `${formData.projectType} (${formData.otherProjectType})`
+                : formData.projectType;
+
+            const message = `Salam, je m'appelle ${formData.fullName}. J'aimerais créer un site web de type : ${projectInfo}. Délai souhaité : ${formData.delay}.`;
+            const whatsappUrl = `https://wa.me/212663711164?text=${encodeURIComponent(message)}`;
+
+            // Mock submission delay
+            await new Promise((resolve) => setTimeout(resolve, 800))
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
 
             setIsSubmitted(true)
-            setFormData({ fullName: '', phone: '', email: '' })
+            setFormData({ fullName: '', projectType: '', otherProjectType: '', delay: '' })
 
             setTimeout(() => setIsSubmitted(false), 5000)
         } catch (err) {
@@ -41,6 +52,25 @@ export default function ContactForm() {
             setIsSubmitting(false)
         }
     }
+
+    const projectTypes = [
+        "Location de voiture",
+        "Clinique / Docteur",
+        "Café / Restaurant",
+        "Agent immobilier",
+        "Agence",
+        "Entreprise",
+        "E-commerce",
+        "Hôtel / Riad",
+        "Autre"
+    ]
+
+    const delayOptions = [
+        "En urgence (< 2 semaines)",
+        "2 à 4 semaines",
+        "1 à 2 mois",
+        "Plus de 2 mois"
+    ]
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -53,32 +83,69 @@ export default function ContactForm() {
                         required
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full bg-white/5 border border-green-500/30 rounded-full px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:bg-white/10 transition-all"
+                        className="w-full bg-white/5 border border-primary-500/30 rounded-full px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:bg-white/10 transition-all appearance-none"
                     />
                 </div>
                 <div className="flex-1">
-                    <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Numéro de téléphone"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full bg-white/5 border border-green-500/30 rounded-full px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:bg-white/10 transition-all"
-                    />
+                    <div className="relative">
+                        <select
+                            name="projectType"
+                            required
+                            value={formData.projectType}
+                            onChange={handleChange}
+                            className="w-full bg-white/5 border border-primary-500/30 rounded-full px-6 py-4 text-white focus:outline-none focus:border-primary-400 focus:bg-[#022545] transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="" disabled className="text-gray-400 bg-[#022545]">Type de projet</option>
+                            {projectTypes.map(type => (
+                                <option key={type} value={type} className="text-white bg-[#022545]">{type}</option>
+                            ))}
+                        </select>
+                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary-400">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
                 </div>
                 <div className="flex-1">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Adresse email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full bg-white/5 border border-green-500/30 rounded-full px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:bg-white/10 transition-all"
-                    />
+                    <div className="relative">
+                        <select
+                            name="delay"
+                            required
+                            value={formData.delay}
+                            onChange={handleChange}
+                            className="w-full bg-white/5 border border-primary-500/30 rounded-full px-6 py-4 text-white focus:outline-none focus:border-primary-400 focus:bg-[#022545] transition-all appearance-none cursor-pointer"
+                        >
+                            <option value="" disabled className="text-gray-400 bg-[#022545]">Délai souhaité</option>
+                            {delayOptions.map(option => (
+                                <option key={option} value={option} className="text-white bg-[#022545]">{option}</option>
+                            ))}
+                        </select>
+                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary-400">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <AnimatePresence>
+                {formData.projectType === 'Autre' && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden"
+                    >
+                        <input
+                            type="text"
+                            name="otherProjectType"
+                            placeholder="Spécifiez votre projet"
+                            required
+                            value={formData.otherProjectType}
+                            onChange={handleChange}
+                            className="w-full bg-white/5 border border-primary-500/30 rounded-full px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:bg-white/10 transition-all appearance-none"
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <div className="flex justify-center mt-8">
                 <motion.button
