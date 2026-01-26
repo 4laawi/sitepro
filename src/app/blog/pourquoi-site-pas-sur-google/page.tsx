@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, CheckCircle2, AlertCircle, Search, EyeOff, BarChart3, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, ChevronRight, CheckCircle2, Search, ShieldCheck } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'Pourquoi mon site web n’apparaît pas sur Google ? Causes réelles et solutions | Sitepro.ma',

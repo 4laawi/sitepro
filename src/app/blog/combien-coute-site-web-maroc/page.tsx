@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, CheckCircle2, AlertCircle, HelpCircle } from 'lucide-react'
-import ClientMotionWrapper from '@/components/ClientMotionWrapper'
+
 
 export const metadata: Metadata = {
     title: 'Combien coûte un site web au Maroc en 2026 ? Prix réels et conseils d\'expert',

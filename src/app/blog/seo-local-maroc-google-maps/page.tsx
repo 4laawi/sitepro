@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Share2, Calendar, User, Clock, ChevronRight } from 'lucide-react'
-import ClientMotionWrapper from '@/components/ClientMotionWrapper'
+import { ArrowLeft, Share2, Calendar, Clock, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'SEO local au Maroc : comment apparaître sur Google Maps | Sitepro.ma',

@@ -37,7 +37,8 @@ export default function Header() {
         gmb: 'Agence GMB',
         ads: 'Google Ads',
       },
-      contact: 'Contact'
+      contact: 'Contact',
+      blog: 'Blog'
     },
     EN: {
       creationWeb: 'Solutions',
@@ -57,7 +58,8 @@ export default function Header() {
         gmb: 'GMB Agency',
         ads: 'Google Ads',
       },
-      contact: 'Contact'
+      contact: 'Contact',
+      blog: 'Blog'
     }
   }[language];
 
@@ -206,6 +208,7 @@ export default function Header() {
                     </ul>
                   </div>
                 </li>
+                <li> <Link href={language === 'EN' ? "/en/blog/" : "/blog/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.blog} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/contact/" : "/contact/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.contact} </Link> </li>
               </ul>
             </nav>
@@ -333,6 +336,19 @@ export default function Header() {
                 */}
               </ul>
             </li>
+            <li>
+              <Link
+                href={language === 'EN' ? "/en/blog/" : "/blog/"}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+                <span className="text-[17px]">{t.blog}</span>
+              </Link>
+            </li>
           </ul>
           <div className="pt-6 mt-6 border-t border-gray-100">
             <div className="lang-switch-container-mobile" data-lang={language}>
@@ -364,8 +380,8 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </nav>
-      </div>
+        </nav >
+      </div >
     </>
   )
 }

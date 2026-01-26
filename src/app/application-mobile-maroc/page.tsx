@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
-import { CheckCircle2, Zap, Globe, ShieldCheck, ArrowRight, Bot, Clock, Lock, TrendingUp, MapPin, SmartphoneNfc, AppWindow, Cpu, Rocket, Shield, PenTool, MessageCircle } from 'lucide-react'
+import { CheckCircle2, Zap, Globe, ShieldCheck, ArrowRight, Bot, Clock, Lock, TrendingUp, SmartphoneNfc, Cpu, Rocket, Shield, PenTool, MessageCircle } from 'lucide-react'
 import FAQSection from '@/components/FAQSection'
 import ContactForm from '@/components/ContactForm'
 import './MobileApp.css'
@@ -26,8 +26,6 @@ export const metadata: Metadata = {
         type: 'website',
     },
 }
-
-const phone = '212663750908'
 
 export default function ApplicationMobileMarocPage() {
     const features = [
@@ -428,7 +426,7 @@ export default function ApplicationMobileMarocPage() {
                                     <span>CRITÈRES DE COLLABORATION</span>
                                 </div>
                                 <p className="text-orange-900/80">
-                                    Nous accompagnons exclusivement les entreprises (<strong>B2B, B2C, B2G</strong>) ayant une vision claire de leur projet. Un <strong>cahier des charges structuré</strong> est indispensable pour toute étude technique ou chiffrage précis.
+                                    Nous accompagnons exclusivement les entreprises (<strong>B2B, B2C, B2G</strong>) ayant une vision claire de leur projet. Un <strong>cahier des charges structuré</strong> est indispensable pour toute étude technique or chiffrage précis.
                                 </p>
                             </div>
 

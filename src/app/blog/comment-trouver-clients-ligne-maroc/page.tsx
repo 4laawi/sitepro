@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, CheckCircle2, AlertCircle, TrendingUp, Search, MapPin, Globe, Users } from 'lucide-react'
+import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, AlertCircle, Search, MapPin, Globe, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'Comment trouver des clients en ligne au Maroc ? Méthodes qui marchent | Sitepro.ma',
