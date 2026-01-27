@@ -10,7 +10,7 @@ const AboutSection = dynamic(() => import('@/components/AboutSection'), { ssr: t
 const MoroccoSection = dynamic(() => import('@/components/MoroccoSection'), { ssr: true })
 const ContactSection = dynamic(() => import('@/components/ContactSection'), { ssr: true })
 const ToolsSection = dynamic(() => import('@/components/ToolsSection'), { ssr: true })
-const CapabilitiesSection = dynamic(() => import('@/components/CapabilitiesSection'), { ssr: true })
+
 const AgencyServices = dynamic(() => import('@/components/AgencyServices'), { ssr: true })
 const ScrollVelocity = dynamic(() => import('@/components/ScrollVelocityWrapper'), { ssr: true })
 const SolutionsSection = dynamic(() => import('@/components/SolutionsSection'), { ssr: true })
@@ -37,7 +37,6 @@ export default function Home() {
       </div>
       <section className="cv-auto"><AgencyServices /></section>
 
-      <CapabilitiesSection />
       <ToolsSection />
 
       <ServedCities lang="FR" />

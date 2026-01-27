@@ -150,7 +150,7 @@ export default function ApplicationMobileMarocPage() {
                             className="relative"
                         >
                             <Image
-                                src="/Purple And White Modern Mobile App Promotion Instagram Post.webp"
+                                src="/clipboard-image-1769520336.webp"
                                 alt="Développement application mobile Maroc"
                                 width={1080}
                                 height={1080}

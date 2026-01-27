@@ -10,29 +10,29 @@ const solutions = [
     {
         title: "Création de site",
         description: "Développer un site vitrine ou e-commerce sur-mesure, pensé pour votre croissance.",
-        image: "https://cdn.prod.website-files.com/60c75078850651e0dfcb0945/68ce935e130a6c3d34f7a92b_Cre%CC%81ation%20de%20site.webp",
+        image: "/clipboard-image-1769520418.webp",
         link: "/creation-site-web-maroc",
         delay: 0.1
     },
     {
-        title: "Refonte de site",
-        description: "Moderniser et optimiser votre site existant pour plus de performance.",
-        image: "https://cdn.prod.website-files.com/60c75078850651e0dfcb0945/68ce935fbd96b4270218427e_Refonte%20de%20site.webp",
-        link: "/agence-refonte-site-web",
+        title: "Application mobile",
+        description: "Développement d'applications iOS et Android sur mesure, fluides et performantes.",
+        image: "/clipboard-image-1769520336.webp",
+        link: "/application-mobile-maroc",
         delay: 0.2
     },
     {
-        title: "Migration",
-        description: "Transférer votre site en toute sécurité vers Shopify, Webflow, WordPress ou un autre CMS.",
-        image: "https://cdn.prod.website-files.com/60c75078850651e0dfcb0945/68ce935ff81670d0543719ad_Migration.webp",
-        link: "/agence-migration-site-web",
+        title: "Portfolio",
+        description: "Découvrez nos dernières réalisations et projets web & mobile pour nos clients.",
+        image: "/portfolio-solutions.png",
+        link: "/portfolio",
         delay: 0.3
     },
     {
-        title: "Maquette UX/UI",
-        description: "Concevoir des maquettes web claires et modernes, pensées pour l’expérience utilisateur et la conversion.",
-        image: "https://cdn.prod.website-files.com/60c75078850651e0dfcb0945/68ce936023daeb9a9c93e94c_anding%20Page.webp",
-        link: "/agence-ux-ui",
+        title: "Blog",
+        description: "Conseils, actualités et expertise sur le monde du digital et du développement.",
+        image: "/blog-solutions.png",
+        link: "/blog",
         delay: 0.4
     }
 ]
