@@ -6,6 +6,7 @@ import { CheckCircle2, XCircle, Zap, Globe, ShieldCheck, ArrowRight, Bot, Clock,
 import FAQSection from '@/components/FAQSection'
 import ContactForm from '@/components/ContactForm'
 import './NewGenSection.css'
+import './LeadGenTable.css'
 
 export const metadata: Metadata = {
     title: 'Création site web Maroc | Sitepro.ma – Sites ultra-performants & SEO',
@@ -507,32 +508,49 @@ export default function CreationSiteWebMarocPage() {
             </section>
 
             {/* Lead Gen Table */}
-            <section className="py-24 bg-[#022545] text-white overflow-hidden relative">
-                <div className="container px-4 mx-auto max-w-7xl">
-                    <h2 className="section-title-premium text-white">Site web orienté <span className="text-primary-400">génération de leads</span></h2>
-                    <div className="overflow-x-auto rounded-3xl border border-white/10">
-                        <table className="w-full text-left min-w-[800px]">
-                            <thead>
-                                <tr className="bg-white/5 border-b border-white/10">
-                                    <th className="p-8 font-bold">Critères</th>
-                                    <th className="p-8 font-bold text-primary-400">Sitepro.ma Performance</th>
-                                    <th className="p-8 font-bold text-red-400">Site standard / Low-cost</th>
+            <section className="py-24 bg-white lead-gen-comparison">
+                <div className="container">
+                    <h2 className="section-title-premium text-center mb-12">Site web orienté <span className="text-primary-600">génération de leads</span></h2>
+                    <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                            <thead className="border border-[#f8f8f8]">
+                                <tr className="bg-[#f8f8f8] text-title">
+                                    <th className=" px-6 py-4 text-left poppins-semibold "> Critères </th>
+                                    <th className="  px-6 py-4 text-left poppins-semibold "> Site web qui génère des leads </th>
+                                    <th className="  px-6 py-4 text-left poppins-semibold "> Site web low-cost </th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                {[
-                                    { c: 'Objectif', h: 'Convertir en clients', l: 'Présence basique' },
-                                    { c: 'SEO', h: 'Optimisation technique avancée', l: 'Contenu générique' },
-                                    { c: 'Vitesse', h: '< 1s (Score 99+)', l: 'Lent, pénalisé' },
-                                    { c: 'Sécurité', h: 'SSL, Anti-DDoS, Zone Zero Trust', l: 'Minimale' },
-                                    { c: 'ROI', h: 'Rentabilité long terme', l: 'Frais perdus' },
-                                ].map((row, i) => (
-                                    <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                                        <td className="p-8 font-semibold">{row.c}</td>
-                                        <td className="p-8 flex items-center gap-3"><CheckCircle2 className="text-primary-500 w-5 h-5 shrink-0" /> {row.h}</td>
-                                        <td className="p-8 flex items-center gap-3 text-white/50"><XCircle className="text-red-500 w-5 h-5 shrink-0" /> {row.l}</td>
-                                    </tr>
-                                ))}
+                            <tbody className="border border-[#f8f8f8]">
+                                <tr key="0" className="bg-white text-title ">
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> Objectif principal </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4"> Attirer des prospects qualifiés et convertir en clients </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 "> Présence basique sans réelle stratégie </td>
+                                </tr>
+                                <tr key="1" className=" text-title bg-[#f8f8f8]">
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> SEO </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4"> Optimisation technique et contenu original </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 "> Peu ou pas optimisé, contenu générique </td>
+                                </tr>
+                                <tr key="2" className="bg-white text-title ">
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> Design &amp; UX </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4"> Expérience fluide, CTA stratégiques </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 "> Design basique, faible impact </td>
+                                </tr>
+                                <tr key="3" className=" text-title bg-[#f8f8f8]">
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> Vitesse </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4"> Chargement rapide conforme PageSpeed </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 "> Lent, pénalisé par Google </td>
+                                </tr>
+                                <tr key="4" className="bg-white text-title ">
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> Sécurité </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4"> SSL, protection avancée, Anti DDOS, Zero Trust </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 "> Sécurité minimale </td>
+                                </tr>
+                                <tr key="5" className=" text-title bg-[#f8f8f8]">
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> ROI </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4"> Investissement rentable à long terme </td>
+                                    <td className=" px-6 border border-[#f8f8f8] py-4 "> Faible retour sur investissement </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

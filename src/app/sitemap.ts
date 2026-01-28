@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Service pages
     { url: `${base}/e-commerce`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/applications-mobiles`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/application-mobile-maroc`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/referencement-seo`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/design-branding`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/maintenance-support`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },

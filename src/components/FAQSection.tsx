@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FAQSection.css';
 
-const faqData = [
+const defaultFaqData = [
     {
         question: "Pourquoi choisir Sitepro.ma pour mon site ?",
         answer: "Notre force, c'est que nous combinons design, développement technique et expertise marketing. Cela nous permet de créer des sites qui ne sont pas seulement beaux, mais qui performent. Chaque projet est pensé pour être rapide et évolutif afin de répondre à vos objectifs de croissance."
@@ -31,7 +31,12 @@ const faqData = [
     }
 ];
 
-const FAQSection = () => {
+interface FAQSectionProps {
+    showTitle?: boolean;
+    data?: { question: string; answer: string }[];
+}
+
+const FAQSection = ({ showTitle = true, data = defaultFaqData }: FAQSectionProps) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const toggleAccordion = (index: number) => {
@@ -40,22 +45,24 @@ const FAQSection = () => {
 
     return (
         <section className="faq-section">
-            <div className="faq-header-wrapper">
-                <div className="faq-inner-container">
-                    <div className="faq-text-center">
-                        <div className="faq-title-wrapper">
-                            <span className="faq-sous-titre">FAQ</span>
-                            <h2 className="faq-h2">Questions Fréquentes</h2>
-                            <h3 className="faq-h3">Les questions qu’on nous pose (vraiment)</h3>
+            {showTitle && (
+                <div className="faq-header-wrapper">
+                    <div className="faq-inner-container">
+                        <div className="faq-text-center">
+                            <div className="faq-title-wrapper">
+                                <span className="faq-sous-titre">FAQ</span>
+                                <h2 className="faq-h2">Questions Fréquentes</h2>
+                                <h3 className="faq-h3">Les questions qu’on nous pose (vraiment)</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
             <div className="uui-container-large">
                 <div className="uui-padding-vertical-xhuge">
                     <div className="uui-faq01_component">
                         <div className="uui-faq01_list">
-                            {faqData.map((item, index) => (
+                            {data.map((item, index) => (
                                 <div key={index} className="uui-faq01_accordion">
                                     <div
                                         className="uui-faq01_question"

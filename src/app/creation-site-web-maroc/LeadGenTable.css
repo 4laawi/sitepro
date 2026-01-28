@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+.lead-gen-comparison {
+    --gray-200: #f8f8f8;
+    --primary: #00d084;
+    --title: #022545;
+    --gap: 20px;
+    --spacing: .25rem;
+    --container-7xl: 80rem;
+    --font-weight-medium: 500;
+}
+
+.lead-gen-comparison .container {
+    width: 100%;
+    max-width: var(--container-7xl);
+    padding-inline: calc(var(--spacing)*4);
+    margin-inline: auto;
+}
+
+@media (min-width: 64rem) {
+    .lead-gen-comparison .container {
+        padding-inline: calc(var(--spacing)*7);
+    }
+}
+
+.lead-gen-comparison .overflow-x-auto {
+    overflow-x: auto;
+}
+
+.lead-gen-comparison table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.lead-gen-comparison .border {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.lead-gen-comparison .border-\[\#f8f8f8\] {
+    border-color: #f8f8f8;
+}
+
+.lead-gen-comparison .bg-\[\#f8f8f8\] {
+    background-color: #f8f8f8;
+}
+
+.lead-gen-comparison .text-title {
+    color: var(--title);
+}
+
+.lead-gen-comparison .bg-white {
+    background-color: #fff;
+}
+
+.lead-gen-comparison .px-6 {
+    padding-inline: calc(var(--spacing)*6);
+}
+
+.lead-gen-comparison .py-4 {
+    padding-block: calc(var(--spacing)*4);
+}
+
+.lead-gen-comparison .text-left {
+    text-align: left;
+}
+
+.lead-gen-comparison .poppins-semibold {
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.lead-gen-comparison .font-medium {
+    font-weight: var(--font-weight-medium);
+}

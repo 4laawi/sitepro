@@ -6,7 +6,6 @@ import ServedCities from '@/components/ServedCities'
 // Safely code-split heavier, below-the-fold sections
 
 const PortfolioSection = dynamic(() => import('@/components/PortfolioSection'), { ssr: true })
-const AboutSection = dynamic(() => import('@/components/AboutSection'), { ssr: true })
 const MoroccoSection = dynamic(() => import('@/components/MoroccoSection'), { ssr: true })
 const ContactSection = dynamic(() => import('@/components/ContactSection'), { ssr: true })
 const ToolsSection = dynamic(() => import('@/components/ToolsSection'), { ssr: true })
@@ -41,7 +40,6 @@ export default function Home() {
 
       <ServedCities lang="FR" />
       <MoroccoSection />
-      <section className="cv-auto"><AboutSection lang="FR" /></section>
       <section className="cv-auto"><ContactSection lang="FR" /></section>
     </>
   )

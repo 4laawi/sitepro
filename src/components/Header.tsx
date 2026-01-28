@@ -177,7 +177,7 @@ export default function Header() {
                 </li>
                 <li> <Link href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
                 <li>
-                  <Link href={language === 'EN' ? "/en/applications-mobiles/" : "/applications-mobiles/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
+                  <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
                     <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -298,7 +298,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={language === 'EN' ? "/en/applications-mobiles/" : "/applications-mobiles/"}
+                href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >

@@ -31,7 +31,7 @@ export default function Footer() {
       serviceLinks: [
         { label: 'Création de Sites Web', href: '/creation-site-web-maroc' },
         { label: 'E-commerce', href: '/e-commerce' },
-        { label: 'Applications Mobiles', href: '/applications-mobiles' },
+        { label: 'Applications Mobiles', href: '/application-mobile-maroc' },
         { label: 'Référencement SEO', href: '/referencement-seo' },
         { label: 'Design & Branding', href: '/design-branding' },
         { label: 'Maintenance & Support', href: '/maintenance-support' },
@@ -58,7 +58,7 @@ export default function Footer() {
       serviceLinks: [
         { label: 'Website Creation', href: '/en/creation-site-web-maroc' },
         { label: 'E-commerce', href: '/en/e-commerce' },
-        { label: 'Mobile Applications', href: '/en/applications-mobiles' },
+        { label: 'Mobile Applications', href: '/en/application-mobile-maroc' },
         { label: 'SEO Ranking', href: '/en/referencement-seo' },
         { label: 'Design & Branding', href: '/en/design-branding' },
         { label: 'Maintenance & Support', href: '/en/maintenance-support' },

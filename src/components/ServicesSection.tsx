@@ -150,7 +150,7 @@ export default function ServicesSection({ lang = 'FR' }: ServicesSectionProps) {
         return '/referencement-seo'
       case 'Applications Mobiles':
       case 'Mobile Applications':
-        return '/applications-mobiles'
+        return '/application-mobile-maroc'
       case 'Design & Branding':
         return '/design-branding'
       case 'Maintenance & Support':
