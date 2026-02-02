@@ -508,12 +508,12 @@ export default function ApplicationMobileMarocPage() {
                                     <div className="feature-content">
                                         <h3 className="feature-title">Optimisation & Maintenance</h3>
                                         <p className="feature-description">Suivi technique permanent pour assurer la stabilité, la sécurité et l'évolution de votre produit digital.</p>
-                                        <a href="/maintenance-site-web-maroc/" className="feature-cta">
+                                        <Link href="/maintenance-site-web-maroc/" className="feature-cta">
                                             <span>Nos forfaits support</span>
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7" />
                                             </svg>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </article>
                             </div>
@@ -657,13 +657,13 @@ export default function ApplicationMobileMarocPage() {
                         <div className="pricing-left">
                             <h2 className="section-title"> Investissement de <span className="highlight">Développement Mobile</span> au Maroc </h2>
                             <div className="pricing-text">
-                                <p> Quel est le tarif pour concevoir une application mobile au Maroc ? C'est une interrogation majeure pour chaque porteur de projet. Le <a href="/contact/" id="style-wKBTF" className="style-wKBTF">coût global</a> s'ajuste en fonction de plusieurs variables : architecture technique, design sur-mesure, complexité des algorithmes et intégrations API. </p>
+                                <p> Quel est le tarif pour concevoir une application mobile au Maroc ? C'est une interrogation majeure pour chaque porteur de projet. Le <Link href="/contact/" id="style-wKBTF" className="style-wKBTF">coût global</Link> s'ajuste en fonction de plusieurs variables : architecture technique, design sur-mesure, complexité des algorithmes et intégrations API. </p>
                                 <p> Pour une <strong>Solution Startup (MVP)</strong>, prévoyez une enveloppe optimisée entre <strong>15 000 et 35 000 DH</strong>. Cette approche ultra-agile vous permet de confronter votre idée au marché en un temps record, de capter vos premiers utilisateurs et de <span className="highlight-text">valider votre Proof of Concept sans risque financier majeur</span>. </p>
                                 <p> Une <strong>architecture mobile évolutive</strong> intégrant des fonctionnalités avancées et un backend performant débute désormais <strong>à partir de 45 000 DH</strong>. Ce pack inclut le déploiement sur les deux stores, une interface d'administration intuitive et une base technique prête pour la croissance. </p>
                                 <p> Le <strong>Design UI/UX Stratégique</strong> est accessible dès <strong>3 500 DH</strong>. Nous concevons des parcours utilisateurs immersifs et des maquettes haute-fidélité qui maximisent l'engagement, garantissant que votre application se démarque dès la première seconde. </p>
-                            </div> <a href="/contact/" className="cta-button"> <span>Calculer votre devis sur-mesure</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            </div> <Link href="/contact/" className="cta-button"> <span>Calculer votre devis sur-mesure</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg> </a>
+                            </svg> </Link>
                         </div>
                         <div className="pricing-right">
                             <div className="pricing-table">

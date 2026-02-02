@@ -3,21 +3,17 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import {
     ShieldCheck,
     Activity,
-    Clock,
     CheckCircle2,
-    XCircle,
     ArrowRight,
     Zap,
     Lock,
     Cpu,
     TrendingUp,
     Phone,
-    Mail,
-    ChevronDown
+    Mail
 } from 'lucide-react';
 import ClientMotionWrapper from '@/components/ClientMotionWrapper';
 import FAQSection from '@/components/FAQSection';

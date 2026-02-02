@@ -46,7 +46,7 @@ export default function ContactForm() {
             setFormData({ fullName: '', projectType: '', otherProjectType: '', delay: '' })
 
             setTimeout(() => setIsSubmitted(false), 5000)
-        } catch (_err) {
+        } catch {
             setError('Une erreur est survenue. Veuillez réessayer.')
         } finally {
             setIsSubmitting(false)

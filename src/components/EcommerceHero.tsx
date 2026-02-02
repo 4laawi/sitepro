@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import './EcommerceHero.css';
 
 const logoItems = [
@@ -21,9 +22,9 @@ const EcommerceHero: React.FC = () => {
                         We collaborate with high performance teams across e-commerce, retail, service, and subscription - applying tailored CRM strategies to unlock long-term growth.
                     </h4>
                     <div className="cta-block">
-                        <a href="/brands" className="primary-cta w-inline-block">
+                        <Link href="/brands" className="primary-cta w-inline-block">
                             <p className="paragraph-2">OUR BRANDS</p>
-                        </a>
+                        </Link>
                     </div>
                     <div className="carousel">
                         <div className="logo-carousel-wrap style-BTZos" id="style-BTZos">
