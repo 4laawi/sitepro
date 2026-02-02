@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import HeroSection from '@/components/HeroSection'
 import StatsSection from '@/components/StatsSection'
 import ServedCities from '@/components/ServedCities'
-import TrustSection from '@/components/TrustSection'
+
 
 // Safely code-split heavier, below-the-fold sections
 
@@ -33,7 +33,7 @@ export default function EnglishHomePage() {
         <>
             <HeroSection lang="EN" />
             <StatsSection lang="EN" />
-            <TrustSection lang="EN" />
+
             <section className="cv-auto"><SolutionsSection lang="EN" /></section>
             <section className="cv-auto"><PortfolioSection lang="EN" /></section>
             <div className="mb-12">
