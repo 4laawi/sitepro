@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import HeroSection from '@/components/HeroSection'
 import StatsSection from '@/components/StatsSection'
 import ServedCities from '@/components/ServedCities'
+import TrustSection from '@/components/TrustSection'
 
 // Safely code-split heavier, below-the-fold sections
 
@@ -14,15 +16,25 @@ const AgencyServices = dynamic(() => import('@/components/AgencyServices'), { ss
 const ScrollVelocity = dynamic(() => import('@/components/ScrollVelocityWrapper'), { ssr: true })
 const SolutionsSection = dynamic(() => import('@/components/SolutionsSection'), { ssr: true })
 
+export const metadata: Metadata = {
+  title: 'Sitepro.ma - Agence Web Maroc | Création de Sites Internet Professionnels',
+  description: 'Sitepro.ma - Votre partenaire digital au Maroc. Nous créons des sites web modernes et performants pour les entreprises marocaines. Design sur mesure, SEO optimisé, résultats garantis.',
+  alternates: {
+    canonical: 'https://www.sitepro.ma/',
+    languages: {
+      'fr-MA': 'https://www.sitepro.ma/',
+      'en-MA': 'https://www.sitepro.ma/en/',
+    },
+  },
+}
 
 export default function Home() {
   return (
     <>
       <HeroSection lang="FR" />
-      <StatsSection />
-      {/* Breadcrumb JSON-LD for homepage */}
-      {/* Inject via next/script would normally be in layout if needed; homepage typically doesn't require breadcrumbs */}
-      <section className="cv-auto"><SolutionsSection /></section>
+      <StatsSection lang="FR" />
+      <TrustSection lang="FR" />
+      <section className="cv-auto"><SolutionsSection lang="FR" /></section>
       <section className="cv-auto"><PortfolioSection lang="FR" /></section>
       <div className="mb-12">
         <ScrollVelocity
@@ -34,12 +46,12 @@ export default function Home() {
           className="text-[#022545]"
         />
       </div>
-      <section className="cv-auto"><AgencyServices /></section>
+      <section className="cv-auto"><AgencyServices lang="FR" /></section>
 
-      <ToolsSection />
+      <ToolsSection lang="FR" />
 
       <ServedCities lang="FR" />
-      <MoroccoSection />
+      <MoroccoSection lang="FR" />
       <section className="cv-auto"><ContactSection lang="FR" /></section>
     </>
   )

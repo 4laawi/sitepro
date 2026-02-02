@@ -20,7 +20,7 @@ export default function Header() {
 
   const t = {
     FR: {
-      creationWeb: 'Solutions',
+      creationWeb: 'Sites Web',
       portfolio: 'Portfolio',
       appsMobiles: 'Applications Mobiles',
       seoSea: 'SEO/SEA',
@@ -41,7 +41,7 @@ export default function Header() {
       blog: 'Blog'
     },
     EN: {
-      creationWeb: 'Solutions',
+      creationWeb: 'Websites',
       portfolio: 'Portfolio',
       appsMobiles: 'Mobile Apps',
       seoSea: 'SEO/SEA',
@@ -72,28 +72,37 @@ export default function Header() {
   }
 
   useEffect(() => {
+    let ticking = false;
+
     const controlNavbar = () => {
-      if (typeof window !== 'undefined') {
-        // Keep navbar visible on mobile/tablets
-        if (window.innerWidth < 1024) {
-          setIsVisible(true)
-          return
-        }
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (typeof window !== 'undefined') {
+            // Keep navbar visible on mobile/tablets
+            if (window.innerWidth < 1024) {
+              setIsVisible(true)
+              ticking = false;
+              return
+            }
 
-        const currentScrollY = window.scrollY
+            const currentScrollY = window.scrollY
 
-        // Always show navbar at the very top
-        if (currentScrollY < 10) {
-          setIsVisible(true)
-        } else if (currentScrollY > lastScrollY) {
-          // Scrolling down - hide navbar
-          setIsVisible(false)
-        } else {
-          // Scrolling up - show navbar
-          setIsVisible(true)
-        }
+            // Always show navbar at the very top
+            if (currentScrollY < 10) {
+              setIsVisible(true)
+            } else if (currentScrollY > lastScrollY) {
+              // Scrolling down - hide navbar
+              setIsVisible(false)
+            } else {
+              // Scrolling up - show navbar
+              setIsVisible(true)
+            }
 
-        setLastScrollY(currentScrollY)
+            setLastScrollY(currentScrollY)
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     }
 
@@ -168,13 +177,13 @@ export default function Header() {
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'creationWeb' ? 'is-open' : ''}`}>
                     <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
                       <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/creation-site-web/" : "/creation-site-web/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.vitrine} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.ecommerce} </Link> </li>
+
                       <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/maintenance-support/" : "/maintenance-support/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/maintenance-site-web-maroc/" : "/maintenance-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
                     </ul>
                   </div>
                 </li>
+
                 <li> <Link href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
                 <li>
                   <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
@@ -276,12 +285,12 @@ export default function Header() {
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['creationWeb'] ? 'active' : 'hidden'}`}>
                 <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/creation-site-web/" : "/creation-site-web/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.vitrine} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.ecommerce} </Link> </li>
+
                 <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/maintenance-support/" : "/maintenance-support/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/maintenance-site-web-maroc/" : "/maintenance-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
               </ul>
             </li>
+
             <li>
               <Link
                 href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"}

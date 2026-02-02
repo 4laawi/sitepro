@@ -47,26 +47,45 @@ const StatItem = ({ number, suffix = '', prefix = '', label, delay = 0 }: StatIt
     );
 };
 
-export default function StatsSection() {
+interface StatsSectionProps {
+    lang?: 'FR' | 'EN';
+}
+
+export default function StatsSection({ lang = 'FR' }: StatsSectionProps) {
+    const t = {
+        FR: {
+            projects: <>Projets web réalisés<br />pour nos clients</>,
+            redesigns: <>Refontes de sites effectuées<br />sur différents secteurs</>,
+            experience: <>ans d&apos;expérience<br />pratique</>,
+            satisfaction: <>Taux de satisfaction client<br />NPS sur l&apos;année 2024</>,
+        },
+        EN: {
+            projects: <>Web projects completed<br />for our clients</>,
+            redesigns: <>Site redesigns performed<br />across various sectors</>,
+            experience: <>years of practical<br />experience</>,
+            satisfaction: <>Customer satisfaction rate<br />NPS for the year 2024</>,
+        }
+    }[lang];
+
     const stats = [
         {
             number: 120,
             prefix: '+',
-            label: <>Projets web réalisés<br />pour nos clients</>,
+            label: t.projects,
         },
         {
             number: 70,
             prefix: '+',
-            label: <>Refontes de sites effectuées<br />sur différents secteurs</>,
+            label: t.redesigns,
         },
         {
             number: 3,
-            label: <>ans d&apos;expérience<br />pratique</>,
+            label: t.experience,
         },
         {
             number: 90,
             suffix: '%',
-            label: <>Taux de satisfaction client<br />NPS sur l&apos;année 2024</>,
+            label: t.satisfaction,
         },
     ];
 

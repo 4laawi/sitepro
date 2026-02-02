@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
-import { useMemo, useState, useRef } from 'react'
+import { useMemo, useState, useRef, useEffect } from 'react'
 import { ExternalLink, Tag } from 'lucide-react'
 import { useInView } from 'framer-motion'
 
@@ -30,9 +30,10 @@ interface PortfolioCardProps {
   index: number;
   isInView: boolean;
   randomDelays: number[];
+  isMobile?: boolean;
 }
 
-function InteractivePortfolioCard({ item, index, isInView, randomDelays }: PortfolioCardProps) {
+function InteractivePortfolioCard({ item, index, isInView, randomDelays, isMobile }: PortfolioCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
     <ClientMotionWrapper
@@ -50,9 +51,9 @@ function InteractivePortfolioCard({ item, index, isInView, randomDelays }: Portf
           </div>
         )}
         <div
-          className={`w-full relative ${item.scrollOnHover && isInView && isLoaded ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
-          style={item.scrollOnHover && isInView && isLoaded ? {
-            animationDelay: `${randomDelays[index % randomDelays.length]}s`,
+          className={`w-full relative ${((item.scrollOnHover || (isMobile && index < 3)) && isInView && isLoaded) ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
+          style={((item.scrollOnHover || (isMobile && index < 3)) && isInView && isLoaded) ? {
+            animationDelay: isMobile && index < 3 ? `${index * 1}s` : `${randomDelays[index % randomDelays.length]}s`,
           } : {}}
         >
           {item.scrollOnHover ? (
@@ -110,8 +111,16 @@ function InteractivePortfolioCard({ item, index, isInView, randomDelays }: Portf
 
 export default function PortfolioInteractive({ items, categories }: PortfolioInteractiveProps) {
   const [selected, setSelected] = useState<string>('Tous')
+  const [isMobile, setIsMobile] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { amount: 0.1, once: false })
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const filtered = useMemo(() => {
     if (selected === 'Tous') return items.filter((i) => !i.hideFromAll)
@@ -157,6 +166,7 @@ export default function PortfolioInteractive({ items, categories }: PortfolioInt
             index={index}
             isInView={isInView}
             randomDelays={randomDelays}
+            isMobile={isMobile}
           />
         ))}
       </div>

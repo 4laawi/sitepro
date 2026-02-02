@@ -86,9 +86,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // We should ideally get the lang from the URL here if possible, 
+  // but since layout is often shared, we can use a middleware approach or 
+  // check headers. For now, we'll keep it 'fr' as default but ensure 
+  // we don't cause a mismatch if the router changes it immediately.
   return (
-    <html lang="fr">
-      <body className={`${plusJakarta.variable} ${outfit.variable} font-sans antialiased text-gray-900 bg-white`}>
+    <html lang="fr" className="scroll-smooth">
+      <body className={`${plusJakarta.variable} ${outfit.variable} font-sans antialiased text-gray-900 bg-white`} suppressHydrationWarning>
         <Script id="ld-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',

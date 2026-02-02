@@ -234,13 +234,13 @@ interface PortfolioCardProps {
   isInView: boolean;
   randomDelays: number[];
   t: TranslationType;
+  isMobile?: boolean;
 }
 
-function PortfolioCard({ item, index, isInView, randomDelays, t }: PortfolioCardProps) {
+function PortfolioCard({ item, index, isInView, randomDelays, t, isMobile }: PortfolioCardProps) {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
@@ -256,9 +256,9 @@ function PortfolioCard({ item, index, isInView, randomDelays, t }: PortfolioCard
             </div>
           )}
           <div
-            className={`w-full relative ${item.scrollOnHover && isInView && isLoaded ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
-            style={item.scrollOnHover && isInView && isLoaded ? {
-              animationDelay: `${randomDelays[index % randomDelays.length]}s`,
+            className={`w-full relative ${((item.scrollOnHover || (isMobile && index < 3)) && isInView && isLoaded) ? 'animate-auto-scroll' : ''} transition-transform duration-[6000ms] ease-in-out group-hover:translate-y-[calc(-100%+12rem)]`}
+            style={((item.scrollOnHover || (isMobile && index < 3)) && isInView && isLoaded) ? {
+              animationDelay: isMobile && index < 3 ? `${index * 1}s` : `${randomDelays[index % randomDelays.length]}s`,
             } : {}}
           >
             {item.scrollOnHover ? (
@@ -609,6 +609,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
               isInView={isInView}
               randomDelays={randomDelays}
               t={t}
+              isMobile={isMobile}
             />
           ))}
         </motion.div>

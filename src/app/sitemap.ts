@@ -24,15 +24,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // City landing pages for local SEO
   const cities = [
-    'marrakech', 'rabat', 'casablanca', 'agadir', 'fes', 'tanger', 'laayoune',
-    'kenitra', 'tetouan', 'larache', 'asilah', 'chefchaouen', 'al-hoceima',
-    'nador', 'khouribga', 'meknes', 'ifrane', 'essaouira', 'benguerir', 'dakhla'
+    'tanger', 'rabat', 'kenitra', 'tetouan', 'larache', 'asilah', 'chefchaouen',
+    'al-hoceima', 'nador', 'casablanca', 'khouribga', 'fes', 'meknes', 'ifrane',
+    'marrakech', 'essaouira', 'benguerir', 'agadir', 'laayoune', 'dakhla'
   ]
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
-    url: `${base}/creation-site-web/${city}`,
+    url: `${base}/creation-site-web-${city}`,
     lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.8,
+  }))
+
+  const oldCityPages: MetadataRoute.Sitemap = [
+    'marrakech', 'rabat', 'casablanca', 'agadir', 'fes', 'tanger', 'laayoune'
+  ].map((city) => ({
+    url: `${base}/creation-site-web/${city}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
   }))
 
   // Case studies (portfolio subpages)
@@ -42,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/portfolio/case-studies/maroc-maroc`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
   ]
 
-  return [...staticPages, ...cityPages, ...caseStudies]
+  return [...staticPages, ...cityPages, ...oldCityPages, ...caseStudies]
 }
 
 

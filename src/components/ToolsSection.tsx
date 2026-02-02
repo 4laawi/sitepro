@@ -20,10 +20,29 @@ const tools = [
     { name: 'InVision', logo: 'https://www.datocms-assets.com/22695/1735402685-invision-logo.svg' },
 ];
 
-const ToolsSection = () => {
+interface ToolsSectionProps {
+    lang?: 'FR' | 'EN';
+}
+
+const ToolsSection = ({ lang = 'FR' }: ToolsSectionProps) => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+
+    const t = {
+        FR: {
+            badge: "Expertise Technique",
+            title: "Les outils que nous utilisons",
+            prevAria: "Outils précédents",
+            nextAria: "Outils suivants"
+        },
+        EN: {
+            badge: "Technical Expertise",
+            title: "The tools we use",
+            prevAria: "Previous tools",
+            nextAria: "Next tools"
+        }
+    }[lang];
 
     const checkScroll = () => {
         if (scrollRef.current) {
@@ -71,8 +90,8 @@ const ToolsSection = () => {
             </div>
             <div className="tools-container relative z-10">
                 <div className="text-center mb-12">
-                    <span className="badge-gradient">Expertise Technique</span>
-                    <h2 className="section-title-premium">Les outils que nous utilisons</h2>
+                    <span className="badge-gradient">{t.badge}</span>
+                    <h2 className="section-title-premium">{t.title}</h2>
                 </div>
                 <div className="tabs-btns">
                     <div className="scroll-nav w-full flex justify-end">
@@ -80,7 +99,7 @@ const ToolsSection = () => {
                             className="scroll-button prev"
                             onClick={() => scroll('left')}
                             disabled={!canScrollLeft}
-                            aria-label="Previous tools"
+                            aria-label={t.prevAria}
                         >
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M19.8764 24.7533L23.5498 28.4355L22.4878 29.5L17.0008 24L22.4878 18.5L23.5498 19.5645L19.8752 23.2479L31 23.2479L31 24.7533L19.8764 24.7533Z" />
@@ -90,7 +109,7 @@ const ToolsSection = () => {
                             className="scroll-button next"
                             onClick={() => scroll('right')}
                             disabled={!canScrollRight}
-                            aria-label="Next tools"
+                            aria-label={t.nextAria}
                         >
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M28.1236 23.2467L24.4502 19.5645L25.5122 18.5L30.9992 24L25.5122 29.5L24.4502 28.4355L28.1248 24.7521L17 24.7521L17 23.2467L28.1236 23.2467Z" />

@@ -6,38 +6,86 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import './SolutionsSection.css'
 
-const solutions = [
-    {
-        title: "Création de site",
-        description: "Développer un site vitrine ou e-commerce sur-mesure, pensé pour votre croissance.",
-        image: "/clipboard-image-1769520418.webp",
-        link: "/creation-site-web-maroc",
-        delay: 0.1
-    },
-    {
-        title: "Application mobile",
-        description: "Développement d'applications iOS et Android sur mesure, fluides et performantes.",
-        image: "/clipboard-image-1769520336.webp",
-        link: "/application-mobile-maroc",
-        delay: 0.2
-    },
-    {
-        title: "Portfolio",
-        description: "Découvrez nos dernières réalisations et projets web & mobile pour nos clients.",
-        image: "/portfolio-solutions.png",
-        link: "/portfolio",
-        delay: 0.3
-    },
-    {
-        title: "Blog",
-        description: "Conseils, actualités et expertise sur le monde du digital et du développement.",
-        image: "/blog-solutions.png",
-        link: "/blog",
-        delay: 0.4
-    }
-]
+interface SolutionsSectionProps {
+    lang?: 'FR' | 'EN';
+}
 
-const SolutionsSection = () => {
+const SolutionsSection = ({ lang = 'FR' }: SolutionsSectionProps) => {
+    const t = {
+        FR: {
+            badge: "Nos solutions",
+            title: "Votre présence digitale, notre expertise",
+            subtitle: "Des solutions sur mesure pour booster votre activité",
+            learnMore: "En savoir plus",
+            solutions: [
+                {
+                    title: "Création de site",
+                    description: "Développer un site vitrine ou e-commerce sur-mesure, pensé pour votre croissance.",
+                    image: "/clipboard-image-1769520418.webp",
+                    link: "/creation-site-web-maroc",
+                    delay: 0.1
+                },
+                {
+                    title: "Application mobile",
+                    description: "Développement d'applications iOS et Android sur mesure, fluides et performantes.",
+                    image: "/clipboard-image-1769520336.webp",
+                    link: "/application-mobile-maroc",
+                    delay: 0.2
+                },
+                {
+                    title: "Portfolio",
+                    description: "Découvrez nos dernières réalisations et projets web & mobile pour nos clients.",
+                    image: "/portfolio-solutions.png",
+                    link: "/portfolio",
+                    delay: 0.3
+                },
+                {
+                    title: "Blog",
+                    description: "Conseils, actualités et expertise sur le monde du digital et du développement.",
+                    image: "/blog-solutions.png",
+                    link: "/blog",
+                    delay: 0.4
+                }
+            ]
+        },
+        EN: {
+            badge: "Our solutions",
+            title: "Your digital presence, our expertise",
+            subtitle: "Custom solutions to boost your business",
+            learnMore: "Learn more",
+            solutions: [
+                {
+                    title: "Website Creation",
+                    description: "Develop a custom showcase or e-commerce site, designed for your growth.",
+                    image: "/clipboard-image-1769520418.webp",
+                    link: "/en/creation-site-web-maroc",
+                    delay: 0.1
+                },
+                {
+                    title: "Mobile App",
+                    description: "Development of custom iOS and Android applications, fluid and high-performing.",
+                    image: "/clipboard-image-1769520336.webp",
+                    link: "/en/application-mobile-maroc",
+                    delay: 0.2
+                },
+                {
+                    title: "Portfolio",
+                    description: "Discover our latest achievements and web & mobile projects for our clients.",
+                    image: "/portfolio-solutions.png",
+                    link: "/en/portfolio",
+                    delay: 0.3
+                },
+                {
+                    title: "Blog",
+                    description: "Tips, news, and expertise on the world of digital and development.",
+                    image: "/blog-solutions.png",
+                    link: "/en/blog",
+                    delay: 0.4
+                }
+            ]
+        }
+    }[lang];
+
     return (
         <section className="solutions-section">
             <div className="solutions-container">
@@ -48,13 +96,13 @@ const SolutionsSection = () => {
                     viewport={{ once: true }}
                     className="solutions-header"
                 >
-                    <span className="badge-gradient">Nos solutions</span>
-                    <h2 className="section-title-premium">Votre présence digitale, notre expertise</h2>
-                    <h3 className="section-subtitle-premium">Des solutions sur mesure pour booster votre activité</h3>
+                    <span className="badge-gradient">{t.badge}</span>
+                    <h2 className="section-title-premium">{t.title}</h2>
+                    <h3 className="section-subtitle-premium">{t.subtitle}</h3>
                 </motion.div>
 
                 <div className="solutions-grid">
-                    {solutions.map((item, index) => (
+                    {t.solutions.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +126,7 @@ const SolutionsSection = () => {
                                             loading="lazy"
                                         />
                                         <div className="learn-more-overlay">
-                                            <span>En savoir plus</span>
+                                            <span>{t.learnMore}</span>
                                             <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>

@@ -1,0 +1,58 @@
+.maintenance-monitoring-section {
+    @apply py-20 bg-white overflow-hidden;
+}
+
+.maintenance-monitoring-section .feature-card {
+    @apply p-8 rounded-[32px] border border-gray-100 bg-white transition-all duration-300;
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+}
+
+.maintenance-monitoring-section .feature-card:hover {
+    @apply border-primary-200;
+    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.1);
+}
+
+.card-security {
+    @apply col-span-1 lg:col-span-1;
+}
+
+.card-comparison {
+    @apply col-span-1 lg:col-span-1 bg-gray-50/50;
+}
+
+.maintenance-monitoring-section .tag {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium;
+}
+
+.maintenance-monitoring-section .cta-box {
+    @apply mt-20 p-12 rounded-[40px] bg-[#022545] text-white overflow-hidden relative;
+}
+
+.maintenance-monitoring-section .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.vs-badge {
+    @apply w-10 h-10 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xs z-10;
+}
