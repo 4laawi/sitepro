@@ -176,17 +176,17 @@ export default function Header() {
                   </button>
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'creationWeb' ? 'is-open' : ''}`}>
                     <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
-                      <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
+                      <li> <Link href={"/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
 
-                      <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
-                      <li> <Link href={language === 'EN' ? "/en/maintenance-site-web-maroc/" : "/maintenance-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
+                      <li> <Link href={"/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
+                      <li> <Link href={"/maintenance-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
                     </ul>
                   </div>
                 </li>
 
-                <li> <Link href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
+                <li> <Link href={"/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
                 <li>
-                  <Link href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
+                  <Link href={"/application-mobile-maroc/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
                     <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -208,7 +208,7 @@ export default function Header() {
                   </button>
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'seo' ? 'is-open' : ''}`}>
                     <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-                      <li> <Link href={language === 'EN' ? "/en/referencement-seo/" : "/referencement-seo/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
+                      <li> <Link href={"/referencement-seo/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
                       {/* Temporarily hiding non-existent routes until created 
                       <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.geo} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.gmb} </Link> </li>
@@ -217,8 +217,8 @@ export default function Header() {
                     </ul>
                   </div>
                 </li>
-                <li> <Link href={language === 'EN' ? "/en/blog/" : "/blog/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.blog} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/contact/" : "/contact/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.contact} </Link> </li>
+                <li> <Link href={"/blog/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.blog} </Link> </li>
+                <li> <Link href={"/contact/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.contact} </Link> </li>
               </ul>
             </nav>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -284,16 +284,16 @@ export default function Header() {
                 </svg>
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['creationWeb'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/creation-site-web-maroc/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
+                <li> <Link href={"/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
 
-                <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
-                <li> <Link href={language === 'EN' ? "/en/maintenance-site-web-maroc/" : "/maintenance-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
+                <li> <Link href={"/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
+                <li> <Link href={"/maintenance-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
               </ul>
             </li>
 
             <li>
               <Link
-                href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"}
+                href={"/portfolio/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
@@ -307,7 +307,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={language === 'EN' ? "/en/application-mobile-maroc/" : "/application-mobile-maroc/"}
+                href={"/application-mobile-maroc/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
@@ -337,7 +337,7 @@ export default function Header() {
                 </svg>
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['seo'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={language === 'EN' ? "/en/referencement-seo/" : "/referencement-seo/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
+                <li> <Link href={"/referencement-seo/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
                 {/* Temporarily hiding non-existent routes until created 
                 <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.geo} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.gmb} </Link> </li>
@@ -347,7 +347,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={language === 'EN' ? "/en/blog/" : "/blog/"}
+                href={"/blog/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
@@ -356,6 +356,18 @@ export default function Header() {
                   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                 </svg>
                 <span className="text-[17px]">{t.blog}</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"/contact/"}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3.08a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-3.86-4.23 19.5 19.5 0 0 1-4.23-3.86A19.79 19.79 0 0 1 2 4.18 2 2 0 0 1 4.18 2h3.08a2 2 0 0 1 2 1.72c.1.64.31 1.26.61 1.85a2 2 0 0 1-.41 2.44L6.84 9.18a15.92 15.92 0 0 0 4 4 15.92 15.92 0 0 0 4-4l1.18-1.18a2 2 0 0 1 2.44-.41c.59.3 1.21.51 1.85.61a2 2 0 0 1 1.72 2z" />
+                </svg>
+                <span className="text-[17px]">{t.contact}</span>
               </Link>
             </li>
           </ul>

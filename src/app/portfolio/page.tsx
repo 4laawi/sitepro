@@ -3,17 +3,18 @@ import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import Script from 'next/script'
 import PortfolioInteractive from '@/components/PortfolioInteractive'
+import { ArrowRight } from 'lucide-react'
 
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Sitepro.ma',
+  title: 'Portfolio Agence Web Maroc | Nos Réalisations Digitales',
   description:
-    'Découvrez nos projets récents: e‑commerce, restaurants, locations, immobilier et plus. UI moderne, performances et résultats mesurables.',
+    'Découvrez notre portfolio agence web maroc. Projets e-commerce, vitrines et solutions sur mesure performantes. Preuve de notre expertise et résultats.',
   alternates: { canonical: '/portfolio' },
-  keywords: ['portfolio site web maroc', 'réalisations web', 'agence web maroc'],
+  keywords: ['portfolio agence web maroc', 'réalisations web maroc', 'projets agence web'],
   openGraph: {
-    title: 'Portfolio | Sitepro.ma',
-    description: 'Sélection de projets modernes et performants.',
+    title: 'Portfolio Agence Web Maroc | Nos Réalisations Digitales',
+    description: 'Sélection de projets modernes et performants par Sitepro.',
     url: 'https://www.sitepro.ma/portfolio',
     type: 'website',
   },
@@ -237,26 +238,63 @@ export default function PortfolioPage() {
             <span className="badge-gradient">
               Portfolio
             </span>
-            <h1 className="hero-title-premium mt-4">Sélection de projets</h1>
+            <h1 className="hero-title-premium mt-4">Portfolio agence web au Maroc – Nos meilleures réalisations</h1>
             <p className="hero-subtitle-premium mx-auto mt-3">
-              Des interfaces modernes, performantes et orientées résultat pour des secteurs variés.
+              Explorez notre <strong className="text-gray-900">portfolio agence web maroc</strong> et découvrez des interfaces modernes, performantes et orientées résultat.
             </p>
           </ClientMotionWrapper>
         </div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-14">
+      <div className="container mx-auto px-4 py-14 border-b border-gray-100">
         <PortfolioInteractive items={items} categories={categories} />
 
-        {/* CTA */}
-        <div className="text-center mt-16">
+        {/* Previous CTA - kept or removed? User asked to add a bottom section. I will replace the small CTA with a more prominent one. */}
+        <div className="text-center mt-16 pb-16">
           <p className="text-gray-600 mb-4">Envie d&apos;un projet similaire ? Parlons-en.</p>
           <a href={`https://wa.me/212663711164`} className="btn-primary inline-flex items-center gap-2">
             Démarrer un projet
           </a>
         </div>
       </div>
+
+      {/* SEO Optimized Internal Link CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-[#022545] to-[#04335d] text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500 rounded-full blur-[150px] opacity-10"></div>
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-10"></div>
+
+        <div className="container px-4 mx-auto max-w-5xl text-center relative z-10">
+          <ClientMotionWrapper
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-bold tracking-wider text-primary-300 mb-4">
+              AGENCE DE CRÉATION DE SITE WEB AU MAROC
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+              Un site web qui <span className="text-primary-400">génère des clients</span> et domine Google
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Découvrez comment notre expertise en <strong>référencement SEO</strong> et performance web transforme votre présence digitale au Maroc en machine à leads.
+            </p>
+            <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link href="/creation-site-web-maroc/" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
+                Agence création site web maroc
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <div className="flex flex-col items-center sm:items-start">
+                <p className="text-sm text-gray-400 font-medium italic">Audit technique offert</p>
+                <a href="tel:+212663711164" className="text-white hover:text-primary-400 font-bold text-lg flex items-center gap-2 transition-colors">
+                  +212 663-711164
+                </a>
+              </div>
+            </div>
+          </ClientMotionWrapper>
+        </div>
+      </section>
     </section>
   )
 }

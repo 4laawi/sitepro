@@ -35,15 +35,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const oldCityPages: MetadataRoute.Sitemap = [
-    'marrakech', 'rabat', 'casablanca', 'agadir', 'fes', 'tanger', 'laayoune'
-  ].map((city) => ({
-    url: `${base}/creation-site-web/${city}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }))
-
   // Case studies (portfolio subpages)
   const caseStudies: MetadataRoute.Sitemap = [
     { url: `${base}/portfolio/case-studies/mama-fatma-store`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
@@ -51,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/portfolio/case-studies/maroc-maroc`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
   ]
 
-  return [...staticPages, ...cityPages, ...oldCityPages, ...caseStudies]
+  return [...staticPages, ...cityPages, ...caseStudies]
 }
 
 

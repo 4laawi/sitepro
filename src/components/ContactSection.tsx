@@ -36,7 +36,7 @@ export default function ContactSection({ lang = 'FR' }: ContactSectionProps) {
   const t = {
     FR: {
       badge: 'Contact',
-      title: 'Parlons de votre projet',
+      title: 'Contact agence web au Maroc – Parlons de votre projet',
       description: 'Prêt à donner vie à votre vision ? Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons transformer votre présence digitale.',
       formTitle: 'Envoyez-nous un message',
       labels: {

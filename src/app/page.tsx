@@ -17,8 +17,8 @@ const ScrollVelocity = dynamic(() => import('@/components/ScrollVelocityWrapper'
 const SolutionsSection = dynamic(() => import('@/components/SolutionsSection'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: 'Sitepro.ma - Agence Web Maroc | Création de Sites Internet Professionnels',
-  description: 'Sitepro.ma - Votre partenaire digital au Maroc. Nous créons des sites web modernes et performants pour les entreprises marocaines. Design sur mesure, SEO optimisé, résultats garantis.',
+  title: 'Création Site Web Maroc | Agence Web Sitepro',
+  description: 'Agence de création site web au Maroc. Sites professionnels, rapides et optimisés SEO. Devis gratuit, design sur mesure et résultats mesurables.',
   alternates: {
     canonical: 'https://www.sitepro.ma/',
     languages: {

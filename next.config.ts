@@ -25,6 +25,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/creation-site-web/:city',
+        destination: '/creation-site-web-:city',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;

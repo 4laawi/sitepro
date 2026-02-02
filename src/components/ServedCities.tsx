@@ -22,8 +22,8 @@ export default function ServedCities({ lang = 'FR' }: ServedCitiesProps) {
   const t = {
     FR: {
       badge: 'Zones d’intervention',
-      title: 'Villes desservies',
-      description: 'Nous travaillons partout au Maroc — en présentiel et à distance. Choisissez votre ville pour voir notre service local.',
+      title: 'Expertise Web par Ville au Maroc',
+      description: 'Nous accompagnons les entreprises à Casablanca, Rabat, Marrakech et partout au Maroc. Consultez nos services de création site web par ville.',
       cityAria: 'Création de site web'
     },
     EN: {

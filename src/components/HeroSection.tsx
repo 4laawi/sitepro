@@ -42,10 +42,10 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
   const t = {
     FR: {
       badge: 'Agence Création Site Web Maroc',
-      title: 'Création de site web professionnel au Maroc',
+      title: 'Création de site web au Maroc pour entreprises et indépendants',
       description: (
         <>
-          Notre <strong className="font-semibold text-title">agence de création de sites web</strong> au <strong className="font-semibold text-title">Maroc</strong> conçoit des solutions sur mesure, entièrement optimisées pour le <strong className="font-semibold text-title">SEO</strong> et les nouveaux <strong className="font-semibold text-title">moteurs d’IA</strong>.
+          Notre <strong className="font-semibold text-title">agence web au Maroc</strong> accompagne votre <strong className="font-semibold text-title">création site web Maroc</strong> avec des solutions sur mesure, un <strong className="font-semibold text-title">site web professionnel</strong> optimisé pour le <strong className="font-semibold text-title">SEO</strong> et les moteurs d’IA.
         </>
       ),
       cta: 'Obtenir mon devis site web',
@@ -206,7 +206,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
             <div className="relative w-full">
               <Image
                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post.webp"
-                alt={t.badge}
+                alt="Création site web Maroc - Agence web Sitepro"
                 width={1080}
                 height={1080}
                 quality={95}

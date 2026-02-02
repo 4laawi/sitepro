@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, AlertCircle, Search, MapPin, Globe, Users } from 'lucide-react'
+import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, AlertCircle, Search, MapPin, Globe, Users, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'Comment trouver des clients en ligne au Maroc ? Méthodes qui marchent | Sitepro.ma',
@@ -335,6 +335,38 @@ export default function BlogPost() {
                     </footer>
                 </article>
             </div>
+
+            {/* SEO Optimized Internal Link CTA Section */}
+            <section className="py-24 bg-gradient-to-br from-[#022545] to-[#04335d] text-white relative overflow-hidden mt-20">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500 rounded-full blur-[150px] opacity-10"></div>
+                <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-10"></div>
+
+                <div className="container px-4 mx-auto max-w-5xl text-center relative z-10">
+                    <div className="space-y-8">
+                        <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-bold tracking-wider text-primary-300 mb-4">
+                            AGENCE DE CRÉATION DE SITE WEB AU MAROC
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+                            Prêt à dominer votre <span className="text-primary-400">marché au Maroc</span> ?
+                        </h2>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                            Ne laissez pas vos concurrents prendre toute la place. Lancez un site web qui capte l&apos;attention et convertit vos visiteurs en clients.
+                        </p>
+                        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <Link href="/creation-site-web-maroc/" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
+                                Création site web Maroc
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                            <div className="flex flex-col items-center sm:items-start text-left">
+                                <p className="text-sm text-gray-400 font-medium italic">Audit technique offert</p>
+                                <a href="tel:+212663711164" className="text-white hover:text-primary-400 font-bold text-lg flex items-center gap-2 transition-colors">
+                                    +212 663-711164
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     )
 }

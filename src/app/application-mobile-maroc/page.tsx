@@ -2,26 +2,26 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
-import { CheckCircle2, Zap, Globe, Bot, Lock, TrendingUp, SmartphoneNfc, Cpu, Rocket, Shield, PenTool, MessageCircle } from 'lucide-react'
+import { CheckCircle2, Zap, Globe, Bot, Lock, TrendingUp, SmartphoneNfc, Cpu, Rocket, Shield, PenTool, MessageCircle, ArrowRight } from 'lucide-react'
 import FAQSection from '@/components/FAQSection'
 import ContactForm from '@/components/ContactForm'
 import CallbackForm from '@/components/CallbackForm'
 import './MobileApp.css'
 
 export const metadata: Metadata = {
-    title: 'Développement Application Mobile Maroc | Agence Experte Sitepro',
-    description: 'Expert en création d\'applications mobiles sur mesure au Maroc. Nous développons des solutions iOS & Android innovantes, performantes et sécurisées. ☎️ 0663 75 09 08',
+    title: 'Création Application Mobile Maroc | Agence Experte Sitepro',
+    description: 'Création application mobile au Maroc. Experts en développement iOS & Android sur mesure, performant et sécurisé. Devis gratuit et accompagnement complet.',
     alternates: { canonical: 'https://www.sitepro.ma/application-mobile-maroc/' },
     openGraph: {
-        title: 'Développement Application Mobile Maroc | Agence Experte Sitepro',
-        description: 'Solutions mobiles innovantes au Maroc. Création d\'applis performantes et évolutives pour iOS et Android par Sitepro.',
+        title: 'Création Application Mobile Maroc | Agence Experte Sitepro',
+        description: 'Création application mobile au Maroc. Experts en développement iOS & Android sur mesure, performant et sécurisé. Devis gratuit et accompagnement complet.',
         url: 'https://www.sitepro.ma/application-mobile-maroc/',
         siteName: 'Sitepro.ma',
         images: [{
             url: 'https://www.sitepro.ma/og-application-mobile.jpg',
             width: 1200,
             height: 630,
-            alt: 'Développement Application Mobile Maroc',
+            alt: 'Création Application Mobile Maroc',
         }],
         locale: 'fr_MA',
         type: 'website',
@@ -83,11 +83,11 @@ export default function ApplicationMobileMarocPage() {
                             </div>
 
                             <h1 className="hero-title-premium">
-                                Création d’applications <span className="text-primary-600">mobiles sur mesure au Maroc</span>
+                                Création d’applications mobiles sur mesure au Maroc
                             </h1>
 
                             <p className="hero-subtitle-premium mx-auto lg:mx-0">
-                                Sitepro est votre agence partenaire de référence pour le <strong className="text-gray-900">développement mobile haute performance</strong>. Nous transformons vos idées en solutions digitales innovantes pour le marché <strong className="text-gray-900">marocain et international</strong>.
+                                Sitepro est votre agence partenaire de référence pour la <strong className="text-gray-900">création application mobile maroc</strong>. Nous transformons vos idées en solutions digitales innovantes et performantes.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
@@ -110,7 +110,7 @@ export default function ApplicationMobileMarocPage() {
                         >
                             <Image
                                 src="/Purple And White Modern Mobile App Promotion Instagram Post.webp"
-                                alt="Développement application mobile Maroc"
+                                alt="Création application mobile Maroc - Solutions sur mesure"
                                 width={1080}
                                 height={1080}
                                 className="w-full h-auto rounded-[2.5rem] relative z-10"
@@ -509,7 +509,7 @@ export default function ApplicationMobileMarocPage() {
                                         <h3 className="feature-title">Optimisation & Maintenance</h3>
                                         <p className="feature-description">Suivi technique permanent pour assurer la stabilité, la sécurité et l'évolution de votre produit digital.</p>
                                         <Link href="/maintenance-site-web-maroc/" className="feature-cta">
-                                            <span>Nos forfaits support</span>
+                                            <span>Maintenance application mobile</span>
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7" />
                                             </svg>
@@ -828,15 +828,37 @@ export default function ApplicationMobileMarocPage() {
                 </div>
             </section>
 
-            {/* Contact Section */}
-            < section id="contact-form-section" className="bg-[#022545] py-24 relative overflow-hidden" >
+            {/* SEO Optimized Internal Link CTA Section */}
+            <section className="py-24 bg-gradient-to-br from-[#022545] to-[#04335d] text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500 rounded-full blur-[150px] opacity-10"></div>
+                <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-10"></div>
+
                 <div className="container px-4 mx-auto max-w-5xl text-center relative z-10">
-                    <h2 className="section-title-premium text-white mb-16">
-                        Concrétisons votre <span className="text-primary-400">vision mobile</span>
-                    </h2>
-                    <ContactForm />
+                    <div className="space-y-8">
+                        <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-bold tracking-wider text-primary-300 mb-4">
+                            AGENCE DE CRÉATION DE SITE WEB AU MAROC
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+                            Propulsez votre business avec un <span className="text-primary-400">site web d&apos;exception</span>
+                        </h2>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                            Votre application mérite un écosystème digital puissant. Obtenez un site web qui convertit vos visiteurs en clients fidèles au Maroc.
+                        </p>
+                        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <Link href="/creation-site-web-maroc/" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
+                                Création site web Maroc
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                            <div className="flex flex-col items-center sm:items-start text-left">
+                                <p className="text-sm text-gray-400 font-medium italic">Audit technique offert</p>
+                                <a href="tel:+212663711164" className="text-white hover:text-primary-400 font-bold text-lg flex items-center gap-2 transition-colors">
+                                    +212 663-711164
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section >
+            </section>
         </div >
     )
 }

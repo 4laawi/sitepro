@@ -21,10 +21,10 @@ const MoroccoSection = ({ lang = 'FR' }: MoroccoSectionProps) => {
 
     const t = {
         FR: {
-            solutionsBadge: "Solutions Digitales",
-            solutionsTitle: "L'excellence du Web Design et du Développement au Maroc",
+            solutionsBadge: "Solutions Digitales Maroc",
+            solutionsTitle: "Expertise en Création de Site Web et Web Design au Maroc",
             solutionsParagraphs: [
-                <>Chez Sitepro.ma, nous redéfinissons les standards du web design et du développement au Maroc. Nous créons des expériences numériques captivantes, alliant esthétique moderne, performance technique et ergonomie intuitive pour propulser votre présence en ligne.</>,
+                <>Chez Sitepro.ma, nous redéfinissons les standards du web design et de la création de site web au Maroc. Nous créons des sites web professionnels et captivants, alliant performance technique et SEO pour propulser votre entreprise.</>,
                 <>Alignés sur la <span className="poppins-semibold">stratégie nationale</span> <a href="https://www.mmsp.gov.ma/sites/default/files/2024-09/PlaquetteInstitutionnel_18092024_Fra.pdf" className="underline" target="_blank" rel="noopener noreferrer">&quot;Digital Morocco 2030&quot;</a> initiée par le Ministère de la Transition Numérique et de la Réforme de l&apos;Administration, nous accompagnons les entreprises marocaines dans leur transformation digitale grâce à des solutions sur mesure et innovantes.</>,
                 <>Notre expertise couvre le design UI/UX, le développement full-stack et l&apos;optimisation SEO, garantissant des sites web robustes et évolutifs. Avec une approche centrée sur l&apos;utilisateur et une maîtrise des dernières technologies, nous transformons vos idées en succès numériques concrets.</>
             ],

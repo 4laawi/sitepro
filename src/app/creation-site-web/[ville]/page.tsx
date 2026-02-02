@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   return {
     title: `Création de site web ${cityCap} | Sitepro.ma`,
     description: `Agence web à ${cityCap}. Création de sites vitrines et e‑commerce rapides, design moderne et SEO pour les entreprises à ${cityCap}.`,
-    alternates: { canonical: `/creation-site-web/${city}` },
+    alternates: { canonical: `https://www.sitepro.ma/creation-site-web-${city}` },
     keywords: [
       `création site web ${cityCap}`,
       `agence web ${cityCap}`,

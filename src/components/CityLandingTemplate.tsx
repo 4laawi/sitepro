@@ -97,11 +97,11 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                             </div>
 
                             <h1 className="hero-title-premium">
-                                Création de site web {preposition} {displayCity} – <span className="text-primary-600">100 % optimisé</span> SEO et IA
+                                {isMainMaroc ? "Création de site web au Maroc – Solutions professionnelles" : `Création de site web ${preposition} ${displayCity} – 100 % optimisé SEO et IA`}
                             </h1>
 
                             <p className="hero-subtitle-premium mx-auto lg:mx-0">
-                                Notre <strong className="text-gray-900">agence de création de sites web</strong> {preposition} <strong className="text-gray-900">{displayCity}</strong> conçoit des solutions sur mesure, entièrement optimisées pour le <strong className="text-gray-900">SEO</strong> et les nouveaux <strong className="text-gray-900">moteurs d’IA</strong>.
+                                Notre <strong className="text-gray-900">agence de création de sites web au Maroc</strong> conçoit votre <strong className="text-gray-900">site web professionnel</strong> sur mesure, entièrement optimisé pour le <strong className="text-gray-900">SEO</strong> et les nouveaux <strong className="text-gray-900">moteurs d’IA</strong>.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
@@ -124,7 +124,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                         >
                             <Image
                                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (1).webp"
-                                alt={`Création site web ${displayCity}`}
+                                alt={`Agence création site web ${displayCity} - Solutions pro`}
                                 width={1080}
                                 height={1080}
                                 className="w-full h-auto max-w-[620px] mx-auto relative z-10 transition-transform duration-700 rounded-xl"
@@ -165,7 +165,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                         <h2 className="section-title-premium">
                             <span>Excellence en conception web</span> <br /> <span className="title-line-2"><span className="highlight">nouvelle génération</span> {preposition} {displayCity}</span>
                         </h2>
-                        <p className="section-subtitle-premium mx-auto">Nous bâtissons des infrastructures digitales ultra-performantes, conçues pour <strong>convertir vos visiteurs</strong> et dominer les résultats de recherche.</p>
+                        <p className="section-subtitle-premium mx-auto">Nous bâtissons des infrastructures digitales ultra-performantes pour votre <strong>création site web maroc</strong>, conçues pour <strong>convertir vos visiteurs</strong> et dominer les résultats de recherche.</p>
                         <div className="tech-stack">
                             {techStack.map((tech) => (
                                 <span key={tech.name} className="tech-pill">
@@ -245,7 +245,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                                 Prenez l&apos;avantage : des technologies web qui <span className="text-primary-600">surpassent vos concurrents</span>
                             </h2>
                             <p className="section-subtitle-premium lg:text-left lg:mx-0">
-                                Pendant que vos concurrents stagnent avec des sites dépassés <strong>invisibles sur Google</strong> et <strong>ignorés par les IA</strong> — votre site domine les résultats {preposition} {displayCity} et à l&apos;étranger.
+                                Pendant que vos concurrents stagnent avec des sites dépassés — votre <strong className="text-gray-900">site web professionnel au Maroc</strong> domine les résultats de recherche et séduit les algorithmes d&apos;IA.
                             </p>
 
                             <div className="grid grid-cols-3 gap-8 pt-4">
@@ -334,7 +334,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                         <div className="order-2 lg:order-1">
                             <Image
                                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (7).webp"
-                                alt={`Agence de création de sites web ${preposition} ${displayCity}`}
+                                alt={`Expert en création de sites web professionnels ${preposition} ${displayCity}`}
                                 width={1080}
                                 height={1080}
                                 className="w-full h-auto"
@@ -345,9 +345,9 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                                 Agence de création de sites web optimisés SEO, IA et conversion {preposition} {displayCity}
                             </h2>
                             <div className="space-y-4 text-gray-600 section-subtitle-premium lg:text-left lg:mx-0">
-                                <p>Sitepro.ma est votre agence web de référence spécialisée dans la création de sites internet {preposition} {displayCity}. {isMainMaroc ? "Basés à Marrakech, nous accompagnons les entrepreneurs et les PME dans tout le Royaume dans leur réussite digitale." : `Nous accompagnons les entrepreneurs et les PME de ${displayCity} dans leur réussite digitale.`}</p>
-                                <p>Notre approche est humaine : chaque site est co-construit avec vous pour être <strong className="text-gray-900">100 % optimisé pour le SEO</strong>, assurant une visibilité immédiate sur les moteurs de recherche.</p>
-                                <p>Nous mettons l&apos;accent sur la <strong>conversion</strong> et la <strong>sécurité</strong>, tout en garantissant des temps de chargement ultra-rapides pour ne perdre aucun client potentiel.</p>
+                                <p>Sitepro.ma est votre <strong>agence création site web maroc</strong> spécialisée dans la conception de solutions digitales haut de gamme. {isMainMaroc ? "Basés à Marrakech, nous accompagnons les entrepreneurs et les PME dans tout le Royaume avec une expertise SEO pointue." : `Nous accompagnons les entrepreneurs et les PME de ${displayCity} dans leur réussite digitale.`}</p>
+                                <p>Notre approche est axée sur la performance : chaque <strong className="text-gray-900">site web professionnel</strong> est co-construit pour être 100 % optimisé, assurant une visibilité maximale au Maroc.</p>
+                                <p>Nous mettons l&apos;accent sur la <strong>conversion</strong>, la <strong>sécurité</strong>, et la rapidité extrême pour transformer vos visiteurs en clients fidèles.</p>
                             </div>
                             <div className="pt-6">
                                 <Link href="/contact/" className="inline-flex items-center gap-3 px-8 py-4 bg-[#022545] text-white rounded-xl font-bold hover:bg-gray-800 transition-all">
@@ -371,7 +371,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                                 <p>Aujourd&apos;hui, créer un site web est devenu extrêmement simple grâce aux <strong>plateformes no code</strong> et aux <strong>générateurs de sites IA</strong>, mais aussi aux agences web qui proposent des sites low-cost.</p>
                                 <p className="bg-red-50 border-l-4 border-red-500 p-4">Bien que beaucoup de gens l&apos;ignorent au départ, ces sites n&apos;atteindront <strong>jamais un bon classement sur Google</strong>. Ils ne serviront au mieux que de simple vitrine à mentionner sur une carte de visite.</p>
-                                <p>Chaque site que nous développons est conçu pour une <strong>visibilité maximale</strong>. Nous l&apos;optimisons méticuleusement pour le <Link href="/agence-seo-maroc/" className="text-primary-600 font-bold hover:underline">référencement naturel (SEO)</Link>, garantissant un excellent classement sur Google et les nouvelles plateformes d&apos;IA.</p>
+                                <p>Chaque site que nous développons est conçu pour une <strong>visibilité maximale</strong>. Nous l&apos;optimisons méticuleusement pour la <Link href="/agence-seo-maroc/" className="text-primary-600 font-bold hover:underline">création site web au maroc</Link> et le référencement naturel, garantissant un excellent classement sur Google.</p>
                             </div>
                             <div className="pt-6">
                                 <Link href="/formulaire-contact-site-web-maroc/" className="inline-flex items-center gap-3 px-8 py-4 bg-primary-500 text-white rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg shadow-primary-200">
@@ -383,7 +383,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false }: CityL
                         <div className="relative">
                             <Image
                                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (8).webp"
-                                alt="Pourquoi le site web low-cost est une erreur"
+                                alt="Pourquoi choisir une agence de création site web au maroc professionnelle"
                                 width={1080}
                                 height={1080}
                                 className="w-full h-auto"

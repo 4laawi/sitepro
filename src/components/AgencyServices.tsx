@@ -12,9 +12,9 @@ interface AgencyServicesProps {
 export default function AgencyServices({ lang = 'FR' }: AgencyServicesProps) {
     const t = {
         FR: {
-            title: <>L&apos;agence web au Maroc pour votre <span className="text-primary-600">création de sites web</span> et stratégie <span className="text-primary-600">SEO</span></>,
-            subtitle: "Boostez votre visibilité et votre taux de conversion avec des solutions digitales sur mesure.",
-            description: <>Chez <strong>Sitepro.ma</strong>, nous construisons des sites web modernes, sécurisés et ultra-rapides. Nos experts créent des expériences digitales uniques qui transforment vos visiteurs en clients fidèles, tout en garantissant un référencement naturel optimal.</>,
+            title: <>L&apos;agence web au Maroc experte en <span className="text-primary-600">création de sites web</span> et stratégie <span className="text-primary-600">SEO</span></>,
+            subtitle: "Boostez votre visibilité à Casablanca, Rabat et partout au Maroc avec des solutions digitales sur mesure.",
+            description: <>Chez <strong>Sitepro.ma</strong>, votre agence web de référence, nous construisons des sites web modernes, sécurisés et ultra-rapides. Nos experts créent des expériences digitales uniques pour votre entreprise au Maroc, garantissant un référencement naturel optimal.</>,
             features: [
                 'Design moderne et intuitif',
                 'Optimisation SEO avancée',
