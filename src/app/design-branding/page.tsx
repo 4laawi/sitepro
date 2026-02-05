@@ -8,7 +8,13 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Design & Branding | Sitepro.ma',
   description: 'Identité visuelle, logo, charte graphique et design system pour une marque forte.',
-  alternates: { canonical: '/design-branding' },
+  alternates: {
+    canonical: 'https://sitepro.ma/design-branding/',
+    languages: {
+      'fr-MA': 'https://sitepro.ma/design-branding/',
+      'en-MA': 'https://sitepro.ma/en/design-branding/',
+    },
+  },
 }
 
 export default function DesignBrandingPage() {

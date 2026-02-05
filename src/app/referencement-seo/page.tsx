@@ -10,7 +10,13 @@ import SeoLottie from '@/components/SeoLottie'
 export const metadata: Metadata = {
   title: 'Référencement Naturel Maroc | Expert SEO & Visibilité Google',
   description: 'Référencement naturel Maroc 100% efficace. Audit SEO, optimisation technique et contenu pour dominer Google. Boostez votre visibilité et vos leads.',
-  alternates: { canonical: '/referencement-seo' },
+  alternates: {
+    canonical: 'https://sitepro.ma/referencement-seo/',
+    languages: {
+      'fr-MA': 'https://sitepro.ma/referencement-seo/',
+      'en-MA': 'https://sitepro.ma/en/seo-agency-morocco/',
+    },
+  },
 }
 
 const phone = '212663711164'

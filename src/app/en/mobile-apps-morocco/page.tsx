@@ -5,69 +5,67 @@ import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import { CheckCircle2, Zap, Globe, Bot, Lock, TrendingUp, SmartphoneNfc, Cpu, Rocket, Shield, PenTool, MessageCircle, ArrowRight } from 'lucide-react'
 import FAQSection from '@/components/FAQSection'
 import CallbackForm from '@/components/CallbackForm'
-import './MobileApp.css'
+import '../../application-mobile-maroc/MobileApp.css'
 
 export const metadata: Metadata = {
-    title: 'Création Application Mobile Maroc | Agence Experte Sitepro',
-    description: 'Création application mobile au Maroc. Experts en développement iOS & Android sur mesure, performant et sécurisé. Devis gratuit et accompagnement complet.',
+    title: 'Mobile App Development Morocco | Expert Agency Sitepro',
+    description: 'Mobile app creation in Morocco. Experts in custom iOS & Android development, high performance and secure. Free quote and complete support.',
     alternates: {
-        canonical: 'https://sitepro.ma/application-mobile-maroc/',
+        canonical: 'https://sitepro.ma/en/mobile-apps-morocco/',
         languages: {
             'fr-MA': 'https://sitepro.ma/application-mobile-maroc/',
             'en-MA': 'https://sitepro.ma/en/mobile-apps-morocco/',
         },
     },
     openGraph: {
-        title: 'Création Application Mobile Maroc | Agence Experte Sitepro',
-        description: 'Création application mobile au Maroc. Experts en développement iOS & Android sur mesure, performant et sécurisé. Devis gratuit et accompagnement complet.',
-        url: 'https://sitepro.ma/application-mobile-maroc/',
+        title: 'Mobile App Development Morocco | Expert Agency Sitepro',
+        description: 'Mobile app creation in Morocco. Experts in custom iOS & Android development, high performance and secure. Free quote and complete support.',
+        url: 'https://sitepro.ma/en/mobile-apps-morocco/',
         siteName: 'Sitepro.ma',
         images: [{
             url: 'https://sitepro.ma/og-application-mobile.jpg',
             width: 1200,
             height: 630,
-            alt: 'Création Application Mobile Maroc',
+            alt: 'Mobile App Creation Morocco',
         }],
-        locale: 'fr_MA',
+        locale: 'en_MA',
         type: 'website',
     },
 }
 
-export default function ApplicationMobileMarocPage() {
+export default function MobileAppPageEn() {
     const features = [
         {
-            title: 'Lancement Accéléré',
-            desc: 'Déploiement de votre application sur iOS et Android en un temps record grâce à notre méthodologie agile.',
+            title: 'Accelerated Launch',
+            desc: 'Deployment of your application on iOS and Android in record time thanks to our agile methodology.',
             icon: <Rocket className="w-6 h-6" />
         },
         {
-            title: 'Sécurité de Pointe',
-            desc: 'Protection rigoureuse de vos données avec des systèmes de cryptage avancés conformes aux standards internationaux.',
+            title: 'Cutting-Edge Security',
+            desc: 'Rigorous data protection with advanced encryption systems compliant with international standards.',
             icon: <Shield className="w-6 h-6" />
         },
         {
-            title: 'Expérience Utilisateur (UX)',
-            desc: 'Interfaces fluides et ergonomiques conçues pour maximiser l\'engagement et la satisfaction de vos utilisateurs.',
+            title: 'User Experience (UX)',
+            desc: 'Fluid and ergonomic interfaces designed to maximize user engagement and satisfaction.',
             icon: <PenTool className="w-6 h-6" />
         },
         {
-            title: 'Haute Performance',
-            desc: 'Développement optimisé garantissant une rapidité d\'exécution sans faille sur tous les types de terminaux mobiles.',
+            title: 'High Performance',
+            desc: 'Optimized development guaranteeing flawless execution speed on all types of mobile devices.',
             icon: <Zap className="w-6 h-6" />
         },
         {
-            title: 'Solutions IA Intégrées',
-            desc: 'Exploitez la puissance de l\'intelligence artificielle pour offrir des fonctionnalités prédictives et personnalisées.',
+            title: 'Integrated AI Solutions',
+            desc: 'Harness the power of artificial intelligence to offer predictive and personalized functionalities.',
             icon: <Cpu className="w-6 h-6" />
         },
         {
-            title: 'Évolutivité Garantie',
-            desc: 'Une architecture technique robuste pensée pour accompagner la croissance de votre entreprise sans limites.',
+            title: 'Guaranteed Scalability',
+            desc: 'A robust technical architecture designed to support your company\'s growth without limits.',
             icon: <TrendingUp className="w-6 h-6" />
         }
     ]
-
-
 
     return (
         <div className="flex flex-col w-full font-sans">
@@ -83,22 +81,22 @@ export default function ApplicationMobileMarocPage() {
                         >
                             <div className="flex justify-center lg:justify-start">
                                 <span className="badge-gradient">
-                                    Application Mobile Maroc
+                                    Mobile App Morocco
                                 </span>
                             </div>
 
                             <h1 className="hero-title-premium">
-                                Création d’applications mobiles sur mesure au Maroc
+                                Custom mobile app creation in Morocco
                             </h1>
 
                             <p className="hero-subtitle-premium mx-auto lg:mx-0">
-                                Sitepro est votre agence partenaire de référence pour la <strong className="text-gray-900">création application mobile maroc</strong>. Nous transformons vos idées en solutions digitales innovantes et performantes.
+                                Sitepro is your reference partner agency for <strong className="text-gray-900">mobile app creation in Morocco</strong>. We transform your ideas into innovative and high-performance digital solutions.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
                                 <div className="flex flex-col items-center lg:items-start group cursor-pointer">
                                     <span className="text-primary-600 text-xs font-bold tracking-[0.2em] mb-1 group-hover:text-primary-500 transition-colors uppercase">
-                                        CONSULTATION PAR EMAIL ?
+                                        EMAIL CONSULTATION?
                                     </span>
                                     <a href="mailto:contact@sitepro.ma" className="text-2xl md:text-3xl font-bold text-[#022545] hover:text-primary-600 transition-colors border-b-2 border-primary-500 pb-1">
                                         contact@sitepro.ma
@@ -115,7 +113,7 @@ export default function ApplicationMobileMarocPage() {
                         >
                             <Image
                                 src="/Purple And White Modern Mobile App Promotion Instagram Post.webp"
-                                alt="Création application mobile Maroc - Solutions sur mesure"
+                                alt="Mobile App Creation Morocco - Custom Solutions"
                                 width={1080}
                                 height={1080}
                                 className="w-full h-auto rounded-[2.5rem] relative z-10"
@@ -139,7 +137,7 @@ export default function ApplicationMobileMarocPage() {
                         className="space-y-12"
                     >
                         <h2 className="section-title-premium text-white">
-                            Création d'application mobile : un conseiller <span className="text-primary-400 border-b-4 border-primary-500 pb-2">vous rappelle !</span>
+                            Mobile app creation: an advisor <span className="text-primary-400 border-b-4 border-primary-500 pb-2">calls you back!</span>
                         </h2>
 
                         <CallbackForm />
@@ -159,7 +157,7 @@ export default function ApplicationMobileMarocPage() {
                         >
                             <Image
                                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (9).webp"
-                                alt="Solutions mobiles sur mesure"
+                                alt="Custom mobile solutions"
                                 width={600}
                                 height={600}
                                 className="w-full h-auto rounded-[2rem] object-cover"
@@ -173,30 +171,30 @@ export default function ApplicationMobileMarocPage() {
                             className="space-y-8"
                         >
                             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                                Au-delà du code : une application unique qui porte votre vision
+                                Beyond code: a unique app that carries your vision
                             </h2>
 
                             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                                 <p>
-                                    Le développement sur-mesure ne se limite pas à la programmation. Chez Sitepro, nous explorons vos défis métier pour concevoir une architecture mobile qui répond précisément à vos besoins stratégiques. Que ce soit pour optimiser vos processus internes ou lancer un service disruptif, nous bâtissons l’outil qui vous propulse.
+                                    Custom development is not limited to programming. At Sitepro, we explore your business challenges to design a mobile architecture that precisely meets your strategic needs. Whether to optimize your internal processes or launch a disruptive service, we build the tool that propels you.
                                 </p>
                                 <p>
-                                    En privilégiant une collaboration étroite, nous créons un produit final dont chaque pixel et chaque fonctionnalité ont un but précis. Votre application devient ainsi un actif technologique puissant, parfaitement aligné avec votre identité et vos objectifs de croissance.
+                                    By favoring close collaboration, we create a final product where every pixel and every feature has a specific purpose. Your application thus becomes a powerful technological asset, perfectly aligned with your identity and growth objectives.
                                 </p>
                             </div>
 
                             <div className="bg-[#022545] p-8 lg:p-10 rounded-[2rem] text-white space-y-6">
                                 <h3 className="text-2xl font-bold leading-tight">
-                                    Vous avez un projet de création d’application web sur-mesure ?
+                                    Do you have a custom mobile app project?
                                 </h3>
                                 <p className="opacity-90">
-                                    Contactez l’équipe Sitepro pour un premier échange autour de votre idée. Nous prenons le temps de comprendre votre besoin, de confronter les points de vue et de poser ensemble les bases d’une application qui répondra vraiment à votre problématique initiale.
+                                    Contact the Sitepro team for an initial discussion about your idea. We take the time to understand your needs, challenge perspectives, and together lay the foundations for an application that truly addresses your initial problem.
                                 </p>
                                 <Link
                                     href="#contact-form-section"
                                     className="inline-block bg-white text-[#022545] px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-all text-center"
                                 >
-                                    Je contacte l'équipe Sitepro
+                                    Contact Sitepro Team
                                 </Link>
                             </div>
                         </ClientMotionWrapper>
@@ -212,7 +210,7 @@ export default function ApplicationMobileMarocPage() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
                                 <path d="M11.107 0.974478L0 16.9385L4.7403 20.2788L15.8473 4.3148L11.107 0.974478Z" fill="#2A4AFB" />
                             </svg>
-                            <div className="brand-text">Stratégie</div>
+                            <div className="brand-text">Strategy</div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
                                 <path d="M11.107 0.974478L0 16.9385L4.7403 20.2788L15.8473 4.3148L11.107 0.974478Z" fill="#2A4AFB" />
                             </svg>
@@ -235,11 +233,11 @@ export default function ApplicationMobileMarocPage() {
                 <div className="container px-4 mx-auto max-w-7xl">
                     <header className="section-header-centered mb-20">
                         <h2 className="hero-title-premium text-center mb-6">
-                            Expertise en développement <br className="hidden md:block" />
-                            mobile <span className="text-[#2563eb]">au Maroc</span>
+                            Mobile development expertise <br className="hidden md:block" />
+                            <span className="text-[#2563eb]">in Morocco</span>
                         </h2>
                         <p className="section-subtitle-premium max-w-2xl mx-auto opacity-70">
-                            Notre agence déploie une expertise technique avancée pour concevoir des <strong>applications mobiles natives et hybrides</strong> de classe mondiale, alliant sécurité impénétrable et design d&apos;exception.
+                            Our agency deploys advanced technical expertise to design world-class <strong>native and hybrid mobile applications</strong>, combining impenetrable security and exceptional design.
                         </p>
                     </header>
 
@@ -271,9 +269,9 @@ export default function ApplicationMobileMarocPage() {
                             <div className="stats-cta-box">
                                 <div className="stats-grid-mobile">
                                     {[
-                                        { val: '+100', label: 'Applications créées', icon: <SmartphoneNfc className="w-5 h-5" /> },
-                                        { val: '+30', label: 'Sous maintenance', icon: <Shield className="w-5 h-5" /> },
-                                        { val: '+10', label: 'Développeurs seniors', icon: <Bot className="w-5 h-5" /> },
+                                        { val: '+100', label: 'Apps Created', icon: <SmartphoneNfc className="w-5 h-5" /> },
+                                        { val: '+30', label: 'Under Maintenance', icon: <Shield className="w-5 h-5" /> },
+                                        { val: '+10', label: 'Senior Developers', icon: <Bot className="w-5 h-5" /> },
                                         { val: '+3', label: 'UI Designers', icon: <PenTool className="w-5 h-5" /> },
                                     ].map((s, i) => (
                                         <div key={i} className="stat-item-mobile">
@@ -325,8 +323,8 @@ export default function ApplicationMobileMarocPage() {
                                         <div className="phone-content">
                                             <div className="phone-user-header">
                                                 <div className="phone-user-info">
-                                                    <span className="phone-greeting">Bonjour, Karim</span>
-                                                    <span className="phone-sub-greeting">Bienvenue sur votre espace</span>
+                                                    <span className="phone-greeting">Hello, Karim</span>
+                                                    <span className="phone-sub-greeting">Welcome to your space</span>
                                                 </div>
                                                 <div className="phone-avatar text-sm">K</div>
                                             </div>
@@ -338,7 +336,7 @@ export default function ApplicationMobileMarocPage() {
                                                     </div>
                                                     <div>
                                                         <span className="phone-stat-v">2,847</span>
-                                                        <span className="phone-stat-l">Utilisateurs</span>
+                                                        <span className="phone-stat-l">Users</span>
                                                     </div>
                                                 </div>
                                                 <div className="phone-stat-card">
@@ -347,19 +345,19 @@ export default function ApplicationMobileMarocPage() {
                                                     </div>
                                                     <div>
                                                         <span className="phone-stat-v">94%</span>
-                                                        <span className="phone-stat-l">Croissance</span>
+                                                        <span className="phone-stat-l">Growth</span>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <span className="phone-section-label">Actions rapides</span>
+                                                <span className="phone-section-label">Quick Actions</span>
                                                 <div className="phone-quick-grid">
                                                     {[
                                                         { icon: <MessageCircle className="w-5 h-5" />, color: 'purple', label: 'Messages' },
                                                         { icon: <TrendingUp className="w-5 h-5" />, color: 'orange', label: 'Stats' },
-                                                        { icon: <Cpu className="w-5 h-5" />, color: 'teal', label: 'Réglages' },
-                                                        { icon: <Shield className="w-5 h-5" />, color: 'pink', label: 'Favoris' },
+                                                        { icon: <Cpu className="w-5 h-5" />, color: 'teal', label: 'Settings' },
+                                                        { icon: <Shield className="w-5 h-5" />, color: 'pink', label: 'Favorites' },
                                                     ].map((q, i) => (
                                                         <div key={i} className="phone-quick-item">
                                                             <div className={`phone-quick-icon ${q.color}`}>
@@ -372,16 +370,16 @@ export default function ApplicationMobileMarocPage() {
                                             </div>
 
                                             <div>
-                                                <span className="phone-section-label">Activité récente</span>
+                                                <span className="phone-section-label">Recent Activity</span>
                                                 <div className="activity-list-phone">
                                                     <div className="activity-row-phone">
                                                         <div className="activity-dot-phone green"></div>
-                                                        <span className="activity-text-phone">Nouvelle commande reçue</span>
+                                                        <span className="activity-text-phone">New order received</span>
                                                         <span className="activity-time-phone">2m</span>
                                                     </div>
                                                     <div className="activity-row-phone">
                                                         <div className="activity-dot-phone blue"></div>
-                                                        <span className="activity-text-phone">Mise à jour système</span>
+                                                        <span className="activity-text-phone">System update</span>
                                                         <span className="activity-time-phone">1h</span>
                                                     </div>
                                                 </div>
@@ -421,9 +419,9 @@ export default function ApplicationMobileMarocPage() {
                     <div className="methodology-grid">
                         <div className="features-column">
                             <div className="features-header">
-                                <h3 className="features-title">Notre processus de développement mobile, de l'idée au succès</h3>
+                                <h3 className="features-title">Our mobile development process, from idea to success</h3>
                                 <p className="features-subtitle">
-                                    De la phase de réflexion stratégique au support après lancement, nous déployons une méthodologie rigoureuse pour garantir la performance de votre application.
+                                    From strategic thinking to post-launch support, we deploy a rigorous methodology to ensure the performance of your application.
                                 </p>
                             </div>
                             <div className="features-grid">
@@ -437,10 +435,10 @@ export default function ApplicationMobileMarocPage() {
                                         </svg>
                                     </div>
                                     <div className="feature-content">
-                                        <h3 className="feature-title">Analyse & Stratégie</h3>
-                                        <p className="feature-description">Nous débutons par une étude approfondie de vos objectifs pour élaborer un cahier des charges technique et fonctionnel précis.</p>
+                                        <h3 className="feature-title">Analysis & Strategy</h3>
+                                        <p className="feature-description">We start with an in-depth study of your goals to develop a precise technical and functional specifications document.</p>
                                         <a href="https://www.hostino.ma/documents/cahier-des-charges-application-mobile.docx" className="feature-cta">
-                                            <span>Modèle gratuit</span>
+                                            <span>Free Template</span>
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7" />
                                             </svg>
@@ -448,6 +446,8 @@ export default function ApplicationMobileMarocPage() {
                                     </div>
                                 </article>
 
+                                {/* ... Other method cards simplified for brevity in this response but I should include them all in real implementation ... */}
+                                {/* I will include them now */}
                                 <article className="feature-card">
                                     <div className="feature-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -458,8 +458,8 @@ export default function ApplicationMobileMarocPage() {
                                         </svg>
                                     </div>
                                     <div className="feature-content">
-                                        <h3 className="feature-title">Planification & Chiffrage</h3>
-                                        <p className="feature-description">Estimation rigoureuse des ressources et établissement d'un rétroplanning détaillé pour respecter vos délais.</p>
+                                        <h3 className="feature-title">Planning & Costing</h3>
+                                        <p className="feature-description">Rigorous resource estimation and establishment of a detailed schedule to meet your deadlines.</p>
                                     </div>
                                 </article>
 
@@ -472,8 +472,8 @@ export default function ApplicationMobileMarocPage() {
                                         </svg>
                                     </div>
                                     <div className="feature-content">
-                                        <h3 className="feature-title">Conception UI/UX</h3>
-                                        <p className="feature-description">Nos designers imaginent une expérience utilisateur fluide et des interfaces haut de gamme pour votre application.</p>
+                                        <h3 className="feature-title">UI/UX Design</h3>
+                                        <p className="feature-description">Our designers imagine a fluid user experience and high-end interfaces for your application.</p>
                                     </div>
                                 </article>
 
@@ -486,8 +486,8 @@ export default function ApplicationMobileMarocPage() {
                                         </svg>
                                     </div>
                                     <div className="feature-content">
-                                        <h3 className="feature-title">Développement Agile</h3>
-                                        <p className="feature-description">Codage métier et intégration des fonctionnalités phares par nos experts en technologies mobiles (React Native, Flutter, Natif).</p>
+                                        <h3 className="feature-title">Agile Development</h3>
+                                        <p className="feature-description">Business coding and integration of key features by our experts in mobile technologies (React Native, Flutter, Native).</p>
                                     </div>
                                 </article>
 
@@ -499,8 +499,8 @@ export default function ApplicationMobileMarocPage() {
                                         </svg>
                                     </div>
                                     <div className="feature-content">
-                                        <h3 className="feature-title">Contrôle Qualité & Déploiement</h3>
-                                        <p className="feature-description">Phase de QA intensive suivie d'une publication optimisée sur l'App Store et Google Play.</p>
+                                        <h3 className="feature-title">QA & Deployment</h3>
+                                        <p className="feature-description">Intensive QA phase followed by optimized publication on the App Store and Google Play.</p>
                                     </div>
                                 </article>
 
@@ -511,10 +511,10 @@ export default function ApplicationMobileMarocPage() {
                                         </svg>
                                     </div>
                                     <div className="feature-content">
-                                        <h3 className="feature-title">Optimisation & Maintenance</h3>
-                                        <p className="feature-description">Suivi technique permanent pour assurer la stabilité, la sécurité et l'évolution de votre produit digital.</p>
-                                        <Link href="/maintenance-site-web-maroc/" className="feature-cta">
-                                            <span>Maintenance application mobile</span>
+                                        <h3 className="feature-title">Optimization & Maintenance</h3>
+                                        <p className="feature-description">Permanent technical support to ensure the stability, security, and evolution of your digital product.</p>
+                                        <Link href="/en/maintenance-website-morocco/" className="feature-cta">
+                                            <span>Mobile App Maintenance</span>
                                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7" />
                                             </svg>
@@ -528,12 +528,12 @@ export default function ApplicationMobileMarocPage() {
                             <div className="methodology-card">
                                 <div className="timeline-header">
                                     <div className="timeline-header-content">
-                                        <span className="timeline-label">Durée estimée</span>
-                                        <h3 className="timeline-title">Timeline projet</h3>
+                                        <span className="timeline-label">Estimated duration</span>
+                                        <h3 className="timeline-title">Project Timeline</h3>
                                     </div>
                                     <div className="timeline-badge">
                                         <span className="badge-value">2-3</span>
-                                        <span className="badge-unit">mois</span>
+                                        <span className="badge-unit">months</span>
                                     </div>
                                 </div>
 
@@ -549,8 +549,8 @@ export default function ApplicationMobileMarocPage() {
                                             <div className="timeline-line"></div>
                                         </div>
                                         <div className="timeline-content">
-                                            <span className="timeline-item-title">Validation du projet</span>
-                                            <span className="timeline-item-duration">1 semaine</span>
+                                            <span className="timeline-item-title">Project Validation</span>
+                                            <span className="timeline-item-duration">1 week</span>
                                         </div>
                                         <div className="timeline-check">
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -559,6 +559,7 @@ export default function ApplicationMobileMarocPage() {
                                         </div>
                                     </div>
 
+                                    {/* Timeline items similar to FR but translated */}
                                     <div className="methodology-item">
                                         <div className="timeline-left">
                                             <div className="timeline-icon">
@@ -571,7 +572,7 @@ export default function ApplicationMobileMarocPage() {
                                         </div>
                                         <div className="timeline-content">
                                             <span className="timeline-item-title">UI/UX Design</span>
-                                            <span className="timeline-item-duration">2-3 semaines</span>
+                                            <span className="timeline-item-duration">2-3 weeks</span>
                                         </div>
                                     </div>
 
@@ -586,8 +587,8 @@ export default function ApplicationMobileMarocPage() {
                                             <div className="timeline-line"></div>
                                         </div>
                                         <div className="timeline-content">
-                                            <span className="timeline-item-title">Développement</span>
-                                            <span className="timeline-item-duration">1-2 mois</span>
+                                            <span className="timeline-item-title">Development</span>
+                                            <span className="timeline-item-duration">1-2 months</span>
                                         </div>
                                     </div>
 
@@ -602,7 +603,7 @@ export default function ApplicationMobileMarocPage() {
                                         </div>
                                         <div className="timeline-content">
                                             <span className="timeline-item-title">Test & Publication</span>
-                                            <span className="timeline-item-duration">2 semaines</span>
+                                            <span className="timeline-item-duration">2 weeks</span>
                                         </div>
                                     </div>
 
@@ -616,7 +617,7 @@ export default function ApplicationMobileMarocPage() {
                                             </div>
                                         </div>
                                         <div className="timeline-content">
-                                            <span className="timeline-item-title">Lancement officiel</span>
+                                            <span className="timeline-item-title">Official Launch</span>
                                             <span className="timeline-item-duration">Go Live 🚀</span>
                                         </div>
                                     </div>
@@ -624,8 +625,8 @@ export default function ApplicationMobileMarocPage() {
 
                                 <div className="methodology-progress">
                                     <div className="progress-info">
-                                        <span>Progression</span>
-                                        <span className="progress-value">Prêt à démarrer</span>
+                                        <span>Progress</span>
+                                        <span className="progress-value">Ready to start</span>
                                     </div>
                                     <div className="progress-bar">
                                         <div className="progress-track">
@@ -641,8 +642,8 @@ export default function ApplicationMobileMarocPage() {
                                     </div>
                                 </div>
 
-                                <Link href="/contact/" className="methodology-cta">
-                                    <span>Démarrer mon projet</span>
+                                <Link href="/en/contact/" className="methodology-cta">
+                                    <span>Start my project</span>
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
@@ -654,19 +655,18 @@ export default function ApplicationMobileMarocPage() {
             </section>
 
 
-
             {/* Pricing Info Section */}
             < section className="pricing-section snipcss-vUK6g" >
                 <div className="container">
                     <div className="pricing-content">
                         <div className="pricing-left">
-                            <h2 className="section-title"> Investissement de <span className="highlight">Développement Mobile</span> au Maroc </h2>
+                            <h2 className="section-title"> Mobile Development <span className="highlight">Investment</span> in Morocco </h2>
                             <div className="pricing-text">
-                                <p> Quel est le tarif pour concevoir une application mobile au Maroc ? C'est une interrogation majeure pour chaque porteur de projet. Le <Link href="/contact/" id="style-wKBTF" className="style-wKBTF">coût global</Link> s'ajuste en fonction de plusieurs variables : architecture technique, design sur-mesure, complexité des algorithmes et intégrations API. </p>
-                                <p> Pour une <strong>Solution Startup (MVP)</strong>, prévoyez une enveloppe optimisée entre <strong>15 000 et 35 000 DH</strong>. Cette approche ultra-agile vous permet de confronter votre idée au marché en un temps record, de capter vos premiers utilisateurs et de <span className="highlight-text">valider votre Proof of Concept sans risque financier majeur</span>. </p>
-                                <p> Une <strong>architecture mobile évolutive</strong> intégrant des fonctionnalités avancées et un backend performant débute désormais <strong>à partir de 45 000 DH</strong>. Ce pack inclut le déploiement sur les deux stores, une interface d'administration intuitive et une base technique prête pour la croissance. </p>
-                                <p> Le <strong>Design UI/UX Stratégique</strong> est accessible dès <strong>3 500 DH</strong>. Nous concevons des parcours utilisateurs immersifs et des maquettes haute-fidélité qui maximisent l'engagement, garantissant que votre application se démarque dès la première seconde. </p>
-                            </div> <Link href="/contact/" className="cta-button"> <span>Calculer votre devis sur-mesure</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <p> What is the cost to design a mobile app in Morocco? This is a major question for every project holder. The <Link href="/en/contact/" id="style-wKBTF" className="style-wKBTF">overall cost</Link> adjusts according to several variables: technical architecture, custom design, complexity of algorithms and API integrations. </p>
+                                <p> For a <strong>Startup Solution (MVP)</strong>, plan an optimized budget between <strong>15,000 and 35,000 DH</strong>. This ultra-agile approach allows you to confront your idea with the market in record time, capture your first users and <span className="highlight-text">validate your Proof of Concept without major financial risk</span>. </p>
+                                <p> A <strong>scalable mobile architecture</strong> integrating advanced features and a high-performance backend now starts <strong>from 45,000 DH</strong>. This pack includes deployment on both stores, an intuitive administration interface and a technical base ready for growth. </p>
+                                <p> <strong>Strategic UI/UX Design</strong> is accessible from <strong>3,500 DH</strong>. We design immersive user journeys and high-fidelity mockups that maximize engagement, ensuring your application stands out from the first second. </p>
+                            </div> <Link href="/en/contact/" className="cta-button"> <span>Calculate your custom quote</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg> </Link>
                         </div>
@@ -680,22 +680,22 @@ export default function ApplicationMobileMarocPage() {
                                         <circle cx="11" cy="11" r="2" />
                                     </svg> </div>
                                     <div className="card-content">
-                                        <h3 className="card-title">Design Stratégique</h3>
-                                        <p className="card-description">Parcours utilisateur, UI moderne et prototypage interactif rapide</p>
-                                        <div className="card-price"> <span className="price-range">Dès 3 500</span> <span className="price-currency">DH</span> </div>
+                                        <h3 className="card-title">Strategic Design</h3>
+                                        <p className="card-description">User journey, modern UI and rapid interactive prototyping</p>
+                                        <div className="card-price"> <span className="price-range">From 3,500</span> <span className="price-currency">DH</span> </div>
                                         <ul className="card-details">
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Wireframes &amp; Maquettes </li>
+                                            </svg> Wireframes &amp; Mockups </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Prototype Figma </li>
+                                            </svg> Figma Prototype </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
                                             </svg> Design System </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Assets exportés </li>
+                                            </svg> Exported Assets </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -707,22 +707,22 @@ export default function ApplicationMobileMarocPage() {
                                         <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
                                     </svg> </div>
                                     <div className="card-content">
-                                        <h3 className="card-title">Solution MVP Agile</h3>
-                                        <p className="card-description">Déploiement express de vos fonctionnalités clés pour validation</p>
-                                        <div className="card-price"> <span className="price-range">Dès 15 000</span> <span className="price-currency">DH</span> </div>
+                                        <h3 className="card-title">Agile MVP Solution</h3>
+                                        <p className="card-description">Express deployment of your key features for validation</p>
+                                        <div className="card-price"> <span className="price-range">From 15,000</span> <span className="price-currency">DH</span> </div>
                                         <ul className="card-details">
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Fonctionnalités essentielles </li>
+                                            </svg> Essential Features </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> 1 à 2 plateformes </li>
+                                            </svg> 1 to 2 Platforms </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Backend basique </li>
+                                            </svg> Basic Backend </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Lancement rapide </li>
+                                            </svg> Fast Launch </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -732,22 +732,22 @@ export default function ApplicationMobileMarocPage() {
                                         <line x1="12" y1="18" x2="12.01" y2="18" />
                                     </svg> </div>
                                     <div className="card-content">
-                                        <h3 className="card-title">Projet Full-Stack</h3>
-                                        <p className="card-description">Application robuste, scalable et connectée pour entreprise</p>
-                                        <div className="card-price"> <span className="price-range">Dès 45 000</span> <span className="price-currency">DH</span> </div>
+                                        <h3 className="card-title">Full-Stack Project</h3>
+                                        <p className="card-description">Robust, scalable and connected application for enterprise</p>
+                                        <div className="card-price"> <span className="price-range">From 45,000</span> <span className="price-currency">DH</span> </div>
                                         <ul className="card-details">
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
                                             </svg> iOS + Android </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Backend sur mesure </li>
+                                            </svg> Custom Backend </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Panneau admin </li>
+                                            </svg> Admin Panel </li>
                                             <li> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <polyline points="20 6 9 17 4 12" />
-                                            </svg> Intégrations avancées </li>
+                                            </svg> Advanced Integrations </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -763,70 +763,70 @@ export default function ApplicationMobileMarocPage() {
                 <div className="container px-4 mx-auto max-w-4xl">
                     <div className="flex flex-col items-center mb-12">
                         <span className="badge-gradient mb-4">FAQ</span>
-                        <h2 className="section-title-premium text-center">Création d’application mobile au Maroc</h2>
+                        <h2 className="section-title-premium text-center">Mobile App Creation in Morocco</h2>
                     </div>
                     <FAQSection
                         showTitle={false}
                         data={[
                             {
-                                question: "1. Qu’est-ce que la création d’une application mobile et à quoi sert-elle pour une entreprise au Maroc ?",
-                                answer: "La création d’une application mobile consiste à concevoir, développer et publier une application destinée aux smartphones et tablettes (Android et/ou iOS). Pour une entreprise au Maroc, une application mobile permet de fidéliser les clients, augmenter la visibilité de la marque, automatiser certains services (réservations, paiements, commandes) et offrir une expérience utilisateur moderne adaptée aux usages mobiles locaux."
+                                question: "1. What is mobile app creation and what is it for in Morocco?",
+                                answer: "Mobile app creation consists of designing, developing, and publishing an application for smartphones and tablets (Android and/or iOS). For a company in Morocco, a mobile app allows customer loyalty, increased brand visibility, automation of certain services (reservations, payments, orders) and offering a modern user experience adapted to local mobile usage."
                             },
                             {
-                                question: "2. Pourquoi créer une application mobile au Maroc plutôt qu’un simple site web ?",
-                                answer: "Un site web est essentiel, mais une application mobile offre des avantages supplémentaires : Accès direct depuis le téléphone sans navigateur, Notifications push pour communiquer avec les clients, Meilleures performances et expérience utilisateur, Fonctionnement hors ligne pour certaines fonctionnalités. Au Maroc, où l’usage du smartphone est très élevé, une application mobile permet de toucher les utilisateurs plus efficacement qu’un site web seul."
+                                question: "2. Why create a mobile app in Morocco rather than just a website?",
+                                answer: "A website is essential, but a mobile app offers additional benefits: Direct access from the phone without a browser, Push notifications to communicate with clients, Better performance and user experience, Offline operation for certain features. In Morocco, where smartphone usage is very high, a mobile app allows you to reach users more effectively than a website alone."
                             },
                             {
-                                question: "3. Quels types d’applications mobiles pouvez-vous développer au Maroc ?",
-                                answer: "Nous développons plusieurs types d’applications mobiles : Applications vitrines pour entreprises et marques, Applications e-commerce et marketplaces, Applications de réservation (hôtels, locations, services), Applications professionnelles (gestion, CRM, ERP léger), Applications éducatives et e-learning, Applications de livraison et de services locaux. Chaque projet est conçu sur mesure selon les besoins du client et le marché marocain."
+                                question: "3. What types of mobile apps can you develop in Morocco?",
+                                answer: "We develop several types of mobile apps: Showcase apps for companies and brands, E-commerce and marketplace apps, Booking apps (hotels, rentals, services), Professional apps (management, CRM, light ERP), Educational and e-learning apps, Delivery and local service apps. Each project is custom-designed according to client needs and the Moroccan market."
                             },
                             {
-                                question: "4. Développez-vous des applications Android et iOS ?",
-                                answer: "Oui. Nous développons : Des applications Android (Google Play Store), Des applications iOS (Apple App Store), Des applications cross-platform (une seule base de code pour Android et iOS). Le choix dépend de votre budget, de votre cible et de vos objectifs commerciaux."
+                                question: "4. Do you develop Android and iOS apps?",
+                                answer: "Yes. We develop: Android apps (Google Play Store), iOS apps (Apple App Store), Cross-platform apps (a single code base for Android and iOS). The choice depends on your budget, your target, and your business objectives."
                             },
                             {
-                                question: "5. Quel est le prix de création d’une application mobile au Maroc ?",
-                                answer: "Le coût de création d’une application mobile au Maroc dépend de plusieurs facteurs : Complexité de l’application, Nombre de fonctionnalités, Design UI/UX personnalisé ou standard, Android, iOS ou les deux, Intégrations externes (paiement, GPS, API, etc.). En général, le prix peut varier de quelques milliers de dirhams à plusieurs dizaines de milliers de dirhams selon le projet. Un devis précis est fourni après analyse de vos besoins."
+                                question: "5. What is the price of creating a mobile app in Morocco?",
+                                answer: "The cost of creating a mobile app in Morocco depends on several factors: App complexity, Number of features, Custom UI/UX design or standard, Android, iOS or both, External integrations (payment, GPS, API, etc.). In general, the price can vary from a few thousand dirhams to several tens of thousands of dirhams depending on the project. A precise quote is provided after analyzing your needs."
                             },
                             {
-                                question: "6. Combien de temps faut-il pour développer une application mobile ?",
-                                answer: "La durée de développement varie selon le projet : Application simple : 3 à 5 semaines, Application moyenne : 1 à 2 mois, Application complexe : 3 mois ou plus. Nous respectons des délais clairs avec un planning détaillé pour chaque étape du développement."
+                                question: "6. How long does it take to develop a mobile app?",
+                                answer: "Development time varies by project: Simple app: 3 to 5 weeks, Medium app: 1 to 2 months, Complex app: 3 months or more. We respect clear deadlines with a detailed schedule for each stage of development."
                             },
                             {
-                                question: "7. Est-ce que vous vous occupez de la publication sur Google Play et l’App Store ?",
-                                answer: "Oui. Nous prenons en charge : La préparation des fichiers de publication, L’optimisation de la fiche de l’application (ASO), La soumission sur Google Play Store et Apple App Store, L’accompagnement pour la création des comptes développeur. Vous recevez une application prête à être téléchargée par vos utilisateurs."
+                                question: "7. Do you handle publication on Google Play and the App Store?",
+                                answer: "Yes. We handle: Preparation of publication files, App Store Optimization (ASO), Submission to Google Play Store and Apple App Store, Support for creating developer accounts. You receive an app ready to be downloaded by your users."
                             },
                             {
-                                question: "8. Proposez-vous la maintenance et les mises à jour des applications mobiles ?",
-                                answer: "Oui. Après la mise en ligne, nous proposons des services de : Maintenance technique, Corrections de bugs, Mises à jour de sécurité, Ajout de nouvelles fonctionnalités. La maintenance garantit la stabilité et la longévité de votre application mobile."
+                                question: "8. Do you offer maintenance and updates for mobile apps?",
+                                answer: "Yes. After launch, we offer services for: Technical maintenance, Bug fixes, Security updates, Adding new features. Maintenance ensures the stability and longevity of your mobile app."
                             },
                             {
-                                question: "9. Une application mobile est-elle adaptée aux petites entreprises au Maroc ?",
-                                answer: "Absolument. Les petites entreprises marocaines (restaurants, salons, agences, commerces locaux) peuvent grandement bénéficier d’une application mobile pour : Gérer les commandes et réservations, Communiquer avec leurs clients, Se différencier de la concurrence. Il existe des solutions adaptés aux petits budgets avec des fonctionnalités ciblées."
+                                question: "9. Is a mobile app suitable for small businesses in Morocco?",
+                                answer: "Absolutely. Small Moroccan businesses (restaurants, salons, agencies, local shops) can greatly benefit from a mobile app to: Manage orders and reservations, Communicate with their clients, Differentiate themselves from the competition. There are solutions adapted to small budgets with targeted features."
                             },
                             {
-                                question: "10. Mon application mobile sera-t-elle sécurisée ?",
-                                answer: "Oui. La sécurité est une priorité : Protection des données utilisateurs, Connexions sécurisées (HTTPS, authentification), Respect des bonnes pratiques de développement, Sécurisation des bases de données. Nous mettons en place des standards de sécurité adaptés aux applications mobiles modernes."
+                                question: "10. Will my mobile app be secure?",
+                                answer: "Yes. Security is a priority: User data protection, Secure connections (HTTPS, authentication), Compliance with best development practices, Database security. We implement security standards adapted to modern mobile applications."
                             },
                             {
-                                question: "11. Puis-je suivre l’avancement de mon projet d’application mobile ?",
-                                answer: "Oui. Vous êtes impliqué à chaque étape : Validation du cahier des charges, Maquettes et design, Développement progressif, Tests avant publication. Vous avez une visibilité totale sur l’évolution du projet."
+                                question: "11. Can I track the progress of my mobile app project?",
+                                answer: "Yes. You are involved at every stage: Validation of specifications, Mockups and design, Progressive development, Tests before publication. You have total visibility on the project's evolution."
                             },
                             {
-                                question: "12. Créez-vous des applications mobiles sur mesure au Maroc ?",
-                                answer: "Oui. Chaque application est développée sur mesure, en fonction : De votre secteur d’activité, De vos objectifs business, De votre cible au Maroc ou à l’international. Nous ne proposons pas de solutions génériques sans adaptation."
+                                question: "12. Do you create custom mobile apps in Morocco?",
+                                answer: "Yes. Each application is developed custom, depending on: Your business sector, Your business goals, Your target in Morocco or internationally. We do not offer generic solutions without adaptation."
                             },
                             {
-                                question: "13. Une application mobile peut-elle être reliée à un site web existant ?",
-                                answer: "Oui. Votre application mobile peut être connectée à : Un site web existant, Une base de données, Un back-office d’administration. Cela permet une gestion centralisée et une meilleure cohérence entre vos outils digitaux."
+                                question: "13. Can a mobile app be linked to an existing website?",
+                                answer: "Yes. Your mobile app can be connected to: An existing website, A database, An administration back-office. This allows centralized management and better consistency between your digital tools."
                             },
                             {
-                                question: "14. Est-ce que vous optimisez les applications pour le marché marocain ?",
-                                answer: "Oui. Nous tenons compte : Des habitudes des utilisateurs marocains, De la langue (français, arabe, darija), Des moyens de paiement locaux, De la performance sur les smartphones les plus utilisés au Maroc. L’objectif est une application réellement adaptée au marché local."
+                                question: "14. Do you optimize apps for the Moroccan market?",
+                                answer: "Yes. We take into account: The habits of Moroccan users, The language (French, Arabic, Darija), Local payment methods, Performance on the most used smartphones in Morocco. The goal is an application truly adapted to the local market."
                             },
                             {
-                                question: "15. Comment démarrer un projet de création d’application mobile au Maroc ?",
-                                answer: "Pour démarrer : Vous nous contactez avec votre idée, nous analysons vos besoins, nous vous proposons une solution technique et un devis. Le développement commence après validation. Nous vous accompagnons de l’idée jusqu’à la publication finale."
+                                question: "15. How to start a mobile app creation project in Morocco?",
+                                answer: "To start: Contact us with your idea, we analyze your needs, we propose a technical solution and a quote. Development begins after validation. We accompany you from the idea to the final publication."
                             }
                         ]}
                     />
@@ -841,21 +841,21 @@ export default function ApplicationMobileMarocPage() {
                 <div className="container px-4 mx-auto max-w-5xl text-center relative z-10">
                     <div className="space-y-8">
                         <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-bold tracking-wider text-primary-300 mb-4">
-                            AGENCE DE CRÉATION DE SITE WEB AU MAROC
+                            WEB DESIGN AGENCY IN MOROCCO
                         </span>
                         <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-                            Propulsez votre business avec un <span className="text-primary-400">site web d&apos;exception</span>
+                            Boost your business with an <span className="text-primary-400">exceptional website</span>
                         </h2>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Votre application mérite un écosystème digital puissant. Obtenez un site web qui convertit vos visiteurs en clients fidèles au Maroc.
+                            Your application deserves a powerful digital ecosystem. Get a website that converts your visitors into loyal customers in Morocco.
                         </p>
                         <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Link href="/creation-site-web-maroc/" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
-                                Création site web Maroc
+                            <Link href="/en/website-creation-morocco/" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
+                                Website Creation Morocco
                                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <div className="flex flex-col items-center sm:items-start text-left">
-                                <p className="text-sm text-gray-400 font-medium italic">Audit technique offert</p>
+                                <p className="text-sm text-gray-400 font-medium italic">Free technical audit</p>
                                 <a href="tel:+212663711164" className="text-white hover:text-primary-400 font-bold text-lg flex items-center gap-2 transition-colors">
                                     +212 663-711164
                                 </a>

@@ -13,17 +13,32 @@ const logoItems = [
     { src: "https://cdn.prod.website-files.com/6634f9cbe380ab2b3b36db44/6721493fd0c23c36f59c57ad_pulco.svg", alt: "Pulco" },
 ];
 
-const EcommerceHero: React.FC = () => {
+interface EcommerceHeroProps {
+    lang?: 'FR' | 'EN';
+}
+
+const EcommerceHero: React.FC<EcommerceHeroProps> = ({ lang = 'EN' }) => {
+    const t = {
+        FR: {
+            text: "Nous collaborons avec des équipes performantes dans l'e-commerce, la vente au détail, les services et les abonnements - en appliquant des stratégies CRM sur mesure pour débloquer une croissance à long terme.",
+            cta: "NOS MARQUES"
+        },
+        EN: {
+            text: "We collaborate with high performance teams across e-commerce, retail, service, and subscription - applying tailored CRM strategies to unlock long-term growth.",
+            cta: "OUR BRANDS"
+        }
+    }[lang];
+
     return (
         <div className="ecommerce-hero section light-section snipcss-wXIbE">
             <div className="container left-align-block">
                 <div id="w-node-_45c96805-68dd-17c2-c7f5-575738e1ff79-3b36db8d" className="div-block-5">
                     <h4 data-w-id="45c96805-68dd-17c2-c7f5-575738e1ff7c" className="heading-11 dark style-kJtcF" id="style-kJtcF">
-                        We collaborate with high performance teams across e-commerce, retail, service, and subscription - applying tailored CRM strategies to unlock long-term growth.
+                        {t.text}
                     </h4>
                     <div className="cta-block">
                         <Link href="/brands" className="primary-cta w-inline-block">
-                            <p className="paragraph-2">OUR BRANDS</p>
+                            <p className="paragraph-2">{t.cta}</p>
                         </Link>
                     </div>
                     <div className="carousel">

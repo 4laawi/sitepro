@@ -8,7 +8,13 @@ import EcommerceHero from '@/components/EcommerceHero'
 export const metadata: Metadata = {
   title: 'Création de sites e‑commerce | Sitepro.ma',
   description: 'Boutiques en ligne performantes: paiement sécurisé, catalogue, analytics, SEO. Devis rapide sur WhatsApp.',
-  alternates: { canonical: '/e-commerce' },
+  alternates: {
+    canonical: 'https://sitepro.ma/e-commerce/',
+    languages: {
+      'fr-MA': 'https://sitepro.ma/e-commerce/',
+      'en-MA': 'https://sitepro.ma/en/e-commerce/',
+    },
+  },
 }
 
 const phone = '212663711164'
@@ -38,7 +44,7 @@ export default function EcommercePage() {
         })}
       </Script>
 
-      <EcommerceHero />
+      <EcommerceHero lang="FR" />
 
       <div className="container mx-auto px-4 py-20">
 

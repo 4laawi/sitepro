@@ -23,6 +23,7 @@ export interface PortfolioItem {
 interface PortfolioInteractiveProps {
   items: PortfolioItem[]
   categories: string[]
+  lang?: 'FR' | 'EN'
 }
 
 interface PortfolioCardProps {
@@ -31,10 +32,16 @@ interface PortfolioCardProps {
   isInView: boolean;
   randomDelays: number[];
   isMobile?: boolean;
+  lang?: 'FR' | 'EN';
 }
 
-function InteractivePortfolioCard({ item, index, isInView, randomDelays, isMobile }: PortfolioCardProps) {
+function InteractivePortfolioCard({ item, index, isInView, randomDelays, isMobile, lang = 'FR' }: PortfolioCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const t = {
+    FR: { view: 'Voir en ligne', case: 'Étude de cas' },
+    EN: { view: 'View Online', case: 'Case Study' }
+  }[lang];
+
   return (
     <ClientMotionWrapper
       key={item.id}
@@ -98,10 +105,10 @@ function InteractivePortfolioCard({ item, index, isInView, randomDelays, isMobil
         </div>
         <div className="flex items-center justify-between mt-5">
           <Link href={item.link} target="_blank" className="inline-flex items-center gap-2 text-primary-700 font-medium">
-            Voir en ligne <ExternalLink size={16} />
+            {t.view} <ExternalLink size={16} />
           </Link>
           {item.caseStudy && (
-            <Link href={item.caseStudy} className="text-sm text-gray-600 underline hover:text-primary-700">Étude de cas</Link>
+            <Link href={item.caseStudy} className="text-sm text-gray-600 underline hover:text-primary-700">{t.case}</Link>
           )}
         </div>
       </div>
@@ -109,8 +116,8 @@ function InteractivePortfolioCard({ item, index, isInView, randomDelays, isMobil
   );
 }
 
-export default function PortfolioInteractive({ items, categories }: PortfolioInteractiveProps) {
-  const [selected, setSelected] = useState<string>('Tous')
+export default function PortfolioInteractive({ items, categories, lang = 'FR' }: PortfolioInteractiveProps) {
+  const [selected, setSelected] = useState<string>(categories[0] || 'Tous')
   const [isMobile, setIsMobile] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { amount: 0.1, once: false })
@@ -123,9 +130,9 @@ export default function PortfolioInteractive({ items, categories }: PortfolioInt
   }, [])
 
   const filtered = useMemo(() => {
-    if (selected === 'Tous') return items.filter((i) => !i.hideFromAll)
+    if (selected === categories[0]) return items.filter((i) => !i.hideFromAll)
     return items.filter((i) => i.category === selected)
-  }, [items, selected])
+  }, [items, selected, categories])
 
   const randomDelays = useMemo(() => {
     return Array.from({ length: 50 }, () => Math.random() * 10)
@@ -167,6 +174,7 @@ export default function PortfolioInteractive({ items, categories }: PortfolioInt
             isInView={isInView}
             randomDelays={randomDelays}
             isMobile={isMobile}
+            lang={lang}
           />
         ))}
       </div>

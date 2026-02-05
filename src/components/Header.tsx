@@ -70,6 +70,41 @@ export default function Header() {
       '/creation-site-web-maroc': '/en/website-creation-morocco',
       '/en/website-creation-morocco/': '/creation-site-web-maroc/',
       '/en/website-creation-morocco': '/creation-site-web-maroc',
+
+      '/e-commerce/': '/en/e-commerce/',
+      '/e-commerce': '/en/e-commerce',
+      '/en/e-commerce/': '/e-commerce/',
+      '/en/e-commerce': '/e-commerce',
+
+      '/contact/': '/en/contact/',
+      '/contact': '/en/contact',
+      '/en/contact/': '/contact/',
+      '/en/contact': '/contact',
+
+      '/design-branding/': '/en/design-branding/',
+      '/design-branding': '/en/design-branding',
+      '/en/design-branding/': '/design-branding/',
+      '/en/design-branding': '/design-branding',
+
+      '/maintenance-site-web-maroc/': '/en/maintenance-website-morocco/',
+      '/maintenance-site-web-maroc': '/en/maintenance-website-morocco',
+      '/en/maintenance-website-morocco/': '/maintenance-site-web-maroc/',
+      '/en/maintenance-website-morocco': '/maintenance-site-web-maroc',
+
+      '/portfolio/': '/en/portfolio/',
+      '/portfolio': '/en/portfolio',
+      '/en/portfolio/': '/portfolio/',
+      '/en/portfolio': '/portfolio',
+
+      '/referencement-seo/': '/en/seo-agency-morocco/',
+      '/referencement-seo': '/en/seo-agency-morocco',
+      '/en/seo-agency-morocco/': '/referencement-seo/',
+      '/en/seo-agency-morocco': '/referencement-seo',
+
+      '/application-mobile-maroc/': '/en/mobile-apps-morocco/',
+      '/application-mobile-maroc': '/en/mobile-apps-morocco',
+      '/en/mobile-apps-morocco/': '/application-mobile-maroc/',
+      '/en/mobile-apps-morocco': '/application-mobile-maroc',
     }
 
     if (lang === 'EN' && !pathname.startsWith('/en')) {
@@ -162,7 +197,7 @@ export default function Header() {
       <header className={`bg-white py-[20px] relative lg:sticky lg:top-0 z-70 snipcss-ooWPY transition-transform duration-300 ease-in-out ${!isVisible && !isMobileMenuOpen ? 'header-hidden' : ''}`}>
         <div className="h-[70px] flex items-center justify-between header">
           <div className="flex w-full items-center justify-between z-[111]">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href={language === 'EN' ? "/en/" : "/"} className="flex items-center gap-2">
               <Image
                 src="/Logo-site-web-pro-maroc.webp"
                 alt="Sitepro.ma"
@@ -187,16 +222,17 @@ export default function Header() {
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'creationWeb' ? 'is-open' : ''}`}>
                     <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
                       <li> <Link href={language === 'EN' ? "/en/website-creation-morocco/" : "/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.ecommerce} </Link> </li>
 
-                      <li> <Link href={"/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
-                      <li> <Link href={"/maintenance-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/maintenance-website-morocco/" : "/maintenance-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
                     </ul>
                   </div>
                 </li>
 
-                <li> <Link href={"/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.portfolio} </Link> </li>
                 <li>
-                  <Link href={"/application-mobile-maroc/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
+                  <Link href={language === 'EN' ? "/en/mobile-apps-morocco/" : "/application-mobile-maroc/"} className="flex items-center animated-link link_header gap-2 text-title navbar-bold transition-colors duration-200 hover:text-[#2563eb]">
                     <svg width="20" height="20" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7 18L1 12L7 6" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M21 6L27 12L21 18" stroke="#022545" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -218,7 +254,7 @@ export default function Header() {
                   </button>
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'seo' ? 'is-open' : ''}`}>
                     <ul className="z-50 dropDown-menu top-full right-0 w-56 bg-white py-2">
-                      <li> <Link href={"/referencement-seo/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/seo-agency-morocco/" : "/referencement-seo/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.seo} </Link> </li>
                       {/* Temporarily hiding non-existent routes until created 
                       <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.geo} </Link> </li>
                       <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} className="block navbar-bold ml-6 my-3 link_header animated-link text-title transition-colors"> {t.seoSub.gmb} </Link> </li>
@@ -228,7 +264,7 @@ export default function Header() {
                   </div>
                 </li>
                 <li> <Link href={"/blog/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.blog} </Link> </li>
-                <li> <Link href={"/contact/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.contact} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/contact/" : "/contact/"} className="text-title animated-link link_header navbar-bold hover:text-[#2563eb] transition-colors duration-200"> {t.contact} </Link> </li>
               </ul>
             </nav>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -295,15 +331,16 @@ export default function Header() {
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['creationWeb'] ? 'active' : 'hidden'}`}>
                 <li> <Link href={language === 'EN' ? "/en/website-creation-morocco/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/e-commerce/" : "/e-commerce/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.ecommerce} </Link> </li>
 
-                <li> <Link href={"/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
-                <li> <Link href={"/maintenance-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/design-branding/" : "/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/maintenance-website-morocco/" : "/maintenance-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>
               </ul>
             </li>
 
             <li>
               <Link
-                href={"/portfolio/"}
+                href={language === 'EN' ? "/en/portfolio/" : "/portfolio/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
@@ -317,7 +354,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={"/application-mobile-maroc/"}
+                href={language === 'EN' ? "/en/mobile-apps-morocco/" : "/application-mobile-maroc/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >
@@ -347,7 +384,7 @@ export default function Header() {
                 </svg>
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['seo'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={"/referencement-seo/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/seo-agency-morocco/" : "/referencement-seo/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.seo} </Link> </li>
                 {/* Temporarily hiding non-existent routes until created 
                 <li> <Link href={language === 'EN' ? "/en/agence-geo-maroc/" : "/agence-geo-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.geo} </Link> </li>
                 <li> <Link href={language === 'EN' ? "/en/google-my-business-maroc/" : "/google-my-business-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="block link_header py-2 text-title font-semibold hover:text-[#2563eb]"> {t.seoSub.gmb} </Link> </li>
@@ -370,7 +407,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={"/contact/"}
+                href={language === 'EN' ? "/en/contact/" : "/contact/"}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 text-title link_header cursor-pointer navbar-bold py-4 transition-colors duration-200 hover:text-[#2563eb]"
               >

@@ -10,7 +10,13 @@ export const metadata: Metadata = {
   title: 'Portfolio Agence Web Maroc | Nos Réalisations Digitales',
   description:
     'Découvrez notre portfolio agence web maroc. Projets e-commerce, vitrines et solutions sur mesure performantes. Preuve de notre expertise et résultats.',
-  alternates: { canonical: '/portfolio' },
+  alternates: {
+    canonical: 'https://sitepro.ma/portfolio/',
+    languages: {
+      'fr-MA': 'https://sitepro.ma/portfolio/',
+      'en-MA': 'https://sitepro.ma/en/portfolio/',
+    },
+  },
   keywords: ['portfolio agence web maroc', 'réalisations web maroc', 'projets agence web'],
   openGraph: {
     title: 'Portfolio Agence Web Maroc | Nos Réalisations Digitales',
