@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Portfolio Agence Web Maroc | Nos Réalisations Digitales',
     description: 'Sélection de projets modernes et performants par Sitepro.',
-    url: 'https://www.sitepro.ma/portfolio',
+    url: 'https://sitepro.ma/portfolio',
     type: 'website',
   },
 }
@@ -220,8 +220,8 @@ export default function PortfolioPage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.sitepro.ma/portfolio' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://sitepro.ma/portfolio' }
           ]
         })}
       </Script>

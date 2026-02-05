@@ -58,7 +58,7 @@ const SolutionsSection = ({ lang = 'FR' }: SolutionsSectionProps) => {
                     title: "Website Creation",
                     description: "Develop a custom showcase or e-commerce site, designed for your growth.",
                     image: "/clipboard-image-1769520418.webp",
-                    link: "/en/creation-site-web-maroc",
+                    link: "/en/website-creation-morocco",
                     delay: 0.1
                 },
                 {

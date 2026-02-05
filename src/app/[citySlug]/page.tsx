@@ -26,14 +26,14 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     return {
         title: `Création site web ${cityCap} | Sitepro.ma – Sites ultra-performants & SEO`,
         description: `Sitepro.ma crée votre site web à ${cityCap} 100 % optimisé SEO & IA pour booster votre visibilité. Design moderne, rapidité extrême et résultats garantis. ☎️ 06 63 71 11 64`,
-        alternates: { canonical: `https://www.sitepro.ma/${citySlug}` },
+        alternates: { canonical: `https://sitepro.ma/${citySlug}` },
         openGraph: {
             title: `Création site web ${cityCap} | Sitepro.ma – Sites ultra-performants & SEO`,
             description: `Sitepro.ma crée votre site web à ${cityCap} 100 % optimisé SEO & IA. Design moderne et rapidité extrême.`,
-            url: `https://www.sitepro.ma/${citySlug}`,
+            url: `https://sitepro.ma/${citySlug}`,
             siteName: 'Sitepro.ma',
             images: [{
-                url: 'https://www.sitepro.ma/og-image.jpg',
+                url: 'https://sitepro.ma/og-image.jpg',
                 width: 1200,
                 height: 630,
                 alt: `Création site web ${cityCap} - Sitepro.ma`,

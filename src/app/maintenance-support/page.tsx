@@ -18,8 +18,8 @@ export default function MaintenanceSupportPage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Maintenance & Support', item: 'https://www.sitepro.ma/maintenance-support' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Maintenance & Support', item: 'https://sitepro.ma/maintenance-support' }
           ]
         })}
       </Script>
@@ -29,9 +29,9 @@ export default function MaintenanceSupportPage() {
           '@type': 'Service',
           name: 'Maintenance & Support',
           serviceType: 'Maintenance web',
-          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://www.sitepro.ma' },
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
           areaServed: 'MA',
-          url: 'https://www.sitepro.ma/maintenance-support'
+          url: 'https://sitepro.ma/maintenance-support'
         })}
       </Script>
       <div className="container mx-auto px-4 py-20">

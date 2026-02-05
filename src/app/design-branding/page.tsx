@@ -19,8 +19,8 @@ export default function DesignBrandingPage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Design & Branding', item: 'https://www.sitepro.ma/design-branding' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Design & Branding', item: 'https://sitepro.ma/design-branding' }
           ]
         })}
       </Script>
@@ -30,9 +30,9 @@ export default function DesignBrandingPage() {
           '@type': 'Service',
           name: 'Design & Branding',
           serviceType: 'Branding / Design',
-          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://www.sitepro.ma' },
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
           areaServed: 'MA',
-          url: 'https://www.sitepro.ma/design-branding'
+          url: 'https://sitepro.ma/design-branding'
         })}
       </Script>
       <div className="container mx-auto px-4 py-20">

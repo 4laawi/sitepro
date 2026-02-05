@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Contact Agence Web Maroc | Devis Gratuit & Consultation',
         description: 'Parlez-nous de votre projet de création de site web ou SEO au Maroc et obtenez une consultation gratuite.',
-        url: 'https://www.sitepro.ma/contact',
+        url: 'https://sitepro.ma/contact',
     },
 }
 
@@ -23,7 +23,7 @@ export default function ContactPage() {
         '@type': 'ContactPage',
         'name': 'Page de Contact Sitepro.ma',
         'description': 'Informations de contact pour l\'agence web Sitepro.ma au Maroc.',
-        'url': 'https://www.sitepro.ma/contact',
+        'url': 'https://sitepro.ma/contact',
         'contactPoint': {
             '@type': 'ContactPoint',
             'telephone': '+212663711164',

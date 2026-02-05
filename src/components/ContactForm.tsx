@@ -4,7 +4,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 
-export default function ContactForm() {
+interface ContactFormProps {
+    lang?: 'FR' | 'EN';
+}
+
+export default function ContactForm({ lang = 'FR' }: ContactFormProps) {
     const [formData, setFormData] = useState({
         fullName: '',
         projectType: '',
@@ -14,6 +18,47 @@ export default function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [error, setError] = useState('')
+
+    const t = {
+        FR: {
+            fullName: "Nom complet",
+            projectType: "Type de projet",
+            otherProjectType: "Spécifiez votre projet",
+            delay: "Délai souhaité",
+            sending: "Envoi...",
+            sent: "Envoyé !",
+            send: "Envoyer",
+            error: "Une erreur est survenue. Veuillez réessayer.",
+            whatsappMsg: (name: string, type: string, delay: string) =>
+                `Salam, je m'appelle ${name}. J'aimerais créer un site web de type : ${type}. Délai souhaité : ${delay}.`,
+            projectTypes: [
+                "Location de voiture", "Clinique / Docteur", "Café / Restaurant", "Agent immobilier",
+                "Agence", "Entreprise", "E-commerce", "Hôtel / Riad", "Autre"
+            ],
+            delays: [
+                "En urgence (< 2 semaines)", "2 à 4 semaines", "1 à 2 mois", "Plus de 2 mois"
+            ]
+        },
+        EN: {
+            fullName: "Full Name",
+            projectType: "Project Type",
+            otherProjectType: "Specify your project",
+            delay: "Desired Timeline",
+            sending: "Sending...",
+            sent: "Sent!",
+            send: "Send",
+            error: "An error occurred. Please try again.",
+            whatsappMsg: (name: string, type: string, delay: string) =>
+                `Hello, my name is ${name}. I would like to create a website for: ${type}. Desired timeline: ${delay}.`,
+            projectTypes: [
+                "Car Rental", "Clinic / Doctor", "Cafe / Restaurant", "Real Estate Agent",
+                "Agency", "Company", "E-commerce", "Hotel / Riad", "Other"
+            ],
+            delays: [
+                "Urgent (< 2 weeks)", "2 to 4 weeks", "1 to 2 months", "More than 2 months"
+            ]
+        }
+    }[lang];
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFormData({
@@ -29,11 +74,11 @@ export default function ContactForm() {
 
         try {
             // Construct WhatsApp message
-            const projectInfo = formData.projectType === 'Autre'
+            const projectInfo = formData.projectType === (lang === 'EN' ? 'Other' : 'Autre')
                 ? `${formData.projectType} (${formData.otherProjectType})`
                 : formData.projectType;
 
-            const message = `Salam, je m'appelle ${formData.fullName}. J'aimerais créer un site web de type : ${projectInfo}. Délai souhaité : ${formData.delay}.`;
+            const message = t.whatsappMsg(formData.fullName, projectInfo, formData.delay);
             const whatsappUrl = `https://wa.me/212663711164?text=${encodeURIComponent(message)}`;
 
             // Mock submission delay
@@ -47,30 +92,11 @@ export default function ContactForm() {
 
             setTimeout(() => setIsSubmitted(false), 5000)
         } catch {
-            setError('Une erreur est survenue. Veuillez réessayer.')
+            setError(t.error)
         } finally {
             setIsSubmitting(false)
         }
     }
-
-    const projectTypes = [
-        "Location de voiture",
-        "Clinique / Docteur",
-        "Café / Restaurant",
-        "Agent immobilier",
-        "Agence",
-        "Entreprise",
-        "E-commerce",
-        "Hôtel / Riad",
-        "Autre"
-    ]
-
-    const delayOptions = [
-        "En urgence (< 2 semaines)",
-        "2 à 4 semaines",
-        "1 à 2 mois",
-        "Plus de 2 mois"
-    ]
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -79,7 +105,7 @@ export default function ContactForm() {
                     <input
                         type="text"
                         name="fullName"
-                        placeholder="Nom complet"
+                        placeholder={t.fullName}
                         required
                         value={formData.fullName}
                         onChange={handleChange}
@@ -95,8 +121,8 @@ export default function ContactForm() {
                             onChange={handleChange}
                             className="w-full bg-white/5 border border-primary-500/30 rounded-full px-6 py-4 text-white focus:outline-none focus:border-primary-400 focus:bg-[#022545] transition-all appearance-none cursor-pointer"
                         >
-                            <option value="" disabled className="text-gray-400 bg-[#022545]">Type de projet</option>
-                            {projectTypes.map(type => (
+                            <option value="" disabled className="text-gray-400 bg-[#022545]">{t.projectType}</option>
+                            {t.projectTypes.map(type => (
                                 <option key={type} value={type} className="text-white bg-[#022545]">{type}</option>
                             ))}
                         </select>
@@ -114,8 +140,8 @@ export default function ContactForm() {
                             onChange={handleChange}
                             className="w-full bg-white/5 border border-primary-500/30 rounded-full px-6 py-4 text-white focus:outline-none focus:border-primary-400 focus:bg-[#022545] transition-all appearance-none cursor-pointer"
                         >
-                            <option value="" disabled className="text-gray-400 bg-[#022545]">Délai souhaité</option>
-                            {delayOptions.map(option => (
+                            <option value="" disabled className="text-gray-400 bg-[#022545]">{t.delay}</option>
+                            {t.delays.map(option => (
                                 <option key={option} value={option} className="text-white bg-[#022545]">{option}</option>
                             ))}
                         </select>
@@ -127,7 +153,7 @@ export default function ContactForm() {
             </div>
 
             <AnimatePresence>
-                {formData.projectType === 'Autre' && (
+                {formData.projectType === (lang === 'EN' ? 'Other' : 'Autre') && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
@@ -137,7 +163,7 @@ export default function ContactForm() {
                         <input
                             type="text"
                             name="otherProjectType"
-                            placeholder="Spécifiez votre projet"
+                            placeholder={t.otherProjectType}
                             required
                             value={formData.otherProjectType}
                             onChange={handleChange}
@@ -159,15 +185,15 @@ export default function ContactForm() {
                     {isSubmitting ? (
                         <span className="flex items-center gap-2">
                             <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                            Envoi...
+                            {t.sending}
                         </span>
                     ) : isSubmitted ? (
                         <span className="flex items-center gap-2">
                             <CheckCircle size={18} />
-                            Envoyé !
+                            {t.sent}
                         </span>
                     ) : (
-                        'Envoyer'
+                        t.send
                     )}
                 </motion.button>
             </div>
@@ -176,3 +202,4 @@ export default function ContactForm() {
         </form>
     )
 }
+

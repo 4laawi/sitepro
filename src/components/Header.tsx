@@ -64,10 +64,20 @@ export default function Header() {
   }[language];
 
   const toggleLanguage = (lang: 'FR' | 'EN') => {
+    // Route mapping for language specific URLs
+    const routeMap: { [key: string]: string } = {
+      '/creation-site-web-maroc/': '/en/website-creation-morocco/',
+      '/creation-site-web-maroc': '/en/website-creation-morocco',
+      '/en/website-creation-morocco/': '/creation-site-web-maroc/',
+      '/en/website-creation-morocco': '/creation-site-web-maroc',
+    }
+
     if (lang === 'EN' && !pathname.startsWith('/en')) {
-      router.push('/en')
+      const targetPath = routeMap[pathname] || '/en'
+      router.push(targetPath)
     } else if (lang === 'FR' && pathname.startsWith('/en')) {
-      router.push('/')
+      const targetPath = routeMap[pathname] || '/'
+      router.push(targetPath)
     }
   }
 
@@ -176,7 +186,7 @@ export default function Header() {
                   </button>
                   <div className={`pt-[35px] absolute dropdown-menu ${openDropdown === 'creationWeb' ? 'is-open' : ''}`}>
                     <ul className="dropDown-menu top-full left-0 w-56 bg-white py-2">
-                      <li> <Link href={"/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
+                      <li> <Link href={language === 'EN' ? "/en/website-creation-morocco/" : "/creation-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.siteWeb} </Link> </li>
 
                       <li> <Link href={"/design-branding/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.branding} </Link> </li>
                       <li> <Link href={"/maintenance-site-web-maroc/"} className="block animated-link link_header ml-6 my-3 text-title navbar-bold"> {t.creationWebSub.maintenance} </Link> </li>
@@ -284,7 +294,7 @@ export default function Header() {
                 </svg>
               </span>
               <ul className={`mobile-submenu pl-9 space-y-2 pb-2 ${openMobileSubmenus['creationWeb'] ? 'active' : 'hidden'}`}>
-                <li> <Link href={"/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
+                <li> <Link href={language === 'EN' ? "/en/website-creation-morocco/" : "/creation-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.siteWeb} </Link> </li>
 
                 <li> <Link href={"/design-branding/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.branding} </Link> </li>
                 <li> <Link href={"/maintenance-site-web-maroc/"} onClick={() => setIsMobileMenuOpen(false)} className="link_header block py-2 text-title font-semibold hover:text-[#2563eb]"> {t.creationWebSub.maintenance} </Link> </li>

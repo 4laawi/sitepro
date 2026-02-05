@@ -21,7 +21,7 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.sitepro.ma'),
+  metadataBase: new URL('https://sitepro.ma'),
   title: 'Sitepro.ma - Agence Web Maroc | Création de Sites Internet Professionnels',
   description: 'Sitepro.ma - Votre partenaire digital au Maroc. Nous créons des sites web modernes et performants pour les entreprises marocaines. Design sur mesure, SEO optimisé, résultats garantis.',
   keywords: 'agence web maroc, création site internet maroc, développement web marrakech, site web professionnel, agence digitale maroc',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sitepro.ma - Agence Web Maroc',
     description: 'Création de sites web professionnels pour entreprises marocaines',
-    url: 'https://www.sitepro.ma',
+    url: 'https://sitepro.ma',
     siteName: 'Sitepro.ma',
     locale: 'fr_MA',
     type: 'website',
@@ -98,8 +98,8 @@ export default function RootLayout({
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Sitepro.ma',
-            url: 'https://www.sitepro.ma',
-            logo: 'https://www.sitepro.ma/favicon.png',
+            url: 'https://sitepro.ma',
+            logo: 'https://sitepro.ma/favicon.png',
             contactPoint: [{
               '@type': 'ContactPoint',
               contactType: 'customer support',

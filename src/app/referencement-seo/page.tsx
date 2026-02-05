@@ -5,6 +5,7 @@ import Typewriter from '@/components/Typewriter'
 import TextTicker from '@/components/TextTicker'
 import { ArrowRight } from 'lucide-react'
 import Script from 'next/script'
+import SeoLottie from '@/components/SeoLottie'
 
 export const metadata: Metadata = {
   title: 'Référencement Naturel Maroc | Expert SEO & Visibilité Google',
@@ -22,8 +23,8 @@ export default function SeoPage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Référencement SEO', item: 'https://www.sitepro.ma/referencement-seo' }
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 2, name: 'Référencement SEO', item: 'https://sitepro.ma/referencement-seo' }
           ]
         })}
       </Script>
@@ -33,9 +34,9 @@ export default function SeoPage() {
           '@type': 'Service',
           name: 'Référencement SEO',
           serviceType: 'SEO',
-          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://www.sitepro.ma' },
+          provider: { '@type': 'Organization', name: 'Sitepro.ma', url: 'https://sitepro.ma' },
           areaServed: 'MA',
-          url: 'https://www.sitepro.ma/referencement-seo'
+          url: 'https://sitepro.ma/referencement-seo'
         })}
       </Script>
       <div className="container mx-auto px-4 py-20">
@@ -48,6 +49,10 @@ export default function SeoPage() {
             <Link href="/portfolio" className="btn-secondary">Voir des résultats</Link>
           </div>
         </ClientMotionWrapper>
+
+        <div className="mt-12 lg:mt-0 lg:absolute lg:top-20 lg:right-0 lg:w-1/2 -z-10 opacity-80 lg:opacity-100">
+          <SeoLottie />
+        </div>
         <TextTicker text="Audit • On‑page • Contenu • Maillage • Vitesse • SEO local" className="mt-8 border-y border-gray-100 text-sm" />
         {/* Why choose us */}
         <div className="mt-12 grid md:grid-cols-3 gap-6">

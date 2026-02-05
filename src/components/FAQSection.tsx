@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './FAQSection.css';
 
-const defaultFaqData = [
+const defaultFaqDataFR = [
     {
         question: "Pourquoi choisir Sitepro.ma pour mon site ?",
         answer: "Notre force, c'est que nous combinons design, développement technique et expertise marketing. Cela nous permet de créer des sites qui ne sont pas seulement beaux, mais qui performent. Chaque projet est pensé pour être rapide et évolutif afin de répondre à vos objectifs de croissance."
@@ -31,17 +31,58 @@ const defaultFaqData = [
     }
 ];
 
+const defaultFaqDataEN = [
+    {
+        question: "Why choose Sitepro.ma for my website?",
+        answer: "Our strength lies in combining design, technical development, and marketing expertise. This allows us to create websites that are not only beautiful but high-performing. Every project is designed to be fast and scalable to meet your growth objectives."
+    },
+    {
+        question: "Do you create showcase or e-commerce websites?",
+        answer: "Both. We create showcase websites to strengthen your brand image and generate leads, and e-commerce websites to boost your sales. Our stack covers Webflow, Shopify, and WordPress, allowing us to advise the best solution based on your needs."
+    },
+    {
+        question: "Which CMS should I choose?",
+        answer: "There is no universal 'best' solution. Shopify, Webflow, or WordPress: each CMS has its strengths. We advise you based on your goals (showcase, e-commerce, leadgen), integration needs, and budget at Sitepro.ma. The idea is simple: choose a tool that supports your growth, not one that hinders it."
+    },
+    {
+        question: "How long does it take?",
+        answer: "It depends on complexity. A landing page can be ready in 1 week. A full e-commerce site takes about 8 to 10 weeks. The best way is to contact us so we can estimate your project's duration according to your specific needs."
+    },
+    {
+        question: "What is the cost of a website?",
+        answer: "Our projects generally start from €3-5k for a showcase site and €4-6k for an e-commerce site. The final budget depends on the scope (pages, integrations, custom design). We always provide a precise estimate after our discovery call."
+    },
+    {
+        question: "Do you only do web?",
+        answer: "No. At Sitepro.ma, we have chosen to specialize with dedicated experts in three key areas: Acquisition, Web, and SEO. Each can be activated separately or combined, but always with a global vision for your online growth."
+    }
+];
+
 interface FAQSectionProps {
     showTitle?: boolean;
     data?: { question: string; answer: string }[];
+    lang?: 'FR' | 'EN';
 }
 
-const FAQSection = ({ showTitle = true, data = defaultFaqData }: FAQSectionProps) => {
+const FAQSection = ({ showTitle = true, data, lang = 'FR' }: FAQSectionProps) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const faqData = data || (lang === 'EN' ? defaultFaqDataEN : defaultFaqDataFR);
 
     const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
+
+    const t = {
+        FR: {
+            title: "Questions Fréquentes",
+            subtitle: "Les questions qu’on nous pose (vraiment)"
+        },
+        EN: {
+            title: "Frequently Asked Questions",
+            subtitle: "The questions we (actually) get asked"
+        }
+    }[lang];
 
     return (
         <section className="faq-section">
@@ -51,8 +92,8 @@ const FAQSection = ({ showTitle = true, data = defaultFaqData }: FAQSectionProps
                         <div className="faq-text-center">
                             <div className="faq-title-wrapper">
                                 <span className="faq-sous-titre">FAQ</span>
-                                <h2 className="faq-h2">Questions Fréquentes</h2>
-                                <h3 className="faq-h3">Les questions qu’on nous pose (vraiment)</h3>
+                                <h2 className="faq-h2">{t.title}</h2>
+                                <h3 className="faq-h3">{t.subtitle}</h3>
                             </div>
                         </div>
                     </div>
@@ -62,7 +103,7 @@ const FAQSection = ({ showTitle = true, data = defaultFaqData }: FAQSectionProps
                 <div className="uui-padding-vertical-xhuge">
                     <div className="uui-faq01_component">
                         <div className="uui-faq01_list">
-                            {data.map((item, index) => (
+                            {faqData.map((item, index) => (
                                 <div key={index} className="uui-faq01_accordion">
                                     <div
                                         className="uui-faq01_question"
