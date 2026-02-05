@@ -159,7 +159,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`bg-white py-[20px] lg:sticky lg:top-0 z-70 snipcss-ooWPY transition-transform duration-300 ease-in-out ${!isVisible && !isMobileMenuOpen ? 'header-hidden' : ''}`}>
+      <header className={`bg-white py-[20px] relative lg:sticky lg:top-0 z-70 snipcss-ooWPY transition-transform duration-300 ease-in-out ${!isVisible && !isMobileMenuOpen ? 'header-hidden' : ''}`}>
         <div className="h-[70px] flex items-center justify-between header">
           <div className="flex w-full items-center justify-between z-[111]">
             <Link href="/" className="flex items-center gap-2">
