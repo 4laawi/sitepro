@@ -11,9 +11,7 @@ import {
     Zap,
     Lock,
     Cpu,
-    TrendingUp,
-    Phone,
-    Mail
+    TrendingUp
 } from 'lucide-react';
 import ClientMotionWrapper from '@/components/ClientMotionWrapper';
 import FAQSection from '@/components/FAQSection';

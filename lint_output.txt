@@ -1,0 +1,16 @@
+
+> sitepro@0.1.0 lint
+> next lint
+
+
+./src/app/application-mobile-maroc/page.tsx
+7:8  Warning: 'ContactForm' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/maintenance-site-web-maroc/MaintenanceContent.tsx
+15:5  Warning: 'Phone' is defined but never used.  @typescript-eslint/no-unused-vars
+16:5  Warning: 'Mail' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/CityLandingTemplate.tsx
+146:11  Warning: 'phone' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

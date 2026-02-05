@@ -4,7 +4,6 @@ import Link from 'next/link'
 import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import { CheckCircle2, Zap, Globe, Bot, Lock, TrendingUp, SmartphoneNfc, Cpu, Rocket, Shield, PenTool, MessageCircle, ArrowRight } from 'lucide-react'
 import FAQSection from '@/components/FAQSection'
-import ContactForm from '@/components/ContactForm'
 import CallbackForm from '@/components/CallbackForm'
 import './MobileApp.css'
 

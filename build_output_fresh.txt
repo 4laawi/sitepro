@@ -1,0 +1,82 @@
+
+> sitepro@0.1.0 build
+> next build
+
+   ▲ Next.js 15.4.9
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ ✓ Compiled successfully in 12.0s
+   Linting and checking validity of types ...
+
+./src/app/application-mobile-maroc/page.tsx
+7:8  Warning: 'ContactForm' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/maintenance-site-web-maroc/MaintenanceContent.tsx
+15:5  Warning: 'Phone' is defined but never used.  @typescript-eslint/no-unused-vars
+16:5  Warning: 'Mail' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/CityLandingTemplate.tsx
+146:11  Warning: 'phone' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/57) ...
+   Generating static pages (14/57) 
+   Generating static pages (28/57) 
+   Generating static pages (42/57) 
+ ✓ Generating static pages (57/57)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                       Size  First Load JS
+┌ ○ /                                            146 B         181 kB
+├ ○ /_not-found                                  996 B         101 kB
+├ ● /[citySlug]                                  143 B         165 kB
+├   ├ /creation-site-web-tanger
+├   ├ /creation-site-web-rabat
+├   ├ /creation-site-web-kénitra
+├   └ [+17 more paths]
+├ ƒ /api/chat                                    135 B         100 kB
+├ ○ /application-mobile-maroc                  5.14 kB         152 kB
+├ ○ /blog                                       5.8 kB         153 kB
+├ ○ /blog/combien-coute-site-web-maroc           190 B         109 kB
+├ ○ /blog/comment-trouver-clients-ligne-maroc    190 B         109 kB
+├ ○ /blog/pourquoi-site-pas-sur-google           190 B         109 kB
+├ ○ /blog/seo-local-maroc-google-maps            190 B         109 kB
+├ ○ /blog/site-web-gratuit-maroc                 190 B         109 kB
+├ ○ /contact                                   3.43 kB         149 kB
+├ ○ /creation-site-web                         5.88 kB         153 kB
+├ ○ /creation-site-web-maroc                     144 B         165 kB
+├ ● /creation-site-web/[ville]                 2.18 kB         149 kB
+├   ├ /creation-site-web/marrakech
+├   ├ /creation-site-web/rabat
+├   ├ /creation-site-web/casablanca
+├   └ [+4 more paths]
+├ ○ /design-branding                             193 B         144 kB
+├ ○ /e-commerce                                2.19 kB         149 kB
+├ ○ /en                                          147 B         181 kB
+├ ○ /en/website-creation-morocco                 144 B         165 kB
+├ ○ /maintenance-site-web-maroc                7.91 kB         158 kB
+├ ○ /maintenance-support                         453 B         141 kB
+├ ○ /manifest.webmanifest                          0 B            0 B
+├ ○ /portfolio                                 3.95 kB         155 kB
+├ ○ /portfolio/case-studies/le-grand-bazar       341 B         142 kB
+├ ○ /portfolio/case-studies/mama-fatma-store     341 B         142 kB
+├ ○ /portfolio/case-studies/maroc-maroc          341 B         142 kB
+├ ○ /referencement-seo                         66.6 kB         211 kB
+├ ○ /robots.txt                                  135 B         100 kB
+└ ○ /sitemap.xml                                 135 B         100 kB
++ First Load JS shared by all                  99.9 kB
+  ├ chunks/4bd1b696-602635ee57868870.js        54.1 kB
+  ├ chunks/5964-098206372dd5b7ce.js            43.6 kB
+  └ other shared chunks (total)                2.08 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

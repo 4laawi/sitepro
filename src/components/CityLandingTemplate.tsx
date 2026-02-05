@@ -143,7 +143,6 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
 
     const successStories = lang === 'EN' ? successStoriesEN : successStoriesFR;
 
-    const phone = '212663711164'
     const displayCity = isMainMaroc ? (lang === 'EN' ? 'Morocco' : 'Maroc') : city;
     const preposition = lang === 'EN' ? 'in' : (city.toLowerCase() === 'maroc' ? 'au' : 'à');
 
