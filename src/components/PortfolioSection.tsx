@@ -226,6 +226,7 @@ interface TranslationType {
   conversion: string;
   ctaText: string;
   ctaButton: string;
+  projectAlt: string;
 }
 
 interface PortfolioCardProps {
@@ -264,7 +265,7 @@ function PortfolioCard({ item, index, isInView, randomDelays, t, isMobile }: Por
             {item.scrollOnHover ? (
               <Image
                 src={item.image}
-                alt={`Projet: ${item.title}`}
+                alt={`${t.projectAlt}: ${item.title}`}
                 className={`w-full h-auto block transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                 width={500}
                 height={1000}
@@ -275,7 +276,7 @@ function PortfolioCard({ item, index, isInView, randomDelays, t, isMobile }: Por
               <div className="relative h-48 w-full">
                 <Image
                   src={item.image}
-                  alt={`Projet: ${item.title}`}
+                  alt={`${t.projectAlt}: ${item.title}`}
                   fill
                   sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
                   className={`object-cover object-top transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
@@ -432,7 +433,8 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
       visitors: 'Visiteurs',
       conversion: 'Conversion',
       ctaText: 'Vous avez un projet en tête ? Discutons-en !',
-      ctaButton: 'Voir Plus de Projets'
+      ctaButton: 'Voir Plus de Projets',
+      projectAlt: 'Projet'
     },
     EN: {
       badge: 'Portfolio',
@@ -512,7 +514,8 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
       visitors: 'Visitors',
       conversion: 'Conversion',
       ctaText: 'Have a project in mind? Let\'s talk!',
-      ctaButton: 'See More Projects'
+      ctaButton: 'See More Projects',
+      projectAlt: 'Project'
     }
   }[lang]), [lang]);
 
@@ -626,7 +629,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
             {t.ctaText}
           </p>
           <motion.a
-            href="/portfolio"
+            href={lang === 'EN' ? "/en/portfolio/" : "/portfolio"}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-primary-700 transition-colors"

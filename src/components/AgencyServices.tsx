@@ -22,7 +22,8 @@ export default function AgencyServices({ lang = 'FR' }: AgencyServicesProps) {
                 'Sécurité et maintenance incluses'
             ],
             cta: "Découvrir nos services",
-            link: "/creation-site-web-maroc"
+            link: "/creation-site-web-maroc",
+            altText: "Agence web Maroc - création site internet optimisé SEO"
         },
         EN: {
             title: <>The web agency in Morocco for your <span className="text-primary-600">website creation</span> and <span className="text-primary-600">SEO</span> strategy</>,
@@ -35,7 +36,8 @@ export default function AgencyServices({ lang = 'FR' }: AgencyServicesProps) {
                 'Security and maintenance included'
             ],
             cta: "Discover our services",
-            link: "/en/creation-site-web-maroc"
+            link: "/en/website-creation-morocco/",
+            altText: "Web agency Morocco - SEO optimized website creation"
         }
     }[lang];
 
@@ -97,7 +99,7 @@ export default function AgencyServices({ lang = 'FR' }: AgencyServicesProps) {
                         <div className="relative z-10">
                             <Image
                                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post (2).webp"
-                                alt="Agence web Maroc - création site internet optimisé SEO"
+                                alt={t.altText}
                                 width={800}
                                 height={800}
                                 className="w-full h-auto"

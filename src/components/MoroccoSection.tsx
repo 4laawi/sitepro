@@ -35,7 +35,9 @@ const MoroccoSection = ({ lang = 'FR' }: MoroccoSectionProps) => {
                 <>– Des <b className="poppins-semibold">performances inégalées :</b> Nos serveurs ultra-rapides garantissent des temps de chargement jusqu&apos;à 3 fois plus rapides que la concurrence.</>,
                 <><b className="poppins-semibold">– La sécurité au cœur de nos préoccupations :</b> Nous mettons en place des mesures de sécurité robustes pour protéger vos données et celles de vos utilisateurs.</>,
                 <>– Notre <b className="poppins-semibold">connaissance approfondie</b> de l&apos;écosystème digital au Maroc nous permet de soutenir le développement rapide de l&apos;économie numérique, de faciliter la transformation digitale des entreprises, et d&apos;améliorer leur compétitivité, notamment celle des TPE/PME, auto-entrepreneurs, et startups.</>
-            ]
+            ],
+            solutionsAlt: "Expertise Web Design et Développement Maroc",
+            hostingAlt: "Hébergement web facile"
         },
         EN: {
             solutionsBadge: "Digital Solutions",
@@ -52,7 +54,9 @@ const MoroccoSection = ({ lang = 'FR' }: MoroccoSectionProps) => {
                 <>– <b className="poppins-semibold">Unmatched performance:</b> Our ultra-fast servers guarantee loading times up to 3 times faster than the competition.</>,
                 <><b className="poppins-semibold">– Security at the heart of our concerns:</b> We implement robust security measures to protect your data and that of your users.</>,
                 <>– Our <b className="poppins-semibold">deep knowledge</b> of the digital ecosystem in Morocco allows us to support the rapid development of the digital economy, facilitate the digital transformation of companies, and improve their competitiveness, particularly that of TPE/PMEs, self-employed individuals, and startups.</>
-            ]
+            ],
+            solutionsAlt: "Web Design and Development Expertise Morocco",
+            hostingAlt: "Easy web hosting"
         }
     }[lang];
 
@@ -85,7 +89,7 @@ const MoroccoSection = ({ lang = 'FR' }: MoroccoSectionProps) => {
                     >
                         <Image
                             src="/clipboard-image-1768750283.webp"
-                            alt="Expertise Web Design et Développement Maroc"
+                            alt={t.solutionsAlt}
                             width={900}
                             height={600}
                             loading="eager"
@@ -130,7 +134,7 @@ const MoroccoSection = ({ lang = 'FR' }: MoroccoSectionProps) => {
                     >
                         <Image
                             src="/Untitled design (12).webp"
-                            alt="Hébergement web facile"
+                            alt={t.hostingAlt}
                             loading="eager"
                             width={660}
                             height={440}

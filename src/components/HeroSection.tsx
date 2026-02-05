@@ -71,7 +71,8 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
       waName: 'Nom',
       waType: 'Type de site',
       waSector: 'Secteur d\'activité',
-      waDeadline: 'Deadline'
+      waDeadline: 'Deadline',
+      heroAlt: 'Création site web Maroc - Agence web Sitepro'
     },
     EN: {
       badge: 'Website Design Agency Morocco',
@@ -104,7 +105,8 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
       waName: 'Name',
       waType: 'Website type',
       waSector: 'Business sector',
-      waDeadline: 'Deadline'
+      waDeadline: 'Deadline',
+      heroAlt: 'Professional website design Morocco - Sitepro web agency'
     }
   }[lang];
 
@@ -206,7 +208,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
             <div className="relative w-full">
               <Image
                 src="/Purple and White Minimalist Your Business Needs a Website Instagram Post.webp"
-                alt="Création site web Maroc - Agence web Sitepro"
+                alt={t.heroAlt}
                 width={1080}
                 height={1080}
                 quality={95}

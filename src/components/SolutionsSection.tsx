@@ -58,28 +58,28 @@ const SolutionsSection = ({ lang = 'FR' }: SolutionsSectionProps) => {
                     title: "Website Creation",
                     description: "Develop a custom showcase or e-commerce site, designed for your growth.",
                     image: "/clipboard-image-1769520418.webp",
-                    link: "/en/website-creation-morocco",
+                    link: "/en/website-creation-morocco/",
                     delay: 0.1
                 },
                 {
                     title: "Mobile App",
                     description: "Development of custom iOS and Android applications, fluid and high-performing.",
                     image: "/clipboard-image-1769520336.webp",
-                    link: "/en/application-mobile-maroc",
+                    link: "/en/mobile-apps-morocco/",
                     delay: 0.2
                 },
                 {
                     title: "Portfolio",
                     description: "Discover our latest achievements and web & mobile projects for our clients.",
                     image: "/portfolio-solutions.png",
-                    link: "/en/portfolio",
+                    link: "/en/portfolio/",
                     delay: 0.3
                 },
                 {
                     title: "Blog",
                     description: "Tips, news, and expertise on the world of digital and development.",
                     image: "/blog-solutions.png",
-                    link: "/en/blog",
+                    link: "/blog/",
                     delay: 0.4
                 }
             ]
