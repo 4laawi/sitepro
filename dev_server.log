@@ -1059,3 +1059,108 @@ Require stack:
  ✓ Compiled in 503ms (877 modules)
  ✓ Compiled in 398ms (877 modules)
  ✓ Compiled in 385ms (877 modules)
+ ✓ Compiled in 1470ms (1944 modules)
+ ✓ Compiled in 546ms (877 modules)
+ ✓ Compiled /_not-found in 319ms (1935 modules)
+ ⨯ Error: ENOENT: no such file or directory, open '/Users/mac/Documents/Siteproweb/sitepro/.next/server/vendor-chunks/next.js'
+    at <unknown> (.next/server/app/_not-found/page.js:385:47)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:388:3) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mac/Documents/Siteproweb/sitepro/.next/server/vendor-chunks/next.js'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/mac/Documents/Siteproweb/sitepro/.next/fallback-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mac/Documents/Siteproweb/sitepro/.next/fallback-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/mac/Documents/Siteproweb/sitepro/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mac/Documents/Siteproweb/sitepro/.next/server/pages/_document.js'
+}
+[Error: ENOENT: no such file or directory, open '/Users/mac/Documents/Siteproweb/sitepro/.next/fallback-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mac/Documents/Siteproweb/sitepro/.next/fallback-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/mac/Documents/Siteproweb/sitepro/.next/server/pages/_document.js'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mac/Documents/Siteproweb/sitepro/.next/server/pages/_document.js'
+}
+[Error: ENOENT: no such file or directory, open '/Users/mac/Documents/Siteproweb/sitepro/.next/fallback-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/mac/Documents/Siteproweb/sitepro/.next/fallback-build-manifest.json'
+}
+ GET / 500 in 1399ms
+ GET / 500 in 276ms
+ ✓ Compiled in 1658ms (1944 modules)
+ ✓ Compiled in 523ms (877 modules)
+ ✓ Compiled in 569ms (877 modules)
+ ✓ Compiled in 833ms (877 modules)
+ ✓ Compiled in 614ms (877 modules)
+ ✓ Compiled in 487ms (877 modules)
+ ✓ Compiled in 541ms (877 modules)
+ ✓ Compiled in 674ms (877 modules)
+ ✓ Compiled in 1863ms (1944 modules)
+ ✓ Compiled in 434ms (877 modules)
+ GET / 200 in 846ms
+ ○ Compiling /blog ...
+ ⨯ ./src/app/blog/page.tsx
+Error:   [31mx[0m Expected ',', got '{'
+     ,-[[36;1;4m/Users/mac/Documents/Siteproweb/sitepro/src/app/blog/page.tsx[0m:113:1]
+ [2m110[0m |     slug: '/blog/seo-local-maroc-google-maps',
+ [2m111[0m |     featured: false
+ [2m112[0m |   }
+ [2m113[0m |   {
+     : [35;1m  ^[0m
+ [2m114[0m |     id: 'les-erreurs-frequentes-cabinets-dentaires-sans-site-web',
+ [2m115[0m |     title: 'Les erreurs les plus fréquentes des cabinets dentaires sans site web',
+ [2m116[0m |     excerpt: "Découvrez pourquoi se priver d'un site web est une erreur critique pour votre cabinet dentaire. Guide expert pour éviter les pièges et attirer plus de patients.",
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/blog/page.tsx
+ ✓ Compiled /[citySlug] in 2.3s (2000 modules)
+ GET /blog 200 in 3215ms
+ GET /blog 200 in 81ms
+ GET /blog 200 in 72ms
+ ✓ Compiled /blog/les-erreurs-frequentes-cabinets-dentaires-sans-site-web in 462ms (2014 modules)
+ GET /blog/les-erreurs-frequentes-cabinets-dentaires-sans-site-web 200 in 663ms
+ GET / Untitled design (3).webp 200 in 1688ms
+ ⨯ The requested resource isn't a valid image for / Untitled design (3).webp received null
+ GET /blog 200 in 87ms
+ ○ Compiling /blog/pourquoi-site-pas-sur-google ...
+ ✓ Compiled /blog/pourquoi-site-pas-sur-google in 563ms (2019 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 708ms
+ ✓ Compiled in 610ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 149ms
+ ✓ Compiled in 580ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 64ms
+ ✓ Compiled in 443ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 65ms
+ ✓ Compiled in 794ms (2010 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 200ms
+ ✓ Compiled in 923ms (2010 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 137ms
+ ✓ Compiled in 449ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 67ms
+ ✓ Compiled in 438ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 63ms
+ ✓ Compiled in 435ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 67ms
+ ✓ Compiled in 548ms (902 modules)
+ GET /blog/pourquoi-site-pas-sur-google 200 in 160ms
+ GET /blog/pourquoi-site-pas-sur-google 200 in 560ms
+ GET /blog 200 in 92ms

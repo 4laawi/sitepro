@@ -45,7 +45,7 @@ export default function BlogPost() {
                                 </div>
                                 <div>
                                     <span className="block text-gray-950 font-bold text-sm">Ali Taghi</span>
-                                    <span className="block text-gray-500 text-xs uppercase tracking-wider">Expert SEO</span>
+                                    <span className="block text-gray-500 text-xs uppercase tracking-wider">8+ Ans d'Expérience Web</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-6 text-sm text-gray-500">

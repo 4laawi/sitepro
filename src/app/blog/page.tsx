@@ -34,6 +34,28 @@ const categories = [
 
 const ARTICLES = [
   {
+    id: 'pourquoi-site-web-cabinet-dentaire-maroc-2026',
+    title: 'Pourquoi un cabinet dentaire au Maroc a besoin d’un site web professionnel en 2026',
+    excerpt: "Il est loin le temps où le bouche-à-oreille suffisait. Découvrez pourquoi un site web est devenu l'actif le plus rentable pour les dentistes au Maroc.",
+    image: '/photo4.webp',
+    category: 'Santé & Digital',
+    date: '10 Fév 2026',
+    readTime: '6 min',
+    slug: '/blog/pourquoi-site-web-cabinet-dentaire-maroc-2026',
+    featured: true
+  },
+  {
+    id: 'comment-attirer-patients-google-site-web-dentaire',
+    title: 'Comment attirer plus de patients avec Google et un site web de cabinet dentaire',
+    excerpt: "Guide pratique pour les dentistes : visibilité locale, Google Maps et optimisation web pour transformer les visiteurs en patients.",
+    image: '/photo-problems.webp',
+    category: 'Guide Pratique',
+    date: '12 Fév 2026',
+    readTime: '7 min',
+    slug: '/blog/comment-attirer-patients-google-site-web-dentaire',
+    featured: false
+  },
+  {
     id: 'site-web-gratuit-maroc',
     title: 'Créer un site web gratuitement au Maroc : bonne ou mauvaise idée ? La vérité que personne ne dit',
     excerpt: "Est-ce une bonne idée de créer un site web gratuit pour votre business au Maroc ? Découvrez les limites cachées, les risques SEO et les conseils d’un expert.",
@@ -86,6 +108,17 @@ const ARTICLES = [
     date: '25 Jan 2026',
     readTime: '8 min',
     slug: '/blog/seo-local-maroc-google-maps',
+    featured: false
+  },
+  {
+    id: 'les-erreurs-frequentes-cabinets-dentaires-sans-site-web',
+    title: 'Les erreurs les plus fréquentes des cabinets dentaires sans site web',
+    excerpt: "Découvrez pourquoi se priver d'un site web est une erreur critique pour votre cabinet dentaire. Guide expert pour éviter les pièges et attirer plus de patients.",
+    image: '/photo5.webp',
+    category: 'Santé & Digital',
+    date: '14 Fév 2026',
+    readTime: '10 min',
+    slug: '/blog/les-erreurs-frequentes-cabinets-dentaires-sans-site-web',
     featured: false
   }
 ]
