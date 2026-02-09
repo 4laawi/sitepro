@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Check } from 'lucide-react';
 import Image from 'next/image';
+import { useHasMounted } from '@/hooks/useHasMounted';
 import './HeroSection.css';
 
 interface HeroSectionProps {
@@ -19,6 +20,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const hasMounted = useHasMounted();
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,6 +40,8 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 50]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+
+  const effectiveIsMobile = hasMounted ? isMobile : false;
 
   const t = {
     FR: {
@@ -164,7 +168,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
     <section ref={sectionRef} className="bg-white snipcss-odHLl overflow-hidden">
       <div className="container grid-cols-1 md:pt-[40px] md:pb-[40px] py-[30px] px-5 mx-auto max-w-screen-xl md:grid-cols-2 gap-x-8 grid items-center">
         <motion.div
-          style={{ y: isMobile ? 0 : contentY, opacity: isMobile ? 1 : opacity }}
+          style={{ y: effectiveIsMobile ? 0 : contentY, opacity: effectiveIsMobile ? 1 : opacity }}
           className="col-span-1 flex sm:px-[0] px-[20px] flex-col custom-row-gap gap-y-[20px] md:mb-0 md:pr-10 text-center md:text-left"
         >
           <div className="flex justify-center md:justify-start">
@@ -201,7 +205,7 @@ export default function HeroSection({ lang = 'FR' }: HeroSectionProps) {
           </div>
         </motion.div>
         <motion.div
-          style={{ y: isMobile ? 0 : imageY, opacity: isMobile ? 1 : opacity }}
+          style={{ y: effectiveIsMobile ? 0 : imageY, opacity: effectiveIsMobile ? 1 : opacity }}
           className="col-span-1 flex z-10 justify-center"
         >
           <div className="relative w-full">

@@ -24,8 +24,15 @@
     overflow: hidden;
     box-shadow: 0 4px 40px -12px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.08);
     transition: all .3s ease;
-    border-radius: 28px;
-    padding: 2rem;
+    border-radius: 24px;
+    padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .card-hover {
+        border-radius: 28px;
+        padding: 2rem;
+    }
 }
 
 .card-hover:before {

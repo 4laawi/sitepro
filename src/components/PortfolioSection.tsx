@@ -5,6 +5,7 @@ import * as React from 'react'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useHasMounted } from '@/hooks/useHasMounted'
 
 const portfolioItems = [
   {
@@ -354,6 +355,9 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  const hasMounted = useHasMounted()
+  const effectiveIsMobile = hasMounted ? isMobile : false
+
   const t = React.useMemo(() => ({
     FR: {
       badge: 'Portfolio',
@@ -531,9 +535,9 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
     return baseItems;
   }, [selectedCategory, lang, translatedPortfolioItems])
 
-  const displayedItems = React.useMemo(() => (isMobile && (selectedCategory === 'Tous' || selectedCategory === 'All'))
+  const displayedItems = React.useMemo(() => (effectiveIsMobile && (selectedCategory === 'Tous' || selectedCategory === 'All'))
     ? filteredItems.slice(0, 3)
-    : filteredItems, [isMobile, selectedCategory, filteredItems])
+    : filteredItems, [effectiveIsMobile, selectedCategory, filteredItems])
 
   const randomDelays = React.useMemo(() => {
     return Array.from({ length: 50 }, () => Math.random() * 10)
@@ -612,7 +616,7 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
               isInView={isInView}
               randomDelays={randomDelays}
               t={t}
-              isMobile={isMobile}
+              isMobile={effectiveIsMobile}
             />
           ))}
         </motion.div>

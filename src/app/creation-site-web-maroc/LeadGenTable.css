@@ -76,3 +76,54 @@
 .lead-gen-comparison .font-medium {
     font-weight: var(--font-weight-medium);
 }
+
+@media (max-width: 48rem) {
+    .lead-gen-comparison thead {
+        display: none;
+    }
+
+    .lead-gen-comparison tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 1px solid #f0f0f0;
+        border-radius: 1rem;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .lead-gen-comparison td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 1rem;
+        border: none;
+        border-bottom: 1px solid #f8f8f8;
+        font-size: 0.9rem;
+    }
+
+    .lead-gen-comparison td:last-child {
+        border-bottom: none;
+    }
+
+    .lead-gen-comparison td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-align: left;
+        margin-right: 1rem;
+        color: var(--title);
+        flex: 1;
+    }
+
+    .lead-gen-comparison td:first-child {
+        background-color: var(--gray-200);
+        justify-content: center;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .lead-gen-comparison td:first-child::before {
+        display: none;
+    }
+}

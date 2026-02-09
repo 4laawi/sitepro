@@ -4,6 +4,8 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useHasMounted } from '@/hooks/useHasMounted'
 import './SolutionsSection.css'
 
 interface SolutionsSectionProps {
@@ -11,6 +13,18 @@ interface SolutionsSectionProps {
 }
 
 const SolutionsSection = ({ lang = 'FR' }: SolutionsSectionProps) => {
+    const [isMobile, setIsMobile] = useState(false);
+    const hasMounted = useHasMounted();
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const effectiveIsMobile = hasMounted ? isMobile : false;
+
     const t = {
         FR: {
             badge: "Nos solutions",
@@ -105,9 +119,10 @@ const SolutionsSection = ({ lang = 'FR' }: SolutionsSectionProps) => {
                     {t.solutions.map((item, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: item.delay }}
+                            initial={effectiveIsMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            whileInView={effectiveIsMobile ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+                            animate={effectiveIsMobile ? { opacity: 1, y: 0 } : undefined}
+                            transition={effectiveIsMobile ? { duration: 0 } : { duration: 0.5, delay: item.delay }}
                             viewport={{ once: true }}
                         >
                             <Link href={item.link} className="solution-card-link">

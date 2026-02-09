@@ -6,6 +6,7 @@ import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import { useMemo, useState, useRef, useEffect } from 'react'
 import { ExternalLink, Tag } from 'lucide-react'
 import { useInView } from 'framer-motion'
+import { useHasMounted } from '@/hooks/useHasMounted'
 
 export interface PortfolioItem {
   id: number
@@ -129,6 +130,9 @@ export default function PortfolioInteractive({ items, categories, lang = 'FR' }:
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  const hasMounted = useHasMounted()
+  const effectiveIsMobile = hasMounted ? isMobile : false
+
   const filtered = useMemo(() => {
     if (selected === categories[0]) return items.filter((i) => !i.hideFromAll)
     return items.filter((i) => i.category === selected)
@@ -173,7 +177,7 @@ export default function PortfolioInteractive({ items, categories, lang = 'FR' }:
             index={index}
             isInView={isInView}
             randomDelays={randomDelays}
-            isMobile={isMobile}
+            isMobile={effectiveIsMobile}
             lang={lang}
           />
         ))}

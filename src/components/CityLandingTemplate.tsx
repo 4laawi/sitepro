@@ -6,9 +6,13 @@ import ClientMotionWrapper from '@/components/ClientMotionWrapper'
 import { CheckCircle2, XCircle, Zap, Globe, ShieldCheck, ArrowRight, Bot, Clock, Lock, TrendingUp, MapPin, Rocket } from 'lucide-react'
 import FAQSection from '@/components/FAQSection'
 import ContactForm from '@/components/ContactForm'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { useHasMounted } from '@/hooks/useHasMounted'
 import '../app/creation-site-web-maroc/NewGenSection.css'
 import '../app/creation-site-web-maroc/LeadGenTable.css'
 import '../app/creation-site-web-maroc/SuccessStories.css'
+import '../app/creation-site-web-maroc/ServicesSlider.css'
 
 interface CityLandingTemplateProps {
     city: string;
@@ -17,6 +21,18 @@ interface CityLandingTemplateProps {
 }
 
 export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 'FR' }: CityLandingTemplateProps) {
+    const [isMobile, setIsMobile] = useState(false);
+    const hasMounted = useHasMounted();
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const effectiveIsMobile = hasMounted ? isMobile : false;
+
     const techStack = [
         { name: 'Astro', color: '#FF5D01' },
         { name: 'Next.js', color: '#000000' },
@@ -150,8 +166,8 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
         <div className="flex flex-col w-full font-sans snipcss-odHLl">
             {/* Hero Section */}
             <section className="bg-white border-b border-gray-100">
-                <div className="container px-4 py-16 lg:py-24 mx-auto max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="container px-4 py-8 lg:py-24 mx-auto max-w-7xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         <ClientMotionWrapper
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -201,7 +217,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                                 alt={`Agence création site web ${displayCity} - Solutions pro`}
                                 width={1080}
                                 height={1080}
-                                className="w-full h-auto max-w-[620px] mx-auto relative z-10 transition-transform duration-700 rounded-xl"
+                                className="w-full h-auto max-w-[400px] lg:max-w-[620px] mx-auto relative z-10 transition-transform duration-700 rounded-xl"
                                 priority
                             />
                             <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-100 rounded-full blur-3xl opacity-60 z-0"></div>
@@ -212,7 +228,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Form CTA Section */}
-            <section id="contact-form-section" className="bg-[#022545] py-20 relative overflow-hidden">
+            <section id="contact-form-section" className="bg-[#022545] py-12 lg:py-20 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full blur-[120px] opacity-10"></div>
                 <div className="container px-4 mx-auto max-w-5xl text-center relative z-10">
                     <ClientMotionWrapper
@@ -237,7 +253,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* New Generation Section */}
-            <section className="py-24 bg-white new-gen-section">
+            <section className="py-16 lg:py-24 bg-white new-gen-section">
                 <div className="new-gen-container">
                     <header className="section-header">
                         <h2 className="section-title-premium">
@@ -266,12 +282,12 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
 
                     <div className="features-grid">
                         {features.map((feature, idx) => (
-                            <ClientMotionWrapper
+                            <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={effectiveIsMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
+                                transition={{ duration: 0.5, delay: idx * 0.1 }}
                                 className={`feature-card ${feature.highlighted ? 'feature-card--highlight' : ''}`}
                             >
                                 <div className="feature-icon">
@@ -281,7 +297,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                                     <h3 className="feature-title">{feature.title}</h3>
                                     <p className="feature-description">{feature.description}</p>
                                 </div>
-                            </ClientMotionWrapper>
+                            </motion.div>
                         ))}
                     </div>
 
@@ -337,7 +353,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Comparison Section */}
-            <section className="py-24 bg-white relative overflow-hidden">
+            <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
@@ -456,7 +472,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* About Section */}
-            <section className="py-24 bg-white">
+            <section className="py-16 lg:py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="order-2 lg:order-1">
@@ -501,7 +517,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Error Section */}
-            <section className="py-24 bg-white">
+            <section className="py-16 lg:py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
@@ -540,7 +556,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                                 alt={lang === 'EN' ? "Why choose a professional website creation agency in Morocco" : "Pourquoi choisir une agence de création site web au maroc professionnelle"}
                                 width={1080}
                                 height={1080}
-                                className="w-full h-auto"
+                                className="w-full h-auto max-w-[400px] lg:max-w-full mx-auto"
                             />
                         </div>
                     </div>
@@ -548,7 +564,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Services Section */}
-            <section className="py-24 bg-[#f8fafc]">
+            <section className="py-16 lg:py-24 bg-[#f8fafc]">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <header className="mb-20">
                         <h2 className="section-title-premium">
@@ -560,7 +576,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                         </h2>
                     </header>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="services-grid-mobile-slider">
                         {[
                             {
                                 title: lang === 'EN' ? 'Showcase Website' : 'Site Vitrine Pro',
@@ -600,7 +616,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Success Section */}
-            <section className="py-24 bg-white">
+            <section className="py-16 lg:py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl text-center mb-16">
                     <h2 className="section-title-premium">{lang === 'EN' ? <>Sitepro.ma Expertise: <br /> Performance & Visibility</> : <>Expertise Sitepro.ma : <br /> Performance & Visibilité</>}</h2>
                     <p className="section-subtitle-premium mx-auto">
@@ -648,7 +664,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* GDPR Section */}
-            <section className="py-24 bg-white">
+            <section className="py-16 lg:py-24 bg-white">
                 <div className="container px-4 mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
@@ -689,7 +705,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Lead Gen Table */}
-            <section className="py-24 bg-white lead-gen-comparison">
+            <section className="py-16 lg:py-24 bg-white lead-gen-comparison">
                 <div className="container">
                     <h2 className="section-title-premium text-center mb-12">
                         {lang === 'EN' ? (
@@ -741,9 +757,9 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                                     }
                                 ].map((row, idx) => (
                                     <tr key={idx} className={idx % 2 === 0 ? "bg-white text-title" : "text-title bg-[#f8f8f8]"}>
-                                        <td className=" px-6 border border-[#f8f8f8] py-4 font-medium"> {row.criterion} </td>
-                                        <td className=" px-6 border border-[#f8f8f8] py-4"> {row.good} </td>
-                                        <td className=" px-6 border border-[#f8f8f8] py-4 "> {row.bad} </td>
+                                        <td className=" px-6 border border-[#f8f8f8] py-4 font-medium" data-label={lang === 'EN' ? 'Criterion' : 'Critère'}> {row.criterion} </td>
+                                        <td className=" px-6 border border-[#f8f8f8] py-4" data-label={lang === 'EN' ? 'Lead generating website' : 'Site web qui génère des leads'}> {row.good} </td>
+                                        <td className=" px-6 border border-[#f8f8f8] py-4 " data-label={lang === 'EN' ? 'Low-cost website' : 'Site web low-cost'}> {row.bad} </td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -753,7 +769,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
             </section>
 
             {/* Cities Section */}
-            <section className="py-24 bg-white relative overflow-hidden">
+            <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
                 <div className="container px-4 mx-auto max-w-7xl relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="section-title-premium">
