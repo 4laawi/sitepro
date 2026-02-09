@@ -6,7 +6,7 @@ import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, ArrowRight } from 'lu
 export const metadata: Metadata = {
     title: 'SEO local au Maroc : comment apparaître sur Google Maps | Sitepro.ma',
     description: 'Pour une entreprise marocaine, être visible sur Google Maps n\'est plus une option, c\'est une nécessité vitale. Découvrez comment optimiser votre SEO local.',
-    alternates: { canonical: '/blog/seo-local-maroc-google-maps' },
+    alternates: { canonical: 'https://sitepro.ma/blog/seo-local-maroc-google-maps' },
 }
 
 const phone = '212663711164'

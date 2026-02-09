@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: 'Création de sites e‑commerce | Sitepro.ma',
   description: 'Boutiques en ligne performantes: paiement sécurisé, catalogue, analytics, SEO. Devis rapide sur WhatsApp.',
   alternates: {
-    canonical: 'https://sitepro.ma/e-commerce/',
+    canonical: 'https://sitepro.ma/e-commerce',
     languages: {
-      'fr-MA': 'https://sitepro.ma/e-commerce/',
-      'en-MA': 'https://sitepro.ma/en/e-commerce/',
+      'fr-MA': 'https://sitepro.ma/e-commerce',
+      'en-MA': 'https://sitepro.ma/en/e-commerce',
     },
   },
 }
@@ -27,7 +27,7 @@ export default function EcommercePage() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma' },
             { '@type': 'ListItem', position: 2, name: 'E-commerce', item: 'https://sitepro.ma/e-commerce' }
           ]
         })}

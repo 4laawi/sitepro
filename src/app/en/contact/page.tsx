@@ -10,16 +10,16 @@ export const metadata: Metadata = {
     description: 'Contact Sitepro.ma web agency Morocco. Let\'s discuss your website creation or SEO project. Free consultation, express quote and personalized support.',
     keywords: 'contact web agency morocco, website creation quote morocco, digital agency marrakech, contact sitepro',
     alternates: {
-        canonical: 'https://sitepro.ma/en/contact/',
+        canonical: 'https://sitepro.ma/en/contact',
         languages: {
-            'fr-MA': 'https://sitepro.ma/contact/',
-            'en-MA': 'https://sitepro.ma/en/contact/',
+            'fr-MA': 'https://sitepro.ma/contact',
+            'en-MA': 'https://sitepro.ma/en/contact',
         },
     },
     openGraph: {
         title: 'Contact Web Agency Morocco | Free Quote & Consultation',
         description: 'Talk to us about your website creation or SEO project in Morocco and get a free consultation.',
-        url: 'https://sitepro.ma/en/contact/',
+        url: 'https://sitepro.ma/en/contact',
     },
 }
 

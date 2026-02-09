@@ -81,8 +81,8 @@ export default async function CityCreationPage({ params }: CityPageProps) {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma/' },
-            { '@type': 'ListItem', position: 2, name: 'Création de Sites Web', item: 'https://sitepro.ma/creation-site-web' },
+            { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://sitepro.ma' },
+            { '@type': 'ListItem', position: 2, name: 'Création de Sites Web', item: 'https://sitepro.ma/creation-site-web-maroc' },
             { '@type': 'ListItem', position: 3, name: `Création site web ${cityCap}`, item: `https://sitepro.ma/creation-site-web/${city}` },
           ],
         })}
@@ -126,7 +126,7 @@ export default async function CityCreationPage({ params }: CityPageProps) {
             <nav aria-label="Fil d'Ariane" className={`text-sm ${hero ? 'text-white/80' : 'text-gray-600'} mb-3`}>
               <Link href="/" className="hover:underline">Accueil</Link>
               <span className="mx-1">/</span>
-              <Link href="/creation-site-web" className="hover:underline">Création de Sites Web</Link>
+              <Link href="/creation-site-web-maroc" className="hover:underline">Création de Sites Web</Link>
               <span className="mx-1">/</span>
               <span>{cityCap}</span>
             </nav>
@@ -192,7 +192,7 @@ export default async function CityCreationPage({ params }: CityPageProps) {
             >
               <MessageSquare size={18} /> Parler à un expert
             </a>
-            <Link href="/creation-site-web" className="bg-white/10 hover:bg-white/20 px-6 py-3 rounded-lg font-semibold">
+            <Link href="/creation-site-web-maroc" className="bg-white/10 hover:bg-white/20 px-6 py-3 rounded-lg font-semibold">
               Demander un devis
             </Link>
           </div>

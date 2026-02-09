@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     title: 'Sitepro.ma - Web Agency Morocco | Professional Website Creation',
     description: 'Sitepro.ma - Your trusted digital partner in Morocco. We create modern and high-performing websites for Moroccan businesses. Custom design, optimized SEO, guaranteed results.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/',
+        canonical: 'https://sitepro.ma/en',
         languages: {
-            'fr-MA': 'https://sitepro.ma/',
-            'en-MA': 'https://sitepro.ma/en/',
+            'fr-MA': 'https://sitepro.ma',
+            'en-MA': 'https://sitepro.ma/en',
         },
     },
 }

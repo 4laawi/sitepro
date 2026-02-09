@@ -11,16 +11,16 @@ export const metadata: Metadata = {
     title: 'Création Application Mobile Maroc | Agence Experte Sitepro',
     description: 'Création application mobile au Maroc. Experts en développement iOS & Android sur mesure, performant et sécurisé. Devis gratuit et accompagnement complet.',
     alternates: {
-        canonical: 'https://sitepro.ma/application-mobile-maroc/',
+        canonical: 'https://sitepro.ma/application-mobile-maroc',
         languages: {
-            'fr-MA': 'https://sitepro.ma/application-mobile-maroc/',
-            'en-MA': 'https://sitepro.ma/en/mobile-apps-morocco/',
+            'fr-MA': 'https://sitepro.ma/application-mobile-maroc',
+            'en-MA': 'https://sitepro.ma/en/mobile-apps-morocco',
         },
     },
     openGraph: {
         title: 'Création Application Mobile Maroc | Agence Experte Sitepro',
         description: 'Création application mobile au Maroc. Experts en développement iOS & Android sur mesure, performant et sécurisé. Devis gratuit et accompagnement complet.',
-        url: 'https://sitepro.ma/application-mobile-maroc/',
+        url: 'https://sitepro.ma/application-mobile-maroc',
         siteName: 'Sitepro.ma',
         images: [{
             url: 'https://sitepro.ma/og-application-mobile.jpg',

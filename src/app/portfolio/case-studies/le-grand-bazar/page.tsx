@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Étude de cas: Le Grand Bazar Marrakech | Sitepro.ma',
   description: 'Site restaurant avec réservation de tables, SEO local et performances.',
-  alternates: { canonical: '/portfolio/case-studies/le-grand-bazar' },
+  alternates: { canonical: 'https://sitepro.ma/portfolio/case-studies/le-grand-bazar' },
 }
 
 const phone = '212663711164'

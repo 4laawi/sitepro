@@ -11,17 +11,17 @@ export const metadata: Metadata = {
     description:
         'Discover our web agency portfolio in Morocco. E-commerce projects, showcase sites, and high-performance custom solutions. Proof of our expertise and results.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/portfolio/',
+        canonical: 'https://sitepro.ma/en/portfolio',
         languages: {
-            'fr-MA': 'https://sitepro.ma/portfolio/',
-            'en-MA': 'https://sitepro.ma/en/portfolio/',
+            'fr-MA': 'https://sitepro.ma/portfolio',
+            'en-MA': 'https://sitepro.ma/en/portfolio',
         },
     },
     keywords: ['portfolio web agency morocco', 'web achievements morocco', 'web agency projects'],
     openGraph: {
         title: 'Portfolio Web Agency Morocco | Our Digital Achievements',
         description: 'Selection of modern and high-performance projects by Sitepro.',
-        url: 'https://sitepro.ma/en/portfolio/',
+        url: 'https://sitepro.ma/en/portfolio',
         type: 'website',
     },
 }

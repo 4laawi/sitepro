@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   title: 'Création Site Web Maroc | Agence Web Sitepro',
   description: 'Agence de création site web au Maroc. Sites professionnels, rapides et optimisés SEO. Devis gratuit, design sur mesure et résultats mesurables.',
   alternates: {
-    canonical: 'https://sitepro.ma/',
+    canonical: 'https://sitepro.ma',
     languages: {
-      'fr-MA': 'https://sitepro.ma/',
-      'en-MA': 'https://sitepro.ma/en/',
+      'fr-MA': 'https://sitepro.ma',
+      'en-MA': 'https://sitepro.ma/en',
     },
   },
 }

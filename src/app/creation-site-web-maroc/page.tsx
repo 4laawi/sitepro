@@ -4,11 +4,11 @@ import CityLandingTemplate from '@/components/CityLandingTemplate'
 export const metadata: Metadata = {
     title: 'Création Site Web au Maroc | Prix & Devis Gratuit',
     description: 'Création site web au Maroc sur mesure. Sites professionnels, rapides et optimisés SEO. Prix clairs, accompagnement complet et devis gratuit.',
-    alternates: { canonical: 'https://sitepro.ma/creation-site-web-maroc/' },
+    alternates: { canonical: 'https://sitepro.ma/creation-site-web-maroc' },
     openGraph: {
         title: 'Création Site Web au Maroc | Prix & Devis Gratuit',
         description: 'Création site web au Maroc sur mesure. Sites professionnels, rapides et optimisés SEO. Prix clairs, accompagnement complet et devis gratuit.',
-        url: 'https://sitepro.ma/creation-site-web-maroc/',
+        url: 'https://sitepro.ma/creation-site-web-maroc',
         siteName: 'Sitepro.ma',
         images: [{
             url: 'https://sitepro.ma/og-image.jpg',

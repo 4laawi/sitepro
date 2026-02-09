@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
     title: 'Étude de cas: marocMaroc | Sitepro.ma',
     description: "Boutique e-commerce de luxe avec SEO optimisé et expérience utilisateur premium.",
-    alternates: { canonical: '/portfolio/case-studies/maroc-maroc' },
+    alternates: { canonical: 'https://sitepro.ma/portfolio/case-studies/maroc-maroc' },
 }
 
 const phone = '212663711164'

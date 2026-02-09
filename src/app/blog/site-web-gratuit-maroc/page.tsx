@@ -6,7 +6,7 @@ import { ArrowLeft, ChevronRight, Calendar, Clock, AlertCircle, HelpCircle, Arro
 export const metadata: Metadata = {
     title: "Créer un site web gratuitement au Maroc : La vérité que personne ne dit | Sitepro.ma",
     description: "Est-ce une bonne idée de créer un site web gratuit pour votre business au Maroc ? Découvrez les limites cachées, les risques SEO et les conseils d’un expert.",
-    alternates: { canonical: '/blog/site-web-gratuit-maroc' },
+    alternates: { canonical: 'https://sitepro.ma/blog/site-web-gratuit-maroc' },
 }
 
 const phone = '212663711164'

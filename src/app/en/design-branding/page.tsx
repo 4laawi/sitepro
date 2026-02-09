@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: 'Design & Branding | Sitepro.ma',
     description: 'Visual identity, logo, graphic charter and design system for a strong brand.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/design-branding/',
+        canonical: 'https://sitepro.ma/en/design-branding',
         languages: {
-            'fr-MA': 'https://sitepro.ma/design-branding/',
-            'en-MA': 'https://sitepro.ma/en/design-branding/',
+            'fr-MA': 'https://sitepro.ma/design-branding',
+            'en-MA': 'https://sitepro.ma/en/design-branding',
         },
     },
 }

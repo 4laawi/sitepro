@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     title: 'SEO Agency Morocco | Expert SEO & Google Visibility',
     description: 'SEO Morocco 100% effective. SEO Audit, technical optimization and content to dominate Google. Boost your visibility and leads.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/seo-agency-morocco/',
+        canonical: 'https://sitepro.ma/en/seo-agency-morocco',
         languages: {
-            'fr-MA': 'https://sitepro.ma/referencement-seo/',
-            'en-MA': 'https://sitepro.ma/en/seo-agency-morocco/',
+            'fr-MA': 'https://sitepro.ma/referencement-seo',
+            'en-MA': 'https://sitepro.ma/en/seo-agency-morocco',
         },
     },
 }
@@ -29,7 +29,7 @@ export default function SeoPageEn() {
                     '@context': 'https://schema.org',
                     '@type': 'BreadcrumbList',
                     itemListElement: [
-                        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sitepro.ma/en/' },
+                        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sitepro.ma/en' },
                         { '@type': 'ListItem', position: 2, name: 'SEO Agency', item: 'https://sitepro.ma/en/seo-agency-morocco' }
                     ]
                 })}

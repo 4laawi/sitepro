@@ -142,7 +142,7 @@ export default function ServicesSection({ lang = 'FR' }: ServicesSectionProps) {
     switch (title) {
       case 'Création de Sites Web':
       case 'Website Creation':
-        return '/creation-site-web'
+        return '/creation-site-web-maroc'
       case 'E-commerce':
         return '/e-commerce'
       case 'Référencement SEO':
@@ -154,7 +154,7 @@ export default function ServicesSection({ lang = 'FR' }: ServicesSectionProps) {
       case 'Design & Branding':
         return '/design-branding'
       case 'Maintenance & Support':
-        return '/maintenance-support'
+        return '/maintenance-site-web-maroc'
       default:
         return null
     }

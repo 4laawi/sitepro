@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   description:
     'Découvrez notre portfolio agence web maroc. Projets e-commerce, vitrines et solutions sur mesure performantes. Preuve de notre expertise et résultats.',
   alternates: {
-    canonical: 'https://sitepro.ma/portfolio/',
+    canonical: 'https://sitepro.ma/portfolio',
     languages: {
-      'fr-MA': 'https://sitepro.ma/portfolio/',
-      'en-MA': 'https://sitepro.ma/en/portfolio/',
+      'fr-MA': 'https://sitepro.ma/portfolio',
+      'en-MA': 'https://sitepro.ma/en/portfolio',
     },
   },
   keywords: ['portfolio agence web maroc', 'réalisations web maroc', 'projets agence web'],

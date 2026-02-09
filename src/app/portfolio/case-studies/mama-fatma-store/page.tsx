@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Étude de cas: Mama Fatma Store | Sitepro.ma',
   description: "E‑commerce rapide avec SEO, gestion produits et conversion optimisée.",
-  alternates: { canonical: '/portfolio/case-studies/mama-fatma-store' },
+  alternates: { canonical: 'https://sitepro.ma/portfolio/case-studies/mama-fatma-store' },
 }
 
 const phone = '212663711164'

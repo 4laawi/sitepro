@@ -5,10 +5,10 @@ export const metadata: Metadata = {
     title: 'Website Creation in Morocco – Professional, SEO & AI Optimized Solutions',
     description: 'Premier website creation agency in Morocco. We design high-end, professional websites optimized for SEO and AI to grow your business.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/website-creation-morocco/',
+        canonical: 'https://sitepro.ma/en/website-creation-morocco',
         languages: {
-            'fr-FR': 'https://sitepro.ma/creation-site-web-maroc/',
-            'en-US': 'https://sitepro.ma/en/website-creation-morocco/',
+            'fr-FR': 'https://sitepro.ma/creation-site-web-maroc',
+            'en-US': 'https://sitepro.ma/en/website-creation-morocco',
         },
     },
 };

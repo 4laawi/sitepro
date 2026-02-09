@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, Clock, ChevronRight, CheckCircle2, Search, ShieldC
 export const metadata: Metadata = {
     title: 'Pourquoi mon site web n’apparaît pas sur Google ? Causes réelles et solutions | Sitepro.ma',
     description: 'Votre site est invisible sur Google ? Découvrez les causes (indexation, SEO, technique) et les solutions concrètes pour les entreprises au Maroc.',
-    alternates: { canonical: '/blog/pourquoi-site-pas-sur-google' },
+    alternates: { canonical: 'https://sitepro.ma/blog/pourquoi-site-pas-sur-google' },
 }
 
 const phone = '212663711164'

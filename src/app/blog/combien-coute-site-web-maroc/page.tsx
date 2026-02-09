@@ -7,7 +7,7 @@ import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, CheckCircle2, AlertCi
 export const metadata: Metadata = {
     title: 'Combien coûte un site web au Maroc en 2026 ? Prix réels et conseils d\'expert',
     description: 'Guide transparent sur le coût de création d\'un site web au Maroc. Découvrez les tarifs réels, évitez les pièges et apprenez à investir intelligemment.',
-    alternates: { canonical: '/blog/combien-coute-site-web-maroc' },
+    alternates: { canonical: 'https://sitepro.ma/blog/combien-coute-site-web-maroc' },
 }
 
 const phone = '212663711164'

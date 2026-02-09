@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     description: 'Contact agence web maroc. Parlons de votre projet de création de site web ou SEO. Consultation gratuite, devis express et accompagnement personnalisé.',
     keywords: 'contact agence web maroc, devis création site web maroc, agence digitale marrakech, contact sitepro',
     alternates: {
-        canonical: 'https://sitepro.ma/contact/',
+        canonical: 'https://sitepro.ma/contact',
         languages: {
-            'fr-MA': 'https://sitepro.ma/contact/',
-            'en-MA': 'https://sitepro.ma/en/contact/',
+            'fr-MA': 'https://sitepro.ma/contact',
+            'en-MA': 'https://sitepro.ma/en/contact',
         },
     },
     openGraph: {

@@ -11,16 +11,16 @@ export const metadata: Metadata = {
     title: 'Mobile App Development Morocco | Expert Agency Sitepro',
     description: 'Mobile app creation in Morocco. Experts in custom iOS & Android development, high performance and secure. Free quote and complete support.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/mobile-apps-morocco/',
+        canonical: 'https://sitepro.ma/en/mobile-apps-morocco',
         languages: {
-            'fr-MA': 'https://sitepro.ma/application-mobile-maroc/',
-            'en-MA': 'https://sitepro.ma/en/mobile-apps-morocco/',
+            'fr-MA': 'https://sitepro.ma/application-mobile-maroc',
+            'en-MA': 'https://sitepro.ma/en/mobile-apps-morocco',
         },
     },
     openGraph: {
         title: 'Mobile App Development Morocco | Expert Agency Sitepro',
         description: 'Mobile app creation in Morocco. Experts in custom iOS & Android development, high performance and secure. Free quote and complete support.',
-        url: 'https://sitepro.ma/en/mobile-apps-morocco/',
+        url: 'https://sitepro.ma/en/mobile-apps-morocco',
         siteName: 'Sitepro.ma',
         images: [{
             url: 'https://sitepro.ma/og-application-mobile.jpg',

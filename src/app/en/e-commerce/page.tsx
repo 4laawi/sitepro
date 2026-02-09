@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: 'E-commerce Website Creation Morocco | Sitepro.ma',
     description: 'High-performance online stores: secure payment, catalog, analytics, SEO. Quick quote via WhatsApp.',
     alternates: {
-        canonical: 'https://sitepro.ma/en/e-commerce/',
+        canonical: 'https://sitepro.ma/en/e-commerce',
         languages: {
-            'fr-MA': 'https://sitepro.ma/e-commerce/',
-            'en-MA': 'https://sitepro.ma/en/e-commerce/',
+            'fr-MA': 'https://sitepro.ma/e-commerce',
+            'en-MA': 'https://sitepro.ma/en/e-commerce',
         },
     },
 }

@@ -6,7 +6,7 @@ import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, AlertCircle, Search, 
 export const metadata: Metadata = {
     title: 'Comment trouver des clients en ligne au Maroc ? Méthodes qui marchent | Sitepro.ma',
     description: 'Découvrez les méthodes réelles pour acquérir des clients en ligne au Maroc. Guide expert pour entrepreneurs et PME : Google, SEO local, réseaux sociaux et publicité.',
-    alternates: { canonical: '/blog/comment-trouver-clients-ligne-maroc' },
+    alternates: { canonical: 'https://sitepro.ma/blog/comment-trouver-clients-ligne-maroc' },
 }
 
 const phone = '212663711164'

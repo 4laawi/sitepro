@@ -7,7 +7,7 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'Maintenance & Support | Sitepro.ma',
   description: 'Mises à jour, sauvegardes, surveillance et support réactif pour votre site.',
-  alternates: { canonical: '/maintenance-support' },
+  alternates: { canonical: 'https://sitepro.ma/maintenance-support' },
 }
 
 export default function MaintenanceSupportPage() {
