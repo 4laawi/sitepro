@@ -1164,3 +1164,5 @@ Import trace for requested module:
  GET /blog/pourquoi-site-pas-sur-google 200 in 160ms
  GET /blog/pourquoi-site-pas-sur-google 200 in 560ms
  GET /blog 200 in 92ms
+ ✓ Compiled in 527ms (902 modules)
+ ✓ Compiled in 481ms (902 modules)
