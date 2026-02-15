@@ -30,6 +30,8 @@ export default function Footer() {
       rights: 'Tous droits réservés.',
       serviceLinks: [
         { label: 'Création de Sites Web', href: '/creation-site-web-maroc' },
+        { label: 'Agence WordPress Maroc', href: '/agence-wordpress-maroc' },
+
         { label: 'E-commerce', href: '/e-commerce' },
         { label: 'Applications Mobiles', href: '/application-mobile-maroc' },
         { label: 'Référencement SEO', href: '/referencement-seo' },
@@ -57,6 +59,7 @@ export default function Footer() {
       rights: 'All rights reserved.',
       serviceLinks: [
         { label: 'Website Creation', href: '/en/website-creation-morocco/' },
+
         { label: 'E-commerce', href: '/en/e-commerce/' },
         { label: 'Mobile Applications', href: '/en/mobile-apps-morocco/' },
         { label: 'SEO Ranking', href: '/en/seo-agency-morocco/' },

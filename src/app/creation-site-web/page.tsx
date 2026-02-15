@@ -210,6 +210,12 @@ export default function CreationSiteWebPage() {
                 <span key={t} className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">{t}</span>
               ))}
             </div>
+            <div className="mt-6 pt-6 border-t border-gray-100">
+              <p className="text-sm text-gray-500 mb-2">Vous cherchez une expertise spécifique ?</p>
+              <Link href="/creation-site-web-maroc" className="text-primary-600 font-semibold hover:underline inline-flex items-center gap-1">
+                Découvrir notre Agence WordPress Maroc <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
           <div>
             <h3 className="heading-3 text-gray-900 mb-4">Livrables inclus</h3>

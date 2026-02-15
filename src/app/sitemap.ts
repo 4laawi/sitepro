@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${base}/creation-site-web`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/creation-site-web-maroc`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+
     { url: `${base}/portfolio`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Service pages
@@ -19,14 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/referencement-seo`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/design-branding`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/maintenance-site-web-maroc`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/maintenance-support`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 }, // Added missing maintenance-support
+    { url: `${base}/maintenance-support`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     // Blog index
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
   ]
 
   // 2. English Pages (Dynamic discovery from src/app/en)
   const enDir = path.join(process.cwd(), 'src/app/en')
-  let enPages: MetadataRoute.Sitemap = []
+  const enPages: MetadataRoute.Sitemap = []
 
   if (fs.existsSync(enDir)) {
     // Main /en page
@@ -70,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 5. Dynamic Blog Posts
   const blogDir = path.join(process.cwd(), 'src/app/blog')
-  let blogPosts: MetadataRoute.Sitemap = []
+  const blogPosts: MetadataRoute.Sitemap = []
 
   if (fs.existsSync(blogDir)) {
     const blogItems = fs.readdirSync(blogDir)

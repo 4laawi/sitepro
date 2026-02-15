@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, Share2, Calendar, Clock, ChevronRight, ArrowRight, MapPin, Smartphone, Search } from 'lucide-react'
+import { ArrowLeft, Share2, Calendar, Clock, User, ArrowRight, CheckCircle2, AlertTriangle, TrendingUp, DollarSign, Smartphone, MapPin, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
     title: 'Comment attirer plus de patients avec Google et un site web dentaire',

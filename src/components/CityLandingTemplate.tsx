@@ -9,6 +9,7 @@ import ContactForm from '@/components/ContactForm'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useHasMounted } from '@/hooks/useHasMounted'
+
 import '../app/creation-site-web-maroc/NewGenSection.css'
 import '../app/creation-site-web-maroc/LeadGenTable.css'
 import '../app/creation-site-web-maroc/SuccessStories.css'
@@ -581,7 +582,8 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                             {
                                 title: lang === 'EN' ? 'Showcase Website' : 'Site Vitrine Pro',
                                 desc: lang === 'EN' ? '100% optimized for SEO and new AI engines.' : '100 % optimisés pour le SEO et les nouveaux moteurs d\'IA.',
-                                icon: <CheckCircle2 />
+                                icon: <CheckCircle2 />,
+                                link: '/creation-site-web-maroc/'
                             },
                             {
                                 title: lang === 'EN' ? 'SEO E-commerce' : 'E-commerce SEO',

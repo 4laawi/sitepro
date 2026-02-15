@@ -1166,3 +1166,69 @@ Import trace for requested module:
  GET /blog 200 in 92ms
  ✓ Compiled in 527ms (902 modules)
  ✓ Compiled in 481ms (902 modules)
+ ✓ Compiled in 2.1s (902 modules)
+ ✓ Compiled in 2s (2010 modules)
+ ○ Compiling /agence-wordpress-maroc ...
+ ✓ Compiled /agence-wordpress-maroc in 924ms (2007 modules)
+ HEAD /agence-wordpress-maroc 200 in 1749ms
+ GET /agence-wordpress-maroc 200 in 195ms
+ ✓ Compiled in 593ms (903 modules)
+ ✓ Compiled in 496ms (903 modules)
+ ○ Compiling /[citySlug] ...
+ ✓ Compiled /[citySlug] in 584ms (1131 modules)
+ GET /agence-wordpress-maroc. 200 in 1257ms
+ ✓ Compiled /agence-wordpress-maroc in 335ms (1138 modules)
+ GET /agence-wordpress-maroc 200 in 855ms
+ GET /agence-wordpress-maroc. 200 in 281ms
+ ✓ Compiled in 651ms (903 modules)
+ GET /agence-wordpress-maroc. 200 in 72ms
+ ○ Compiling /manifest.webmanifest ...
+ ✓ Compiled /manifest.webmanifest in 580ms (1101 modules)
+ GET /manifest.webmanifest 200 in 982ms
+ ✓ Compiled in 1277ms (1987 modules)
+ GET /agence-wordpress-maroc. 200 in 256ms
+ ✓ Compiled /manifest.webmanifest in 278ms (1101 modules)
+ GET /manifest.webmanifest 200 in 590ms
+ ✓ Compiled in 877ms (2004 modules)
+ GET /agence-wordpress-maroc. 200 in 245ms
+ GET /manifest.webmanifest 200 in 213ms
+ ✓ Compiled in 1172ms (2004 modules)
+ GET /agence-wordpress-maroc. 200 in 133ms
+ GET /manifest.webmanifest 200 in 212ms
+ ✓ Compiled in 1144ms (2004 modules)
+ GET /agence-wordpress-maroc. 200 in 167ms
+ GET /manifest.webmanifest 200 in 215ms
+ ✓ Compiled in 961ms (2004 modules)
+ GET /agence-wordpress-maroc. 200 in 98ms
+ GET /manifest.webmanifest 200 in 214ms
+ ✓ Compiled in 672ms (2004 modules)
+ GET /agence-wordpress-maroc. 200 in 101ms
+ GET /manifest.webmanifest 200 in 213ms
+ ✓ Compiled in 861ms (2004 modules)
+ GET /agence-wordpress-maroc. 200 in 84ms
+ GET /manifest.webmanifest 200 in 213ms
+ GET /agence-wordpress-maroc. 200 in 557ms
+ GET /agence-wordpress-maroc 200 in 341ms
+ GET /a 200 in 281ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1373ms (1133 modules)
+ GET / 200 in 2555ms
+ GET /agence-wordpress-maroc 200 in 84ms
+ ✓ Compiled /manifest.webmanifest in 329ms (1150 modules)
+ GET /manifest.webmanifest 200 in 736ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.4.9
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.141:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 6.5s
+ ○ Compiling /agence-wordpress-maroc ...
+ ✓ Compiled /agence-wordpress-maroc in 14.6s (1580 modules)
+ ✓ Compiled in 1608ms (686 modules)
+ GET /agence-wordpress-maroc 200 in 16388ms
+ ○ Compiling /[citySlug] ...
+ ✓ Compiled /[citySlug] in 867ms (1560 modules)
+ GET /agence-wordpress-maroc. 200 in 2360ms
+ GET /agence-wordpress-maroc. 200 in 264ms
