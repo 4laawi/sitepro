@@ -23,6 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/maintenance-support`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     // Blog index
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
+    // Legal pages
+    { url: `${base}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/politique-de-confidentialite`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/cgv`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   // 2. English Pages (Dynamic discovery from src/app/en)

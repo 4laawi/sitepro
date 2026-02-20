@@ -45,10 +45,10 @@ export default function Footer() {
         { label: 'Contact', href: '/#contact' },
       ],
       legalLinks: [
-        { label: 'Mentions Légales', href: '#' },
-        { label: 'Politique de Confidentialité', href: '#' },
-        { label: 'CGV', href: '#' },
-        { label: 'Cookies', href: '#' },
+        { label: 'Mentions Légales', href: '/mentions-legales' },
+        { label: 'Politique de Confidentialité', href: '/politique-de-confidentialite' },
+        { label: 'CGV', href: '/cgv' },
+        { label: 'Cookies', href: '/cookies' },
       ]
     },
     EN: {
@@ -73,10 +73,10 @@ export default function Footer() {
         { label: 'Contact', href: '/en/contact' },
       ],
       legalLinks: [
-        { label: 'Legal Notice', href: '#' },
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Cookies', href: '#' },
+        { label: 'Legal Notice', href: '/en/legal-notice' },
+        { label: 'Privacy Policy', href: '/en/privacy-policy' },
+        { label: 'Terms of Service', href: '/en/terms-of-service' },
+        { label: 'Cookies', href: '/en/cookies' },
       ]
     }
   }[language];
