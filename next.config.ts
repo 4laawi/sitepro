@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         destination: '/creation-site-web-:city',
         permanent: true,
       },
+      {
+        source: '/applications-mobiles',
+        destination: '/application-mobile-maroc',
+        permanent: true,
+      },
     ]
   },
 };

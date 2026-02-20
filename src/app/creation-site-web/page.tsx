@@ -352,7 +352,7 @@ export default function CreationSiteWebPage() {
               Ne vous contentez pas d&apos;un simple site. Obtenez une machine à leads optimisée pour Google et conçue pour convertir vos visiteurs en clients.
             </p>
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/creation-site-web-maroc/" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
+              <Link href="/creation-site-web-maroc" className="bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all shadow-xl shadow-primary-900/40 flex items-center gap-3 group">
                 Création site web Maroc
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
