@@ -29,6 +29,17 @@ export const metadata: Metadata = {
 const items = [
     {
         id: 1,
+        title: 'ZahriTours - Tour Agency',
+        category: 'Tours',
+        description:
+            'ZahriTours - Tour Agency: The premier choice for private transfers and custom tours across Morocco. Local expertise and premium travel excellence at zahritours.com.',
+        image: '/zahritours.webp',
+        tags: ['React', 'Tours', 'Morocco'],
+        link: 'https://zahritours.com/',
+        scrollOnHover: true,
+    },
+    {
+        id: 2,
         title: 'Mama Fatma Store',
         category: 'E‑commerce',
         description:
@@ -40,7 +51,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 2,
+        id: 3,
         title: 'EUN Cars – Car Rental',
         category: 'Rental',
         description:
@@ -51,7 +62,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 3,
+        id: 4,
         title: 'Le Grand Bazar Marrakech',
         category: 'Restaurant',
         description: 'Restaurant website with online table reservation.',
@@ -61,7 +72,7 @@ const items = [
         caseStudy: '/portfolio/case-studies/le-grand-bazar',
     },
     {
-        id: 4,
+        id: 5,
         title: 'Tamraght Paradise',
         category: 'Airbnb Rental',
         description: 'Luxury listing with calendar and booking.',
@@ -71,7 +82,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 5,
+        id: 6,
         title: 'Cars Rental Business',
         category: 'Rental',
         description: 'Simple and effective site for car rental.',
@@ -81,7 +92,7 @@ const items = [
         hideFromAll: true,
     },
     {
-        id: 6,
+        id: 7,
         title: 'Atlas Touareg Real Estate',
         category: 'Real Estate',
         description: "Real estate agency with property search.",
@@ -90,7 +101,7 @@ const items = [
         link: 'https://atlastouareg.com/',
     },
     {
-        id: 7,
+        id: 8,
         title: 'Centre Dentaire Bentouda',
         category: 'Medical Cabinet',
         description:
@@ -100,7 +111,7 @@ const items = [
         link: 'https://centredentairebentouda.com/',
     },
     {
-        id: 8,
+        id: 9,
         title: 'Rabat Rentals',
         category: 'Rental',
         description: 'Premium car rental agency in Rabat with luxury fleet and professional chauffeur service.',
@@ -110,7 +121,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 9,
+        id: 10,
         title: 'Rabat Rental',
         category: 'Rental',
         description: 'Car rental in Rabat with online booking system and 24/7 assistance.',
@@ -119,7 +130,7 @@ const items = [
         link: 'https://rabat-rental.vercel.app/',
     },
     {
-        id: 10,
+        id: 11,
         title: 'Essouira Surf House Club',
         category: 'Rental',
         description: 'Modern website for surf club in Essaouira with clean design and optimal user experience.',
@@ -129,7 +140,7 @@ const items = [
         hideFromAll: true,
     },
     {
-        id: 11,
+        id: 12,
         title: 'Trevi Rent Car Location',
         category: 'Rental',
         description: 'Professional car rental site with online booking system and fleet management.',
@@ -139,7 +150,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 12,
+        id: 13,
         title: 'Apex Dental Clinic',
         category: 'Medical Cabinet',
         description: 'Modern website for a premium dental clinic with clean design and smooth navigation.',
@@ -149,7 +160,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 13,
+        id: 14,
         title: 'marocMaroc',
         category: 'E‑commerce',
         description:
@@ -161,7 +172,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 14,
+        id: 15,
         title: 'Car Hire Agadir',
         category: 'Rental',
         description: 'Premium car rental service in Agadir with a wide choice of vehicles and 24/7 assistance.',
@@ -171,7 +182,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 15,
+        id: 16,
         title: 'Power Delivery',
         category: 'Delivery',
         description: 'Innovative logistics solution in Morocco with real-time parcel tracking and dedicated portal for businesses.',
@@ -181,7 +192,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 16,
+        id: 17,
         title: 'MetaLivraison',
         category: 'Delivery',
         description: 'Ultra-modern Moroccan delivery platform with fluid animations and immersive user experience.',
@@ -191,7 +202,7 @@ const items = [
         scrollOnHover: true,
     },
     {
-        id: 17,
+        id: 18,
         title: 'LondonFood.ma',
         category: 'Restaurant',
         description: 'Vibrant restaurant site with polished graphic design, allowing simple and intuitive online ordering.',
@@ -204,6 +215,7 @@ const items = [
 
 const categories = [
     'All',
+    'Tours',
     'E‑commerce',
     'Rental',
     'Restaurant',

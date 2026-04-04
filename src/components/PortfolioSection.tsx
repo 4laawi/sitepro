@@ -10,6 +10,17 @@ import { useHasMounted } from '@/hooks/useHasMounted'
 const portfolioItems = [
   {
     id: 1,
+    title: 'ZahriTours - Tour Agency',
+    category: 'Tours',
+    description: 'ZahriTours - Tour Agency: Your premier travel agency for private transfers and custom tours across Morocco. Book your premium experience at zahritours.com.',
+    image: '/zahritours.webp',
+    tags: ['React', 'Tours', 'Morocco'],
+    stats: { visitors: '10K+', conversion: '5.2%' },
+    link: 'https://zahritours.com/',
+    scrollOnHover: true
+  },
+  {
+    id: 2,
     title: 'Apex Clinique Dentaire',
     category: 'Cabinet Médical',
     description: 'Clinique dentaire de pointe à Tanger, Maroc, avec une présence digitale élégante et fonctionnelle.',
@@ -20,7 +31,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 2,
+    id: 3,
     title: 'Mama Fatma Store',
     category: 'E-commerce',
     description: 'Boutique en ligne moderne avec gestion des produits, SEO optimisé et performances élevées',
@@ -31,7 +42,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 3,
+    id: 4,
     title: 'EUN Cars - Location de Voitures',
     category: 'Location',
     description: 'Système de réservation en ligne pour location de voitures à Laayoune avec interface intuitive',
@@ -42,7 +53,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 4,
+    id: 5,
     title: 'Le Grand Bazar Marrakech',
     category: 'Restaurant',
     description: 'Site de restaurant à Marrakech avec système de réservation de tables en ligne',
@@ -52,7 +63,7 @@ const portfolioItems = [
     link: 'https://legrandbazarmarrakech.com/fr/'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Tamraght Paradise',
     category: 'Location Airbnb',
     description: 'Listing Airbnb luxueux à Tamraght avec système de réservation et sélecteur de calendrier',
@@ -63,7 +74,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 6,
+    id: 7,
     title: 'Cars Rental Business',
     category: 'Location',
     description: 'Site simple et efficace pour entreprise de location de voitures',
@@ -74,7 +85,7 @@ const portfolioItems = [
     hideFromAll: true
   },
   {
-    id: 7,
+    id: 8,
     title: 'Atlas Touareg Immobilier',
     category: 'Immobilier',
     description: 'Agence immobilière à Marrakech permettant aux utilisateurs de trouver des biens adaptés',
@@ -84,7 +95,7 @@ const portfolioItems = [
     link: 'https://atlastouareg.com/'
   },
   {
-    id: 8,
+    id: 9,
     title: 'Centre Dentaire Bentouda',
     category: 'Cabinet Médical',
     description: 'Cabinet dentaire à Agadir avec visuels magnifiques, SEO optimisé et performances élevées',
@@ -94,7 +105,7 @@ const portfolioItems = [
     link: 'https://centredentairebentouda.com/'
   },
   {
-    id: 9,
+    id: 10,
     title: 'Rabat Rentals',
     category: 'Location',
     description: 'Agence premium de location de voitures à Rabat avec flotte de luxe et service chauffeur professionnel',
@@ -105,7 +116,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 10,
+    id: 11,
     title: 'Rabat Rental',
     category: 'Location',
     description: 'Location de voitures à Rabat avec système de réservation en ligne et assistance 24h/24',
@@ -115,7 +126,7 @@ const portfolioItems = [
     link: 'https://rabat-rental.vercel.app/'
   },
   {
-    id: 11,
+    id: 12,
     title: 'Essouira Surf House Club',
     category: 'Location',
     description: 'Site web moderne pour club de surf à Essaouira avec design épuré et expérience utilisateur optimale',
@@ -126,7 +137,7 @@ const portfolioItems = [
     hideFromAll: true
   },
   {
-    id: 12,
+    id: 13,
     title: 'Trevi Rent Car Location',
     category: 'Location',
     description: 'Site de location de voitures professionnel avec système de réservation en ligne et gestion de flotte',
@@ -137,7 +148,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 13,
+    id: 14,
     title: 'marocMaroc',
     category: 'E-commerce',
     description: 'Boutique e-commerce premium spécialisée dans les rituels de beauté et cosmétiques marocains de luxe.',
@@ -148,7 +159,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 14,
+    id: 15,
     title: 'Car Hire Agadir',
     category: 'Location',
     description: 'Service de location de voitures premium à Agadir avec un large choix de véhicules et assistance 24/7.',
@@ -159,7 +170,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 15,
+    id: 16,
     title: 'Power Delivery',
     category: 'Livraison',
     description: 'Solution logistique innovante au Maroc avec suivi de colis en temps réel et portail dédié pour les entreprises.',
@@ -170,7 +181,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 16,
+    id: 17,
     title: 'MetaLivraison',
     category: 'Livraison',
     description: 'Plateforme de livraison marocaine ultra-moderne avec des animations fluides et une expérience utilisateur immersive.',
@@ -181,7 +192,7 @@ const portfolioItems = [
     scrollOnHover: true
   },
   {
-    id: 17,
+    id: 18,
     title: 'LondonFood.ma',
     category: 'Restaurant',
     description: 'Site de restauration vibrant avec un design graphique soigné, permettant la commande en ligne de manière simple et intuitive.',
@@ -363,8 +374,12 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
       badge: 'Portfolio',
       title: 'Nos Réalisations Récentes',
       description: 'Découvrez une sélection de projets qui illustrent notre expertise et notre capacité à créer des solutions digitales performantes.',
-      categories: ['Tous', 'E-commerce', 'Location', 'Restaurant', 'Location Airbnb', 'Immobilier', 'Cabinet Médical', 'Livraison'],
+      categories: ['Tous', 'Tours', 'E-commerce', 'Location', 'Restaurant', 'Location Airbnb', 'Immobilier', 'Cabinet Médical', 'Livraison'],
       items: [
+        {
+          category: 'Tours',
+          description: 'ZahriTours - Tour Agency : Agence de voyage premium pour vos transferts et excursions sur mesure à travers tout le Maroc. Excellence et authenticité sur zahritours.com.',
+        },
         {
           category: 'Cabinet Médical',
           description: 'Clinique dentaire de pointe à Tanger, Maroc, avec une présence digitale élégante et fonctionnelle.',
@@ -444,8 +459,12 @@ export default function PortfolioSection({ lang = 'FR' }: PortfolioSectionProps)
       badge: 'Portfolio',
       title: 'Our Recent Achievements',
       description: 'Discover a selection of projects that illustrate our expertise and our ability to create high-performance digital solutions.',
-      categories: ['All', 'E-commerce', 'Rental', 'Restaurant', 'Airbnb Rental', 'Real Estate', 'Medical Practice', 'Delivery'],
+      categories: ['All', 'Tours', 'E-commerce', 'Rental', 'Restaurant', 'Airbnb Rental', 'Real Estate', 'Medical Practice', 'Delivery'],
       items: [
+        {
+           category: 'Tours',
+           description: 'ZahriTours - Tour Agency: Leading travel agency for private transfers and custom tours across Morocco. Book your premium experience at zahritours.com.',
+        },
         {
           category: 'Medical Practice',
           description: 'State-of-the-art dental clinic in Tangier, Morocco, with an elegant and functional digital presence.',

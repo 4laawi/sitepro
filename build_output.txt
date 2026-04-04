@@ -6,35 +6,85 @@
    - Environments: .env.local
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 4.0s
+ ✓ Compiled successfully in 5.0s
    Linting and checking validity of types ...
 
-Failed to compile.
-
-./src/app/creation-site-web-maroc/page.tsx
-5:45  Warning: 'Cpu' is defined but never used.  @typescript-eslint/no-unused-vars
-
-./src/app/portfolio/page.tsx
-6:10  Warning: 'FolderOpen' is defined but never used.  @typescript-eslint/no-unused-vars
-
-./src/components/ContactForm.tsx
-5:10  Warning: 'Send' is defined but never used.  @typescript-eslint/no-unused-vars
-49:18  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
-
-./src/components/Footer.tsx
-6:18  Warning: 'AnimatePresence' is defined but never used.  @typescript-eslint/no-unused-vars
-16:10  Warning: 'useEffect' is defined but never used.  @typescript-eslint/no-unused-vars
-16:21  Warning: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
-
-./src/components/ScrollVelocityWrapper.tsx
-7:47  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-
-./src/components/SolutionsSection.tsx
-4:8  Warning: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
-72:41  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
-
-./src/components/StatsSection.tsx
-64:27  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-69:64  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+./src/app/blog/comment-attirer-patients-google-site-web-dentaire/page.tsx
+4:46  Warning: 'User' is defined but never used.  @typescript-eslint/no-unused-vars
+4:64  Warning: 'CheckCircle2' is defined but never used.  @typescript-eslint/no-unused-vars
+4:78  Warning: 'AlertTriangle' is defined but never used.  @typescript-eslint/no-unused-vars
+4:93  Warning: 'TrendingUp' is defined but never used.  @typescript-eslint/no-unused-vars
+4:105  Warning: 'DollarSign' is defined but never used.  @typescript-eslint/no-unused-vars
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/69) ...
+   Generating static pages (17/69) 
+   Generating static pages (34/69) 
+   Generating static pages (51/69) 
+ ✓ Generating static pages (69/69)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                           Size  First Load JS
+┌ ○ /                                                                146 B         181 kB
+├ ○ /_not-found                                                      996 B         101 kB
+├ ● /[citySlug]                                                      146 B         166 kB
+├   ├ /creation-site-web-tanger
+├   ├ /creation-site-web-rabat
+├   ├ /creation-site-web-kénitra
+├   └ [+17 more paths]
+├ ○ /agence-wordpress-maroc                                        10.9 kB         166 kB
+├ ƒ /api/chat                                                        137 B         100 kB
+├ ○ /application-mobile-maroc                                        141 B         152 kB
+├ ○ /blog                                                           5.8 kB         153 kB
+├ ○ /blog/combien-coute-site-web-maroc                               201 B         109 kB
+├ ○ /blog/comment-attirer-patients-google-site-web-dentaire          201 B         109 kB
+├ ○ /blog/comment-trouver-clients-ligne-maroc                        201 B         109 kB
+├ ○ /blog/les-erreurs-frequentes-cabinets-dentaires-sans-site-web    201 B         109 kB
+├ ○ /blog/pourquoi-site-pas-sur-google                               201 B         109 kB
+├ ○ /blog/pourquoi-site-web-cabinet-dentaire-maroc-2026              201 B         109 kB
+├ ○ /blog/seo-local-maroc-google-maps                                201 B         109 kB
+├ ○ /blog/site-web-gratuit-maroc                                     201 B         109 kB
+├ ○ /cgv                                                             188 B         103 kB
+├ ○ /contact                                                         192 B         149 kB
+├ ○ /cookies                                                         188 B         103 kB
+├ ○ /creation-site-web                                             5.87 kB         153 kB
+├ ○ /creation-site-web-maroc                                         147 B         166 kB
+├ ○ /design-branding                                                 196 B         144 kB
+├ ○ /e-commerce                                                    2.19 kB         149 kB
+├ ○ /en                                                              147 B         181 kB
+├ ○ /en/contact                                                      192 B         149 kB
+├ ○ /en/cookies                                                      188 B         103 kB
+├ ○ /en/design-branding                                              196 B         144 kB
+├ ○ /en/e-commerce                                                 2.19 kB         149 kB
+├ ○ /en/legal-notice                                                 188 B         103 kB
+├ ○ /en/maintenance-website-morocco                                7.52 kB         157 kB
+├ ○ /en/mobile-apps-morocco                                          141 B         152 kB
+├ ○ /en/portfolio                                                    138 B         155 kB
+├ ○ /en/privacy-policy                                               188 B         103 kB
+├ ○ /en/seo-agency-morocco                                           616 B         211 kB
+├ ○ /en/terms-of-service                                             188 B         103 kB
+├ ○ /en/website-creation-morocco                                     147 B         166 kB
+├ ○ /maintenance-site-web-maroc                                    7.93 kB         158 kB
+├ ○ /maintenance-support                                             453 B         141 kB
+├ ○ /manifest.webmanifest                                              0 B            0 B
+├ ○ /mentions-legales                                                188 B         103 kB
+├ ○ /politique-de-confidentialite                                    188 B         103 kB
+├ ○ /portfolio                                                       137 B         155 kB
+├ ○ /portfolio/case-studies/le-grand-bazar                           335 B         142 kB
+├ ○ /portfolio/case-studies/mama-fatma-store                         335 B         142 kB
+├ ○ /portfolio/case-studies/maroc-maroc                              335 B         142 kB
+├ ○ /referencement-seo                                               616 B         211 kB
+├ ○ /robots.txt                                                      137 B         100 kB
+└ ○ /sitemap.xml                                                     137 B         100 kB
++ First Load JS shared by all                                      99.9 kB
+  ├ chunks/4bd1b696-602635ee57868870.js                            54.1 kB
+  ├ chunks/5964-098206372dd5b7ce.js                                43.6 kB
+  └ other shared chunks (total)                                    2.09 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
