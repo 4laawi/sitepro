@@ -58,7 +58,7 @@ const items = [
       'Système de réservation en ligne pour location de voitures à Laâyoune avec interface intuitive.',
     image: '/Screenshot 2026-01-20 at 10.03.01 PM.webp',
     tags: ['React', 'Vercel', 'Réservation'],
-    link: 'https://eun-cars.vercel.app/',
+    link: 'https://euncars.site/',
     scrollOnHover: true,
   },
   {

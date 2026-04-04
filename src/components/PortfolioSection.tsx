@@ -49,7 +49,7 @@ const portfolioItems = [
     image: '/Screenshot 2026-01-20 at 10.03.01 PM.webp',
     tags: ['React', 'Vercel', 'Système de réservation'],
     stats: { visitors: '8K+', conversion: '6.1%' },
-    link: 'https://eun-cars.vercel.app/',
+    link: 'https://euncars.site/',
     scrollOnHover: true
   },
   {
