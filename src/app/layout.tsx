@@ -28,7 +28,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Sitepro.ma' }],
   creator: 'Sitepro.ma',
   publisher: 'Sitepro.ma',
-  alternates: { canonical: '/' },
+  alternates: {
+    canonical: 'https://sitepro.ma',
+    languages: {
+      'fr-MA': 'https://sitepro.ma',
+      'en-MA': 'https://sitepro.ma/en',
+    },
+  },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',

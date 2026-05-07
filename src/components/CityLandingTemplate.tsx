@@ -165,6 +165,62 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
 
     return (
         <div className="flex flex-col w-full font-sans snipcss-odHLl">
+            {/* SEO Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": `Sitepro.ma - Création site web ${displayCity}`,
+                        "description": lang === 'EN'
+                            ? `Professional website creation agency in ${displayCity}. Optimized for SEO and AI.`
+                            : `Agence de création de site web à ${displayCity}. Optimisation SEO et IA.`,
+                        "url": `https://sitepro.ma/creation-site-web-${city.toLowerCase()}`,
+                        "telephone": "+212663711164",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": displayCity,
+                            "addressCountry": "MA"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": city.toLowerCase() === 'marrakech' ? "31.6295" : "33.5731",
+                            "longitude": city.toLowerCase() === 'marrakech' ? "-7.9811" : "-7.5898"
+                        }
+                    })
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": lang === 'EN' ? "Home" : "Accueil",
+                                "item": "https://sitepro.ma"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": lang === 'EN' ? "Website Creation" : "Création site web",
+                                "item": "https://sitepro.ma/creation-site-web-maroc"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": displayCity,
+                                "item": `https://sitepro.ma/creation-site-web-${city.toLowerCase()}`
+                            }
+                        ]
+                    })
+                }}
+            />
+
             {/* Hero Section */}
             <section className="bg-white border-b border-gray-100">
                 <div className="container px-4 py-8 lg:py-24 mx-auto max-w-7xl">
@@ -534,7 +590,7 @@ export default function CityLandingTemplate({ city, isMainMaroc = false, lang = 
                                     <>
                                         <p>Today, creating a website has become extremely simple thanks to <strong>no-code platforms</strong> and <strong>AI site generators</strong>, as well as web agencies that offer low-cost sites.</p>
                                         <p className="bg-red-50 border-l-4 border-red-500 p-4">While many people ignore it at first, these sites will <strong>never achieve a good ranking on Google</strong>. They will serve at best as a simple showcase for a business card.</p>
-                                        <p>Every site we develop is designed for <strong>maximum visibility</strong>. We meticulously optimize it for <Link href="/creative-site-web-maroc/" className="text-primary-600 font-bold hover:underline">website creation in Morocco</Link> and SEO, guaranteeing an excellent Google ranking.</p>
+                                        <p>Every site we develop is designed for <strong>maximum visibility</strong>. We meticulously optimize it for <Link href="/creation-site-web-maroc/" className="text-primary-600 font-bold hover:underline">website creation in Morocco</Link> and SEO, guaranteeing an excellent Google ranking.</p>
                                     </>
                                 ) : (
                                     <>

@@ -119,8 +119,52 @@ export default function WordpressLandingTemplate({ lang = 'FR' }: WordpressLandi
 
     const successStories = lang === 'EN' ? successStoriesEN : successStoriesFR;
 
+    const faqWP = [
+        {
+            question: lang === 'EN' ? "Why choose WordPress for my business?" : "Pourquoi choisir WordPress pour mon entreprise ?",
+            answer: lang === 'EN' 
+                ? "WordPress powers over 43% of the web. It's flexible, easy to manage, and has a massive ecosystem of plugins. At Sitepro.ma, we ensure it's built properly for speed and security."
+                : "WordPress propulse plus de 43% du web mondial. C'est un outil flexible, facile à gérer et doté d'un immense écosystème de plugins. Chez Sitepro.ma, nous l'optimisons pour la vitesse et la sécurité."
+        },
+        {
+            question: lang === 'EN' ? "Do you offer custom WordPress theme development?" : "Proposez-vous le développement de thèmes WordPress sur mesure ?",
+            answer: lang === 'EN'
+                ? "Yes, we specialize in high-performance custom themes built from scratch. No bloatware, just clean code that loads fast and ranks well on Google."
+                : "Oui, nous sommes spécialisés dans la création de thèmes sur mesure haute performance. Pas de code superflu, juste un site ultra-rapide qui performe sur Google."
+        },
+        {
+            question: lang === 'EN' ? "Is WordPress secure?" : "Est-ce que WordPress est sécurisé ?",
+            answer: lang === 'EN'
+                ? "WordPress is very secure when maintained correctly. We implement WAF (Web Application Firewall), regular updates, and automated backups to protect your business."
+                : "WordPress est très sécurisé lorsqu'il est maintenu correctement. Nous implémentons des pare-feu (WAF), des mises à jour régulières et des sauvegardes pour protéger votre activité."
+        }
+    ];
+
     return (
         <div className="flex flex-col w-full font-sans snipcss-odHLl">
+            {/* Schema.org Implementation */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "name": lang === 'EN' ? "WordPress Development Agency Morocco" : "Agence Développement WordPress Maroc",
+                        "serviceType": "Web Development",
+                        "description": lang === 'EN' 
+                            ? "Expert WordPress agency in Morocco for custom themes, WooCommerce, and SEO optimization."
+                            : "Agence experte WordPress au Maroc pour thèmes sur mesure, WooCommerce et optimisation SEO.",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Sitepro.ma",
+                            "url": "https://sitepro.ma"
+                        },
+                        "areaServed": "MA"
+                    })
+                }}
+            />
+            <FAQSection data={faqWP} lang={lang} showTitle={false} />
+
             {/* Hero Section */}
             <section className="bg-white border-b border-gray-100">
                 <div className="container px-4 py-8 lg:py-24 mx-auto max-w-7xl">
@@ -145,9 +189,9 @@ export default function WordpressLandingTemplate({ lang = 'FR' }: WordpressLandi
 
                             <p className="hero-subtitle-premium mx-auto lg:mx-0">
                                 {lang === 'EN' ? (
-                                    <>Our <strong className="text-gray-900">WordPress agency in Morocco</strong> designs your customized <strong className="text-gray-900">website</strong>. Easy to manage, secured, and fully optimized for <strong className="text-gray-900">SEO</strong> to rank #1 on Google.</>
+                                    <>Our <strong className="text-gray-900">WordPress agency in Morocco</strong> designs your customized <strong className="text-gray-900">website</strong>. Easy to manage, secured, and fully optimized for <strong className="text-gray-900">SEO</strong> to rank #1 on Google for keywords like <Link href="/referencement-seo/" className="text-primary-600 hover:underline">agence SEO maroc</Link>.</>
                                 ) : (
-                                    <>Notre <strong className="text-gray-900">agence WordPress au Maroc</strong> conçoit votre <strong className="text-gray-900">site web</strong> clé en main. Facile à gérer, sécurisé et entièrement optimisé pour le <strong className="text-gray-900">SEO</strong> pour atteindre la 1ère position sur Google.</>
+                                    <>Notre <strong className="text-gray-900">agence WordPress au Maroc</strong> conçoit votre <strong className="text-gray-900">site web</strong> clé en main. Facile à gérer, sécurisé et entièrement optimisé pour le <Link href="/referencement-seo/" className="text-primary-600 hover:underline font-bold">SEO</Link> pour atteindre la 1ère position sur Google.</>
                                 )}
                             </p>
 

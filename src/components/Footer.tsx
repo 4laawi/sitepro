@@ -26,23 +26,31 @@ export default function Footer() {
       tagline: 'Votre partenaire digital de confiance au Maroc. Nous créons des expériences web exceptionnelles qui propulsent votre business.',
       services: 'Services',
       company: 'Entreprise',
+      villes: 'Villes',
       contact: 'Contact',
       rights: 'Tous droits réservés.',
       serviceLinks: [
-        { label: 'Création de Sites Web', href: '/creation-site-web-maroc' },
+        { label: 'Création Site Web Maroc', href: '/creation-site-web-maroc' },
         { label: 'Agence WordPress Maroc', href: '/agence-wordpress-maroc' },
-
+        { label: 'Référencement SEO', href: '/referencement-seo' },
         { label: 'E-commerce', href: '/e-commerce' },
         { label: 'Applications Mobiles', href: '/application-mobile-maroc' },
-        { label: 'Référencement SEO', href: '/referencement-seo' },
         { label: 'Design & Branding', href: '/design-branding' },
         { label: 'Maintenance & Support', href: '/maintenance-site-web-maroc' },
+      ],
+      cityLinks: [
+        { label: 'Tanger', href: '/creation-site-web-tanger' },
+        { label: 'Casablanca', href: '/creation-site-web-casablanca' },
+        { label: 'Rabat', href: '/creation-site-web-rabat' },
+        { label: 'Marrakech', href: '/creation-site-web-marrakech' },
+        { label: 'Agadir', href: '/creation-site-web-agadir' },
+        { label: 'Fès', href: '/creation-site-web-fes' },
       ],
       companyLinks: [
         { label: 'À propos', href: '/#about' },
         { label: 'Portfolio', href: '/portfolio' },
-        { label: 'Villes', href: '/#villes' },
         { label: 'Contact', href: '/#contact' },
+        { label: 'Blog SEO', href: '/blog' },
       ],
       legalLinks: [
         { label: 'Mentions Légales', href: '/mentions-legales' },
@@ -55,22 +63,29 @@ export default function Footer() {
       tagline: 'Your trusted digital partner in Morocco. We create exceptional web experiences that propel your business.',
       services: 'Services',
       company: 'Company',
+      villes: 'Cities',
       contact: 'Contact',
       rights: 'All rights reserved.',
       serviceLinks: [
         { label: 'Website Creation', href: '/en/website-creation-morocco' },
-
         { label: 'E-commerce', href: '/en/e-commerce' },
         { label: 'Mobile Applications', href: '/en/mobile-apps-morocco' },
-        { label: 'SEO Ranking', href: '/en/seo-agency-morocco' },
+        { label: 'SEO Agency Morocco', href: '/en/seo-agency-morocco' },
         { label: 'Design & Branding', href: '/en/design-branding' },
         { label: 'Maintenance & Support', href: '/en/maintenance-website-morocco' },
+      ],
+      cityLinks: [
+        { label: 'Tangier', href: '/creation-site-web-tanger' },
+        { label: 'Casablanca', href: '/creation-site-web-casablanca' },
+        { label: 'Rabat', href: '/creation-site-web-rabat' },
+        { label: 'Marrakech', href: '/creation-site-web-marrakech' },
+        { label: 'Agadir', href: '/creation-site-web-agadir' },
       ],
       companyLinks: [
         { label: 'About Us', href: '/en/#about' },
         { label: 'Portfolio', href: '/en/portfolio' },
-        { label: 'Cities', href: '/en/#villes' },
         { label: 'Contact', href: '/en/contact' },
+        { label: 'Legal Notice', href: '/en/legal-notice' },
       ],
       legalLinks: [
         { label: 'Legal Notice', href: '/en/legal-notice' },
@@ -91,16 +106,54 @@ export default function Footer() {
 
   return (
     <footer className="bg-tech-dark text-white relative">
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Sitepro.ma",
+            "image": "https://sitepro.ma/Logo-site-web-pro-maroc.webp",
+            "@id": "https://sitepro.ma",
+            "url": "https://sitepro.ma",
+            "telephone": "+212663711164",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Avenue Mohammed VI",
+              "addressLocality": "Marrakech",
+              "postalCode": "40000",
+              "addressCountry": "MA"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 31.6295,
+              "longitude": -7.9811
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          })
+        }}
+      />
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="lg:col-span-1"
           >
             <Link href="/" className="inline-block mb-6">
               <Image
@@ -154,6 +207,29 @@ export default function Footer() {
             </ul>
           </motion.div>
 
+          {/* Villes Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6">{t.villes}</h4>
+            <ul className="space-y-3">
+              {t.cityLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center gap-2 group"
+                  >
+                    <span className="w-0 group-hover:w-4 h-0.5 bg-primary-400 transition-all duration-300" />
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
           {/* Company Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -189,7 +265,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+212663711164"
-                  className="flex items-center gap-3 text-gray-400 hover:text-primary-400 transition-colors"
+                  className="flex items-center gap-3 text-gray-400 hover:text-primary-400 transition-colors font-bold"
                 >
                   <Phone size={18} />
                   +212 6 63 71 11 64
@@ -236,7 +312,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   )
 }

@@ -8,26 +8,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 1. Static Pages (French - Main)
   const staticPages: MetadataRoute.Sitemap = [
-    { url: `${base}`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${base}/creation-site-web`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/creation-site-web-maroc`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-
+    { url: `${base}`, lastModified: now, changeFrequency: 'daily', priority: 1 },
+    { url: `${base}/creation-site-web-maroc`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    { url: `${base}/agence-wordpress-maroc`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${base}/referencement-seo`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/portfolio`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     // Service pages
-    { url: `${base}/e-commerce`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/e-commerce`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/application-mobile-maroc`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/referencement-seo`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/design-branding`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/design-branding`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/maintenance-site-web-maroc`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/maintenance-support`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     // Blog index
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'daily', priority: 0.8 },
     // Legal pages
-    { url: `${base}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/politique-de-confidentialite`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/cgv`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${base}/politique-de-confidentialite`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${base}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${base}/cgv`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ]
 
   // 2. English Pages (Dynamic discovery from src/app/en)

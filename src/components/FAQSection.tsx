@@ -86,6 +86,23 @@ const FAQSection = ({ showTitle = true, data, lang = 'FR' }: FAQSectionProps) =>
 
     return (
         <section className="faq-section">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": faqData.map(item => ({
+                            "@type": "Question",
+                            "name": item.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": item.answer
+                            }
+                        }))
+                    })
+                }}
+            />
             {showTitle && (
                 <div className="faq-header-wrapper">
                     <div className="faq-inner-container">
